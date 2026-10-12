@@ -12,7 +12,7 @@
 
 🌐 Website: <https://robertleehao.github.io/MAT/> (soon <https://askmat.app>)
 
-This repository is MAT's website — one self-contained [`index.html`](index.html) — and where the beta is released and discussed. The app's source code lives in a separate, private repository; its builds are published here as [releases](https://github.com/RobertLeeHao/MAT/releases).
+This repository holds MAT's [website](https://robertleehao.github.io/MAT/) ([`index.html`](index.html); setup in [`SETUP.md`](SETUP.md)) and is where the beta is released and discussed. The app's source code lives in a separate, private repository; its builds are published here as [releases](https://github.com/RobertLeeHao/MAT/releases).
 
 ## Get the beta
 
@@ -130,50 +130,11 @@ MAT has **no account and no server of its own.** It runs on your computer and ca
 
 We don't hold anything about you: no account, no email list. Downloads and discussions happen on GitHub, under GitHub's terms.
 
-## 6. The website
-
-The first screen is just the claim, one sentence and the two ways in: **Download for Mac** and **Discuss on GitHub**. Scroll, and a one-take demo film rises from below (32 seconds, ending as MAT shrinks back under the notch; files in `media/`): the frame's own edge covers the first screen, grows to the full width of the window and starts playing. Scroll on and 01 slides up over it while the film steps back, dims and pauses.
-
-| # | Section | What it says |
-|---|---|---|
-| 00 | See it work | The demo film, one take |
-| 01 | The problem | Many models, no team — four problems, each with what it costs you |
-| 02 | The answer | One chat, every model, one memory: a diagram that rewires as you scroll, from "you, between six apps" to one chat, one memory and a gate after every step |
-| 03 | MAT decides | It answers, does it, or staffs it — the three calls, with the crew marked as where MAT is strongest |
-| 04 | What it saves | One example, a competitor analysis of 12 apps done three ways: 61% less spent than one strong model, 8 minutes sooner, 12 of 12 claims holding up (cheap models only: 9) — and why not every job gets both |
-| 05 | Why it works | Process beats raw IQ: strong models plan and check, seats run side by side, gates stop rework |
-| 06 | How it works | Start to finish in one chat, in four steps; the window beside them frames only the part each step is about |
-| 07 | Models and memory | Every AI you pay for, working as one crew: one job's seats sitting on the subscriptions they run on, what each has left this cycle, and MAT's local memory |
-| 08 | Privacy | Your work never passes through us |
-| 09 | The ranking | Every model, ranked for every kind of work |
-| 10 | Dock | Out of the way until you're needed |
-| 11 | Coming soon | The next four things (below) |
-| 12 | Questions | Six questions, answered |
-| 13 | Get the beta | Try it. Tell us what breaks. — the same two buttons |
-
-- **Motion.** There is one motion design for everyone: the page moves, with a few scroll-driven scenes, and stands still when the system's Reduce Motion setting is on. For review, `?motion=quiet`, `?motion=bold` or `?motion=loud` forces a level. Press **G** (or add `?grid`) to see the 12-column grid every element sits on.
-- **Phones and tablets.** Below 861 px, and on any portrait screen up to 1199 px, the page is one column: the film sits in the flow at the grid's width instead of pinning and growing. On phones (≤ 699 px) it's one calm column — nothing pinned, the questions fold, and tapping the film plays it full screen.
-- **Footer pages.** Get the beta (how to open it), Changelog, About, Privacy, Terms and Contact open as one sheet over the page, each with its own shareable link (`#install`, `#changelog`, `#privacy`, …); Esc or Close shuts it. Privacy and Terms are short beta versions; Contact points to Discussions and to the issue forms.
-- **Download button.** It always points at `releases/latest/download/MAT-macOS.zip`. The version and size under it come from `MAT_SITE.beta` in `index.html`, which `release.sh` in the app repository writes when it publishes a build; with no build out yet, the button opens the releases page instead.
-- **Numbers.** The times and costs on the page are illustrative, worked out from each provider's public list prices (September 2026), until measured runs replace them. MAT shows the real comparison on every job.
-
-## 7. Technical notes
-
-- **One file.** CSS and JS are inline. The only external dependency is [Lenis](https://github.com/darkroomengineering/lenis) from jsDelivr, for smooth scrolling; the page works without it.
-- **Brand marks.** An inline SVG sprite at the top of `<body>` holds 21 `<symbol id="lg-…">` marks on one 24 grid at the same optical size, drawn in the text's colour (`fill: currentColor`). Subscriptions and products use product marks (Claude, ChatGPT → OpenAI, Gemini…); the ranking uses maker marks. Sources: LobeHub Icons (MIT), Simple Icons (CC0), svglogos.dev (CC0), Lucide (ISC). The trademarks belong to their owners: Microsoft (Copilot) requires written permission, and Google, Meta and MiniMax require approval first — get it before a public launch, or remove the `<symbol>` and its id in `MODELS` / `MKLG`, and that spot shows text only.
-- **No build step, no cookies.** Visits aren't counted (Cloudflare Web Analytics is wired but off: its token goes in `MAT_SITE.beacon`, and it only loads on askmat.app). Download clicks are counted: each click on a Download button adds one to a public counter on Abacus (`MAT_SITE.clicks`, once per kind per page load, never when the browser sends Do Not Track / GPC); GitHub counts the zip downloads itself. `sh stats.sh` prints both. Nothing is stored in the browser (the keys an older version left behind are cleared on load).
-- **Hosting.** Static files only: GitHub Pages now, Cloudflare (`wrangler.jsonc`, assets only — no Worker code, no database, no secrets) once askmat.app is live. `.assetsignore` makes sure only the page and its public images are served. The waitlist Worker from v3.4 is kept, unused, in `archive/waitlist-worker/`. Setup: [`SETUP.md`](SETUP.md).
-- **GitHub.** `.github/ISSUE_TEMPLATE/` has two forms (a bug in the beta, a crew for your company) and sends ideas and questions to Discussions; `.github/DISCUSSION_TEMPLATE/` has the forms for Ideas and Use cases.
-- **README clips.** `readme/01–07-*.gif` are cut from the demo film along its own captions (1100 px wide, 15 fps, 0.9–3 MB each), so each clip carries its title; the line under each one adds what the clip shows. They are not deployed with the site (`.assetsignore`).
-- **Share card and icons.** `og.png` (2400 × 1260), `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`; social assets (GitHub social preview, X header and avatar, a build-log post template) in `social/`.
-- **Preview locally.** Open `index.html` in a browser.
-- **Publish.** `sh publish.sh` commits and pushes to GitHub; once the repository is connected to Cloudflare, every push redeploys askmat.app. `.github/workflows/pages.yml` publishes the page, its images and `media/` to the GitHub Pages address.
-
-## 8. Status
+## 6. Status
 
 MAT is in an open beta, free while it lasts: anyone can [download it](https://github.com/RobertLeeHao/MAT/releases/latest). The app's source code is not public; builds are released here.
 
-## 9. What's next
+## 7. What's next
 
 **Coming soon**
 
@@ -191,7 +152,7 @@ MAT is in an open beta, free while it lasts: anyone can [download it](https://gi
 - An open format: export your ways of working and your memory, and take them with you.
 - Privacy routing per step: sensitive steps go only to local models.
 
-## 10. Design principles
+## 8. Design principles
 
 - **You only talk to MAT.** However complex the workflow, it never becomes complexity in the conversation.
 - **Each colour means one thing.** Blue: running. Amber: needs you. Green: passed or done. Red: something went wrong.
