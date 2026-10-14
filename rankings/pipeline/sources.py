@@ -130,10 +130,15 @@ def aa_effort(name):
 def fetch_aa():
     page = get("https://artificialanalysis.ai/leaderboards/models").text
     text = rsc_text(page)
-    rows = {}
+    rows, richness = {}, {}
     for o in objects_with(text, "intelligenceIndex"):
-        if "slug" not in o or "medianOutputTokensPerSecond" not in o:
+        # model rows carry a slug and a maker; a model with no speed measured yet simply lacks those keys
+        if "slug" not in o or "modelCreatorName" not in o:
             continue
+        rich = sum(1 for v in AA_FIELDS.values() if num(o.get(v)) is not None)
+        if rich <= richness.get(o["slug"], -1):
+            continue   # the same model appears in several places on the page: keep the fullest copy
+        richness[o["slug"]] = rich
         r = {k: (o.get(v) if k == "iiEstimated" else num(o.get(v))) for k, v in AA_FIELDS.items()}
         r.update(slug=o["slug"], name=o.get("name"), effort=aa_effort(o.get("name")),
                  deprecated=bool(o.get("deprecated")), maker=o.get("modelCreatorName"))

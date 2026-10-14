@@ -26,7 +26,7 @@ jobs:
         run: |
           mkdir _site && cp -r index.html og.png favicon.svg favicon-32.png apple-touch-icon.png media _site/
           # the weekly model rankings, read by the app and the website
-          if [ -d rankings/v2 ]; then mkdir -p _site/rankings && cp -r rankings/v2 _site/rankings/; fi
+          if [ -d rankings/v2 ]; then mkdir -p _site/rankings && cp -r rankings/v2 rankings/index.html _site/rankings/; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
