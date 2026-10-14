@@ -188,6 +188,7 @@ html:lang(de) h1,html:lang(de) h2,html:lang(de) h3,html:lang(fr) h2,html:lang(es
 h1,h2,h3{overflow-wrap:break-word}
 /* ═══ Rankings page v2 · one table. Uses the site's tokens and grid (copied above from index.html). ═══ */
 html,body{--ground:#1A1726}
+:root{--pair:calc(7*var(--px))}
 :root{--ca:var(--green);--cp:var(--ada);--cs:var(--blue)}
 .lg-sprite{position:absolute;width:0;height:0;overflow:hidden}
 a{color:inherit;text-decoration:none}
@@ -206,7 +207,7 @@ main{padding-top:var(--navh)}
 
 /* title: short, a leaderboard's header */
 #hd{padding-top:var(--s8);background:radial-gradient(50% 90% at 88% 10%,rgba(111,168,220,.13),rgba(111,168,220,0) 70%),radial-gradient(40% 80% at 62% 40%,rgba(234,170,66,.08),rgba(234,170,66,0) 70%)}
-.crumb{grid-column:1/-1;display:flex;justify-content:space-between;gap:var(--s4);padding-top:var(--s3);border-top:var(--hair);font-size:var(--small);color:var(--dim)}
+.crumb{grid-column:1/-1;display:flex;justify-content:space-between;gap:var(--s4);font-size:var(--small);color:var(--dim)}
 .crumb a{color:var(--mute)}.crumb a:hover{color:var(--paper)}
 #hd h1{grid-column:1/-1;margin-top:var(--s8);font-size:clamp(calc(44*var(--px)),6vw,calc(96*var(--px)))}
 .sub{grid-column:1/8;margin-top:var(--s6);font-size:var(--lede);font-weight:500;line-height:1.4;color:var(--mute)}
@@ -225,7 +226,7 @@ main{padding-top:var(--navh)}
 .sg{border:0;background:none;padding:var(--s2) var(--s4);font:600 calc(13*var(--px))/1.2 var(--text);color:var(--dim);cursor:pointer}
 .sg:hover{color:var(--paper)}
 .sg[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
-.binfo{display:flex;flex-direction:column;gap:2px;font-size:var(--small);color:var(--dim);margin-right:auto}
+.binfo{display:flex;flex-direction:column;gap:var(--pair);line-height:1.3;font-size:var(--small);color:var(--dim);margin-right:auto}
 .binfo b{font-weight:500;color:var(--mute)}
 .sort{display:flex;align-items:center;gap:var(--s4);font-size:var(--small);color:var(--dim)}
 .so{display:inline-flex;align-items:center;gap:calc(5*var(--px));border:0;background:none;padding:var(--s1) 0;font:600 calc(13*var(--px))/1 var(--text);color:var(--dim);cursor:pointer;border-bottom:1.5px solid transparent}
@@ -234,12 +235,12 @@ main{padding-top:var(--navh)}
 .r{display:grid;grid-template-columns:calc(36*var(--px)) minmax(0,2.3fr) repeat(3,minmax(0,1.25fr));column-gap:var(--s6);align-items:center;min-height:calc(58*var(--px));border-top:.5px solid var(--hc)}
 .r.h{min-height:calc(44*var(--px));border-top:.5px solid var(--hc2);font-size:calc(11*var(--px));font-weight:600;letter-spacing:.03em;color:var(--dim)}
 .r.h .c{gap:calc(6*var(--px));align-items:flex-start}
-.r.h .c>span{display:flex;flex-direction:column;gap:2px;text-transform:uppercase}
+.r.h .c>span{display:flex;flex-direction:column;gap:var(--pair);line-height:1.2;text-transform:uppercase}
 .r.h small{font-size:calc(10*var(--px));font-weight:500;letter-spacing:0;text-transform:none;color:var(--dim);opacity:.8}
 .n{font-family:var(--mono);font-size:var(--small);color:var(--dim)}
 .m{display:flex;align-items:center;gap:var(--s3);min-width:0}
 .m .blogo{width:calc(20*var(--px));height:calc(20*var(--px));color:var(--paper);flex:none}
-.m .t{display:flex;flex-direction:column;gap:3px;min-width:0}
+.m .t{display:flex;flex-direction:column;gap:var(--pair);line-height:1.25;min-width:0}
 .nm{display:flex;align-items:center;gap:var(--s3);font-weight:600;font-size:calc(15*var(--px));white-space:nowrap}
 .su{font-size:var(--small);color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tag{font:600 calc(10*var(--px))/1 var(--text);font-style:normal;letter-spacing:.04em;text-transform:uppercase;padding:calc(4*var(--px)) calc(6*var(--px));background:var(--paper);color:var(--ink)}
@@ -265,7 +266,7 @@ main{padding-top:var(--navh)}
 #ft{padding:var(--s9) 0 var(--s10)}
 .how{grid-column:1/9}
 .how h2{font:600 var(--h3)/1.2 var(--display);letter-spacing:-.015em}
-.how ol{margin:var(--s4) 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:var(--s2);color:var(--mute);font-size:calc(14*var(--px));line-height:1.5}
+.how ol{margin:var(--s5) 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:var(--s3);color:var(--mute);font-size:calc(14*var(--px));line-height:1.5}
 .srcs{margin-top:var(--s5);font-size:var(--small);color:var(--dim)}
 .srcs b{color:var(--mute);font-weight:600;margin-right:var(--s2)}
 .lnk{display:flex;flex-wrap:wrap;gap:var(--s5);margin-top:var(--s4);font-size:calc(13*var(--px));font-weight:600}
@@ -279,12 +280,12 @@ main{padding-top:var(--navh)}
 .pn .blogo{width:calc(26*var(--px));height:calc(26*var(--px));color:var(--paper)}
 .pk>.su{font-size:calc(13*var(--px));line-height:1.5;overflow:visible}
 .kp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:var(--s5);border-top:var(--hair)}
-.k{display:flex;flex-direction:column;gap:2px;padding:var(--s3) var(--s3) 0 0}
+.k{display:flex;flex-direction:column;gap:var(--pair);padding:var(--s3) var(--s3) 0 0}
 .k+.k{padding-left:var(--s4);border-left:var(--hair)}
 .k b{font:700 calc(28*var(--px))/1.1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .k.a b{color:var(--ca)}.k.p b{color:var(--cp)}.k.s b{color:var(--cs)}
 .k small{font-size:calc(12*var(--px));color:var(--dim)}
-.vs{display:flex;flex-direction:column;gap:2px;padding-top:var(--s4);font-size:calc(13*var(--px));color:var(--mute)}
+.vs{display:flex;flex-direction:column;gap:var(--s2);line-height:1.4;padding-top:var(--s4);font-size:calc(13*var(--px));color:var(--mute)}
 .sc{margin:0;display:flex;flex-direction:column;gap:var(--s2)}
 .sc figcaption{display:flex;justify-content:space-between;gap:var(--s3);font-size:calc(11*var(--px));font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
 .sc figcaption{flex-wrap:wrap}.sc .lg{white-space:nowrap;display:flex;align-items:center;gap:calc(6*var(--px));text-transform:none;letter-spacing:0;font-weight:500}
@@ -303,7 +304,7 @@ main{padding-top:var(--navh)}
 
 /* where the numbers come from: the foot of the leaderboard */
 .src{margin-top:var(--s5);padding-top:var(--s5);border-top:.5px solid var(--hc2)}
-.srh{display:flex;flex-direction:column;gap:var(--s1);margin-bottom:var(--s3)}
+.srh{display:flex;flex-direction:column;gap:var(--s3);margin-bottom:var(--s3)}
 .srh h3{flex:none;font:600 calc(15*var(--px))/1.2 var(--text)}
 .srh p{max-width:90ch;font-size:calc(12*var(--px));color:var(--dim)}
 .sr{display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1.6fr) calc(70*var(--px)) calc(120*var(--px));column-gap:var(--s6);align-items:center;min-height:calc(40*var(--px));border-top:.5px solid var(--hc);font-size:calc(13*var(--px))}
@@ -344,10 +345,49 @@ main{padding-top:var(--navh)}
   .k+.k{padding-left:var(--s3)}
   .sr{grid-template-columns:1fr auto;row-gap:var(--s1);padding:var(--s3) 0}
   .sr.hd{display:none}
-  .sn{grid-column:1/-1;flex-direction:column;gap:2px}.sn small{width:auto}
+  .sn{grid-column:1/-1;flex-direction:column;gap:var(--pair)}.sn small{width:auto}
   .sw{grid-column:1/-1}
   .sm em{display:inline;font-style:normal;color:var(--dim)}
   .sm{text-align:left;font-size:calc(12*var(--px))}.sd{font-size:calc(12*var(--px))}
+}
+
+/* ═══ v4.1 · one footer on every page (2026-10-14): the mark and one line, the way in, three columns of links,
+   then one rule and the base. The footer's own colour is its edge, so the columns carry no rules of their own. ═══ */
+footer.sf{background:#111112;color:#F4EFE6;padding-top:var(--s9)}
+footer.sf .sf-top{row-gap:var(--s8);padding-bottom:var(--s9)}
+footer.sf .sf-brand{grid-column:1/6;display:flex;flex-direction:column;align-items:flex-start}
+footer.sf .sf-logo{display:inline-flex;align-items:center;gap:var(--s3);font:700 calc(22*var(--px))/1 var(--display);letter-spacing:-.02em;color:var(--paper);text-decoration:none}
+footer.sf .sf-logo svg{width:calc(36*var(--px));height:calc(22*var(--px));flex:none}
+footer.sf .sf-logo span{text-box:trim-both cap alphabetic}
+footer.sf .sf-brand p{margin-top:var(--s6);max-width:34ch;font-size:var(--small);line-height:1.5;color:var(--mute);text-box:trim-both cap alphabetic}
+footer.sf .foot-get{display:block;margin-top:var(--s6);max-width:none}
+footer.sf .get{display:flex;flex-wrap:wrap;gap:var(--s2)}
+footer.sf .get .btn{flex:none;height:calc(40*var(--px))}
+footer.sf .sf-col{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s4)}
+footer.sf .sf-col:nth-child(2){grid-column:7/9}
+footer.sf .sf-col:nth-child(3){grid-column:9/11}
+footer.sf .sf-col:nth-child(4){grid-column:11/13}
+footer.sf .fh{display:flex;gap:var(--s3);margin:0 0 var(--s3);font:600 var(--small)/1 var(--text);color:var(--paper);text-box:trim-both cap alphabetic}
+footer.sf .fh b{display:inline;font-family:var(--mono);font-weight:600;color:var(--dim)}
+footer.sf .fh span{margin:0;font-weight:600;color:var(--paper)}
+footer.sf .sf-col a{font-size:calc(14*var(--px));line-height:1.2;color:var(--mute);text-decoration:none;text-box:trim-both cap alphabetic}
+footer.sf .sf-col a:hover{color:var(--paper)}
+footer.sf .sf-base{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s6);background:linear-gradient(var(--hc),var(--hc)) var(--m) 0/calc(100% - 2*var(--m)) .5px no-repeat;padding-top:var(--s5);padding-bottom:var(--s6);font-size:var(--small);color:var(--dim)}
+footer.sf .sf-base>span{text-box:trim-both cap alphabetic}
+footer.sf .sf-base>span:not(.lang-f){border:0;padding:0}
+footer.sf .sf-base .lang-f{margin-left:auto;display:block}
+@media (max-width:860px), (max-width:1199px) and (orientation:portrait){
+  footer.sf .sf-brand{grid-column:1/-1}
+  footer.sf .sf-col:nth-child(n){grid-column:span 4}
+}
+@media (max-width:699px){
+  footer.sf{padding-top:var(--s8)}
+  footer.sf .sf-top{row-gap:var(--s7);padding-bottom:var(--s8)}
+  footer.sf .sf-col:nth-child(n){grid-column:span 6}
+  footer.sf .sf-col:nth-child(4){grid-column:1/-1}
+  footer.sf .get .btn{flex:1 1 100%}
+  footer.sf .sf-base{flex-direction:column;align-items:flex-start;gap:var(--s4)}
+  footer.sf .sf-base .lang-f{margin-left:0;margin-top:var(--s2)}
 }
 </style>
 </head>
@@ -360,14 +400,18 @@ main{padding-top:var(--navh)}
 </header>
 <div class="lang-pop" id="langPop" role="menu" hidden></div>
 <main id="app"></main>
-<footer>
-  <div class="g fmap">
-    <div><div class="fh">MAT</div><p class="small" id="footLine"></p></div>
-    <div><div class="fh"><b>01</b><span id="fh1">Product</span></div><a href="../#problem">Why MAT</a><a href="../#race">What it saves</a><a href="../#work">How it works</a><a href="./">The ranking</a></div>
-    <div><div class="fh"><b>02</b><span id="fh2">Beta</span></div><a href="https://github.com/RobertLeeHao/MAT/releases/latest/download/MAT-macOS.zip">Download for Mac</a><a href="https://github.com/RobertLeeHao/MAT/discussions" target="_blank" rel="noopener">Discussions</a><a href="https://github.com/RobertLeeHao/MAT" target="_blank" rel="noopener">GitHub</a></div>
-    <div><div class="fh"><b>03</b><span id="fh3">Company</span></div><a href="../#about">About</a><a href="../#privacy">Privacy</a><a href="../#terms">Terms</a></div>
+<footer class="sf" data-ground="ink">
+  <div class="g sf-top">
+    <div class="sf-brand">
+      <a class="sf-logo" href="../" aria-label="MAT home"><svg viewBox="0 0 26 16" aria-hidden="true"><circle cx="18" cy="8" r="6" fill="#9882CF"/><circle cx="13" cy="8" r="6" fill="#C98565"/><circle cx="8" cy="8" r="6" fill="#F4EFE6"/></svg><span>MAT</span></a>
+      <p data-f="line">One chat, and a crew on the models you already pay for — running locally.</p>
+      <div class="foot-get"><div class="get" data-get="foot"><a class="btn primary" href="https://github.com/RobertLeeHao/MAT/releases/latest/download/MAT-macOS.zip" data-dl><span class="bl" data-f="dl">Download for Mac</span><span class="arw v"><i>↓</i><i>↓</i></span></a><a class="btn line" href="https://github.com/RobertLeeHao/MAT/discussions" target="_blank" rel="noopener"><span class="bl" data-f="discuss">Discuss on GitHub</span><span class="arw"><i>↗</i><i>↗</i></span></a></div></div>
+    </div>
+    <nav class="sf-col" aria-label="Product"><div class="fh"><b>01</b><span data-f="product">Product</span></div><a href="../#problem" data-f="why">Why MAT</a><a href="../#race" data-f="saves">What it saves</a><a href="../#work" data-f="how">How it works</a><a href="../#private" data-f="data">Your data</a><a href="./" data-f="ranking">The ranking</a><a href="../#soon" data-f="soon">Coming soon</a></nav>
+    <nav class="sf-col" aria-label="Beta"><div class="fh"><b>02</b><span data-f="beta">Beta</span></div><a href="https://github.com/RobertLeeHao/MAT/releases/latest/download/MAT-macOS.zip" data-dl data-f="dl">Download for Mac</a><a href="../#install" data-f="open">How to open it</a><a href="https://github.com/RobertLeeHao/MAT/discussions" target="_blank" rel="noopener" data-f="discussions">Discussions</a><a href="https://github.com/RobertLeeHao/MAT" target="_blank" rel="noopener">GitHub</a><a href="../#faq" data-f="faq">Questions</a><a href="../#changelog" data-f="changelog">Changelog</a></nav>
+    <nav class="sf-col" aria-label="Company"><div class="fh"><b>03</b><span data-f="company">Company</span></div><a href="../#about" data-f="about">About</a><a href="../#privacy" data-f="privacy">Privacy</a><a href="../#terms" data-f="terms">Terms</a><a href="../#contact" data-f="contact">Contact</a></nav>
   </div>
-  <div class="g fbase"><span>© 2026 MAT</span><span>Desktop app · runs locally</span><span>Arena data CC BY 4.0</span></div>
+  <div class="g sf-base"><span>© 2026 MAT</span><span data-f="local">Desktop app · runs locally</span><span data-f="memory">Your memory stays on your computer</span><span class="lang-f"><button class="lang-b wide" type="button" data-lang-menu aria-haspopup="menu" aria-expanded="false" aria-label="Language" data-i18n-skip><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c-2 2.2-2 10.8 0 13M8 1.5c2 2.2 2 10.8 0 13"/></svg><span class="lang-n"></span></button></span></div>
 </footer>
 <script>
 // MAT rankings page · v2 (one table). Reads v2/latest.json — rebuilt every Monday by rankings/pipeline — and shows, for one kind
@@ -475,8 +519,11 @@ $('#langC').textContent={en:'EN','zh-Hans':'简','zh-Hant':'繁'}[L];
 $('#langBtn').addEventListener('click',e=>{ const p=$('#langPop'); const open=p.hidden; p.hidden=!open; e.currentTarget.setAttribute('aria-expanded',open); });
 $('#langPop').innerHTML=LANGS.map(([c,n])=>`<button type="button" data-l="${c}"${c===L?' aria-current="true"':''}>${n}</button>`).join('')+`<p>${T.langNote}</p>`;
 $('#langPop').addEventListener('click',e=>{ const b=e.target.closest('[data-l]'); if(!b) return; try{ localStorage.setItem('mat-lang',b.dataset.l); }catch(x){} const u=new URL(location.href); u.searchParams.set('lang',b.dataset.l); location.href=u.toString(); });
-document.addEventListener('click',e=>{ if(!e.target.closest('#langPop,#langBtn')) $('#langPop').hidden=true; });
-$('#footLine').textContent=T.foot[0]; $('#fh1').textContent=T.foot[1]; $('#fh2').textContent=T.foot[2]; $('#fh3').textContent=T.foot[3];
+document.addEventListener('click',e=>{ if(!e.target.closest('#langPop,#langBtn,[data-lang-menu]')) $('#langPop').hidden=true; });
+// the footer is the same on every page; here its words come from this page's own dictionary
+{ const FT={"en": null, "zh-Hans": {"line": "一个对话，用上你已付费的所有模型——在你自己的电脑上运行。", "dl": "下载 Mac 版", "discuss": "在 GitHub 讨论", "product": "产品", "why": "为什么是 MAT", "saves": "省下什么", "how": "工作原理", "data": "你的数据", "ranking": "排行榜", "soon": "即将推出", "beta": "测试版", "open": "怎么打开", "discussions": "讨论区", "faq": "常见问题", "changelog": "更新日志", "company": "公司", "about": "关于", "privacy": "隐私", "terms": "条款", "contact": "联系", "local": "桌面应用 · 在本机运行", "memory": "你的记忆留在你自己的电脑上"}, "zh-Hant": {"line": "一個對話，用上你已付費的所有模型——在你自己的電腦上執行。", "dl": "下載 Mac 版", "discuss": "在 GitHub 討論", "product": "產品", "why": "為什麼是 MAT", "saves": "省下什麼", "how": "運作方式", "data": "你的資料", "ranking": "排行榜", "soon": "即將推出", "beta": "測試版", "open": "怎麼開啟", "discussions": "討論區", "faq": "常見問題", "changelog": "更新紀錄", "company": "公司", "about": "關於", "privacy": "隱私", "terms": "條款", "contact": "聯絡", "local": "桌面應用 · 在本機執行", "memory": "你的記憶留在你自己的電腦上"}}[L]; if(FT) document.querySelectorAll('[data-f]').forEach(e=>{ const v=FT[e.dataset.f]; if(v) e.textContent=v; });
+  document.querySelectorAll('.lang-n').forEach(e=>e.textContent=(LANGS.find(l=>l[0]===L)||LANGS[0])[1]);
+  document.querySelectorAll('[data-lang-menu]').forEach(b=>b.addEventListener('click',e=>{ e.stopPropagation(); const p=$('#langPop'); p.hidden=!p.hidden; if(!p.hidden) window.scrollTo({top:0,behavior:'smooth'}); })); }
 $('#app').innerHTML=`<div class="g"><p class="load">${T.loading}</p></div>`;
 
 const st={cat:'coding',tier:'deliver',sort:'price',all:false};

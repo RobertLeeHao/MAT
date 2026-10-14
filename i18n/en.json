@@ -432,7 +432,22 @@
   "seat routed to Gemini",
   "skipped this cycle",
   "used up",
-  "■ Stops · type to queue the next"
+  "■ Stops · type to queue the next",
+  "<0>Why MAT</0><1>What it saves</1><2>How it works</2><3>Models</3><4>Rankings</4><5>Privacy</5><6>Questions</6>",
+  "See which model MAT picks at each quality bar — and what it costs →",
+  "Rankings",
+  "Every Monday MAT rebuilds a public ranking from Arena, Artificial Analysis, Vals AI and three more sources. For each kind of work it finds the models that clear the quality bar, then ranks them by what a finished job costs.",
+  "between rebuilds",
+  "MAT's picks",
+  "Arena · Artificial Analysis · Vals AI and more",
+  "Pass chance",
+  "Per job",
+  "MAT's pick",
+  "Fastest",
+  "<0>See the full ranking</0><1><2>→</2><3>→</3></1>",
+  "See the full ranking",
+  "This week's ranking couldn't be loaded.",
+  "Ranking at the Deliver bar"
  ],
  "templates": {
   "${0} less · vs ${1}": "$0.95 less · vs $1.55",
@@ -484,6 +499,12 @@
   "{0}% left · resets Oct {1} · Wren writes here": "48% left · resets Oct 3 · Wren writes here",
   "· v{0} · {1} MB": "· v0.1.0 · 5.8 MB",
   "· {0} min · ${1} · {2} of {3} hold up": "· 14 min · $0.60 · 12 of 12 hold up",
-  "≈{0} min": "≈14 min"
+  "≈{0} min": "≈14 min",
+  "The models that clear the Deliver bar, cheapest first · updated {0}-{1}-{2}": "The models that clear the Deliver bar, cheapest first · updated {0}-{1}-{2}",
+  "Deliver bar · {0}% — below the line, models don't clear it": "Deliver bar · {0}% — below the line, models don't clear it",
+  "All four quality bars, {0} models, and where every number comes from.": "All four quality bars, {0} models, and where every number comes from.",
+  "+{0} more clear the bar": "+{0} more clear the bar",
+  "{0}m {1}s": "{0}m {1}s",
+  "{0}s": "{0}s"
  }
 }

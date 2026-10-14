@@ -432,7 +432,22 @@
   "seat routed to Gemini": "Platz an Gemini vergeben",
   "skipped this cycle": "in diesem Zyklus übersprungen",
   "used up": "aufgebraucht",
-  "■ Stops · type to queue the next": "■ Stoppt · tippen, um das Nächste einzureihen"
+  "■ Stops · type to queue the next": "■ Stoppt · tippen, um das Nächste einzureihen",
+  "<0>Why MAT</0><1>What it saves</1><2>How it works</2><3>Models</3><4>Rankings</4><5>Privacy</5><6>Questions</6>": "<0>Warum MAT</0><1>Was es spart</1><2>So funktioniert’s</2><3>Modelle</3><4>Rangliste</4><5>Datenschutz</5><6>Fragen</6>",
+  "See which model MAT picks at each quality bar — and what it costs →": "Sehen, welches Modell MAT für jede Qualitätsstufe wählt – und was es kostet →",
+  "Rankings": "Rangliste",
+  "Every Monday MAT rebuilds a public ranking from Arena, Artificial Analysis, Vals AI and three more sources. For each kind of work it finds the models that clear the quality bar, then ranks them by what a finished job costs.": "Jeden Montag baut MAT eine öffentliche Rangliste aus Arena, Artificial Analysis, Vals AI und drei weiteren Quellen neu. Für jede Art von Arbeit findet es die Modelle, die die Qualitätsschwelle schaffen, und ordnet sie nach den Kosten einer fertigen Aufgabe.",
+  "between rebuilds": "zwischen den Neuberechnungen",
+  "MAT's picks": "Was MAT wählt",
+  "Arena · Artificial Analysis · Vals AI and more": "Arena · Artificial Analysis · Vals AI und mehr",
+  "Pass chance": "Erfolgschance",
+  "Per job": "Pro Aufgabe",
+  "MAT's pick": "MATs Wahl",
+  "Fastest": "Am schnellsten",
+  "<0>See the full ranking</0><1><2>→</2><3>→</3></1>": "<0>Ganze Rangliste ansehen</0><1><2>→</2><3>→</3></1>",
+  "See the full ranking": "Ganze Rangliste ansehen",
+  "This week's ranking couldn't be loaded.": "Die Rangliste dieser Woche konnte nicht geladen werden.",
+  "Ranking at the Deliver bar": "Rangliste an der Schwelle „Abgabe“"
  },
  "templates": {
   "${0} less · vs ${1}": "${0} weniger · statt ${1}",
@@ -484,6 +499,12 @@
   "{0}% left · resets Oct {1} · Wren writes here": "{0} % übrig · neu ab {1}. Okt. · Wren schreibt hier",
   "· v{0} · {1} MB": "· v{0} · {1} MB",
   "· {0} min · ${1} · {2} of {3} hold up": "· {0} min · ${1} · {2} von {3} halten",
-  "≈{0} min": "≈{0} min"
+  "≈{0} min": "≈{0} min",
+  "The models that clear the Deliver bar, cheapest first · updated {0}-{1}-{2}": "Die Modelle über der Schwelle „Abgabe“, die günstigsten zuerst · aktualisiert {0}-{1}-{2}",
+  "Deliver bar · {0}% — below the line, models don't clear it": "Schwelle „Abgabe“ · {0} % — unter der Linie schaffen es die Modelle nicht",
+  "All four quality bars, {0} models, and where every number comes from.": "Alle vier Qualitätsschwellen, {0} Modelle und woher jede Zahl kommt.",
+  "+{0} more clear the bar": "+{0} weitere schaffen die Schwelle",
+  "{0}m {1}s": "{0} min {1} s",
+  "{0}s": "{0} s"
  }
 }

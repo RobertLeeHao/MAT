@@ -432,7 +432,22 @@
   "seat routed to Gemini": "座位改派給 Gemini",
   "skipped this cycle": "本週期略過",
   "used up": "已用完",
-  "■ Stops · type to queue the next": "■ 停止 · 輸入以排入下一則"
+  "■ Stops · type to queue the next": "■ 停止 · 輸入以排入下一則",
+  "<0>Why MAT</0><1>What it saves</1><2>How it works</2><3>Models</3><4>Rankings</4><5>Privacy</5><6>Questions</6>": "<0>為什麼選 MAT</0><1>省下什麼</1><2>運作方式</2><3>模型</3><4>排行榜</4><5>隱私權</5><6>常見問題</6>",
+  "See which model MAT picks at each quality bar — and what it costs →": "看看每一檔品質要求下 MAT 選哪個模型，花多少錢 →",
+  "Rankings": "排行榜",
+  "Every Monday MAT rebuilds a public ranking from Arena, Artificial Analysis, Vals AI and three more sources. For each kind of work it finds the models that clear the quality bar, then ranks them by what a finished job costs.": "MAT 每週一根據 Arena、Artificial Analysis、Vals AI 等六個公開來源重建一份排行榜。每一類工作，先找出能達到品質線的模型，再按做完一件的成本排序。",
+  "between rebuilds": "重建一次",
+  "MAT's picks": "MAT 的選擇",
+  "Arena · Artificial Analysis · Vals AI and more": "Arena · Artificial Analysis · Vals AI 等",
+  "Pass chance": "過線率",
+  "Per job": "每件價格",
+  "MAT's pick": "MAT 會選",
+  "Fastest": "最快",
+  "<0>See the full ranking</0><1><2>→</2><3>→</3></1>": "<0>查看完整排行榜</0><1><2>→</2><3>→</3></1>",
+  "See the full ranking": "查看完整排行榜",
+  "This week's ranking couldn't be loaded.": "本週的排行榜沒能讀出來。",
+  "Ranking at the Deliver bar": "「交付」線上的排名"
  },
  "templates": {
   "${0} less · vs ${1}": "少花 ${0} · 對比 ${1}",
@@ -484,6 +499,12 @@
   "{0}% left · resets Oct {1} · Wren writes here": "剩餘 {0}% · 10 月 {1} 日重置 · Wren 在這裡撰寫",
   "· v{0} · {1} MB": "· v{0} · {1} MB",
   "· {0} min · ${1} · {2} of {3} hold up": "· {0} 分鐘 · ${1} · {3} 項中 {2} 項經得起查證",
-  "≈{0} min": "≈{0} 分鐘"
+  "≈{0} min": "≈{0} 分鐘",
+  "The models that clear the Deliver bar, cheapest first · updated {0}-{1}-{2}": "能達到「交付」線的模型，最便宜的在前 · {0}-{1}-{2} 更新",
+  "Deliver bar · {0}% — below the line, models don't clear it": "「交付」線 · {0}%——線以下的模型達不到",
+  "All four quality bars, {0} models, and where every number comes from.": "四檔品質線、{0} 個模型，以及每個數字的來源。",
+  "+{0} more clear the bar": "還有 {0} 個能過線",
+  "{0}m {1}s": "{0}分{1}秒",
+  "{0}s": "{0}秒"
  }
 }

@@ -432,7 +432,22 @@
   "seat routed to Gemini": "Geminiに割り当てた席",
   "skipped this cycle": "今サイクルはスキップ",
   "used up": "使い切り",
-  "■ Stops · type to queue the next": "■ で停止 · 入力すると次をキューに追加"
+  "■ Stops · type to queue the next": "■ で停止 · 入力すると次をキューに追加",
+  "<0>Why MAT</0><1>What it saves</1><2>How it works</2><3>Models</3><4>Rankings</4><5>Privacy</5><6>Questions</6>": "<0>MATを選ぶ理由</0><1>節約できるもの</1><2>仕組み</2><3>モデル</3><4>ランキング</4><5>プライバシー</5><6>よくある質問</6>",
+  "See which model MAT picks at each quality bar — and what it costs →": "品質の基準ごとに、MAT がどのモデルを選び、いくらかかるかを見る →",
+  "Rankings": "ランキング",
+  "Every Monday MAT rebuilds a public ranking from Arena, Artificial Analysis, Vals AI and three more sources. For each kind of work it finds the models that clear the quality bar, then ranks them by what a finished job costs.": "MATは毎週月曜、Arena、Artificial Analysis、Vals AIなど6つの公開ソースからランキングを作り直します。仕事の種類ごとに品質ラインを超えるモデルを選び、1件を仕上げるコストの安い順に並べます。",
+  "between rebuilds": "ごとに作り直し",
+  "MAT's picks": "MATの選択",
+  "Arena · Artificial Analysis · Vals AI and more": "Arena · Artificial Analysis · Vals AI ほか",
+  "Pass chance": "合格率",
+  "Per job": "1件あたり",
+  "MAT's pick": "MATの選択",
+  "Fastest": "最速",
+  "<0>See the full ranking</0><1><2>→</2><3>→</3></1>": "<0>ランキングをすべて見る</0><1><2>→</2><3>→</3></1>",
+  "See the full ranking": "ランキングをすべて見る",
+  "This week's ranking couldn't be loaded.": "今週のランキングを読み込めませんでした。",
+  "Ranking at the Deliver bar": "「納品」ラインでのランキング"
  },
  "templates": {
   "${0} less · vs ${1}": "${0}安い · ${1}と比較",
@@ -484,6 +499,12 @@
   "{0}% left · resets Oct {1} · Wren writes here": "残り{0}% · 10月{1}日にリセット · Wrenがここで執筆",
   "· v{0} · {1} MB": "· v{0} · {1} MB",
   "· {0} min · ${1} · {2} of {3} hold up": "· {0}分 · ${1} · {3}件中{2}件が正確",
-  "≈{0} min": "約{0}分"
+  "≈{0} min": "約{0}分",
+  "The models that clear the Deliver bar, cheapest first · updated {0}-{1}-{2}": "「納品」ラインを超えるモデルを安い順に · {0}-{1}-{2} 更新",
+  "Deliver bar · {0}% — below the line, models don't clear it": "「納品」ライン · {0}% — この線より下のモデルは届きません",
+  "All four quality bars, {0} models, and where every number comes from.": "4つの品質ライン、{0}モデル、そしてすべての数字の出どころ。",
+  "+{0} more clear the bar": "ほかに{0}モデルがラインを超えます",
+  "{0}m {1}s": "{0}分{1}秒",
+  "{0}s": "{0}秒"
  }
 }
