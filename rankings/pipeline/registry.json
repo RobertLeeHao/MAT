@@ -1,0 +1,1241 @@
+{
+ "note": "Every model MAT ranks, and the name each source gives it. A source's new names that match nothing are listed in the weekly changes; add them here.",
+ "failsPlanChecks": [
+  "gemma-4-12b",
+  "gpt-oss-20b",
+  "mistral-medium-3.5",
+  "mistral-small-4"
+ ],
+ "models": [
+  {
+   "id": "gpt-6-astra",
+   "name": "GPT-6 Astra",
+   "maker": "OpenAI",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "gpt-6-astra",
+    "gpt-6.0-astra"
+   ],
+   "aliases": {
+    "aa": [
+     "gpt-6-astra"
+    ],
+    "arena": [
+     "gpt-6-astra-max",
+     "GPT 6 Astra (Max)"
+    ],
+    "vals": [
+     "openai/gpt-6-astra"
+    ],
+    "scale": [
+     "gpt-6-astra"
+    ],
+    "eqbench": [
+     "gpt-6-astra"
+    ],
+    "openrouter": "openai/gpt-6-astra"
+   }
+  },
+  {
+   "id": "gpt-6.1-sol",
+   "name": "GPT-6.1 Sol",
+   "maker": "OpenAI",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "gpt-6.1-sol"
+   ],
+   "aliases": {
+    "aa": [
+     "gpt-6-1-sol"
+    ],
+    "arena": [
+     "gpt-6.1-sol-max",
+     "GPT 6.1 Sol (Max)"
+    ],
+    "vals": [
+     "openai/gpt-6.1-sol"
+    ],
+    "scale": [
+     "gpt-6-1-sol",
+     "gpt-6.1-sol"
+    ],
+    "eqbench": [
+     "gpt-6.1-sol"
+    ],
+    "openrouter": "openai/gpt-6.1-sol"
+   }
+  },
+  {
+   "id": "gpt-6-luna",
+   "name": "GPT-6 Luna",
+   "maker": "OpenAI",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "gpt-6-luna"
+   ],
+   "aliases": {
+    "aa": [
+     "gpt-6-luna"
+    ],
+    "arena": [
+     "gpt-6-luna-max",
+     "GPT 6 Luna (Max)"
+    ],
+    "vals": [
+     "openai/gpt-6-luna"
+    ],
+    "scale": [
+     "gpt-6-luna"
+    ],
+    "eqbench": [
+     "gpt-6-luna"
+    ],
+    "openrouter": "openai/gpt-6-luna"
+   }
+  },
+  {
+   "id": "claude-fable-5.1",
+   "name": "Claude Fable 5.1",
+   "maker": "Anthropic",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "claude-fable-5.1",
+    "claude-fable-5-1"
+   ],
+   "aliases": {
+    "aa": [
+     "claude-fable-5-1"
+    ],
+    "arena": [
+     "claude-fable-5.1-max",
+     "claude-fable-5.1-high",
+     "Claude Fable 5.1 (Max)"
+    ],
+    "vals": [
+     "anthropic/claude-fable-5-1"
+    ],
+    "scale": [
+     "claude-fable-5-1"
+    ],
+    "eqbench": [
+     "claude-fable-5-1"
+    ],
+    "openrouter": "anthropic/claude-fable-5.1"
+   }
+  },
+  {
+   "id": "claude-opus-5.5",
+   "name": "Claude Opus 5.5",
+   "maker": "Anthropic",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "claude-opus-5.5",
+    "claude-opus-5-5"
+   ],
+   "aliases": {
+    "aa": [
+     "claude-opus-5-5"
+    ],
+    "arena": [
+     "claude-opus-5.5-high",
+     "claude-opus-5.5-max",
+     "claude-opus-5.5-medium",
+     "Claude Opus 5.5 (Max)"
+    ],
+    "vals": [
+     "anthropic/claude-opus-5-5"
+    ],
+    "scale": [
+     "claude-opus-5-5"
+    ],
+    "eqbench": [
+     "claude-opus-5-5"
+    ],
+    "openrouter": "anthropic/claude-opus-5.5"
+   }
+  },
+  {
+   "id": "claude-sonnet-5.5",
+   "name": "Claude Sonnet 5.5",
+   "maker": "Anthropic",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "claude-sonnet-5.5",
+    "claude-sonnet-5-5"
+   ],
+   "aliases": {
+    "aa": [
+     "claude-sonnet-5-5"
+    ],
+    "arena": [
+     "claude-sonnet-5.5-xhigh",
+     "claude-sonnet-5.5-high",
+     "Claude Sonnet 5.5 (Max)"
+    ],
+    "vals": [
+     "anthropic/claude-sonnet-5-5"
+    ],
+    "scale": [
+     "claude-sonnet-5-5"
+    ],
+    "eqbench": [
+     "claude-sonnet-5-5"
+    ],
+    "openrouter": "anthropic/claude-sonnet-5.5"
+   }
+  },
+  {
+   "id": "claude-haiku-4.5",
+   "name": "Claude Haiku 4.5",
+   "maker": "Anthropic",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "claude-haiku-4.5",
+    "claude-haiku-4-5",
+    "claude-4.5-haiku"
+   ],
+   "aliases": {
+    "aa": [
+     "claude-4-5-haiku"
+    ],
+    "arena": [
+     "claude-haiku-4-5-20251001"
+    ],
+    "vals": [
+     "anthropic/claude-haiku-4-5-20251001-thinking"
+    ],
+    "scale": [],
+    "eqbench": [
+     "claude-haiku-4-5"
+    ],
+    "openrouter": "anthropic/claude-haiku-4.5"
+   },
+   "priceNote": "Deprecated by Anthropic.",
+   "deprecated": true
+  },
+  {
+   "id": "gemini-3.8-flash",
+   "name": "Gemini 3.8 Flash",
+   "maker": "Google",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "gemini-3.8-flash"
+   ],
+   "aliases": {
+    "aa": [
+     "gemini-3-8-flash"
+    ],
+    "arena": [
+     "gemini-3.8-flash-high",
+     "Gemini 3.8 Flash (High)"
+    ],
+    "vals": [
+     "google/gemini-3.8-flash"
+    ],
+    "scale": [
+     "gemini-3-8-flash"
+    ],
+    "eqbench": [
+     "gemini-3.8-flash"
+    ],
+    "openrouter": "google/gemini-3.8-flash"
+   },
+   "priceNote": "Rises to $1.50/$7.50 on 2027-01-01."
+  },
+  {
+   "id": "gemini-3.1-pro",
+   "name": "Gemini 3.1 Pro",
+   "maker": "Google",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "gemini-3.1-pro"
+   ],
+   "aliases": {
+    "aa": [
+     "gemini-3-1-pro-preview"
+    ],
+    "arena": [
+     "gemini-3.1-pro-preview",
+     "gemini-3.1-pro-grounding",
+     "Gemini 3.1 Pro Preview"
+    ],
+    "vals": [
+     "google/gemini-3.1-pro-preview"
+    ],
+    "scale": [
+     "gemini-3-1-pro-preview",
+     "gemini-3.1-pro-preview"
+    ],
+    "eqbench": [
+     "gemini-3.1-pro-preview"
+    ],
+    "openrouter": "google/gemini-3.1-pro-preview"
+   }
+  },
+  {
+   "id": "gemini-3.5-flash-lite",
+   "name": "Gemini 3.5 Flash-Lite",
+   "maker": "Google",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "gemini-3.5-flash-lite"
+   ],
+   "aliases": {
+    "aa": [
+     "gemini-3-5-flash-lite"
+    ],
+    "arena": [
+     "gemini-3.5-flash-lite"
+    ],
+    "vals": [
+     "google/gemini-3.5-flash-lite"
+    ],
+    "scale": [],
+    "eqbench": [
+     "gemini-3.5-flash-lite"
+    ],
+    "openrouter": "google/gemini-3.5-flash-lite"
+   }
+  },
+  {
+   "id": "grok-4.7",
+   "name": "Grok 4.7",
+   "maker": "SpaceXAI",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "grok-4.7"
+   ],
+   "aliases": {
+    "aa": [
+     "grok-4-7"
+    ],
+    "arena": [
+     "grok-4.7-xhigh",
+     "Grok 4.7 (xHigh)"
+    ],
+    "vals": [
+     "grok/grok-4.7"
+    ],
+    "scale": [
+     "grok-4-7",
+     "grok-4.7"
+    ],
+    "eqbench": [
+     "grok-4.7"
+    ],
+    "openrouter": "x-ai/grok-4.7"
+   }
+  },
+  {
+   "id": "muse-spark-1.3",
+   "name": "Muse Spark 1.3",
+   "maker": "Meta",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "muse-spark-1.3"
+   ],
+   "aliases": {
+    "aa": [
+     "muse-spark-1-3"
+    ],
+    "arena": [
+     "muse-spark-1.3-max",
+     "muse-spark-1.3 (xHigh)",
+     "Muse Spark 1.3 (Max)"
+    ],
+    "vals": [
+     "meta/muse_spark_1_3",
+     "meta/muse_spark_1_3_max"
+    ],
+    "scale": [
+     "muse-spark-1-3"
+    ],
+    "eqbench": [
+     "muse-spark-1.3"
+    ],
+    "openrouter": "meta/muse-spark-1.3"
+   }
+  },
+  {
+   "id": "mistral-medium-3.5",
+   "name": "Mistral Medium 3.5",
+   "maker": "Mistral",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "mistral-medium-3.5",
+    "mistral-medium-2604",
+    "mistral-medium-latest"
+   ],
+   "aliases": {
+    "aa": [
+     "mistral-medium-3-5"
+    ],
+    "arena": [
+     "mistral-medium-3.5"
+    ],
+    "vals": [
+     "mistralai/mistral-medium-3.5"
+    ],
+    "scale": [],
+    "eqbench": [
+     "mistral-medium-3.5"
+    ],
+    "openrouter": "mistralai/mistral-medium-3-5"
+   }
+  },
+  {
+   "id": "mistral-small-4",
+   "name": "Mistral Small 4",
+   "maker": "Mistral",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "mistral-small-4",
+    "mistral-small-latest"
+   ],
+   "aliases": {
+    "aa": [
+     "mistral-small-4"
+    ],
+    "arena": [],
+    "vals": [],
+    "scale": [],
+    "eqbench": [
+     "mistral-small-4"
+    ],
+    "openrouter": "mistralai/mistral-small-2603"
+   }
+  },
+  {
+   "id": "deepseek-v4.1-flash",
+   "name": "DeepSeek V4.1 Flash",
+   "maker": "DeepSeek",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "deepseek-v4.1-flash",
+    "deepseek-flash"
+   ],
+   "aliases": {
+    "aa": [
+     "deepseek-v4-1-flash"
+    ],
+    "arena": [
+     "deepseek-v4.1-flash-max",
+     "Deepseek V4.1 Flash (Max)"
+    ],
+    "vals": [
+     "deepseek/deepseek-v4.1-flash"
+    ],
+    "scale": [
+     "deepseek-v4-1-flash"
+    ],
+    "eqbench": [
+     "deepseek-v4.1-flash"
+    ],
+    "openrouter": "deepseek/deepseek-v4.1-flash"
+   },
+   "priceNote": "Off-peak (outside 01–04 and 06–10 UTC on weekdays) is half price."
+  },
+  {
+   "id": "deepseek-v4-pro",
+   "name": "DeepSeek V4 Pro",
+   "maker": "DeepSeek",
+   "image": false,
+   "local": false,
+   "reads": false,
+   "match": [
+    "deepseek-v4-pro"
+   ],
+   "aliases": {
+    "aa": [
+     "deepseek-v4-pro"
+    ],
+    "arena": [
+     "deepseek-v4-pro-high-20260813",
+     "DeepSeek V4 Pro (High) (0813)"
+    ],
+    "vals": [
+     "deepseek/deepseek-v4-pro-0813"
+    ],
+    "scale": [
+     "deepseek-v4-pro"
+    ],
+    "eqbench": [
+     "deepseek-v4-pro"
+    ],
+    "openrouter": "deepseek/deepseek-v4-pro"
+   },
+   "priceNote": "Off-peak (outside 01–04 and 06–10 UTC on weekdays) is half price."
+  },
+  {
+   "id": "qwen3.8-max",
+   "name": "Qwen3.8 Max",
+   "maker": "Alibaba",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "qwen3.8-max",
+    "qwen-max"
+   ],
+   "aliases": {
+    "aa": [
+     "qwen3-8-max"
+    ],
+    "arena": [
+     "qwen3.8-max",
+     "qwen3.8-max-0902",
+     "Qwen3.8 Max"
+    ],
+    "vals": [
+     "alibaba/qwen3.8-max"
+    ],
+    "scale": [
+     "qwen3-8-max",
+     "qwen3.8-max"
+    ],
+    "eqbench": [
+     "qwen3.8-max"
+    ],
+    "openrouter": "qwen/qwen3.8-max-0902"
+   }
+  },
+  {
+   "id": "qwen3.8-flash",
+   "name": "Qwen3.8 Flash",
+   "maker": "Alibaba",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "qwen3.8-flash",
+    "qwen-flash"
+   ],
+   "aliases": {
+    "aa": [
+     "qwen3-8-flash-next"
+    ],
+    "arena": [
+     "qwen3.8-flash-next",
+     "Qwen3.8 Flash Next"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [
+     "qwen3.8-flash"
+    ],
+    "openrouter": "qwen/qwen3.8-flash"
+   }
+  },
+  {
+   "id": "qwen3.7-plus",
+   "name": "Qwen3.7 Plus",
+   "maker": "Alibaba",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "qwen3.7-plus",
+    "qwen-plus"
+   ],
+   "aliases": {
+    "aa": [
+     "qwen3-7-plus"
+    ],
+    "arena": [
+     "qwen3.7-plus",
+     "Qwen3.7 Plus"
+    ],
+    "vals": [
+     "alibaba/qwen3.7-plus"
+    ],
+    "scale": [],
+    "eqbench": [
+     "qwen3.7-plus"
+    ],
+    "openrouter": "qwen/qwen3.7-plus"
+   }
+  },
+  {
+   "id": "glm-5.3",
+   "name": "GLM-5.3",
+   "maker": "Z.ai",
+   "image": false,
+   "local": false,
+   "reads": false,
+   "match": [
+    "glm-5.3"
+   ],
+   "aliases": {
+    "aa": [
+     "glm-5-3"
+    ],
+    "arena": [
+     "glm-5.3-max",
+     "GLM 5.3 (Max)"
+    ],
+    "vals": [
+     "zai/glm-5.3"
+    ],
+    "scale": [
+     "glm-5-3",
+     "glm-5.3"
+    ],
+    "eqbench": [
+     "GLM-5.3"
+    ],
+    "openrouter": "z-ai/glm-5.3"
+   }
+  },
+  {
+   "id": "glm-5.3-flash",
+   "name": "GLM-5.3 Flash",
+   "maker": "Z.ai",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "glm-5.3-flash"
+   ],
+   "aliases": {
+    "aa": [
+     "glm-5-3-flash"
+    ],
+    "arena": [
+     "glm-5.3-flash",
+     "GLM 5.3 Flash"
+    ],
+    "vals": [
+     "zai/glm-5.3-flash"
+    ],
+    "scale": [],
+    "eqbench": [
+     "GLM-5.3-Flash"
+    ],
+    "openrouter": "z-ai/glm-5.3-flash"
+   }
+  },
+  {
+   "id": "kimi-k3",
+   "name": "Kimi K3",
+   "maker": "Moonshot",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "kimi-k3"
+   ],
+   "aliases": {
+    "aa": [
+     "kimi-k3"
+    ],
+    "arena": [
+     "kimi-k3-max",
+     "Kimi K3 (Max)"
+    ],
+    "vals": [
+     "kimi/kimi-k3"
+    ],
+    "scale": [
+     "kimi-k3"
+    ],
+    "eqbench": [
+     "kimi-k3"
+    ],
+    "openrouter": "moonshotai/kimi-k3"
+   }
+  },
+  {
+   "id": "minimax-m3",
+   "name": "MiniMax M3",
+   "maker": "MiniMax",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "minimax-m3"
+   ],
+   "aliases": {
+    "aa": [
+     "minimax-m3"
+    ],
+    "arena": [
+     "minimax-m3",
+     "Minimax M3"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [
+     "minimax-m3"
+    ],
+    "openrouter": "minimax/minimax-m3"
+   }
+  },
+  {
+   "id": "seed-2.1-pro",
+   "name": "Seed 2.1 Pro",
+   "maker": "ByteDance",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "seed-2.1-pro",
+    "seed-2-1-pro"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [],
+    "vals": [],
+    "scale": [],
+    "eqbench": [
+     "seed-2.1-pro"
+    ],
+    "openrouter": null
+   },
+   "priceOverride": {
+    "pin": 0.83,
+    "pout": 4.15,
+    "src": "MAT Oct 3 list (no public USD page found)"
+   }
+  },
+  {
+   "id": "mimo-v2.6-pro",
+   "name": "MiMo V2.6 Pro",
+   "maker": "Xiaomi",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "mimo-v2.6-pro"
+   ],
+   "aliases": {
+    "aa": [
+     "mimo-v2-6-pro"
+    ],
+    "arena": [
+     "mimo-v2.6-pro",
+     "MiMo V2.6 Pro"
+    ],
+    "vals": [
+     "xiaomi/mimo-v2.6-pro"
+    ],
+    "scale": [],
+    "eqbench": [
+     "mimo-v2.6-pro"
+    ],
+    "openrouter": "xiaomi/mimo-v2.6-pro"
+   }
+  },
+  {
+   "id": "mimo-v2.6-flash",
+   "name": "MiMo V2.6 Flash",
+   "maker": "Xiaomi",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "mimo-v2.6-flash"
+   ],
+   "aliases": {
+    "aa": [
+     "mimo-v2-6-flash"
+    ],
+    "arena": [
+     "mimo-v2.6-flash",
+     "MiMo V2.6 Flash"
+    ],
+    "vals": [
+     "xiaomi/mimo-v2.6-flash"
+    ],
+    "scale": [],
+    "eqbench": [
+     "mimo-v2.6-flash"
+    ],
+    "openrouter": "xiaomi/mimo-v2.6-flash"
+   }
+  },
+  {
+   "id": "qwen3.8-27b",
+   "name": "Qwen3.8 27B",
+   "maker": "Alibaba",
+   "image": false,
+   "local": true,
+   "reads": true,
+   "match": [
+    "qwen3.8:27b",
+    "qwen3.8-27b",
+    "qwen-3.8-27b"
+   ],
+   "aliases": {
+    "aa": [
+     "qwen3-8-27b"
+    ],
+    "arena": [
+     "qwen3.8-27b"
+    ],
+    "vals": [
+     "alibaba/qwen3.8-27b"
+    ],
+    "scale": [],
+    "eqbench": [
+     "qwen3.8-27b"
+    ],
+    "openrouter": null
+   },
+   "localTps": 24
+  },
+  {
+   "id": "gpt-oss-20b",
+   "name": "gpt-oss 20B",
+   "maker": "OpenAI",
+   "image": false,
+   "local": true,
+   "reads": false,
+   "match": [
+    "gpt-oss:20b",
+    "gpt-oss-20b"
+   ],
+   "aliases": {
+    "aa": [
+     "gpt-oss-20b"
+    ],
+    "arena": [
+     "gpt-oss-20b"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [
+     "gpt-oss-20b"
+    ],
+    "openrouter": null
+   },
+   "localTps": 60
+  },
+  {
+   "id": "gemma-4-12b",
+   "name": "Gemma 4 12B",
+   "maker": "Google",
+   "image": false,
+   "local": true,
+   "reads": true,
+   "match": [
+    "gemma4:12b",
+    "gemma-4-12b"
+   ],
+   "aliases": {
+    "aa": [
+     "gemma-4-12b"
+    ],
+    "arena": [],
+    "vals": [],
+    "scale": [],
+    "eqbench": [
+     "gemma-4-12b"
+    ],
+    "openrouter": null
+   },
+   "localTps": 45
+  },
+  {
+   "id": "gpt-image-2.5",
+   "name": "GPT Image 2.5",
+   "maker": "OpenAI",
+   "image": true,
+   "local": false,
+   "reads": false,
+   "match": [
+    "gpt-image-2.5"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [
+     "gpt-image-2.5-sunburst",
+     "gpt-image-2.5-flare"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [],
+    "openrouter": null
+   },
+   "perImage": 0.053,
+   "secondsPerImage": 24
+  },
+  {
+   "id": "mai-image-2.6",
+   "name": "MAI-Image-2.6",
+   "maker": "Microsoft",
+   "image": true,
+   "local": false,
+   "reads": false,
+   "match": [
+    "mai-image-2.6"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [
+     "mai-image-2.6"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [],
+    "openrouter": null
+   },
+   "perImage": 0.0389,
+   "secondsPerImage": 12
+  },
+  {
+   "id": "grok-imagine-2.0",
+   "name": "Grok Imagine 2.0",
+   "maker": "SpaceXAI",
+   "image": true,
+   "local": false,
+   "reads": false,
+   "match": [
+    "grok-imagine-image-2.0",
+    "grok-imagine-2"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [
+     "grok-imagine-image-2.0 (canvas)",
+     "grok-imagine-image-2.0 (20260801)"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [],
+    "openrouter": null
+   },
+   "perImage": 0.04,
+   "secondsPerImage": 8
+  },
+  {
+   "id": "nano-banana-2",
+   "name": "Nano Banana 2",
+   "maker": "Google",
+   "image": true,
+   "local": false,
+   "reads": false,
+   "match": [
+    "gemini-3.1-flash-image",
+    "nano-banana-2"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [
+     "gemini-3.1-flash-image (nano-banana-2) [web-search]",
+     "gemini-nano-banana-2.1"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [],
+    "openrouter": null
+   },
+   "perImage": 0.067,
+   "secondsPerImage": 10
+  },
+  {
+   "id": "seedream-5.0-pro",
+   "name": "Seedream 5.0 Pro",
+   "maker": "ByteDance",
+   "image": true,
+   "local": false,
+   "reads": false,
+   "match": [
+    "seedream-5.0-pro",
+    "seedream-5-0-pro"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [
+     "seedream-5.0-pro"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [],
+    "openrouter": null
+   },
+   "perImage": 0.045,
+   "secondsPerImage": 14
+  },
+  {
+   "id": "qwen-image-3.0-pro",
+   "name": "Qwen-Image 3.0 Pro",
+   "maker": "Alibaba",
+   "image": true,
+   "local": false,
+   "reads": false,
+   "match": [
+    "qwen-image-3.0-pro"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [
+     "qwen-image-3.0-pro"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [],
+    "openrouter": null
+   },
+   "perImage": 0.04,
+   "secondsPerImage": 16
+  },
+  {
+   "id": "flux.2-pro",
+   "name": "FLUX.2 Pro",
+   "maker": "Black Forest Labs",
+   "image": true,
+   "local": false,
+   "reads": false,
+   "match": [
+    "flux.2-pro",
+    "flux-2-pro"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [
+     "flux-2-pro"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [],
+    "openrouter": null
+   },
+   "perImage": 0.03,
+   "secondsPerImage": 9
+  },
+  {
+   "id": "muse-image",
+   "name": "Muse Image",
+   "maker": "Meta",
+   "image": true,
+   "local": false,
+   "reads": false,
+   "match": [
+    "muse-image"
+   ],
+   "aliases": {
+    "aa": [],
+    "arena": [
+     "muse-image"
+    ],
+    "vals": [],
+    "scale": [],
+    "eqbench": [],
+    "openrouter": null
+   },
+   "perImage": 0.01,
+   "secondsPerImage": null
+  },
+  {
+   "id": "claude-haiku-5.5",
+   "name": "Claude Haiku 5.5",
+   "maker": "Anthropic",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "claude-haiku-5.5",
+    "claude-haiku-5-5"
+   ],
+   "aliases": {
+    "aa": [
+     "claude-haiku-5-5"
+    ],
+    "arena": [
+     "claude-haiku-5.5-high",
+     "Claude Haiku 5.5 (High)"
+    ],
+    "vals": [
+     "anthropic/claude-haiku-5-5"
+    ],
+    "scale": [
+     "claude-haiku-5-5"
+    ],
+    "eqbench": [
+     "claude-haiku-5-5"
+    ],
+    "openrouter": "anthropic/claude-haiku-5.5"
+   },
+   "priceNote": "Over 100K prompt tokens: $0.50/$2.50 for the whole request."
+  },
+  {
+   "id": "gemini-4-argon",
+   "name": "Gemini 4 Argon",
+   "maker": "Google",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "gemini-4-argon"
+   ],
+   "aliases": {
+    "aa": [
+     "gemini-4-argon"
+    ],
+    "arena": [
+     "gemini-4-argon-high",
+     "Gemini 4 Argon (High)"
+    ],
+    "vals": [
+     "google/gemini-4-argon"
+    ],
+    "scale": [
+     "gemini-4-argon"
+    ],
+    "eqbench": [
+     "gemini-4-argon"
+    ],
+    "openrouter": "google/gemini-4-argon"
+   },
+   "priceNote": "Rises to $4/$20 on 2026-12-01."
+  },
+  {
+   "id": "muse-wonder",
+   "name": "Muse Wonder",
+   "maker": "Meta",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "muse-wonder"
+   ],
+   "aliases": {
+    "aa": [
+     "muse-wonder"
+    ],
+    "arena": [
+     "muse-wonder-max"
+    ],
+    "vals": [
+     "meta/muse-wonder"
+    ],
+    "scale": [
+     "muse-wonder"
+    ],
+    "eqbench": [
+     "muse-wonder"
+    ],
+    "openrouter": "meta/muse-wonder"
+   }
+  },
+  {
+   "id": "gpt-5.6-terra",
+   "name": "GPT-5.6 Terra",
+   "maker": "OpenAI",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "gpt-5.6-terra"
+   ],
+   "aliases": {
+    "aa": [
+     "gpt-5-6-terra"
+    ],
+    "arena": [
+     "gpt-5.6-terra-xhigh",
+     "gpt-5.6-terra-xhigh (codex-harness)",
+     "GPT 5.6 Terra (xHigh)"
+    ],
+    "vals": [
+     "openai/gpt-5.6-terra"
+    ],
+    "scale": [
+     "gpt-5-6-terra",
+     "gpt-5.6-terra"
+    ],
+    "eqbench": [
+     "gpt-5.6-terra"
+    ],
+    "openrouter": "openai/gpt-5.6-terra"
+   }
+  },
+  {
+   "id": "mistral-large-4",
+   "name": "Mistral Large 4",
+   "maker": "Mistral",
+   "image": false,
+   "local": false,
+   "reads": true,
+   "match": [
+    "mistral-large-4",
+    "mistral-large-latest"
+   ],
+   "aliases": {
+    "aa": [
+     "mistral-large-4"
+    ],
+    "arena": [
+     "mistral-large-4"
+    ],
+    "vals": [
+     "mistralai/mistral-large-4"
+    ],
+    "scale": [],
+    "eqbench": [
+     "mistral-large-4"
+    ],
+    "openrouter": "mistralai/mistral-large-4-0"
+   },
+   "priceNote": "On sale at $0.68/$2.09; list price $1.36/$4.18."
+  },
+  {
+   "id": "step-5",
+   "name": "Step 5",
+   "maker": "StepFun",
+   "image": false,
+   "local": false,
+   "reads": false,
+   "match": [
+    "step-5",
+    "step-5-preview"
+   ],
+   "aliases": {
+    "aa": [
+     "step-5"
+    ],
+    "arena": [
+     "step-5-preview-high"
+    ],
+    "vals": [
+     "stepfun/step-5-preview"
+    ],
+    "scale": [],
+    "eqbench": [
+     "step-5"
+    ],
+    "openrouter": "stepfun/step-5-preview"
+   }
+  }
+ ]
+}

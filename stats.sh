@@ -7,7 +7,7 @@
 NS=$(grep -o "clicks:'[^']*'" "$(dirname "$0")/index.html" | head -1 | sed "s/clicks:'//; s/'//")
 [ -n "$NS" ] || { echo "index.html 里 MAT_SITE.clicks 是空的：点击计数没开。"; NS=""; }
 if [ -n "$NS" ]; then
-  echo "官网点击（Abacus · $NS）"
+  echo "官网点击（Abacus · ${NS}）"
   for k in mac-download phone-download; do
     v=$(curl -s "https://abacus.jasoncameron.dev/get/$NS/$k" | sed -n 's/.*"value":[ ]*\([0-9]*\).*/\1/p')
     printf '  %-15s %s\n' "$k" "${v:-0}"

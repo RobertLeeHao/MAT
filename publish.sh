@@ -3,7 +3,8 @@
 #   仓库 https://github.com/RobertLeeHao/MAT
 #   官网 https://robertleehao.github.io/MAT/
 #
-# 用法： sh ~/code/MAT-website/publish.sh
+# 用法： sh ~/code/MAT-website/publish.sh            发布官网
+#       sh ~/code/MAT-website/publish.sh rankings   发布后立刻跑一次排行榜周更（平时每周一自动跑）
 # 第一次跑会建仓库并推上去、打开 Pages；以后再跑就是提交改动并推送（推送后官网自动更新）。
 # 需要 GitHub CLI：没有就先  brew install gh  然后  gh auth login
 cd "$(dirname "$0")" || exit 1
@@ -44,7 +45,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Only the page and its public images go out
-        run: mkdir _site && cp -r index.html og.png favicon.svg favicon-32.png apple-touch-icon.png media _site/
+        run: |
+          mkdir _site && cp -r index.html og.png favicon.svg favicon-32.png apple-touch-icon.png media _site/
+          # the weekly model rankings, read by the app and the website
+          if [ -d rankings/v2 ]; then mkdir -p _site/rankings && cp -r rankings/v2 _site/rankings/; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -52,6 +56,9 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 WORKFLOW
+
+# 排行榜周更的工作流放在 rankings/pipeline/ 里，这里装到 .github/workflows/。
+[ -f rankings/pipeline/rankings.yml ] && cp rankings/pipeline/rankings.yml .github/workflows/rankings.yml
 
 [ -d .git ] || git init -b main
 git config user.name  >/dev/null || git config user.name  "Robert Lee"
@@ -69,7 +76,20 @@ if ! gh repo view "$OWNER/$REPO" >/dev/null 2>&1; then
   gh workflow run Website -R "$OWNER/$REPO" >/dev/null 2>&1
 else
   git remote get-url origin >/dev/null 2>&1 || git remote add origin "https://github.com/$OWNER/$REPO.git"
+  # 排行榜机器人每周会往 main 提交 rankings/ 下的文件，先把它们拉下来再推
+  git pull --rebase origin main || exit 1
   git push -u origin main || exit 1
+fi
+
+if [ "$1" = "rankings" ]; then
+  echo "→ 开始跑排行榜周更…"
+  sleep 5
+  gh workflow run Rankings -R "$OWNER/$REPO" || exit 1
+  sleep 8
+  RUN="$(gh run list -R "$OWNER/$REPO" --workflow Rankings --limit 1 --json databaseId -q '.[0].databaseId')"
+  gh run watch -R "$OWNER/$REPO" "$RUN" --exit-status || echo "（有步骤失败，看上面的输出）"
+  git pull --rebase origin main >/dev/null 2>&1
+  echo "✅ 排行榜： ${SITE}rankings/v2/latest.json"
 fi
 
 echo ""
