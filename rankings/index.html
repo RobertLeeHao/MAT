@@ -17,7 +17,7 @@
 <meta property="og:description" content="Which model clears the bar for each kind of work, at the lowest cost per finished job. Rebuilt every Monday.">
 <meta property="og:image" content="https://robertleehao.github.io/MAT/og.png">
 <style>
-/* the site's tokens, grid, nav, buttons and footer — copied from index.html so this page looks like the rest of the site */
+/* the site's tokens, grid, nav, buttons and footer — copied from index.html */
 :root{--px:clamp(1px,100vw / 1600,2.4px)}
 :root{
   --ink:#111112; --paper:#F4EFE6; --mute:rgba(244,239,230,.66); --dim:rgba(244,239,230,.45); --faint:rgba(244,239,230,.06);
@@ -186,198 +186,173 @@ html.cjk body{line-break:strict}
 html:lang(ko) body{word-break:keep-all}
 html:lang(de) h1,html:lang(de) h2,html:lang(de) h3,html:lang(fr) h2,html:lang(es) h2{-webkit-hyphens:auto;hyphens:auto}
 h1,h2,h3{overflow-wrap:break-word}
-/* ═══ Rankings page · 2026-10-14. Uses the site's tokens and grid (copied above from index.html). ═══ */
+/* ═══ Rankings page v2 · one table. Uses the site's tokens and grid (copied above from index.html). ═══ */
 html,body{--ground:#1A1726}
+:root{--ca:var(--green);--cp:var(--ada);--cs:var(--blue)}
 .lg-sprite{position:absolute;width:0;height:0;overflow:hidden}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}
 .ic{display:inline-block;flex:none;width:calc(16*var(--px));height:calc(16*var(--px))}
 .ic.s{width:calc(12*var(--px));height:calc(12*var(--px))}
-.blogo{color:var(--paper)}
 main{padding-top:var(--navh)}
 .nav .logo svg{width:calc(26*var(--px));height:calc(16*var(--px))}
 .links a.cur{color:var(--paper)}
-.lang-pop{position:absolute;right:var(--m);top:calc(var(--navh) - 4*var(--px));z-index:50;background:var(--pop);box-shadow:inset 0 0 0 .5px var(--hc2);padding:var(--s2) 0;min-width:calc(160*var(--px))}
+.lang-pop{position:fixed;right:var(--m);top:calc(var(--navh) - 4*var(--px));z-index:50;background:var(--pop);box-shadow:inset 0 0 0 .5px var(--hc2);padding:var(--s2) 0;min-width:calc(160*var(--px))}
 .lang-pop button{display:block;width:100%;text-align:left;border:0;background:none;padding:var(--s2) var(--s4);font:500 calc(13*var(--px))/1.4 var(--text);color:var(--mute);cursor:pointer}
 .lang-pop button:hover,.lang-pop button[aria-current="true"]{color:var(--paper)}
 .lang-pop p{padding:var(--s2) var(--s4) 0;font-size:calc(11*var(--px));color:var(--dim);max-width:24ch}
+.load{grid-column:1/-1;padding:var(--s10) 0;color:var(--mute)}
+:focus-visible{outline:1px solid var(--amber);outline-offset:2px}
 
-section{padding-bottom:var(--s10)}
-.sec-lab{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:var(--s4);align-items:baseline;padding:var(--s3) 0 var(--s6);border-top:.5px solid var(--hc2);font-size:var(--small);font-weight:500;color:var(--mute)}
-.sec-lab b{color:var(--paper);font-weight:600}
-.sec-lab .r{margin-left:auto;display:flex;gap:var(--s5);align-items:center}
+/* title: short, a leaderboard's header */
+#hd{padding-top:var(--s8);background:radial-gradient(50% 90% at 88% 10%,rgba(111,168,220,.13),rgba(111,168,220,0) 70%),radial-gradient(40% 80% at 62% 40%,rgba(234,170,66,.08),rgba(234,170,66,0) 70%)}
+.crumb{grid-column:1/-1;display:flex;justify-content:space-between;gap:var(--s4);padding-top:var(--s3);border-top:var(--hair);font-size:var(--small);color:var(--dim)}
+.crumb a{color:var(--mute)}.crumb a:hover{color:var(--paper)}
+#hd h1{grid-column:1/-1;margin-top:var(--s8);font-size:clamp(calc(44*var(--px)),6vw,calc(96*var(--px)))}
+.sub{grid-column:1/8;margin-top:var(--s6);font-size:var(--lede);font-weight:500;line-height:1.4;color:var(--mute)}
 
-/* header */
-#top{padding-top:var(--s9)}
-#top .lab{grid-column:1/-1}
-#top .lab a{display:flex;gap:var(--s3);color:var(--mute)}
-#top .lab a:hover{color:var(--paper)}
-#top .lab em{margin-left:auto;font-style:normal;font-size:calc(11*var(--px));color:var(--dim)}
-#top h1{grid-column:1/10;margin-top:var(--s10);font-size:var(--d2)}
-#top .lede{grid-column:1/6;margin-top:var(--s6)}
-.figs{grid-column:10/13;grid-row:2/4;align-self:end;margin:0;display:flex;flex-direction:column}
-.figs div{border-top:var(--hair);padding:var(--s3) 0 var(--s4);display:flex;align-items:baseline;justify-content:space-between;gap:var(--s4)}
-.figs dt{font:700 calc(40*var(--px))/1 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
-.figs dd{margin:0;font-size:var(--small);color:var(--mute);text-align:right}
-
-/* controls */
-.ctl{grid-column:1/-1}
-.row-k{display:flex;align-items:stretch;border-top:.5px solid var(--hc2)}
-.row-k>.k{flex:none;width:calc(192*var(--px));padding-top:calc(19*var(--px));font:600 calc(11*var(--px))/1 var(--text);letter-spacing:.04em;text-transform:uppercase;color:var(--dim);display:flex;gap:var(--s2);align-items:flex-start}
-.tabs{display:flex;gap:var(--s6);overflow-x:auto;scrollbar-width:none;flex:1}
+/* the board: tabs, one toolbar, one table */
+#board{padding-top:var(--s8)}
+.bd{grid-column:1/-1;background:var(--pop);box-shadow:inset 0 0 0 .5px var(--hc2);padding:0 var(--s5) var(--s3)}
+.tabs{display:flex;gap:var(--s6);overflow-x:auto;scrollbar-width:none;border-bottom:var(--hair)}
 .tabs::-webkit-scrollbar{display:none}
-.tab{position:relative;flex:none;display:flex;align-items:center;gap:var(--s2);border:0;background:none;padding:var(--s4) 0;font:600 calc(14*var(--px))/1 var(--text);color:var(--dim);cursor:pointer;white-space:nowrap}
+.tab{position:relative;flex:none;display:flex;align-items:center;gap:var(--s2);border:0;background:none;padding:var(--s5) 0 var(--s4);font:600 calc(14*var(--px))/1 var(--text);color:var(--dim);cursor:pointer;white-space:nowrap}
 .tab:hover{color:var(--mute)}
 .tab[aria-selected="true"]{color:var(--paper)}
-.tab[aria-selected="true"]:after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--paper)}
-.tab:focus-visible,.bar:focus-visible,.srt:focus-visible,.more:focus-visible{outline:1px solid var(--amber);outline-offset:2px}
-.bars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));flex:1}
-.bar{position:relative;text-align:left;border:0;background:none;padding:var(--s4) var(--s6) 0 0;cursor:pointer;color:var(--dim)}
-.bar b{display:block;font:600 var(--h3)/1 var(--display);letter-spacing:-.015em}
-.bar span{display:block;margin-top:var(--s2);font-size:var(--small);font-weight:500}
-.bar i{display:block;margin-top:var(--s2);font-style:normal;font-size:var(--small);color:var(--dim);opacity:.8;line-height:1.45}
-.bar:hover{color:var(--mute)}
-.bar[aria-pressed="true"]{color:var(--paper)}
-.bar[aria-pressed="true"]:after{content:"";position:absolute;left:0;right:var(--s6);top:-1px;height:2px;background:var(--paper)}
-.bar[aria-pressed="true"] i{color:var(--mute)}
+.tab[aria-selected="true"]:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--paper)}
+.tool{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s6);padding:var(--s4) 0}
+.seg{display:flex;box-shadow:inset 0 0 0 .5px var(--hc2)}
+.sg{border:0;background:none;padding:var(--s2) var(--s4);font:600 calc(13*var(--px))/1.2 var(--text);color:var(--dim);cursor:pointer}
+.sg:hover{color:var(--paper)}
+.sg[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+.binfo{display:flex;flex-direction:column;gap:2px;font-size:var(--small);color:var(--dim);margin-right:auto}
+.binfo b{font-weight:500;color:var(--mute)}
+.sort{display:flex;align-items:center;gap:var(--s4);font-size:var(--small);color:var(--dim)}
+.so{display:inline-flex;align-items:center;gap:calc(5*var(--px));border:0;background:none;padding:var(--s1) 0;font:600 calc(13*var(--px))/1 var(--text);color:var(--dim);cursor:pointer;border-bottom:1.5px solid transparent}
+.so[aria-pressed="true"]{color:var(--paper);border-bottom-color:var(--paper)}
 
-/* pick */
-.pick{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gt)}
-.pick .main{grid-column:1/7}
-.pick .alt{padding-left:var(--s5);border-left:var(--hair)}
-.pick .alt.a1{grid-column:7/10}.pick .alt.a2{grid-column:10/13}
-.pk-l{font:600 calc(11*var(--px))/1 var(--text);letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
-.main .pk-l{color:var(--paper)}
-.pk-n{display:flex;align-items:center;gap:var(--s3);margin-top:var(--s4);font:700 calc(24*var(--px))/1 var(--display);letter-spacing:-.03em}
-.main .pk-n{font-size:calc(56*var(--px));letter-spacing:-.045em;gap:var(--s4)}
-.pk-n .blogo{width:calc(20*var(--px));height:calc(20*var(--px))}
-.main .pk-n .blogo{width:calc(36*var(--px));height:calc(36*var(--px))}
-.pk-s{margin-top:var(--s3);font-size:calc(13*var(--px));font-weight:500;color:var(--mute)}
-.main .pk-s{font-size:calc(16*var(--px))}
-.pk-v{display:flex;flex-wrap:wrap;gap:var(--s5);margin-top:var(--s5)}
-.main .pk-v{gap:var(--s8);margin-top:var(--s7)}
-.pk-v div b{display:block;font:700 calc(20*var(--px))/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.main .pk-v div b{font-size:calc(40*var(--px));letter-spacing:-.045em}
-.pk-v div span{display:flex;gap:calc(5*var(--px));align-items:center;margin-top:var(--s2);font-size:var(--small);color:var(--mute)}
-.note{grid-column:1/-1;margin-top:var(--s7);font-size:calc(14*var(--px));font-weight:500;color:var(--mute);max-width:80ch}
-.warn{grid-column:1/-1;padding:var(--s4) 0;border-top:1px solid var(--amber);color:var(--paper);font-size:calc(15*var(--px));font-weight:500}
-.warn b{color:var(--amber)}
-
-/* three-dimension chart */
-.dim{grid-column:1/-1}
-.dm-h,.dm-r{display:grid;grid-template-columns:3fr 3fr 3fr 3fr;column-gap:var(--gt);align-items:center}
-.dm-h{padding-bottom:var(--s3);border-bottom:var(--hair)}
-.dm-h>div:first-child{font:600 calc(11*var(--px))/1 var(--text);letter-spacing:.04em;color:var(--dim);align-self:start}
-.dm-h .t{display:flex;align-items:center;gap:var(--s2);font-weight:600;font-size:calc(14*var(--px))}
-.dm-h .d{margin-top:var(--s1);font-size:calc(11*var(--px));color:var(--dim)}
-.axis{position:relative;height:calc(14*var(--px));margin-top:var(--s2);margin-right:calc(92*var(--px));font-size:calc(10*var(--px));color:var(--dim)}
-.axis span{position:absolute;top:0;white-space:nowrap}
-.dm-r{min-height:calc(44*var(--px));border-bottom:.5px solid var(--faint)}
-.dm-r.off{opacity:.5}
-.dm-m{display:flex;align-items:center;gap:var(--s3);min-width:0;font-weight:600;font-size:calc(14*var(--px))}
-.dm-m .blogo{width:calc(18*var(--px));height:calc(18*var(--px))}
-.dm-m small{font-size:calc(11*var(--px));font-weight:500;color:var(--dim);white-space:nowrap}
-.dm-m .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tag{flex:none;font:600 calc(10*var(--px))/1 var(--text);letter-spacing:.04em;text-transform:uppercase;padding:calc(3*var(--px)) calc(5*var(--px));box-shadow:inset 0 0 0 .5px var(--hc2);color:var(--paper)}
-.cell{display:flex;align-items:center;gap:var(--s4);padding-left:0}
-.cell .ic{display:none}
-.trk{position:relative;flex:1;height:calc(8*var(--px));background:var(--faint)}
+.r{display:grid;grid-template-columns:calc(36*var(--px)) minmax(0,2.3fr) repeat(3,minmax(0,1.25fr));column-gap:var(--s6);align-items:center;min-height:calc(58*var(--px));border-top:.5px solid var(--hc)}
+.r.h{min-height:calc(44*var(--px));border-top:.5px solid var(--hc2);font-size:calc(11*var(--px));font-weight:600;letter-spacing:.03em;color:var(--dim)}
+.r.h .c{gap:calc(6*var(--px));align-items:flex-start}
+.r.h .c>span{display:flex;flex-direction:column;gap:2px;text-transform:uppercase}
+.r.h small{font-size:calc(10*var(--px));font-weight:500;letter-spacing:0;text-transform:none;color:var(--dim);opacity:.8}
+.n{font-family:var(--mono);font-size:var(--small);color:var(--dim)}
+.m{display:flex;align-items:center;gap:var(--s3);min-width:0}
+.m .blogo{width:calc(20*var(--px));height:calc(20*var(--px));color:var(--paper);flex:none}
+.m .t{display:flex;flex-direction:column;gap:3px;min-width:0}
+.nm{display:flex;align-items:center;gap:var(--s3);font-weight:600;font-size:calc(15*var(--px));white-space:nowrap}
+.su{font-size:var(--small);color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tag{font:600 calc(10*var(--px))/1 var(--text);font-style:normal;letter-spacing:.04em;text-transform:uppercase;padding:calc(4*var(--px)) calc(6*var(--px));background:var(--paper);color:var(--ink)}
+.tag.q{background:none;color:var(--paper);box-shadow:inset 0 0 0 .5px var(--hc2)}
+.c{display:flex;align-items:center;gap:var(--s3)}
+.r:not(.h) .c .ic{display:none}
+.trk{position:relative;flex:1;height:calc(6*var(--px));background:var(--faint)}
 .trk i{position:absolute;left:0;top:0;bottom:0;background:var(--paper)}
-.trk u{position:absolute;top:calc(-4*var(--px));bottom:calc(-4*var(--px));width:1px;background:var(--mute)}
-.cell b{flex:none;width:calc(76*var(--px));text-align:right;font-size:calc(13*var(--px));font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
-.dm-f{display:flex;flex-wrap:wrap;gap:var(--s4);align-items:baseline;margin-top:var(--s4);font-size:var(--small);color:var(--mute)}
-.more{border:0;background:none;padding:0;font:600 calc(13*var(--px))/1 var(--text);color:var(--paper);cursor:pointer}
+.c.a .trk i{background:var(--ca)}.c.p .trk i{background:var(--cp)}.c.s .trk i{background:var(--cs)}
+.r.h .c.a .ic{color:var(--ca)}.r.h .c.p .ic{color:var(--cp)}.r.h .c.s .ic{color:var(--cs)}
+.trk u{position:absolute;top:calc(-5*var(--px));bottom:calc(-5*var(--px));width:1px;background:var(--amber)}
+.c b{flex:none;min-width:calc(58*var(--px));text-align:right;font-size:calc(14*var(--px));font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.r.top{background:linear-gradient(90deg,rgba(121,194,142,.12),rgba(121,194,142,0) 70%);box-shadow:inset 2px 0 0 var(--ca)}
+.r.top .n{padding-left:var(--s2)}
+.r.top .n{color:var(--paper)}
+.r.dn .m,.r.dn .c b{opacity:.55}
+.r.dn .trk i{opacity:.4}
+.cut{display:flex;align-items:center;gap:var(--s3);padding:var(--s3) 0;border-top:1px dashed var(--amber);font-size:var(--small);font-weight:500;color:var(--amber)}
+.mo{padding-top:var(--s3)}
+.more{border:0;background:none;padding:var(--s2) 0;font:600 calc(13*var(--px))/1 var(--text);color:var(--paper);cursor:pointer}
 
-/* table */
-.tbl{grid-column:1/-1}
-.srt{display:inline-flex;align-items:center;gap:calc(5*var(--px));border:0;background:none;padding:var(--s1) 0;font:600 calc(13*var(--px))/1 var(--text);color:var(--dim);cursor:pointer;border-bottom:1.5px solid transparent}
-.srt[aria-pressed="true"]{color:var(--paper);border-bottom-color:var(--paper)}
-.tr{display:grid;grid-template-columns:calc(48*var(--px)) 3fr 4fr 3fr 1.4fr 1.6fr;column-gap:var(--gt);align-items:center;min-height:calc(60*var(--px));border-bottom:var(--hair)}
-.tr.h{min-height:calc(36*var(--px));font-size:calc(11*var(--px));font-weight:600;letter-spacing:.04em;color:var(--dim)}
-.tr.h>span{display:flex;align-items:center;gap:calc(5*var(--px))}
-.tr.h>span:last-child{justify-content:flex-end}
-.tr.off{opacity:.45}
-.tr .rn{font-family:var(--mono);font-size:var(--small);color:var(--mute)}
-.tr .su{font-size:calc(13*var(--px));font-weight:500;color:var(--mute)}
-.tr .ps{display:flex;align-items:center;gap:var(--s4)}
-.tr .ps .trk{height:calc(4*var(--px))}
-.tr .ps b,.tr .co{font-weight:600;font-variant-numeric:tabular-nums}
-.tr .ps b{width:calc(40*var(--px))}
-.tr .tm{text-align:right;font-size:calc(13*var(--px));font-weight:500;color:var(--mute);font-variant-numeric:tabular-nums}
-.tr .v3{display:none}
-.sub{margin-top:var(--s9)}
-.tail{display:flex;gap:var(--s4);padding-top:var(--s4);font-size:calc(13*var(--px));color:var(--mute)}
-
-/* scatter */
-.sc{grid-column:1/9}
-.sc svg{display:block;width:100%;height:auto;overflow:visible}
-.sc text{fill:var(--dim);font:calc(11*var(--px)) var(--text)}
-.sc .lb{fill:var(--paper);font-weight:600}
-.sc-t{grid-column:10/13;display:flex;flex-direction:column;gap:var(--s4)}
-.sc-t p:first-child{font-size:var(--lede);font-weight:500;line-height:1.4}
-.sc-t p{font-size:calc(14*var(--px));color:var(--mute)}
-
-/* how, honest */
-.steps{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gt)}
-.steps div{padding-right:var(--s5)}
-.steps div+div{padding-left:var(--s5);border-left:var(--hair)}
-.steps b{display:block;font:700 calc(40*var(--px))/1 var(--display);letter-spacing:-.045em}
-.steps h3{margin:var(--s4) 0 var(--s3);font:600 var(--h3)/1.2 var(--display);letter-spacing:-.015em}
-.steps p{font-size:calc(14*var(--px));color:var(--mute)}
-.hon{grid-column:5/-1}
-.hon .n{display:grid;grid-template-columns:2fr 5fr;column-gap:var(--gt);padding:var(--s4) 0;border-bottom:var(--hair)}
-.hon .n b{font-weight:600}
-.hon .n p{color:var(--mute)}
-.srcs{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);font-size:var(--small);color:var(--mute)}
-.srcs span.st{color:var(--amber)}
-.lnk{display:flex;flex-wrap:wrap;gap:var(--s6);padding-top:var(--s5);font-weight:600;font-size:calc(13*var(--px))}
+/* how it's ranked: one compact note, not another section */
+#ft{padding:var(--s9) 0 var(--s10)}
+.how{grid-column:1/9}
+.how h2{font:600 var(--h3)/1.2 var(--display);letter-spacing:-.015em}
+.how ol{margin:var(--s4) 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:var(--s2);color:var(--mute);font-size:calc(14*var(--px));line-height:1.5}
+.srcs{margin-top:var(--s5);font-size:var(--small);color:var(--dim)}
+.srcs b{color:var(--mute);font-weight:600;margin-right:var(--s2)}
+.lnk{display:flex;flex-wrap:wrap;gap:var(--s5);margin-top:var(--s4);font-size:calc(13*var(--px));font-weight:600}
 .lnk a:hover{text-decoration:underline;text-underline-offset:.2em}
-.hon-l{grid-column:1/5;font-weight:600;font-size:var(--small)}
-.load{grid-column:1/-1;padding:var(--s9) 0;color:var(--mute)}
 
-/* tablets upright, phones */
-@media (max-width:1080px){
-  #top h1{grid-column:1/-1}#top .lede{grid-column:1/-1}
-  .figs{grid-column:1/-1;grid-row:auto;margin-top:var(--s7);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gt)}
-  .pick .main{grid-column:1/-1}
-  .pick .alt{grid-column:auto!important;margin-top:var(--s7);padding-left:0;border-left:0;border-top:var(--hair);padding-top:var(--s4)}
-  .pick .alt.a1{grid-column:1/7!important}.pick .alt.a2{grid-column:7/13!important}
-  .sc{grid-column:1/-1}.sc-t{grid-column:1/-1;margin-top:var(--s6)}
-  .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--s7)}
-  .steps div+div{padding-left:0;border-left:0}
-  .hon,.hon-l{grid-column:1/-1}.hon-l{margin-bottom:var(--s4)}
-}
-@media (max-width:699px){
-  .row-k{flex-direction:column}
-  .row-k>.k{width:auto;padding:var(--s4) 0 var(--s2)}
-  .bars{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .bar{padding-bottom:var(--s4)}
-  .bar i{display:none}
-  .main .pk-n{font-size:calc(36*var(--px))}
-  .main .pk-v{gap:var(--s5)}
-  .main .pk-v div b{font-size:calc(28*var(--px))}
-  .pick .alt.a1,.pick .alt.a2{grid-column:1/-1!important}
-  .dm-h{display:none}
-  .dm-r{grid-template-columns:1fr;row-gap:var(--s2);padding:var(--s4) 0}
-  .cell .ic{display:inline-block;opacity:.66}
-  .tr.h{display:none}
-  .tr{grid-template-columns:calc(28*var(--px)) 1fr;row-gap:var(--s2);padding:var(--s4) 0;align-items:start}
-  .tr>.mn{grid-column:2}
-  .tr>.su{grid-column:2}
-  .tr>.ps,.tr>.co,.tr>.tm{display:none}
-  .tr .v3{display:flex;grid-column:2;gap:var(--s5);font-size:calc(13*var(--px));font-weight:600}
-  .tr .v3 span{display:flex;gap:calc(5*var(--px));align-items:center}
-  .sc,.sc-t{display:none}
-  #s-scatter{display:none}
-  .steps{grid-template-columns:1fr}
-  .hon .n{grid-template-columns:1fr;row-gap:var(--s1)}
-  .figs dt{font-size:calc(32*var(--px))}
-}
+/* the pick, up top: big numbers and the chart that explains them */
+.sum{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);padding:var(--s5) 0 var(--s6);border-top:var(--hair)}
+.pk{display:flex;flex-direction:column;gap:var(--s2)}
+.ey{font-size:calc(11*var(--px));font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ca)}
+.pn{display:flex;align-items:center;gap:var(--s3);margin-top:var(--s2);font:700 calc(30*var(--px))/1.1 var(--display);letter-spacing:-.02em}
+.pn .blogo{width:calc(26*var(--px));height:calc(26*var(--px));color:var(--paper)}
+.pk>.su{font-size:calc(13*var(--px));line-height:1.5;overflow:visible}
+.kp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:var(--s5);border-top:var(--hair)}
+.k{display:flex;flex-direction:column;gap:2px;padding:var(--s3) var(--s3) 0 0}
+.k+.k{padding-left:var(--s4);border-left:var(--hair)}
+.k b{font:700 calc(28*var(--px))/1.1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.k.a b{color:var(--ca)}.k.p b{color:var(--cp)}.k.s b{color:var(--cs)}
+.k small{font-size:calc(12*var(--px));color:var(--dim)}
+.vs{display:flex;flex-direction:column;gap:2px;padding-top:var(--s4);font-size:calc(13*var(--px));color:var(--mute)}
+.sc{margin:0;display:flex;flex-direction:column;gap:var(--s2)}
+.sc figcaption{display:flex;justify-content:space-between;gap:var(--s3);font-size:calc(11*var(--px));font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+.sc figcaption{flex-wrap:wrap}.sc .lg{white-space:nowrap;display:flex;align-items:center;gap:calc(6*var(--px));text-transform:none;letter-spacing:0;font-weight:500}
+.sc .lg i{width:calc(8*var(--px));height:calc(8*var(--px));border-radius:50%;margin-left:var(--s2)}
+.sc .lg .l1{background:var(--ca)}.sc .lg .l2{box-shadow:inset 0 0 0 1.5px var(--cs)}
+.scv{width:100%;height:auto;display:block;overflow:visible}
+.scv .zone{fill:rgba(121,194,142,.06)}
+.scv .axl{stroke:rgba(244,239,230,.16);stroke-width:.5}
+.scv .barl{stroke:var(--amber);stroke-width:1;stroke-dasharray:4 3}
+.scv .barT{fill:var(--amber);font-size:10px;font-weight:600}
+.scv .ax{fill:rgba(244,239,230,.45);font-size:10px}
+.scv .dup{fill:var(--paper);opacity:.8}.scv .ddn{fill:rgba(244,239,230,.28)}
+.scv .dpk{fill:var(--ca)}.scv .dpk2{fill:rgba(121,194,142,.18)}
+.scv .dfs{fill:var(--ground);stroke:var(--cs);stroke-width:1.5}
+.scv .lpk{fill:var(--ca);font-size:11px;font-weight:700}.scv .lot{fill:rgba(244,239,230,.5);font-size:9.5px}.scv .zt{fill:rgba(121,194,142,.7);font-size:10px;font-weight:600}.scv .lfs{fill:var(--cs);font-size:10px;font-weight:600}
 
+/* where the numbers come from: the foot of the leaderboard */
+.src{margin-top:var(--s5);padding-top:var(--s5);border-top:.5px solid var(--hc2)}
+.srh{display:flex;flex-direction:column;gap:var(--s1);margin-bottom:var(--s3)}
+.srh h3{flex:none;font:600 calc(15*var(--px))/1.2 var(--text)}
+.srh p{max-width:90ch;font-size:calc(12*var(--px));color:var(--dim)}
+.sr{display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1.6fr) calc(70*var(--px)) calc(120*var(--px));column-gap:var(--s6);align-items:center;min-height:calc(40*var(--px));border-top:.5px solid var(--hc);font-size:calc(13*var(--px))}
+.sr.hd{min-height:calc(32*var(--px));font-size:calc(11*var(--px));font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--dim)}
+.sr.hd span:nth-child(n+3),.sm,.sd{text-align:right}
+.sn{display:flex;align-items:baseline;gap:var(--s3);min-width:0}
+.sn small{flex:none;width:calc(130*var(--px));font-size:calc(12*var(--px));color:var(--dim)}
+.sn span{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sn:hover span{text-decoration:underline;text-underline-offset:.2em}
+.sw{display:flex;align-items:center;gap:var(--s3)}
+.sw .trk{height:calc(4*var(--px))}.sw .trk i{background:var(--paper);opacity:.75}
+.sw b{flex:none;min-width:calc(36*var(--px));text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.sw .na{color:var(--dim)}
+.sm{color:var(--mute);font-variant-numeric:tabular-nums}.sm em{display:none}
+.sd{color:var(--mute);font-variant-numeric:tabular-nums;white-space:nowrap}
+.sd .rd{color:var(--dim)}.sd .bad{color:var(--amber)}
+.sg2{margin-top:var(--s4);padding-bottom:var(--s2);font-size:calc(11*var(--px));font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--dim)}
+.attr{margin-top:var(--s4);font-size:calc(12*var(--px));color:var(--dim)}
+.attr a{text-decoration:underline;text-underline-offset:.2em}
+
+@media (max-width:1080px){ .sub,.how{grid-column:1/-1} .r{column-gap:var(--s4)} }
+@media (max-width:860px){
+  .bd{padding:0 var(--s4) var(--s3)}
+  .r{grid-template-columns:calc(26*var(--px)) 1fr;row-gap:var(--s2);padding:var(--s3) 0;align-items:start}
+  .r.h{display:none}
+  .r .c{grid-column:2}
+  .r:not(.h) .c .ic{display:inline-block;opacity:.6}
+  .r .m{grid-column:2}
+  .r .n{padding-top:calc(3*var(--px))}
+  .c b{min-width:calc(64*var(--px))}
+  .c .trk{height:calc(5*var(--px))}
+  .tool{gap:var(--s3)}
+  .binfo{order:3;width:100%}
+  .sg{padding:var(--s2) var(--s3)}
+  .sum{grid-template-columns:1fr;gap:var(--s5)}
+  .pn{font-size:calc(24*var(--px))}
+  .k b{font-size:calc(22*var(--px))}
+  .k+.k{padding-left:var(--s3)}
+  .sr{grid-template-columns:1fr auto;row-gap:var(--s1);padding:var(--s3) 0}
+  .sr.hd{display:none}
+  .sn{grid-column:1/-1;flex-direction:column;gap:2px}.sn small{width:auto}
+  .sw{grid-column:1/-1}
+  .sm em{display:inline;font-style:normal;color:var(--dim)}
+  .sm{text-align:left;font-size:calc(12*var(--px))}.sd{font-size:calc(12*var(--px))}
+}
 </style>
 </head>
 <body>
-<svg class="lg-sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs><symbol id="lg-claude" viewBox="0 0 24 24"><path d="M9.56 13.32L9.63 13.11L9.56 13L9.36 13L8.67 12.96L6.3 12.9L4.25 12.81L2.27 12.7L1.77 12.6L1.3 11.98L1.35 11.67L1.77 11.39L2.37 11.44L3.7 11.53L5.7 11.67L7.14 11.76L9.29 11.98L9.63 11.98L9.68 11.84L9.56 11.76L9.47 11.67L7.41 10.27L5.17 8.79L4 7.94L3.36 7.51L3.04 7.11L2.91 6.22L3.48 5.59L4.25 5.64L4.45 5.7L5.23 6.3L6.91 7.59L9.09 9.2L9.41 9.46L9.54 9.37L9.55 9.31L9.41 9.07L8.22 6.92L6.95 4.74L6.39 3.84L6.24 3.3C6.18 3.09 6.15 2.87 6.15 2.66L6.8 1.77L7.17 1.65L8.04 1.77L8.41 2.09L8.95 3.33L9.83 5.28L11.19 7.94L11.59 8.72L11.8 9.45L11.88 9.68L12.02 9.68L12.02 9.55L12.13 8.05L12.34 6.22L12.54 3.85L12.62 3.19L12.94 2.39L13.6 1.96L14.11 2.21L14.53 2.81L14.47 3.19L14.22 4.82L13.73 7.36L13.41 9.06L13.6 9.06L13.81 8.85L14.68 7.71L16.12 5.9L16.76 5.18L17.51 4.39L17.99 4.01L18.89 4.01L19.56 5L19.26 6.02L18.33 7.2L17.56 8.2L16.45 9.69L15.76 10.88L15.82 10.98L15.98 10.96L18.49 10.43L19.84 10.19L21.45 9.91L22.18 10.25L22.26 10.6L21.98 11.3L20.25 11.73L18.23 12.13L15.21 12.85L15.18 12.87L15.22 12.93L16.58 13.05L17.16 13.09L18.58 13.09L21.23 13.28L21.92 13.74L22.33 14.3L22.26 14.73L21.2 15.27L19.76 14.93L16.41 14.13L15.26 13.84L15.1 13.84L15.1 13.94L16.05 14.88L17.81 16.46L20.01 18.5L20.12 19.01L19.84 19.41L19.54 19.37L17.61 17.91L16.86 17.26L15.18 15.84L15.06 15.84L15.06 15.99L15.45 16.56L17.51 19.64L17.61 20.59L17.47 20.9L16.93 21.09L16.35 20.98L15.14 19.29L13.9 17.39L12.9 15.69L12.78 15.76L12.19 22.12L11.91 22.44L11.27 22.69L10.74 22.28L10.46 21.63L10.74 20.34L11.08 18.65L11.36 17.31L11.61 15.64L11.76 15.09L11.75 15.05L11.62 15.07L10.37 16.79L8.46 19.37L6.94 20.99L6.58 21.13L5.95 20.81L6.01 20.23L6.36 19.71L8.46 17.05L9.72 15.4L10.53 14.45L10.53 14.31L10.48 14.31L4.92 17.92L3.93 18.05L3.5 17.65L3.56 16.99L3.76 16.78L5.43 15.63L5.42 15.64L9.56 13.32Z"/></symbol><symbol id="lg-openai" viewBox="0 0 24 24"><path d="M13.7 21.96C13.04 21.96 12.38 21.83 11.76 21.57C11.14 21.32 10.58 20.95 10.11 20.48C9.57 20.67 9.04 20.75 8.48 20.75C5.73 20.75 3.34 18.55 3.34 15.61C3.34 15.18 3.4 14.75 3.51 14.31C2.4 13.31 1.78 11.91 1.78 10.47C1.78 8.27 3.26 6.11 5.56 5.52C5.72 4.75 6.05 4.02 6.53 3.4C7.01 2.78 7.63 2.28 8.33 1.93C9.04 1.59 9.81 1.41 10.6 1.41C11.27 1.41 11.93 1.54 12.54 1.79C13.16 2.05 13.72 2.42 14.2 2.89C14.73 2.7 15.27 2.62 15.82 2.62C18.57 2.62 20.96 4.82 20.96 7.76C20.96 8.19 20.9 8.62 20.79 9.05C21.9 10.06 22.52 11.46 22.52 12.9C22.52 15.1 21.04 17.25 18.74 17.85C18.58 18.62 18.25 19.34 17.77 19.96C17.29 20.59 16.67 21.09 15.97 21.43C15.26 21.78 14.49 21.96 13.7 21.96L13.7 21.96ZM13.7 20.73C15.98 20.73 17.69 19.06 17.69 16.86L17.69 12.34C17.69 12.18 17.63 12.05 17.48 11.97L15.78 10.98L15.78 16.95C15.78 17.23 15.65 17.44 15.41 17.58L11.36 19.93C12.04 20.44 12.84 20.73 13.7 20.73L13.7 20.73ZM8.52 6.42C8.52 6.13 8.65 5.93 8.89 5.79L12.94 3.44C12.26 2.93 11.46 2.64 10.6 2.64C8.32 2.64 6.63 4.3 6.63 6.5L6.63 11.03C6.63 11.19 6.69 11.31 6.84 11.4L8.52 12.38L8.52 6.42ZM10.43 19.06L14.36 16.8C14.5 16.72 14.56 16.6 14.56 16.43L14.56 14.48L9.4 17.46C9.16 17.6 8.91 17.6 8.67 17.46L4.62 15.12C4.6 15.28 4.58 15.45 4.58 15.61C4.58 17.77 6.28 19.52 8.6 19.52C9.26 19.52 9.9 19.37 10.43 19.06ZM8.96 16.2C9.01 16.21 9.06 16.21 9.11 16.2C9.16 16.19 9.2 16.17 9.24 16.14L10.93 15.18L5.79 12.2C5.54 12.05 5.42 11.85 5.42 11.56L5.42 6.87C4.94 7.07 4.51 7.35 4.15 7.71C3.79 8.08 3.5 8.51 3.31 8.98C3.11 9.45 3.01 9.96 3.01 10.47C3.01 11.83 3.77 13.22 4.9 13.88L8.83 16.14C8.87 16.17 8.92 16.19 8.96 16.2ZM18.9 16.5C20.36 15.9 21.29 14.46 21.29 12.9C21.29 11.54 20.53 10.14 19.39 9.48L15.47 7.22C15.43 7.2 15.38 7.18 15.34 7.17C15.29 7.16 15.24 7.16 15.19 7.17C15.14 7.18 15.1 7.2 15.06 7.22L13.37 8.19L18.53 11.19C18.78 11.34 18.9 11.54 18.9 11.83L18.9 16.49L18.9 16.5ZM14.89 5.89C14.97 5.84 15.05 5.81 15.13 5.79C15.22 5.78 15.31 5.78 15.39 5.79C15.48 5.81 15.56 5.84 15.63 5.89L19.7 8.27C19.73 8.11 19.73 7.94 19.73 7.8C19.73 5.76 18.16 3.85 15.7 3.85C15.04 3.85 14.4 4 13.87 4.3L9.94 6.57C9.8 6.65 9.73 6.77 9.73 6.93L9.73 8.89L14.89 5.89Z"/></symbol><symbol id="lg-gemini" viewBox="0 0 24 24"><path d="M16.17 7.83C17.45 9.11 18.96 10.13 20.62 10.83C21.27 11.11 21.93 11.34 22.62 11.51C22.69 11.53 22.76 11.56 22.82 11.61C22.87 11.66 22.92 11.72 22.95 11.79C22.98 11.85 23 11.93 23 12C23 12.07 22.98 12.15 22.95 12.21C22.92 12.28 22.87 12.34 22.82 12.39C22.76 12.44 22.69 12.47 22.62 12.49C21.41 12.8 20.24 13.27 19.15 13.89C18.06 14.52 17.05 15.28 16.17 16.16C14.89 17.44 13.87 18.95 13.16 20.62C12.88 21.27 12.66 21.93 12.49 22.62C12.47 22.69 12.44 22.76 12.39 22.82C12.34 22.87 12.28 22.92 12.22 22.95C12.15 22.98 12.07 23 12 23C11.93 23 11.85 22.98 11.79 22.95C11.72 22.92 11.66 22.87 11.61 22.82C11.56 22.76 11.53 22.69 11.51 22.62C11.2 21.4 10.73 20.24 10.11 19.15C9.48 18.06 8.72 17.05 7.83 16.16C6.56 14.89 5.04 13.87 3.38 13.16C2.73 12.88 2.07 12.66 1.38 12.49C1.31 12.47 1.24 12.44 1.18 12.39C1.13 12.34 1.08 12.28 1.05 12.21C1.02 12.15 1 12.07 1 12C1 11.93 1.02 11.85 1.05 11.78C1.08 11.72 1.13 11.66 1.18 11.61C1.24 11.56 1.31 11.53 1.38 11.51C2.07 11.34 2.73 11.11 3.38 10.83C5.04 10.13 6.56 9.11 7.83 7.83C8.72 6.95 9.48 5.94 10.11 4.85C10.73 3.76 11.2 2.6 11.51 1.38C11.53 1.31 11.57 1.24 11.61 1.18C11.66 1.13 11.72 1.08 11.79 1.05C11.85 1.02 11.93 1 12 1C12.07 1 12.15 1.02 12.21 1.05C12.28 1.08 12.34 1.13 12.39 1.18C12.44 1.24 12.47 1.31 12.49 1.38C12.8 2.6 13.27 3.76 13.89 4.85C14.52 5.94 15.28 6.95 16.17 7.83Z"/></symbol><symbol id="lg-copilot" viewBox="0 0 24 24"><path d="M8.42 19.55C8.25 19.34 8.13 19.11 8.05 18.85L7.54 17.03C7.46 16.77 7.33 16.53 7.15 16.32C6.98 16.12 6.76 15.95 6.51 15.84C6.26 15.72 6 15.66 5.72 15.66L5.35 15.66L5.28 15.66C1.93 15.66 3.08 11.72 3.97 8.78L4.09 8.38C4.83 6.04 5.93 3.8 7.7 3.8L14.31 3.8C15.15 3.8 15.88 4.36 16.12 5.17L16.65 7C16.72 7.25 16.84 7.47 17.01 7.67C17.17 7.87 17.37 8.04 17.6 8.15C17.82 8.27 18.07 8.34 18.33 8.36L18.44 8.36L18.84 8.37C21.49 8.45 21.14 11.16 20.45 13.74L20.36 14.05C20.25 14.46 20.13 14.86 20.01 15.25L19.89 15.64C19.15 17.99 18.05 20.22 16.28 20.22L9.75 20.22L9.81 20.22C9.54 20.21 9.28 20.15 9.04 20.03C8.8 19.91 8.59 19.75 8.42 19.55ZM11.66 8.94C11.48 9.12 11.35 9.34 11.26 9.57L9.91 14.28C9.84 14.54 9.71 14.79 9.53 15C9.35 15.2 9.13 15.37 8.88 15.48C8.64 15.6 8.37 15.66 8.1 15.66L10.97 15.66C11.76 15.66 12.46 15.17 12.73 14.44L14.07 9.74C14.15 9.48 14.28 9.24 14.45 9.03C14.63 8.82 14.85 8.65 15.1 8.54C15.34 8.42 15.61 8.37 15.89 8.36L13.01 8.37C12.76 8.37 12.51 8.42 12.28 8.52C12.04 8.61 11.83 8.76 11.66 8.94Z"/></symbol><symbol id="lg-perplexity" viewBox="0 0 24 24"><path d="M21.61 17.27L18.92 17.27L18.92 23.12L12.47 17.44L12.47 23.08L11.47 23.08L11.47 17.44L5.01 23.12L5.01 17.2L2.36 17.2L2.36 7.71L5 7.71L5 1.12L11.47 7.08L11.47 1.3L12.47 1.3L12.47 7.25L19.12 1.12L19.12 1.12L19.12 1.12L19.12 1.12L19.12 7.79L21.61 7.79L21.61 17.27ZM11.46 16.12L11.46 9.34L6.01 14.29L6.01 20.92L11.46 16.12ZM17.92 14.36L12.47 9.41L12.47 16.12L17.92 20.92L17.92 14.36ZM5.01 16.21L5.01 13.85L10.68 8.7L3.36 8.7L3.36 16.21L5.01 16.21ZM13.32 8.78L18.92 13.85L18.92 16.29L20.61 16.29L20.61 8.78L13.32 8.78ZM6 3.39L6 7.71L10.69 7.71L6 3.39ZM18.12 3.39L13.43 7.71L18.12 7.71L18.12 3.39ZM10.69 8.7L10.68 8.7L10.69 8.7L10.69 8.7Z"/></symbol><symbol id="lg-deepseek" viewBox="0 0 24 24"><path d="M23.08 5.51C23.3 5.62 23.32 5.84 23.31 6.05C23.18 7.42 22.67 8.57 21.39 9.27C20.95 9.51 20.47 9.66 19.97 9.71C19.79 9.72 19.76 9.79 19.76 9.94C19.76 10.02 19.77 10.08 19.77 10.15C19.78 10.32 19.79 10.49 19.76 10.72C19.17 14.71 17.66 15.95 16.65 17.14C16.82 17.27 16.84 17.27 16.96 17.31C17.12 17.36 17.46 17.46 18.59 17.98C18.83 18.1 18.88 18.72 18.2 18.87C17.77 18.95 17.22 19.04 16.64 18.98C15.89 18.92 15.44 18.83 15.01 18.62C13.3 20.06 11.79 20.25 10.43 20.32C8.19 20.46 6.23 19.77 4.53 18.36C2.89 17.01 1.82 15.27 1.45 13.18C1.1 11.2 1.39 9.29 2.6 7.62C3.62 6.22 5 5.4 6.73 5.21C7.61 5.11 8.5 5.14 9.37 5.3C9.52 5.27 9.66 5.23 9.8 5.18C10.73 4.82 11.46 4.55 12.26 4.55C13.06 4.55 13.22 4.85 12.97 4.94C12.74 5.03 11.71 5.75 12.62 6.63C12.83 6.76 13.04 6.91 13.25 7.06C14.13 7.71 14.84 8.55 15.63 9.31C16.09 9.77 16.63 10.14 17.22 10.39C17.4 10.46 17.47 10.43 17.52 10.27C17.6 10.01 17.69 9.76 17.77 9.5C17.81 9.38 17.77 9.29 17.65 9.21C16.54 8.46 15.99 7.41 15.96 6.09C15.95 5.51 16.06 4.93 16.35 4.41C16.36 4.4 16.36 4.39 16.36 4.38C16.43 4.26 16.5 4.13 16.68 4.16C16.84 4.18 16.89 4.33 16.95 4.48C17.02 4.72 17.07 4.96 17.23 5.19C17.45 5.5 17.78 5.64 18.1 5.78C18.72 6.06 19.12 6.48 19.24 7.2C19.82 6.62 20.47 6.38 21.23 6.42C21.75 6.45 22.14 6.21 22.48 5.85C22.52 5.81 22.56 5.76 22.61 5.72C22.64 5.7 22.67 5.67 22.7 5.63C22.8 5.53 22.9 5.42 23.08 5.51L23.08 5.51ZM14.73 18.46C14.48 18.32 14.23 18.11 13.91 17.84C13.01 17.08 12.3 16.15 11.64 15.17C11.02 14.25 10.41 13.31 9.62 12.52C8.22 11.14 6.56 10.27 4.61 9.98C4.14 9.91 3.67 9.93 3.2 10.02C2.85 10.08 2.75 10.2 2.77 10.56C2.83 12.02 3.25 13.39 3.96 14.67C4.69 15.99 5.73 16.96 6.98 17.7C7.03 17.72 8.1 18.23 8.72 17.85C9 17.68 8.93 17.45 8.82 17.3C8.67 17.07 8.57 16.89 8.48 16.62C8.41 16.35 8.34 15.94 8.7 15.92C9.08 15.9 10.01 16.4 11.93 17.9C12.76 18.57 13.99 18.55 14.73 18.46ZM15.92 13.05C15.82 12.76 15.68 12.51 15.52 12.27C15.31 11.96 15.25 11.85 14.89 11.43C14.54 11.09 14.29 10.85 13.97 10.71C13.62 10.57 13.25 10.52 12.92 10.7C12.89 10.72 12.77 10.84 12.74 10.89C12.66 11.05 12.75 11.17 12.85 11.22C12.92 11.26 13 11.29 13.08 11.29C13.32 11.29 13.54 11.33 13.71 11.47C13.92 11.65 13.99 11.84 13.93 12.14C13.89 12.32 13.89 12.5 13.92 12.68C13.99 13.05 14.17 13.16 14.42 13.38C14.53 13.45 14.64 13.52 14.77 13.55C14.89 13.59 15.02 13.61 15.15 13.61C15.33 13.6 15.51 13.54 15.69 13.46C15.91 13.37 15.98 13.23 15.92 13.05ZM12.84 12C12.84 12.04 12.85 12.07 12.86 12.11C12.88 12.14 12.9 12.17 12.92 12.2C12.95 12.22 12.98 12.24 13.02 12.26C13.05 12.27 13.09 12.28 13.12 12.28C13.16 12.28 13.2 12.27 13.23 12.26C13.27 12.25 13.3 12.22 13.32 12.2C13.35 12.17 13.37 12.14 13.38 12.11C13.4 12.07 13.41 12.04 13.41 12C13.41 11.96 13.4 11.92 13.38 11.89C13.37 11.85 13.35 11.82 13.32 11.79C13.29 11.77 13.26 11.75 13.22 11.73C13.18 11.72 13.13 11.71 13.09 11.72C13.04 11.72 13 11.74 12.96 11.77C12.93 11.79 12.9 11.83 12.88 11.87C12.85 11.91 12.84 11.95 12.84 12L12.84 12Z"/></symbol><symbol id="lg-mistral" viewBox="0 0 24 24"><path d="M10.47 6.87L10.47 9.93L13.53 9.93L13.53 6.87L16.59 6.87L16.59 3.81L19.66 3.81L19.66 16.06L22.72 16.06L22.72 19.12L13.53 19.12L13.53 16.06L10.47 16.06L10.47 19.12L1.28 19.12L1.28 16.06L4.34 16.06L4.34 3.81L7.41 3.81L7.41 6.87L10.47 6.87ZM7.4 16.06L10.47 16.06L10.47 13L7.4 13L7.4 16.06ZM13.53 13L13.53 16.06L16.59 16.06L16.59 13L13.53 13Z"/></symbol><symbol id="lg-qwen" viewBox="0 0 24 24"><path d="M13.84 3.55C13.86 3.56 13.88 3.56 13.9 3.56L19.42 3.56C19.59 3.56 19.74 3.67 19.86 3.89L21.3 6.44C21.49 6.78 21.54 6.92 21.33 7.27C21.07 7.7 20.82 8.13 20.57 8.56L20.21 9.22C20.19 9.25 20.17 9.28 20.16 9.31C20.07 9.45 20.02 9.54 20.17 9.73L22.8 14.33C22.97 14.63 22.91 14.82 22.76 15.1C22.33 15.88 21.88 16.65 21.43 17.42C21.28 17.69 21.08 17.8 20.76 17.79C19.99 17.77 19.22 17.78 18.45 17.81C18.43 17.81 18.41 17.81 18.4 17.82C18.39 17.83 18.38 17.84 18.37 17.86C17.48 19.43 16.58 21 15.68 22.56C15.51 22.86 15.3 22.92 14.96 22.93C13.97 22.93 12.97 22.93 11.96 22.93C11.9 22.93 11.84 22.92 11.78 22.89C11.72 22.87 11.67 22.84 11.62 22.8C11.57 22.76 11.53 22.71 11.5 22.66L10.18 20.35C10.17 20.34 10.16 20.33 10.15 20.32C10.15 20.32 10.14 20.31 10.12 20.31C10.12 20.3 10.1 20.3 10.09 20.3L5.01 20.3C4.72 20.33 4.46 20.3 4.21 20.21L2.62 17.46C2.57 17.38 2.54 17.29 2.54 17.19C2.54 17.1 2.57 17 2.61 16.92L3.81 14.82C3.83 14.79 3.84 14.75 3.84 14.72C3.84 14.69 3.83 14.65 3.81 14.62C3.19 13.54 2.57 12.46 1.95 11.37L1.17 9.98C1.01 9.68 0.99 9.49 1.26 9.03C1.72 8.22 2.18 7.41 2.64 6.61C2.77 6.37 2.94 6.28 3.22 6.27C4.08 6.27 4.93 6.27 5.79 6.27C5.8 6.27 5.82 6.27 5.83 6.26C5.85 6.26 5.86 6.25 5.87 6.24C5.88 6.23 5.89 6.22 5.9 6.21L8.68 1.35C8.71 1.3 8.75 1.25 8.79 1.22C8.84 1.18 8.88 1.15 8.94 1.13C8.99 1.11 9.05 1.1 9.1 1.1C9.62 1.1 10.15 1.1 10.68 1.1L11.69 1.07C12.02 1.07 12.4 1.11 12.58 1.41C12.97 2.1 13.36 2.79 13.75 3.47C13.76 3.49 13.77 3.51 13.79 3.52C13.8 3.54 13.82 3.55 13.84 3.55ZM9.12 1.84L6.27 6.82C6.26 6.85 6.24 6.87 6.21 6.88C6.19 6.89 6.17 6.9 6.14 6.9L3.29 6.9C3.23 6.9 3.22 6.93 3.25 6.97L9.02 17.06C9.05 17.11 9.03 17.12 8.99 17.13L6.21 17.14C6.18 17.14 6.16 17.14 6.13 17.15C6.11 17.16 6.08 17.18 6.06 17.19C6.04 17.21 6.03 17.23 6.01 17.26L4.7 19.55C4.66 19.63 4.68 19.67 4.77 19.67L10.45 19.68C10.49 19.68 10.53 19.7 10.55 19.74L11.94 22.18C11.99 22.25 12.04 22.26 12.08 22.18L17.05 13.47L17.83 12.1C17.84 12.09 17.84 12.09 17.85 12.08C17.85 12.08 17.86 12.07 17.87 12.07C17.88 12.07 17.88 12.07 17.89 12.07C17.9 12.07 17.91 12.08 17.91 12.08C17.92 12.09 17.92 12.09 17.93 12.1L19.34 14.61C19.35 14.63 19.36 14.64 19.37 14.65C19.38 14.65 19.39 14.66 19.41 14.67C19.42 14.67 19.43 14.68 19.45 14.68L22.19 14.65C22.2 14.65 22.2 14.65 22.21 14.65C22.21 14.65 22.21 14.65 22.22 14.65C22.22 14.64 22.23 14.64 22.23 14.63C22.23 14.63 22.23 14.62 22.23 14.62C22.23 14.61 22.23 14.6 22.23 14.6L19.35 9.54C19.34 9.53 19.34 9.52 19.33 9.51C19.33 9.49 19.33 9.48 19.33 9.47C19.34 9.46 19.34 9.44 19.35 9.43L19.64 8.93L20.75 6.96C20.77 6.92 20.76 6.9 20.72 6.9L9.2 6.9C9.14 6.9 9.13 6.88 9.15 6.83L10.58 4.34C10.59 4.33 10.59 4.31 10.59 4.3C10.6 4.29 10.6 4.27 10.59 4.26C10.59 4.25 10.59 4.24 10.58 4.22L9.22 1.84C9.22 1.84 9.21 1.83 9.21 1.83C9.2 1.82 9.2 1.82 9.19 1.82C9.19 1.81 9.18 1.81 9.17 1.81C9.16 1.81 9.16 1.81 9.15 1.82C9.14 1.82 9.14 1.82 9.13 1.83C9.13 1.83 9.12 1.84 9.12 1.84ZM12.03 15.85C12.03 15.86 12.02 15.86 12.02 15.86C12.01 15.87 12.01 15.87 12 15.87C11.99 15.88 11.99 15.88 11.98 15.88C11.97 15.88 11.96 15.88 11.95 15.87C11.94 15.87 11.94 15.86 11.93 15.85L8.5 9.86C8.48 9.82 8.49 9.8 8.53 9.8L8.74 9.79L15.42 9.78L15.42 9.78C15.46 9.78 15.48 9.8 15.45 9.84L14.63 11.29L12.03 15.85Z"/></symbol><symbol id="lg-this-mac" viewBox="0 0 24 24"><path d="M22.6 4.19Q23 4.89 23 5.69L23 15.69Q23 16.5 22.6 17.19Q22.2 17.89 21.5 18.29Q20.8 18.69 20 18.69L13 18.69L13 20.69L16 20.69Q17 20.69 17 21.69Q17 22.69 16 22.69L8 22.69Q7 22.69 7 21.69Q7 20.69 8 20.69L11 20.69L11 18.69L4 18.69Q3.2 18.69 2.5 18.29Q1.8 17.89 1.4 17.19Q1 16.5 1 15.69L1 5.69Q1 4.89 1.4 4.19Q1.8 3.5 2.5 3.1Q3.2 2.69 4 2.69L20 2.69Q20.8 2.69 21.5 3.1Q22.2 3.5 22.6 4.19ZM12 16.69L20 16.69Q20.27 16.69 20.5 16.56Q20.73 16.43 20.87 16.19Q21 15.96 21 15.69L21 5.69Q21 5.43 20.87 5.19Q20.73 4.96 20.5 4.83Q20.27 4.69 20 4.69L4 4.69Q3.73 4.69 3.5 4.83Q3.27 4.96 3.13 5.19Q3 5.43 3 5.69L3 15.69Q3 15.96 3.13 16.19Q3.27 16.43 3.5 16.56Q3.73 16.69 4 16.69L12 16.69ZM12 16.69Q11 16.69 11 17.69L11 18.69L13 18.69L13 17.69Q13 16.69 12 16.69Z"/></symbol><symbol id="lg-anthropic" viewBox="0 0 24 24"><path d="M13.34 19.3L12.11 16.13L5.81 16.13L4.58 19.3L1.21 19.3L7.23 4.2L7.23 4.2L10.69 4.2L16.71 19.3L13.34 19.3ZM19.91 19.3L13.89 4.2L17.19 4.2L23.21 19.3L19.91 19.3Z"/></symbol><symbol id="lg-google" viewBox="0 0 24 24"><path d="M12.32 5.9C11.51 5.9 10.7 6.07 9.95 6.4C9.2 6.73 8.53 7.21 7.97 7.81C7.42 8.42 7 9.13 6.73 9.9L6.73 9.9L6.73 9.9C6.53 10.5 6.41 11.14 6.41 11.8C6.41 12.45 6.53 13.09 6.74 13.71L6.74 13.71C7 14.48 7.42 15.19 7.98 15.79C8.53 16.39 9.2 16.88 9.95 17.2C10.7 17.53 11.51 17.7 12.32 17.7C13.79 17.7 14.9 17.31 15.73 16.74C17.04 15.84 17.62 14.51 17.73 13.62L12.32 13.62L12.32 10.05L21.54 10.05C21.68 10.65 21.75 11.22 21.75 12.02C21.75 14.95 20.68 17.41 18.82 19.09L18.82 19.09C17.2 20.57 14.97 21.42 12.32 21.42C8.48 21.42 5.17 19.26 3.56 16.12C2.89 14.82 2.51 13.35 2.51 11.8C2.51 10.3 2.87 8.82 3.55 7.48L3.56 7.48C5.17 4.34 8.48 2.18 12.32 2.18C14.97 2.18 17.19 3.13 18.89 4.68L16.12 7.33C15.41 6.68 14.17 5.9 12.32 5.9Z"/></symbol><symbol id="lg-spacexai" viewBox="0 0 24 24"><path d="M0.31 15.57C1.89 14.05 8.88 7.58 24 6.72L24 6.72C21.23 6.95 10.35 8.3 2.8 15.89L0 15.89L0.31 15.57ZM8 12.74C8.4 12.49 8.8 12.25 9.2 12.02L14.52 15.89L12.33 15.89L8 12.74ZM8.15 15.4L4.44 15.4C4.7 15.17 4.96 14.95 5.23 14.73L7.22 14.73L6.19 13.98C6.56 13.7 6.93 13.44 7.31 13.19L11.01 15.89L8.82 15.89L8.15 15.4ZM3.54 12.04L0.84 10.08L3.03 10.08L4.72 11.31C4.3 11.56 3.9 11.8 3.54 12.04Z"/></symbol><symbol id="lg-meta" viewBox="0 0 24 24"><path d="M13.79 6.83L14.07 6.52C15.06 5.47 16.15 4.75 17.45 4.75C18.61 4.75 19.7 5.26 20.63 6.13L20.82 6.32C22.4 7.92 23.48 10.6 23.6 13.62L23.61 13.97L23.61 14.2C23.61 15.56 23.36 16.71 22.87 17.56L22.74 17.77L22.64 17.91C22.37 18.29 22.04 18.6 21.66 18.83L21.41 18.95L21.34 18.99C21.25 19.03 21.15 19.07 21.06 19.1C20.67 19.23 20.26 19.29 19.85 19.29C19.38 19.29 18.95 19.23 18.55 19.09C17.99 18.91 17.49 18.58 16.98 18.08L16.77 17.86C16.09 17.13 15.38 16.07 14.5 14.61L13.21 12.42L12.71 11.6L11.11 14.45L10.79 14.98C8.7 18.52 7.46 19.29 5.76 19.29C4.66 19.29 3.75 18.91 3.09 18.22L2.94 18.05C2.5 17.53 2.18 16.86 1.99 16.06L1.93 15.77C1.86 15.38 1.82 14.99 1.8 14.6L1.8 14.26C1.8 13.59 1.85 12.91 1.96 12.24L2.05 11.72C2.32 10.32 2.8 9.03 3.44 7.94L3.63 7.63C4.7 5.97 6.17 4.85 7.83 4.76L8.07 4.75C9.81 4.75 11.26 5.6 13 7.82L13.26 7.48C13.43 7.25 13.61 7.04 13.79 6.83ZM15.31 7.66C14.91 8.08 14.51 8.63 14.07 9.3L14.31 9.66C14.47 9.91 14.64 10.17 14.81 10.44L15.08 10.87L16.34 13L16.98 14.01C17.51 14.85 17.91 15.46 18.26 15.9L18.45 16.14C18.71 16.43 18.93 16.63 19.16 16.75L19.25 16.8C19.45 16.89 19.66 16.92 19.9 16.92C20.06 16.92 20.22 16.9 20.37 16.86C20.68 16.76 20.93 16.56 21.11 16.28L21.2 16.13L21.27 15.98C21.44 15.56 21.53 15.02 21.53 14.36L21.53 13.95C21.45 11.34 20.67 9.07 19.53 7.77L19.37 7.6C18.76 6.98 18.05 6.62 17.3 6.62L17.14 6.63C16.57 6.67 16.03 6.96 15.49 7.48L15.31 7.66Z"/></symbol><symbol id="lg-alibaba" viewBox="0 0 24 24"><path d="M15.24 17.48C14.54 17.62 13.77 17.62 13.05 17.52C12.38 17.43 12.04 16.84 12.28 16.21C12.51 15.62 12.81 15.03 13.21 14.54C14.06 13.47 15.02 12.51 15.89 11.45C16.41 10.81 16.89 10.12 17.31 9.4C17.61 8.89 17.47 8.27 16.94 8.01C16.04 7.58 15.08 7.27 14.13 6.94C14.05 6.91 13.95 6.95 13.83 7.01C13.77 7.03 13.71 7.06 13.63 7.09C13.91 7.33 14.1 7.51 14.38 7.76C11.56 8.24 8.89 8.92 6.3 9.86C6.29 9.87 6.29 9.89 6.28 9.9C6.28 9.93 6.27 9.96 6.27 9.97C6.66 10.56 6.48 11 5.92 11.37C5.71 11.51 5.52 11.69 5.36 11.89C7.06 12.39 8.58 12.1 10.04 11.15C9.95 11.03 9.86 10.91 9.77 10.78C10.32 10.88 10.65 11.18 10.69 11.64C10.7 11.72 10.67 11.79 10.64 11.87C10.63 11.9 10.62 11.93 10.61 11.96C10.53 11.88 10.43 11.79 10.37 11.7C10.32 11.63 10.31 11.56 10.28 11.45C8.55 12.6 6.69 12.89 4.64 12.29C4.64 12.41 4.64 12.53 4.64 12.64L4.64 12.64C4.64 12.9 4.63 13.14 4.66 13.37C4.68 13.65 4.56 13.78 4.3 13.93C3.71 14.29 3.09 14.67 2.6 15.15C2.01 15.73 2.23 16.45 3.03 16.74C3.93 17.08 4.89 17.09 5.84 16.98C6.96 16.84 8.07 16.66 9.29 16.49C7.86 17.16 6.45 17.63 4.96 17.82C3.92 17.96 2.88 18.03 1.86 17.73C0.38 17.32-0.28 16.23 0.11 14.77C0.47 13.41 1.34 12.32 2.28 11.32C5.42 7.99 9.39 6.3 13.98 5.96C15.05 5.88 16.14 6.02 17.14 6.47C18.55 7.11 19.14 8.46 18.46 9.82C18.01 10.73 17.38 11.56 16.76 12.38C16.15 13.19 15.46 13.93 14.81 14.71C14.63 14.94 14.45 15.19 14.31 15.45C14.04 15.95 14.22 16.28 14.8 16.23C16.02 16.11 17.25 16.02 18.42 15.72C20.14 15.28 21.81 14.67 23.51 14.12C23.68 14.08 23.84 14.02 23.99 13.96C21.2 15.47 18.38 16.85 15.24 17.48ZM23.99 13.96L24 13.95L24 13.95L23.99 13.96Z"/></symbol><symbol id="lg-zai" viewBox="0 0 24 24"><path d="M13.98 3.57L21.92 3.57L10.02 20.43L2.08 20.43L13.98 3.57ZM21.42 17.95L21.42 20.43L11.5 20.43L12.89 18.45C13.11 18.14 13.47 17.95 13.86 17.95L21.42 17.95ZM2.58 6.04L2.58 3.56L2.58 3.56L2.58 3.56L2.58 3.56C2.59 3.57 12.5 3.57 12.5 3.57L11.11 5.54C10.9 5.85 10.54 6.04 10.15 6.04L2.58 6.04Z"/></symbol><symbol id="lg-moonshot" viewBox="0 0 24 24"><path d="M21.88 13.79C21.76 14.43 21.59 15.06 21.35 15.65L12.24 13.21L3.17 10.79L3.18 10.71L3.19 10.67L3.19 10.62L3.21 10.55L3.22 10.47C3.24 10.36 3.27 10.24 3.29 10.12L3.31 10.03L3.33 9.96L3.35 9.88C3.37 9.81 3.38 9.74 3.4 9.67L3.42 9.59L3.44 9.53L3.47 9.45L3.49 9.38L3.51 9.31L3.53 9.24L3.55 9.17C3.76 8.55 4.03 7.96 4.35 7.41L4.35 7.41L13.77 9.93C13.48 10.4 13.21 10.9 12.97 11.4L21.88 13.79ZM21.58 9.32C21.79 10 21.93 10.7 21.99 11.43L4.73 6.81L4.77 6.76L4.79 6.73L4.82 6.68L4.86 6.63L4.9 6.57L4.94 6.52L4.99 6.45L5.03 6.4L5.08 6.34L5.12 6.28L5.17 6.23L5.21 6.17L5.26 6.11L5.3 6.06L5.36 6L5.4 5.95L5.46 5.89L5.5 5.84L5.55 5.78L5.59 5.74L5.65 5.67L5.7 5.63L5.75 5.57L5.88 5.44L5.96 5.36L6 5.32L6.06 5.26C6.61 4.75 7.21 4.31 7.85 3.94L16.75 6.32C16.28 6.75 15.83 7.2 15.42 7.67L21.58 9.32ZM20.2 17.73C19.78 18.31 19.29 18.84 18.75 19.31L3.59 15.25L3.58 15.21L3.55 15.13C3.54 15.09 3.52 15.05 3.51 15.01L3.5 14.99C3.44 14.8 3.39 14.61 3.34 14.41L3.32 14.31L3.3 14.25L3.29 14.17L3.27 14.11L3.26 14.04L3.25 13.97L3.23 13.9C3.21 13.79 3.19 13.67 3.17 13.56L3.16 13.47L3.15 13.4L3.14 13.32C3.14 13.28 3.13 13.24 3.13 13.2L3.12 13.16C3.06 12.6 3.06 12.03 3.1 11.47L12.04 13.86C11.89 14.38 11.77 14.91 11.68 15.45L20.2 17.73ZM16.16 20.9C14.77 21.48 13.26 21.71 11.76 21.59L11.62 21.57L11.58 21.57L11.52 21.56L11.44 21.55C11.4 21.55 11.36 21.54 11.32 21.54L11.23 21.53L11.15 21.51C11.06 21.5 10.98 21.49 10.89 21.47L10.86 21.47L10.8 21.46L10.72 21.44L10.66 21.43L10.59 21.41L10.53 21.4L10.46 21.39L10.38 21.37L10.3 21.35L10.25 21.34L10.18 21.32L10.11 21.3L10.04 21.28L9.97 21.26L9.88 21.24L9.84 21.22L9.77 21.2L9.7 21.18L9.61 21.16L9.57 21.14L9.51 21.12L9.43 21.1L9.38 21.08C9.37 21.07 9.36 21.07 9.35 21.07L9.29 21.05L9.21 21.02L9.17 21L9.11 20.98L9.04 20.95L8.97 20.92L8.91 20.89L8.83 20.86L8.78 20.84L8.73 20.82C8.72 20.82 8.71 20.81 8.7 20.81L8.65 20.78L8.57 20.75L8.53 20.73L8.45 20.69L8.4 20.67L8.34 20.64L8.27 20.6L8.19 20.56L8.15 20.54L8.07 20.5L8.03 20.48L7.98 20.45C7.97 20.44 7.96 20.44 7.94 20.43L7.87 20.39L7.82 20.36L7.78 20.34L7.73 20.3L7.66 20.27L7.59 20.22L7.55 20.2L7.48 20.15L7.43 20.12L7.37 20.08L7.32 20.05L7.27 20.02C7.26 20.01 7.25 20 7.23 19.99L7.2 19.97L7.16 19.94C7.15 19.94 7.14 19.93 7.13 19.92L7.08 19.89L7.03 19.85L6.97 19.81L6.91 19.77L6.87 19.73L6.81 19.69L6.75 19.64L6.68 19.59L6.65 19.56L6.59 19.52L6.54 19.47L6.47 19.41L6.39 19.35C6.38 19.34 6.37 19.33 6.36 19.32L6.33 19.29L6.28 19.25L6.22 19.2L6.17 19.16L6.12 19.11L6.07 19.06L6.03 19.02L5.96 18.95C5.93 18.93 5.9 18.9 5.88 18.88L5.85 18.86L5.82 18.82L5.77 18.77L5.73 18.73L5.69 18.69C5.64 18.64 5.6 18.59 5.56 18.55L5.49 18.48L5.44 18.42L5.39 18.36L5.36 18.32L5.31 18.27L5.27 18.22L5.23 18.17C5.22 18.16 5.22 18.16 5.21 18.15L5.17 18.1L5.12 18.04L5.09 18L5.05 17.95L5.04 17.93C4.58 17.34 4.2 16.71 3.9 16.03L11.42 18.05C11.41 18.58 11.42 19.11 11.47 19.65L16.16 20.9ZM12.74 2.7L12.78 2.71L12.83 2.71L12.87 2.71L12.93 2.71L12.97 2.71L13.02 2.71L13.06 2.71L13.13 2.72L13.21 2.72L13.32 2.73L13.39 2.74L13.43 2.74L13.49 2.75L13.55 2.75L13.59 2.76L13.67 2.77L13.71 2.77L13.79 2.78L13.86 2.79L13.89 2.8L13.94 2.8L14.11 2.83L14.16 2.84L14.21 2.85L14.32 2.87L14.39 2.88L14.48 2.9L14.52 2.91L14.58 2.92L14.61 2.93L14.66 2.94L14.69 2.95L14.74 2.96L14.78 2.97L14.84 2.98L14.91 3L15 3.02L15.09 3.05L15.18 3.07L15.22 3.08L15.27 3.1L15.33 3.12L15.39 3.14L15.43 3.15L15.47 3.16L15.53 3.18L15.61 3.21L15.69 3.24L15.73 3.25L15.78 3.27L15.85 3.29L15.94 3.33L16.03 3.36L16.11 3.39L16.14 3.41L16.19 3.43L16.22 3.44L16.27 3.46L16.3 3.48L16.35 3.5L16.44 3.54L16.52 3.57L16.57 3.6L16.63 3.63L16.68 3.65L16.75 3.69L16.82 3.72L16.91 3.76L16.95 3.78L16.98 3.8L17.02 3.82L17.07 3.85L17.1 3.87L17.14 3.89L17.21 3.93L17.3 3.98L17.36 4.02L17.41 4.04L17.45 4.07L17.53 4.12L17.59 4.16L17.67 4.21L17.7 4.23L17.75 4.26L17.82 4.3L17.85 4.32L17.9 4.36L17.95 4.39L17.96 4.4C18.01 4.43 18.05 4.46 18.09 4.49L18.16 4.54L18.21 4.58L18.25 4.61L18.32 4.66L18.39 4.71L18.42 4.74L18.46 4.77L18.52 4.83L18.59 4.88L18.65 4.93C19.21 5.41 19.72 5.94 20.16 6.53L8.76 3.48L8.81 3.46L8.86 3.44L8.93 3.42L8.99 3.39C9.08 3.35 9.17 3.32 9.26 3.28L9.34 3.26L9.41 3.23L9.48 3.21L9.55 3.18C9.62 3.16 9.69 3.14 9.76 3.12L9.83 3.09L9.9 3.07L9.98 3.05L10.05 3.03L10.13 3.01L10.2 2.99L10.27 2.98L10.34 2.96L10.41 2.94L10.48 2.92L10.56 2.91L10.63 2.89L10.71 2.88L10.78 2.86L10.86 2.85L10.93 2.84L11.01 2.82L11.08 2.81L11.16 2.8L11.23 2.79L11.31 2.78L11.38 2.77L11.46 2.76L11.54 2.75L11.62 2.75C11.69 2.74 11.77 2.73 11.84 2.73L11.92 2.72L11.99 2.72L12.08 2.71L12.15 2.71L12.23 2.71L12.31 2.7L12.39 2.7L12.54 2.7L12.54 2.7L12.62 2.7L12.68 2.7L12.74 2.7Z"/></symbol><symbol id="lg-minimax" viewBox="0 0 24 24"><path d="M17.5 16.64C17.56 16.73 17.65 16.82 17.75 16.87C17.85 16.93 17.96 16.96 18.08 16.96C18.2 16.96 18.31 16.93 18.41 16.87C18.51 16.82 18.6 16.73 18.66 16.64C18.72 16.54 18.76 16.42 18.76 16.31L18.76 9.46C18.76 9.21 18.81 8.96 18.91 8.74C19 8.51 19.14 8.3 19.32 8.12C19.5 7.95 19.71 7.81 19.94 7.72C20.17 7.63 20.41 7.58 20.66 7.58C20.91 7.58 21.15 7.63 21.38 7.72C21.61 7.81 21.82 7.95 22 8.13C22.18 8.3 22.32 8.51 22.41 8.74C22.51 8.96 22.56 9.21 22.56 9.46L22.56 15.47C22.56 15.58 22.53 15.68 22.48 15.77C22.42 15.86 22.35 15.93 22.26 15.99C22.17 16.04 22.07 16.07 21.96 16.06C21.88 16.07 21.8 16.05 21.73 16.02C21.66 15.99 21.59 15.95 21.54 15.89C21.48 15.84 21.44 15.77 21.41 15.7C21.38 15.63 21.36 15.55 21.36 15.47L21.36 9.46C21.36 9.37 21.34 9.28 21.31 9.19C21.27 9.11 21.22 9.03 21.16 8.97C21.09 8.9 21.01 8.85 20.93 8.82C20.84 8.78 20.75 8.76 20.66 8.76C20.57 8.76 20.48 8.78 20.39 8.82C20.31 8.85 20.23 8.9 20.16 8.97C20.1 9.03 20.05 9.11 20.01 9.19C19.98 9.28 19.96 9.37 19.96 9.46L19.96 16.31C19.96 16.55 19.91 16.8 19.81 17.02C19.72 17.25 19.58 17.45 19.4 17.62C19.23 17.8 19.02 17.93 18.8 18.03C18.57 18.12 18.33 18.17 18.08 18.16C17.84 18.17 17.59 18.12 17.36 18.03C17.14 17.93 16.93 17.8 16.76 17.62C16.58 17.45 16.44 17.25 16.35 17.02C16.25 16.8 16.2 16.55 16.2 16.31L16.2 4.85C16.2 4.73 16.16 4.61 16.1 4.5C16.03 4.4 15.94 4.31 15.83 4.25C15.72 4.19 15.6 4.16 15.48 4.16C15.36 4.16 15.24 4.19 15.13 4.25C15.02 4.31 14.93 4.4 14.86 4.5C14.8 4.61 14.76 4.72 14.76 4.85L14.76 19.43C14.76 19.75 14.67 20.08 14.5 20.36C14.34 20.64 14.1 20.88 13.81 21.04C13.53 21.2 13.21 21.29 12.88 21.28C12.63 21.29 12.39 21.24 12.16 21.14C11.94 21.05 11.73 20.92 11.56 20.74C11.38 20.57 11.24 20.37 11.15 20.14C11.05 19.91 11 19.67 11 19.43L11 17.65C11 17.33 11.27 17.06 11.6 17.06C11.93 17.06 12.2 17.33 12.2 17.65L12.2 19.43C12.2 19.67 12.33 19.89 12.54 20.01C12.75 20.13 13.01 20.13 13.22 20.01C13.29 19.97 13.35 19.92 13.4 19.86C13.45 19.8 13.49 19.73 13.52 19.66C13.55 19.58 13.56 19.5 13.56 19.43L13.56 4.85C13.56 3.8 14.42 2.95 15.48 2.95C16.54 2.95 17.4 3.8 17.4 4.85L17.4 16.31C17.4 16.42 17.44 16.54 17.5 16.64ZM12.15 15.64C12.12 15.71 12.08 15.78 12.02 15.83C11.96 15.88 11.9 15.93 11.83 15.96C11.76 15.99 11.68 16 11.6 16C11.52 16 11.44 15.99 11.37 15.96C11.3 15.93 11.23 15.88 11.18 15.83C11.12 15.78 11.08 15.71 11.05 15.64C11.02 15.57 11 15.49 11 15.41L11 4.85C11 4.72 10.97 4.6 10.9 4.49C10.84 4.38 10.75 4.29 10.64 4.23C10.53 4.17 10.4 4.13 10.28 4.13C10.15 4.13 10.03 4.17 9.92 4.23C9.81 4.29 9.72 4.38 9.65 4.49C9.59 4.6 9.56 4.72 9.55 4.85L9.55 17.69C9.55 18.02 9.46 18.35 9.3 18.64C9.13 18.92 8.89 19.16 8.6 19.32C8.31 19.49 7.99 19.57 7.66 19.57C7.33 19.57 7 19.49 6.71 19.32C6.42 19.16 6.18 18.92 6.02 18.64C5.85 18.35 5.76 18.02 5.76 17.69L5.76 9.46C5.76 9.37 5.74 9.28 5.71 9.19C5.67 9.11 5.62 9.03 5.55 8.97C5.49 8.9 5.41 8.85 5.33 8.82C5.24 8.78 5.15 8.76 5.06 8.76C4.96 8.76 4.88 8.78 4.79 8.82C4.71 8.85 4.63 8.9 4.56 8.97C4.5 9.03 4.45 9.11 4.41 9.19C4.37 9.28 4.36 9.37 4.36 9.46L4.36 12.94C4.35 13.19 4.3 13.44 4.21 13.66C4.11 13.89 3.97 14.1 3.79 14.27C3.62 14.45 3.41 14.59 3.18 14.68C2.95 14.77 2.71 14.82 2.46 14.82C2.21 14.82 1.96 14.77 1.73 14.68C1.5 14.59 1.29 14.45 1.12 14.27C0.94 14.1 0.8 13.89 0.71 13.66C0.61 13.44 0.56 13.19 0.56 12.94L0.56 11.68C0.56 11.35 0.83 11.09 1.16 11.09C1.49 11.09 1.75 11.35 1.75 11.68L1.75 12.94C1.75 13.32 2.07 13.64 2.46 13.64C2.84 13.64 3.16 13.32 3.16 12.94L3.16 9.46C3.16 9.13 3.25 8.8 3.42 8.52C3.58 8.23 3.82 7.99 4.11 7.83C4.4 7.66 4.72 7.58 5.06 7.58C5.39 7.58 5.71 7.66 6 7.83C6.29 7.99 6.53 8.23 6.7 8.52C6.86 8.8 6.95 9.13 6.96 9.46L6.96 17.69C6.96 18.08 7.27 18.39 7.66 18.39C8.05 18.39 8.36 18.08 8.36 17.69L8.36 4.85C8.36 3.8 9.22 2.95 10.28 2.95C11.34 2.95 12.2 3.8 12.2 4.85L12.2 15.41C12.2 15.49 12.18 15.57 12.15 15.64Z"/></symbol><symbol id="lg-bytedance" viewBox="0 0 24 24"><path d="M18.79 2.62C18.86 2.64 19.53 2.81 20.27 3C21.02 3.19 21.76 3.38 21.91 3.42L22.19 3.49L22.18 11.54L22.16 19.59L20.63 19.98C19.79 20.2 19 20.39 18.88 20.43L18.66 20.48L18.66 11.52C18.66 3.04 18.66 2.58 18.79 2.62ZM1.51 11.55C1.51 7.16 1.53 3.56 1.57 3.56C1.6 3.56 2.39 3.75 3.33 3.99L5.04 4.42L5.04 11.55C5.04 15.46 5.03 18.67 5.01 18.67C4.99 18.67 4.2 18.87 3.25 19.11L1.51 19.55L1.51 11.55ZM13.02 16.85L13.02 9.21L14.73 8.77C15.67 8.53 16.46 8.34 16.5 8.35C16.53 8.35 16.55 10.45 16.55 13.02L16.55 17.69L16.39 17.69C16.29 17.69 15.49 17.49 14.62 17.27L14.62 17.27L13.02 16.85ZM7.21 10.66C7.24 10.66 8.03 10.85 8.98 11.09L10.69 11.52L10.67 15.33L10.65 19.14L9.11 19.53C8.27 19.75 7.48 19.95 7.37 19.98L7.15 20.03L7.15 15.35C7.15 12.77 7.17 10.66 7.21 10.66Z"/></symbol><symbol id="lg-xiaomi" viewBox="0 0 24 24"><path d="M18.57 5.41C20.14 6.98 20.3 9.24 20.3 12C20.3 14.75 20.14 17.01 18.57 18.58C17 20.14 14.75 20.3 11.99 20.3C9.23 20.3 6.97 20.14 5.4 18.58C3.83 17.01 3.67 14.75 3.67 12C3.67 9.24 3.83 6.98 5.4 5.42C6.97 3.85 9.23 3.67 11.99 3.67C14.74 3.67 17 3.85 18.57 5.41ZM7.02 8.82C7 8.83 6.99 8.84 6.98 8.86C6.97 8.87 6.97 8.89 6.97 8.91L6.97 15.07C6.97 15.09 6.97 15.11 6.98 15.12C6.99 15.14 7 15.15 7.02 15.16C7.04 15.17 7.05 15.17 7.07 15.17L8.42 15.17C8.44 15.17 8.45 15.17 8.46 15.16C8.47 15.16 8.49 15.15 8.5 15.14C8.51 15.13 8.51 15.12 8.52 15.11C8.53 15.1 8.53 15.08 8.53 15.07L8.53 10.23C8.53 10.22 8.53 10.2 8.54 10.18C8.55 10.17 8.56 10.15 8.58 10.15C8.6 10.14 8.61 10.13 8.63 10.13L11.08 10.13C11.56 10.14 12.02 10.2 12.27 10.45C12.56 10.74 12.59 11.31 12.59 11.87L12.59 15.07C12.59 15.08 12.6 15.1 12.6 15.11C12.61 15.12 12.61 15.13 12.62 15.14C12.63 15.15 12.64 15.16 12.66 15.16C12.67 15.17 12.68 15.17 12.7 15.17L14.05 15.17C14.06 15.17 14.08 15.17 14.1 15.16C14.11 15.15 14.13 15.14 14.14 15.12C14.15 15.11 14.15 15.09 14.15 15.07L14.15 11.93C14.15 10.93 14.09 9.89 13.58 9.38C13.05 8.85 11.99 8.8 10.97 8.8L7.07 8.8C7.05 8.8 7.04 8.81 7.02 8.82ZM15.44 8.81C15.42 8.82 15.41 8.83 15.4 8.84C15.39 8.85 15.38 8.86 15.38 8.87C15.38 8.88 15.37 8.89 15.37 8.91L15.37 15.07C15.37 15.09 15.38 15.11 15.39 15.12C15.39 15.14 15.41 15.15 15.42 15.16C15.44 15.17 15.46 15.17 15.48 15.17L16.83 15.17C16.84 15.17 16.86 15.17 16.88 15.16C16.89 15.15 16.91 15.14 16.92 15.12C16.93 15.11 16.93 15.09 16.93 15.07L16.93 8.91C16.93 8.89 16.93 8.87 16.92 8.86C16.91 8.84 16.89 8.83 16.88 8.82C16.86 8.81 16.84 8.8 16.83 8.8L15.48 8.8C15.46 8.8 15.45 8.81 15.44 8.81ZM9.8 11.27C9.79 11.28 9.77 11.29 9.76 11.31C9.75 11.33 9.75 11.34 9.75 11.36L9.75 15.07C9.75 15.08 9.75 15.1 9.76 15.11C9.76 15.12 9.77 15.13 9.78 15.14C9.79 15.15 9.8 15.16 9.81 15.16C9.83 15.17 9.84 15.17 9.85 15.17L11.27 15.17C11.29 15.17 11.31 15.17 11.32 15.16C11.34 15.15 11.35 15.14 11.36 15.12C11.37 15.11 11.37 15.09 11.37 15.07L11.37 11.36C11.37 11.3 11.33 11.26 11.27 11.26L9.85 11.26C9.84 11.26 9.82 11.26 9.8 11.27Z"/></symbol><symbol id="lg-microsoft" viewBox="0 0 24 24"><path d="M4.4 4.4L11.61 4.4L11.61 11.61L4.4 11.61L4.4 4.4ZM12.39 4.4L19.6 4.4L19.6 11.61L12.39 11.61L12.39 4.4ZM4.4 12.39L11.61 12.39L11.61 19.6L4.4 19.6L4.4 12.39ZM12.39 12.39L19.6 12.39L19.6 19.6L12.39 19.6L12.39 12.39Z"/></symbol><symbol id="lg-bfl" viewBox="0 0 24 24"><path d="M19.53 19.04L19.53 17.12L16.91 13.42L14.3 17.12L14.3 19.04L1.22 19.04L12.23 3.46L16.91 10.1L16.91 10.1L16.91 10.1L16.91 10.1L16.91 10.1L23.22 19.04L19.53 19.04ZM4.93 17.12L7.28 17.12L12.23 10.1L14.57 10.1L9.62 17.12L11.97 17.12L16.91 10.1L14.57 10.1L12.23 6.79L4.93 17.12Z"/></symbol><symbol id="ic-agents" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><rect x="6" y="1.75" width="4" height="4"/><rect x="1.75" y="10.25" width="4" height="4"/><rect x="10.25" y="10.25" width="4" height="4"/><path d="M8 5.75V8M3.75 10.25V8H12.25V10.25"/></symbol><symbol id="ic-search" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="6.75" cy="6.75" r="4.5"/><path d="M10.25 10.25L14.25 14.25"/></symbol><symbol id="ic-reasoning" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 3.25H6.5L9.5 12.75H14"/><path d="M9.5 3.25H14"/><path d="M2 12.75H5"/></symbol><symbol id="ic-writing" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 3.25H14M2 7.25H9M2 11.25H6"/><path d="M10 13.75L14.25 9.5"/></symbol><symbol id="ic-factuality" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><rect x="1.75" y="1.75" width="12.5" height="12.5"/><path d="M4.75 8.25L7 10.5L11.5 5.5"/></symbol><symbol id="ic-coding" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 4L1.75 8L5 12M11 4L14.25 8L11 12M9.25 2.75L6.75 13.25"/></symbol><symbol id="ic-instructionFollowing" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M6.5 3.25H14.25M6.5 8H14.25M6.5 12.75H14.25"/><path d="M1.75 3.25L2.75 4.25L4.5 2.25"/><path d="M1.75 8H4.25M1.75 12.75H4.25"/></symbol><symbol id="ic-vision" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M1 8C2.75 4.75 5.25 3.25 8 3.25C10.75 3.25 13.25 4.75 15 8C13.25 11.25 10.75 12.75 8 12.75C5.25 12.75 2.75 11.25 1 8Z"/><circle cx="8" cy="8" r="2"/></symbol><symbol id="ic-imageGeneration" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><rect x="1.75" y="2.75" width="12.5" height="10.5"/><path d="M1.75 11L6 7L9.5 10.5L11.25 8.75L14.25 11.75"/><rect x="10" y="4.75" width="1.5" height="1.5" fill="currentColor" stroke="none"/></symbol><symbol id="ic-ability" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="8" cy="8" r="6.25"/><circle cx="8" cy="8" r="2.75"/><rect x="7.25" y="7.25" width="1.5" height="1.5" fill="currentColor" stroke="none"/></symbol><symbol id="ic-price" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M11.25 4.25H6.5C5.25 4.25 4.25 5 4.25 6.125C4.25 7.25 5.25 8 6.5 8H9.5C10.75 8 11.75 8.75 11.75 9.875C11.75 11 10.75 11.75 9.5 11.75H4.75"/><path d="M8 1.75V4.25M8 11.75V14.25"/></symbol><symbol id="ic-speed" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="8" cy="9" r="5.25"/><path d="M8 9V6M6 1.75H10M12.5 3.5L13.5 4.5"/></symbol></defs></svg>
+<svg class="lg-sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs><symbol id="lg-claude" viewBox="0 0 24 24"><path d="M9.56 13.32L9.63 13.11L9.56 13L9.36 13L8.67 12.96L6.3 12.9L4.25 12.81L2.27 12.7L1.77 12.6L1.3 11.98L1.35 11.67L1.77 11.39L2.37 11.44L3.7 11.53L5.7 11.67L7.14 11.76L9.29 11.98L9.63 11.98L9.68 11.84L9.56 11.76L9.47 11.67L7.41 10.27L5.17 8.79L4 7.94L3.36 7.51L3.04 7.11L2.91 6.22L3.48 5.59L4.25 5.64L4.45 5.7L5.23 6.3L6.91 7.59L9.09 9.2L9.41 9.46L9.54 9.37L9.55 9.31L9.41 9.07L8.22 6.92L6.95 4.74L6.39 3.84L6.24 3.3C6.18 3.09 6.15 2.87 6.15 2.66L6.8 1.77L7.17 1.65L8.04 1.77L8.41 2.09L8.95 3.33L9.83 5.28L11.19 7.94L11.59 8.72L11.8 9.45L11.88 9.68L12.02 9.68L12.02 9.55L12.13 8.05L12.34 6.22L12.54 3.85L12.62 3.19L12.94 2.39L13.6 1.96L14.11 2.21L14.53 2.81L14.47 3.19L14.22 4.82L13.73 7.36L13.41 9.06L13.6 9.06L13.81 8.85L14.68 7.71L16.12 5.9L16.76 5.18L17.51 4.39L17.99 4.01L18.89 4.01L19.56 5L19.26 6.02L18.33 7.2L17.56 8.2L16.45 9.69L15.76 10.88L15.82 10.98L15.98 10.96L18.49 10.43L19.84 10.19L21.45 9.91L22.18 10.25L22.26 10.6L21.98 11.3L20.25 11.73L18.23 12.13L15.21 12.85L15.18 12.87L15.22 12.93L16.58 13.05L17.16 13.09L18.58 13.09L21.23 13.28L21.92 13.74L22.33 14.3L22.26 14.73L21.2 15.27L19.76 14.93L16.41 14.13L15.26 13.84L15.1 13.84L15.1 13.94L16.05 14.88L17.81 16.46L20.01 18.5L20.12 19.01L19.84 19.41L19.54 19.37L17.61 17.91L16.86 17.26L15.18 15.84L15.06 15.84L15.06 15.99L15.45 16.56L17.51 19.64L17.61 20.59L17.47 20.9L16.93 21.09L16.35 20.98L15.14 19.29L13.9 17.39L12.9 15.69L12.78 15.76L12.19 22.12L11.91 22.44L11.27 22.69L10.74 22.28L10.46 21.63L10.74 20.34L11.08 18.65L11.36 17.31L11.61 15.64L11.76 15.09L11.75 15.05L11.62 15.07L10.37 16.79L8.46 19.37L6.94 20.99L6.58 21.13L5.95 20.81L6.01 20.23L6.36 19.71L8.46 17.05L9.72 15.4L10.53 14.45L10.53 14.31L10.48 14.31L4.92 17.92L3.93 18.05L3.5 17.65L3.56 16.99L3.76 16.78L5.43 15.63L5.42 15.64L9.56 13.32Z"/></symbol><symbol id="lg-openai" viewBox="0 0 24 24"><path d="M13.7 21.96C13.04 21.96 12.38 21.83 11.76 21.57C11.14 21.32 10.58 20.95 10.11 20.48C9.57 20.67 9.04 20.75 8.48 20.75C5.73 20.75 3.34 18.55 3.34 15.61C3.34 15.18 3.4 14.75 3.51 14.31C2.4 13.31 1.78 11.91 1.78 10.47C1.78 8.27 3.26 6.11 5.56 5.52C5.72 4.75 6.05 4.02 6.53 3.4C7.01 2.78 7.63 2.28 8.33 1.93C9.04 1.59 9.81 1.41 10.6 1.41C11.27 1.41 11.93 1.54 12.54 1.79C13.16 2.05 13.72 2.42 14.2 2.89C14.73 2.7 15.27 2.62 15.82 2.62C18.57 2.62 20.96 4.82 20.96 7.76C20.96 8.19 20.9 8.62 20.79 9.05C21.9 10.06 22.52 11.46 22.52 12.9C22.52 15.1 21.04 17.25 18.74 17.85C18.58 18.62 18.25 19.34 17.77 19.96C17.29 20.59 16.67 21.09 15.97 21.43C15.26 21.78 14.49 21.96 13.7 21.96L13.7 21.96ZM13.7 20.73C15.98 20.73 17.69 19.06 17.69 16.86L17.69 12.34C17.69 12.18 17.63 12.05 17.48 11.97L15.78 10.98L15.78 16.95C15.78 17.23 15.65 17.44 15.41 17.58L11.36 19.93C12.04 20.44 12.84 20.73 13.7 20.73L13.7 20.73ZM8.52 6.42C8.52 6.13 8.65 5.93 8.89 5.79L12.94 3.44C12.26 2.93 11.46 2.64 10.6 2.64C8.32 2.64 6.63 4.3 6.63 6.5L6.63 11.03C6.63 11.19 6.69 11.31 6.84 11.4L8.52 12.38L8.52 6.42ZM10.43 19.06L14.36 16.8C14.5 16.72 14.56 16.6 14.56 16.43L14.56 14.48L9.4 17.46C9.16 17.6 8.91 17.6 8.67 17.46L4.62 15.12C4.6 15.28 4.58 15.45 4.58 15.61C4.58 17.77 6.28 19.52 8.6 19.52C9.26 19.52 9.9 19.37 10.43 19.06ZM8.96 16.2C9.01 16.21 9.06 16.21 9.11 16.2C9.16 16.19 9.2 16.17 9.24 16.14L10.93 15.18L5.79 12.2C5.54 12.05 5.42 11.85 5.42 11.56L5.42 6.87C4.94 7.07 4.51 7.35 4.15 7.71C3.79 8.08 3.5 8.51 3.31 8.98C3.11 9.45 3.01 9.96 3.01 10.47C3.01 11.83 3.77 13.22 4.9 13.88L8.83 16.14C8.87 16.17 8.92 16.19 8.96 16.2ZM18.9 16.5C20.36 15.9 21.29 14.46 21.29 12.9C21.29 11.54 20.53 10.14 19.39 9.48L15.47 7.22C15.43 7.2 15.38 7.18 15.34 7.17C15.29 7.16 15.24 7.16 15.19 7.17C15.14 7.18 15.1 7.2 15.06 7.22L13.37 8.19L18.53 11.19C18.78 11.34 18.9 11.54 18.9 11.83L18.9 16.49L18.9 16.5ZM14.89 5.89C14.97 5.84 15.05 5.81 15.13 5.79C15.22 5.78 15.31 5.78 15.39 5.79C15.48 5.81 15.56 5.84 15.63 5.89L19.7 8.27C19.73 8.11 19.73 7.94 19.73 7.8C19.73 5.76 18.16 3.85 15.7 3.85C15.04 3.85 14.4 4 13.87 4.3L9.94 6.57C9.8 6.65 9.73 6.77 9.73 6.93L9.73 8.89L14.89 5.89Z"/></symbol><symbol id="lg-gemini" viewBox="0 0 24 24"><path d="M16.17 7.83C17.45 9.11 18.96 10.13 20.62 10.83C21.27 11.11 21.93 11.34 22.62 11.51C22.69 11.53 22.76 11.56 22.82 11.61C22.87 11.66 22.92 11.72 22.95 11.79C22.98 11.85 23 11.93 23 12C23 12.07 22.98 12.15 22.95 12.21C22.92 12.28 22.87 12.34 22.82 12.39C22.76 12.44 22.69 12.47 22.62 12.49C21.41 12.8 20.24 13.27 19.15 13.89C18.06 14.52 17.05 15.28 16.17 16.16C14.89 17.44 13.87 18.95 13.16 20.62C12.88 21.27 12.66 21.93 12.49 22.62C12.47 22.69 12.44 22.76 12.39 22.82C12.34 22.87 12.28 22.92 12.22 22.95C12.15 22.98 12.07 23 12 23C11.93 23 11.85 22.98 11.79 22.95C11.72 22.92 11.66 22.87 11.61 22.82C11.56 22.76 11.53 22.69 11.51 22.62C11.2 21.4 10.73 20.24 10.11 19.15C9.48 18.06 8.72 17.05 7.83 16.16C6.56 14.89 5.04 13.87 3.38 13.16C2.73 12.88 2.07 12.66 1.38 12.49C1.31 12.47 1.24 12.44 1.18 12.39C1.13 12.34 1.08 12.28 1.05 12.21C1.02 12.15 1 12.07 1 12C1 11.93 1.02 11.85 1.05 11.78C1.08 11.72 1.13 11.66 1.18 11.61C1.24 11.56 1.31 11.53 1.38 11.51C2.07 11.34 2.73 11.11 3.38 10.83C5.04 10.13 6.56 9.11 7.83 7.83C8.72 6.95 9.48 5.94 10.11 4.85C10.73 3.76 11.2 2.6 11.51 1.38C11.53 1.31 11.57 1.24 11.61 1.18C11.66 1.13 11.72 1.08 11.79 1.05C11.85 1.02 11.93 1 12 1C12.07 1 12.15 1.02 12.21 1.05C12.28 1.08 12.34 1.13 12.39 1.18C12.44 1.24 12.47 1.31 12.49 1.38C12.8 2.6 13.27 3.76 13.89 4.85C14.52 5.94 15.28 6.95 16.17 7.83Z"/></symbol><symbol id="lg-copilot" viewBox="0 0 24 24"><path d="M8.42 19.55C8.25 19.34 8.13 19.11 8.05 18.85L7.54 17.03C7.46 16.77 7.33 16.53 7.15 16.32C6.98 16.12 6.76 15.95 6.51 15.84C6.26 15.72 6 15.66 5.72 15.66L5.35 15.66L5.28 15.66C1.93 15.66 3.08 11.72 3.97 8.78L4.09 8.38C4.83 6.04 5.93 3.8 7.7 3.8L14.31 3.8C15.15 3.8 15.88 4.36 16.12 5.17L16.65 7C16.72 7.25 16.84 7.47 17.01 7.67C17.17 7.87 17.37 8.04 17.6 8.15C17.82 8.27 18.07 8.34 18.33 8.36L18.44 8.36L18.84 8.37C21.49 8.45 21.14 11.16 20.45 13.74L20.36 14.05C20.25 14.46 20.13 14.86 20.01 15.25L19.89 15.64C19.15 17.99 18.05 20.22 16.28 20.22L9.75 20.22L9.81 20.22C9.54 20.21 9.28 20.15 9.04 20.03C8.8 19.91 8.59 19.75 8.42 19.55ZM11.66 8.94C11.48 9.12 11.35 9.34 11.26 9.57L9.91 14.28C9.84 14.54 9.71 14.79 9.53 15C9.35 15.2 9.13 15.37 8.88 15.48C8.64 15.6 8.37 15.66 8.1 15.66L10.97 15.66C11.76 15.66 12.46 15.17 12.73 14.44L14.07 9.74C14.15 9.48 14.28 9.24 14.45 9.03C14.63 8.82 14.85 8.65 15.1 8.54C15.34 8.42 15.61 8.37 15.89 8.36L13.01 8.37C12.76 8.37 12.51 8.42 12.28 8.52C12.04 8.61 11.83 8.76 11.66 8.94Z"/></symbol><symbol id="lg-perplexity" viewBox="0 0 24 24"><path d="M21.61 17.27L18.92 17.27L18.92 23.12L12.47 17.44L12.47 23.08L11.47 23.08L11.47 17.44L5.01 23.12L5.01 17.2L2.36 17.2L2.36 7.71L5 7.71L5 1.12L11.47 7.08L11.47 1.3L12.47 1.3L12.47 7.25L19.12 1.12L19.12 1.12L19.12 1.12L19.12 1.12L19.12 7.79L21.61 7.79L21.61 17.27ZM11.46 16.12L11.46 9.34L6.01 14.29L6.01 20.92L11.46 16.12ZM17.92 14.36L12.47 9.41L12.47 16.12L17.92 20.92L17.92 14.36ZM5.01 16.21L5.01 13.85L10.68 8.7L3.36 8.7L3.36 16.21L5.01 16.21ZM13.32 8.78L18.92 13.85L18.92 16.29L20.61 16.29L20.61 8.78L13.32 8.78ZM6 3.39L6 7.71L10.69 7.71L6 3.39ZM18.12 3.39L13.43 7.71L18.12 7.71L18.12 3.39ZM10.69 8.7L10.68 8.7L10.69 8.7L10.69 8.7Z"/></symbol><symbol id="lg-deepseek" viewBox="0 0 24 24"><path d="M23.08 5.51C23.3 5.62 23.32 5.84 23.31 6.05C23.18 7.42 22.67 8.57 21.39 9.27C20.95 9.51 20.47 9.66 19.97 9.71C19.79 9.72 19.76 9.79 19.76 9.94C19.76 10.02 19.77 10.08 19.77 10.15C19.78 10.32 19.79 10.49 19.76 10.72C19.17 14.71 17.66 15.95 16.65 17.14C16.82 17.27 16.84 17.27 16.96 17.31C17.12 17.36 17.46 17.46 18.59 17.98C18.83 18.1 18.88 18.72 18.2 18.87C17.77 18.95 17.22 19.04 16.64 18.98C15.89 18.92 15.44 18.83 15.01 18.62C13.3 20.06 11.79 20.25 10.43 20.32C8.19 20.46 6.23 19.77 4.53 18.36C2.89 17.01 1.82 15.27 1.45 13.18C1.1 11.2 1.39 9.29 2.6 7.62C3.62 6.22 5 5.4 6.73 5.21C7.61 5.11 8.5 5.14 9.37 5.3C9.52 5.27 9.66 5.23 9.8 5.18C10.73 4.82 11.46 4.55 12.26 4.55C13.06 4.55 13.22 4.85 12.97 4.94C12.74 5.03 11.71 5.75 12.62 6.63C12.83 6.76 13.04 6.91 13.25 7.06C14.13 7.71 14.84 8.55 15.63 9.31C16.09 9.77 16.63 10.14 17.22 10.39C17.4 10.46 17.47 10.43 17.52 10.27C17.6 10.01 17.69 9.76 17.77 9.5C17.81 9.38 17.77 9.29 17.65 9.21C16.54 8.46 15.99 7.41 15.96 6.09C15.95 5.51 16.06 4.93 16.35 4.41C16.36 4.4 16.36 4.39 16.36 4.38C16.43 4.26 16.5 4.13 16.68 4.16C16.84 4.18 16.89 4.33 16.95 4.48C17.02 4.72 17.07 4.96 17.23 5.19C17.45 5.5 17.78 5.64 18.1 5.78C18.72 6.06 19.12 6.48 19.24 7.2C19.82 6.62 20.47 6.38 21.23 6.42C21.75 6.45 22.14 6.21 22.48 5.85C22.52 5.81 22.56 5.76 22.61 5.72C22.64 5.7 22.67 5.67 22.7 5.63C22.8 5.53 22.9 5.42 23.08 5.51L23.08 5.51ZM14.73 18.46C14.48 18.32 14.23 18.11 13.91 17.84C13.01 17.08 12.3 16.15 11.64 15.17C11.02 14.25 10.41 13.31 9.62 12.52C8.22 11.14 6.56 10.27 4.61 9.98C4.14 9.91 3.67 9.93 3.2 10.02C2.85 10.08 2.75 10.2 2.77 10.56C2.83 12.02 3.25 13.39 3.96 14.67C4.69 15.99 5.73 16.96 6.98 17.7C7.03 17.72 8.1 18.23 8.72 17.85C9 17.68 8.93 17.45 8.82 17.3C8.67 17.07 8.57 16.89 8.48 16.62C8.41 16.35 8.34 15.94 8.7 15.92C9.08 15.9 10.01 16.4 11.93 17.9C12.76 18.57 13.99 18.55 14.73 18.46ZM15.92 13.05C15.82 12.76 15.68 12.51 15.52 12.27C15.31 11.96 15.25 11.85 14.89 11.43C14.54 11.09 14.29 10.85 13.97 10.71C13.62 10.57 13.25 10.52 12.92 10.7C12.89 10.72 12.77 10.84 12.74 10.89C12.66 11.05 12.75 11.17 12.85 11.22C12.92 11.26 13 11.29 13.08 11.29C13.32 11.29 13.54 11.33 13.71 11.47C13.92 11.65 13.99 11.84 13.93 12.14C13.89 12.32 13.89 12.5 13.92 12.68C13.99 13.05 14.17 13.16 14.42 13.38C14.53 13.45 14.64 13.52 14.77 13.55C14.89 13.59 15.02 13.61 15.15 13.61C15.33 13.6 15.51 13.54 15.69 13.46C15.91 13.37 15.98 13.23 15.92 13.05ZM12.84 12C12.84 12.04 12.85 12.07 12.86 12.11C12.88 12.14 12.9 12.17 12.92 12.2C12.95 12.22 12.98 12.24 13.02 12.26C13.05 12.27 13.09 12.28 13.12 12.28C13.16 12.28 13.2 12.27 13.23 12.26C13.27 12.25 13.3 12.22 13.32 12.2C13.35 12.17 13.37 12.14 13.38 12.11C13.4 12.07 13.41 12.04 13.41 12C13.41 11.96 13.4 11.92 13.38 11.89C13.37 11.85 13.35 11.82 13.32 11.79C13.29 11.77 13.26 11.75 13.22 11.73C13.18 11.72 13.13 11.71 13.09 11.72C13.04 11.72 13 11.74 12.96 11.77C12.93 11.79 12.9 11.83 12.88 11.87C12.85 11.91 12.84 11.95 12.84 12L12.84 12Z"/></symbol><symbol id="lg-mistral" viewBox="0 0 24 24"><path d="M10.47 6.87L10.47 9.93L13.53 9.93L13.53 6.87L16.59 6.87L16.59 3.81L19.66 3.81L19.66 16.06L22.72 16.06L22.72 19.12L13.53 19.12L13.53 16.06L10.47 16.06L10.47 19.12L1.28 19.12L1.28 16.06L4.34 16.06L4.34 3.81L7.41 3.81L7.41 6.87L10.47 6.87ZM7.4 16.06L10.47 16.06L10.47 13L7.4 13L7.4 16.06ZM13.53 13L13.53 16.06L16.59 16.06L16.59 13L13.53 13Z"/></symbol><symbol id="lg-qwen" viewBox="0 0 24 24"><path d="M13.84 3.55C13.86 3.56 13.88 3.56 13.9 3.56L19.42 3.56C19.59 3.56 19.74 3.67 19.86 3.89L21.3 6.44C21.49 6.78 21.54 6.92 21.33 7.27C21.07 7.7 20.82 8.13 20.57 8.56L20.21 9.22C20.19 9.25 20.17 9.28 20.16 9.31C20.07 9.45 20.02 9.54 20.17 9.73L22.8 14.33C22.97 14.63 22.91 14.82 22.76 15.1C22.33 15.88 21.88 16.65 21.43 17.42C21.28 17.69 21.08 17.8 20.76 17.79C19.99 17.77 19.22 17.78 18.45 17.81C18.43 17.81 18.41 17.81 18.4 17.82C18.39 17.83 18.38 17.84 18.37 17.86C17.48 19.43 16.58 21 15.68 22.56C15.51 22.86 15.3 22.92 14.96 22.93C13.97 22.93 12.97 22.93 11.96 22.93C11.9 22.93 11.84 22.92 11.78 22.89C11.72 22.87 11.67 22.84 11.62 22.8C11.57 22.76 11.53 22.71 11.5 22.66L10.18 20.35C10.17 20.34 10.16 20.33 10.15 20.32C10.15 20.32 10.14 20.31 10.12 20.31C10.12 20.3 10.1 20.3 10.09 20.3L5.01 20.3C4.72 20.33 4.46 20.3 4.21 20.21L2.62 17.46C2.57 17.38 2.54 17.29 2.54 17.19C2.54 17.1 2.57 17 2.61 16.92L3.81 14.82C3.83 14.79 3.84 14.75 3.84 14.72C3.84 14.69 3.83 14.65 3.81 14.62C3.19 13.54 2.57 12.46 1.95 11.37L1.17 9.98C1.01 9.68 0.99 9.49 1.26 9.03C1.72 8.22 2.18 7.41 2.64 6.61C2.77 6.37 2.94 6.28 3.22 6.27C4.08 6.27 4.93 6.27 5.79 6.27C5.8 6.27 5.82 6.27 5.83 6.26C5.85 6.26 5.86 6.25 5.87 6.24C5.88 6.23 5.89 6.22 5.9 6.21L8.68 1.35C8.71 1.3 8.75 1.25 8.79 1.22C8.84 1.18 8.88 1.15 8.94 1.13C8.99 1.11 9.05 1.1 9.1 1.1C9.62 1.1 10.15 1.1 10.68 1.1L11.69 1.07C12.02 1.07 12.4 1.11 12.58 1.41C12.97 2.1 13.36 2.79 13.75 3.47C13.76 3.49 13.77 3.51 13.79 3.52C13.8 3.54 13.82 3.55 13.84 3.55ZM9.12 1.84L6.27 6.82C6.26 6.85 6.24 6.87 6.21 6.88C6.19 6.89 6.17 6.9 6.14 6.9L3.29 6.9C3.23 6.9 3.22 6.93 3.25 6.97L9.02 17.06C9.05 17.11 9.03 17.12 8.99 17.13L6.21 17.14C6.18 17.14 6.16 17.14 6.13 17.15C6.11 17.16 6.08 17.18 6.06 17.19C6.04 17.21 6.03 17.23 6.01 17.26L4.7 19.55C4.66 19.63 4.68 19.67 4.77 19.67L10.45 19.68C10.49 19.68 10.53 19.7 10.55 19.74L11.94 22.18C11.99 22.25 12.04 22.26 12.08 22.18L17.05 13.47L17.83 12.1C17.84 12.09 17.84 12.09 17.85 12.08C17.85 12.08 17.86 12.07 17.87 12.07C17.88 12.07 17.88 12.07 17.89 12.07C17.9 12.07 17.91 12.08 17.91 12.08C17.92 12.09 17.92 12.09 17.93 12.1L19.34 14.61C19.35 14.63 19.36 14.64 19.37 14.65C19.38 14.65 19.39 14.66 19.41 14.67C19.42 14.67 19.43 14.68 19.45 14.68L22.19 14.65C22.2 14.65 22.2 14.65 22.21 14.65C22.21 14.65 22.21 14.65 22.22 14.65C22.22 14.64 22.23 14.64 22.23 14.63C22.23 14.63 22.23 14.62 22.23 14.62C22.23 14.61 22.23 14.6 22.23 14.6L19.35 9.54C19.34 9.53 19.34 9.52 19.33 9.51C19.33 9.49 19.33 9.48 19.33 9.47C19.34 9.46 19.34 9.44 19.35 9.43L19.64 8.93L20.75 6.96C20.77 6.92 20.76 6.9 20.72 6.9L9.2 6.9C9.14 6.9 9.13 6.88 9.15 6.83L10.58 4.34C10.59 4.33 10.59 4.31 10.59 4.3C10.6 4.29 10.6 4.27 10.59 4.26C10.59 4.25 10.59 4.24 10.58 4.22L9.22 1.84C9.22 1.84 9.21 1.83 9.21 1.83C9.2 1.82 9.2 1.82 9.19 1.82C9.19 1.81 9.18 1.81 9.17 1.81C9.16 1.81 9.16 1.81 9.15 1.82C9.14 1.82 9.14 1.82 9.13 1.83C9.13 1.83 9.12 1.84 9.12 1.84ZM12.03 15.85C12.03 15.86 12.02 15.86 12.02 15.86C12.01 15.87 12.01 15.87 12 15.87C11.99 15.88 11.99 15.88 11.98 15.88C11.97 15.88 11.96 15.88 11.95 15.87C11.94 15.87 11.94 15.86 11.93 15.85L8.5 9.86C8.48 9.82 8.49 9.8 8.53 9.8L8.74 9.79L15.42 9.78L15.42 9.78C15.46 9.78 15.48 9.8 15.45 9.84L14.63 11.29L12.03 15.85Z"/></symbol><symbol id="lg-this-mac" viewBox="0 0 24 24"><path d="M22.6 4.19Q23 4.89 23 5.69L23 15.69Q23 16.5 22.6 17.19Q22.2 17.89 21.5 18.29Q20.8 18.69 20 18.69L13 18.69L13 20.69L16 20.69Q17 20.69 17 21.69Q17 22.69 16 22.69L8 22.69Q7 22.69 7 21.69Q7 20.69 8 20.69L11 20.69L11 18.69L4 18.69Q3.2 18.69 2.5 18.29Q1.8 17.89 1.4 17.19Q1 16.5 1 15.69L1 5.69Q1 4.89 1.4 4.19Q1.8 3.5 2.5 3.1Q3.2 2.69 4 2.69L20 2.69Q20.8 2.69 21.5 3.1Q22.2 3.5 22.6 4.19ZM12 16.69L20 16.69Q20.27 16.69 20.5 16.56Q20.73 16.43 20.87 16.19Q21 15.96 21 15.69L21 5.69Q21 5.43 20.87 5.19Q20.73 4.96 20.5 4.83Q20.27 4.69 20 4.69L4 4.69Q3.73 4.69 3.5 4.83Q3.27 4.96 3.13 5.19Q3 5.43 3 5.69L3 15.69Q3 15.96 3.13 16.19Q3.27 16.43 3.5 16.56Q3.73 16.69 4 16.69L12 16.69ZM12 16.69Q11 16.69 11 17.69L11 18.69L13 18.69L13 17.69Q13 16.69 12 16.69Z"/></symbol><symbol id="lg-anthropic" viewBox="0 0 24 24"><path d="M13.34 19.3L12.11 16.13L5.81 16.13L4.58 19.3L1.21 19.3L7.23 4.2L7.23 4.2L10.69 4.2L16.71 19.3L13.34 19.3ZM19.91 19.3L13.89 4.2L17.19 4.2L23.21 19.3L19.91 19.3Z"/></symbol><symbol id="lg-google" viewBox="0 0 24 24"><path d="M12.32 5.9C11.51 5.9 10.7 6.07 9.95 6.4C9.2 6.73 8.53 7.21 7.97 7.81C7.42 8.42 7 9.13 6.73 9.9L6.73 9.9L6.73 9.9C6.53 10.5 6.41 11.14 6.41 11.8C6.41 12.45 6.53 13.09 6.74 13.71L6.74 13.71C7 14.48 7.42 15.19 7.98 15.79C8.53 16.39 9.2 16.88 9.95 17.2C10.7 17.53 11.51 17.7 12.32 17.7C13.79 17.7 14.9 17.31 15.73 16.74C17.04 15.84 17.62 14.51 17.73 13.62L12.32 13.62L12.32 10.05L21.54 10.05C21.68 10.65 21.75 11.22 21.75 12.02C21.75 14.95 20.68 17.41 18.82 19.09L18.82 19.09C17.2 20.57 14.97 21.42 12.32 21.42C8.48 21.42 5.17 19.26 3.56 16.12C2.89 14.82 2.51 13.35 2.51 11.8C2.51 10.3 2.87 8.82 3.55 7.48L3.56 7.48C5.17 4.34 8.48 2.18 12.32 2.18C14.97 2.18 17.19 3.13 18.89 4.68L16.12 7.33C15.41 6.68 14.17 5.9 12.32 5.9Z"/></symbol><symbol id="lg-spacexai" viewBox="0 0 24 24"><path d="M0.31 15.57C1.89 14.05 8.88 7.58 24 6.72L24 6.72C21.23 6.95 10.35 8.3 2.8 15.89L0 15.89L0.31 15.57ZM8 12.74C8.4 12.49 8.8 12.25 9.2 12.02L14.52 15.89L12.33 15.89L8 12.74ZM8.15 15.4L4.44 15.4C4.7 15.17 4.96 14.95 5.23 14.73L7.22 14.73L6.19 13.98C6.56 13.7 6.93 13.44 7.31 13.19L11.01 15.89L8.82 15.89L8.15 15.4ZM3.54 12.04L0.84 10.08L3.03 10.08L4.72 11.31C4.3 11.56 3.9 11.8 3.54 12.04Z"/></symbol><symbol id="lg-meta" viewBox="0 0 24 24"><path d="M13.79 6.83L14.07 6.52C15.06 5.47 16.15 4.75 17.45 4.75C18.61 4.75 19.7 5.26 20.63 6.13L20.82 6.32C22.4 7.92 23.48 10.6 23.6 13.62L23.61 13.97L23.61 14.2C23.61 15.56 23.36 16.71 22.87 17.56L22.74 17.77L22.64 17.91C22.37 18.29 22.04 18.6 21.66 18.83L21.41 18.95L21.34 18.99C21.25 19.03 21.15 19.07 21.06 19.1C20.67 19.23 20.26 19.29 19.85 19.29C19.38 19.29 18.95 19.23 18.55 19.09C17.99 18.91 17.49 18.58 16.98 18.08L16.77 17.86C16.09 17.13 15.38 16.07 14.5 14.61L13.21 12.42L12.71 11.6L11.11 14.45L10.79 14.98C8.7 18.52 7.46 19.29 5.76 19.29C4.66 19.29 3.75 18.91 3.09 18.22L2.94 18.05C2.5 17.53 2.18 16.86 1.99 16.06L1.93 15.77C1.86 15.38 1.82 14.99 1.8 14.6L1.8 14.26C1.8 13.59 1.85 12.91 1.96 12.24L2.05 11.72C2.32 10.32 2.8 9.03 3.44 7.94L3.63 7.63C4.7 5.97 6.17 4.85 7.83 4.76L8.07 4.75C9.81 4.75 11.26 5.6 13 7.82L13.26 7.48C13.43 7.25 13.61 7.04 13.79 6.83ZM15.31 7.66C14.91 8.08 14.51 8.63 14.07 9.3L14.31 9.66C14.47 9.91 14.64 10.17 14.81 10.44L15.08 10.87L16.34 13L16.98 14.01C17.51 14.85 17.91 15.46 18.26 15.9L18.45 16.14C18.71 16.43 18.93 16.63 19.16 16.75L19.25 16.8C19.45 16.89 19.66 16.92 19.9 16.92C20.06 16.92 20.22 16.9 20.37 16.86C20.68 16.76 20.93 16.56 21.11 16.28L21.2 16.13L21.27 15.98C21.44 15.56 21.53 15.02 21.53 14.36L21.53 13.95C21.45 11.34 20.67 9.07 19.53 7.77L19.37 7.6C18.76 6.98 18.05 6.62 17.3 6.62L17.14 6.63C16.57 6.67 16.03 6.96 15.49 7.48L15.31 7.66Z"/></symbol><symbol id="lg-alibaba" viewBox="0 0 24 24"><path d="M15.24 17.48C14.54 17.62 13.77 17.62 13.05 17.52C12.38 17.43 12.04 16.84 12.28 16.21C12.51 15.62 12.81 15.03 13.21 14.54C14.06 13.47 15.02 12.51 15.89 11.45C16.41 10.81 16.89 10.12 17.31 9.4C17.61 8.89 17.47 8.27 16.94 8.01C16.04 7.58 15.08 7.27 14.13 6.94C14.05 6.91 13.95 6.95 13.83 7.01C13.77 7.03 13.71 7.06 13.63 7.09C13.91 7.33 14.1 7.51 14.38 7.76C11.56 8.24 8.89 8.92 6.3 9.86C6.29 9.87 6.29 9.89 6.28 9.9C6.28 9.93 6.27 9.96 6.27 9.97C6.66 10.56 6.48 11 5.92 11.37C5.71 11.51 5.52 11.69 5.36 11.89C7.06 12.39 8.58 12.1 10.04 11.15C9.95 11.03 9.86 10.91 9.77 10.78C10.32 10.88 10.65 11.18 10.69 11.64C10.7 11.72 10.67 11.79 10.64 11.87C10.63 11.9 10.62 11.93 10.61 11.96C10.53 11.88 10.43 11.79 10.37 11.7C10.32 11.63 10.31 11.56 10.28 11.45C8.55 12.6 6.69 12.89 4.64 12.29C4.64 12.41 4.64 12.53 4.64 12.64L4.64 12.64C4.64 12.9 4.63 13.14 4.66 13.37C4.68 13.65 4.56 13.78 4.3 13.93C3.71 14.29 3.09 14.67 2.6 15.15C2.01 15.73 2.23 16.45 3.03 16.74C3.93 17.08 4.89 17.09 5.84 16.98C6.96 16.84 8.07 16.66 9.29 16.49C7.86 17.16 6.45 17.63 4.96 17.82C3.92 17.96 2.88 18.03 1.86 17.73C0.38 17.32-0.28 16.23 0.11 14.77C0.47 13.41 1.34 12.32 2.28 11.32C5.42 7.99 9.39 6.3 13.98 5.96C15.05 5.88 16.14 6.02 17.14 6.47C18.55 7.11 19.14 8.46 18.46 9.82C18.01 10.73 17.38 11.56 16.76 12.38C16.15 13.19 15.46 13.93 14.81 14.71C14.63 14.94 14.45 15.19 14.31 15.45C14.04 15.95 14.22 16.28 14.8 16.23C16.02 16.11 17.25 16.02 18.42 15.72C20.14 15.28 21.81 14.67 23.51 14.12C23.68 14.08 23.84 14.02 23.99 13.96C21.2 15.47 18.38 16.85 15.24 17.48ZM23.99 13.96L24 13.95L24 13.95L23.99 13.96Z"/></symbol><symbol id="lg-zai" viewBox="0 0 24 24"><path d="M13.98 3.57L21.92 3.57L10.02 20.43L2.08 20.43L13.98 3.57ZM21.42 17.95L21.42 20.43L11.5 20.43L12.89 18.45C13.11 18.14 13.47 17.95 13.86 17.95L21.42 17.95ZM2.58 6.04L2.58 3.56L2.58 3.56L2.58 3.56L2.58 3.56C2.59 3.57 12.5 3.57 12.5 3.57L11.11 5.54C10.9 5.85 10.54 6.04 10.15 6.04L2.58 6.04Z"/></symbol><symbol id="lg-moonshot" viewBox="0 0 24 24"><path d="M21.88 13.79C21.76 14.43 21.59 15.06 21.35 15.65L12.24 13.21L3.17 10.79L3.18 10.71L3.19 10.67L3.19 10.62L3.21 10.55L3.22 10.47C3.24 10.36 3.27 10.24 3.29 10.12L3.31 10.03L3.33 9.96L3.35 9.88C3.37 9.81 3.38 9.74 3.4 9.67L3.42 9.59L3.44 9.53L3.47 9.45L3.49 9.38L3.51 9.31L3.53 9.24L3.55 9.17C3.76 8.55 4.03 7.96 4.35 7.41L4.35 7.41L13.77 9.93C13.48 10.4 13.21 10.9 12.97 11.4L21.88 13.79ZM21.58 9.32C21.79 10 21.93 10.7 21.99 11.43L4.73 6.81L4.77 6.76L4.79 6.73L4.82 6.68L4.86 6.63L4.9 6.57L4.94 6.52L4.99 6.45L5.03 6.4L5.08 6.34L5.12 6.28L5.17 6.23L5.21 6.17L5.26 6.11L5.3 6.06L5.36 6L5.4 5.95L5.46 5.89L5.5 5.84L5.55 5.78L5.59 5.74L5.65 5.67L5.7 5.63L5.75 5.57L5.88 5.44L5.96 5.36L6 5.32L6.06 5.26C6.61 4.75 7.21 4.31 7.85 3.94L16.75 6.32C16.28 6.75 15.83 7.2 15.42 7.67L21.58 9.32ZM20.2 17.73C19.78 18.31 19.29 18.84 18.75 19.31L3.59 15.25L3.58 15.21L3.55 15.13C3.54 15.09 3.52 15.05 3.51 15.01L3.5 14.99C3.44 14.8 3.39 14.61 3.34 14.41L3.32 14.31L3.3 14.25L3.29 14.17L3.27 14.11L3.26 14.04L3.25 13.97L3.23 13.9C3.21 13.79 3.19 13.67 3.17 13.56L3.16 13.47L3.15 13.4L3.14 13.32C3.14 13.28 3.13 13.24 3.13 13.2L3.12 13.16C3.06 12.6 3.06 12.03 3.1 11.47L12.04 13.86C11.89 14.38 11.77 14.91 11.68 15.45L20.2 17.73ZM16.16 20.9C14.77 21.48 13.26 21.71 11.76 21.59L11.62 21.57L11.58 21.57L11.52 21.56L11.44 21.55C11.4 21.55 11.36 21.54 11.32 21.54L11.23 21.53L11.15 21.51C11.06 21.5 10.98 21.49 10.89 21.47L10.86 21.47L10.8 21.46L10.72 21.44L10.66 21.43L10.59 21.41L10.53 21.4L10.46 21.39L10.38 21.37L10.3 21.35L10.25 21.34L10.18 21.32L10.11 21.3L10.04 21.28L9.97 21.26L9.88 21.24L9.84 21.22L9.77 21.2L9.7 21.18L9.61 21.16L9.57 21.14L9.51 21.12L9.43 21.1L9.38 21.08C9.37 21.07 9.36 21.07 9.35 21.07L9.29 21.05L9.21 21.02L9.17 21L9.11 20.98L9.04 20.95L8.97 20.92L8.91 20.89L8.83 20.86L8.78 20.84L8.73 20.82C8.72 20.82 8.71 20.81 8.7 20.81L8.65 20.78L8.57 20.75L8.53 20.73L8.45 20.69L8.4 20.67L8.34 20.64L8.27 20.6L8.19 20.56L8.15 20.54L8.07 20.5L8.03 20.48L7.98 20.45C7.97 20.44 7.96 20.44 7.94 20.43L7.87 20.39L7.82 20.36L7.78 20.34L7.73 20.3L7.66 20.27L7.59 20.22L7.55 20.2L7.48 20.15L7.43 20.12L7.37 20.08L7.32 20.05L7.27 20.02C7.26 20.01 7.25 20 7.23 19.99L7.2 19.97L7.16 19.94C7.15 19.94 7.14 19.93 7.13 19.92L7.08 19.89L7.03 19.85L6.97 19.81L6.91 19.77L6.87 19.73L6.81 19.69L6.75 19.64L6.68 19.59L6.65 19.56L6.59 19.52L6.54 19.47L6.47 19.41L6.39 19.35C6.38 19.34 6.37 19.33 6.36 19.32L6.33 19.29L6.28 19.25L6.22 19.2L6.17 19.16L6.12 19.11L6.07 19.06L6.03 19.02L5.96 18.95C5.93 18.93 5.9 18.9 5.88 18.88L5.85 18.86L5.82 18.82L5.77 18.77L5.73 18.73L5.69 18.69C5.64 18.64 5.6 18.59 5.56 18.55L5.49 18.48L5.44 18.42L5.39 18.36L5.36 18.32L5.31 18.27L5.27 18.22L5.23 18.17C5.22 18.16 5.22 18.16 5.21 18.15L5.17 18.1L5.12 18.04L5.09 18L5.05 17.95L5.04 17.93C4.58 17.34 4.2 16.71 3.9 16.03L11.42 18.05C11.41 18.58 11.42 19.11 11.47 19.65L16.16 20.9ZM12.74 2.7L12.78 2.71L12.83 2.71L12.87 2.71L12.93 2.71L12.97 2.71L13.02 2.71L13.06 2.71L13.13 2.72L13.21 2.72L13.32 2.73L13.39 2.74L13.43 2.74L13.49 2.75L13.55 2.75L13.59 2.76L13.67 2.77L13.71 2.77L13.79 2.78L13.86 2.79L13.89 2.8L13.94 2.8L14.11 2.83L14.16 2.84L14.21 2.85L14.32 2.87L14.39 2.88L14.48 2.9L14.52 2.91L14.58 2.92L14.61 2.93L14.66 2.94L14.69 2.95L14.74 2.96L14.78 2.97L14.84 2.98L14.91 3L15 3.02L15.09 3.05L15.18 3.07L15.22 3.08L15.27 3.1L15.33 3.12L15.39 3.14L15.43 3.15L15.47 3.16L15.53 3.18L15.61 3.21L15.69 3.24L15.73 3.25L15.78 3.27L15.85 3.29L15.94 3.33L16.03 3.36L16.11 3.39L16.14 3.41L16.19 3.43L16.22 3.44L16.27 3.46L16.3 3.48L16.35 3.5L16.44 3.54L16.52 3.57L16.57 3.6L16.63 3.63L16.68 3.65L16.75 3.69L16.82 3.72L16.91 3.76L16.95 3.78L16.98 3.8L17.02 3.82L17.07 3.85L17.1 3.87L17.14 3.89L17.21 3.93L17.3 3.98L17.36 4.02L17.41 4.04L17.45 4.07L17.53 4.12L17.59 4.16L17.67 4.21L17.7 4.23L17.75 4.26L17.82 4.3L17.85 4.32L17.9 4.36L17.95 4.39L17.96 4.4C18.01 4.43 18.05 4.46 18.09 4.49L18.16 4.54L18.21 4.58L18.25 4.61L18.32 4.66L18.39 4.71L18.42 4.74L18.46 4.77L18.52 4.83L18.59 4.88L18.65 4.93C19.21 5.41 19.72 5.94 20.16 6.53L8.76 3.48L8.81 3.46L8.86 3.44L8.93 3.42L8.99 3.39C9.08 3.35 9.17 3.32 9.26 3.28L9.34 3.26L9.41 3.23L9.48 3.21L9.55 3.18C9.62 3.16 9.69 3.14 9.76 3.12L9.83 3.09L9.9 3.07L9.98 3.05L10.05 3.03L10.13 3.01L10.2 2.99L10.27 2.98L10.34 2.96L10.41 2.94L10.48 2.92L10.56 2.91L10.63 2.89L10.71 2.88L10.78 2.86L10.86 2.85L10.93 2.84L11.01 2.82L11.08 2.81L11.16 2.8L11.23 2.79L11.31 2.78L11.38 2.77L11.46 2.76L11.54 2.75L11.62 2.75C11.69 2.74 11.77 2.73 11.84 2.73L11.92 2.72L11.99 2.72L12.08 2.71L12.15 2.71L12.23 2.71L12.31 2.7L12.39 2.7L12.54 2.7L12.54 2.7L12.62 2.7L12.68 2.7L12.74 2.7Z"/></symbol><symbol id="lg-minimax" viewBox="0 0 24 24"><path d="M17.5 16.64C17.56 16.73 17.65 16.82 17.75 16.87C17.85 16.93 17.96 16.96 18.08 16.96C18.2 16.96 18.31 16.93 18.41 16.87C18.51 16.82 18.6 16.73 18.66 16.64C18.72 16.54 18.76 16.42 18.76 16.31L18.76 9.46C18.76 9.21 18.81 8.96 18.91 8.74C19 8.51 19.14 8.3 19.32 8.12C19.5 7.95 19.71 7.81 19.94 7.72C20.17 7.63 20.41 7.58 20.66 7.58C20.91 7.58 21.15 7.63 21.38 7.72C21.61 7.81 21.82 7.95 22 8.13C22.18 8.3 22.32 8.51 22.41 8.74C22.51 8.96 22.56 9.21 22.56 9.46L22.56 15.47C22.56 15.58 22.53 15.68 22.48 15.77C22.42 15.86 22.35 15.93 22.26 15.99C22.17 16.04 22.07 16.07 21.96 16.06C21.88 16.07 21.8 16.05 21.73 16.02C21.66 15.99 21.59 15.95 21.54 15.89C21.48 15.84 21.44 15.77 21.41 15.7C21.38 15.63 21.36 15.55 21.36 15.47L21.36 9.46C21.36 9.37 21.34 9.28 21.31 9.19C21.27 9.11 21.22 9.03 21.16 8.97C21.09 8.9 21.01 8.85 20.93 8.82C20.84 8.78 20.75 8.76 20.66 8.76C20.57 8.76 20.48 8.78 20.39 8.82C20.31 8.85 20.23 8.9 20.16 8.97C20.1 9.03 20.05 9.11 20.01 9.19C19.98 9.28 19.96 9.37 19.96 9.46L19.96 16.31C19.96 16.55 19.91 16.8 19.81 17.02C19.72 17.25 19.58 17.45 19.4 17.62C19.23 17.8 19.02 17.93 18.8 18.03C18.57 18.12 18.33 18.17 18.08 18.16C17.84 18.17 17.59 18.12 17.36 18.03C17.14 17.93 16.93 17.8 16.76 17.62C16.58 17.45 16.44 17.25 16.35 17.02C16.25 16.8 16.2 16.55 16.2 16.31L16.2 4.85C16.2 4.73 16.16 4.61 16.1 4.5C16.03 4.4 15.94 4.31 15.83 4.25C15.72 4.19 15.6 4.16 15.48 4.16C15.36 4.16 15.24 4.19 15.13 4.25C15.02 4.31 14.93 4.4 14.86 4.5C14.8 4.61 14.76 4.72 14.76 4.85L14.76 19.43C14.76 19.75 14.67 20.08 14.5 20.36C14.34 20.64 14.1 20.88 13.81 21.04C13.53 21.2 13.21 21.29 12.88 21.28C12.63 21.29 12.39 21.24 12.16 21.14C11.94 21.05 11.73 20.92 11.56 20.74C11.38 20.57 11.24 20.37 11.15 20.14C11.05 19.91 11 19.67 11 19.43L11 17.65C11 17.33 11.27 17.06 11.6 17.06C11.93 17.06 12.2 17.33 12.2 17.65L12.2 19.43C12.2 19.67 12.33 19.89 12.54 20.01C12.75 20.13 13.01 20.13 13.22 20.01C13.29 19.97 13.35 19.92 13.4 19.86C13.45 19.8 13.49 19.73 13.52 19.66C13.55 19.58 13.56 19.5 13.56 19.43L13.56 4.85C13.56 3.8 14.42 2.95 15.48 2.95C16.54 2.95 17.4 3.8 17.4 4.85L17.4 16.31C17.4 16.42 17.44 16.54 17.5 16.64ZM12.15 15.64C12.12 15.71 12.08 15.78 12.02 15.83C11.96 15.88 11.9 15.93 11.83 15.96C11.76 15.99 11.68 16 11.6 16C11.52 16 11.44 15.99 11.37 15.96C11.3 15.93 11.23 15.88 11.18 15.83C11.12 15.78 11.08 15.71 11.05 15.64C11.02 15.57 11 15.49 11 15.41L11 4.85C11 4.72 10.97 4.6 10.9 4.49C10.84 4.38 10.75 4.29 10.64 4.23C10.53 4.17 10.4 4.13 10.28 4.13C10.15 4.13 10.03 4.17 9.92 4.23C9.81 4.29 9.72 4.38 9.65 4.49C9.59 4.6 9.56 4.72 9.55 4.85L9.55 17.69C9.55 18.02 9.46 18.35 9.3 18.64C9.13 18.92 8.89 19.16 8.6 19.32C8.31 19.49 7.99 19.57 7.66 19.57C7.33 19.57 7 19.49 6.71 19.32C6.42 19.16 6.18 18.92 6.02 18.64C5.85 18.35 5.76 18.02 5.76 17.69L5.76 9.46C5.76 9.37 5.74 9.28 5.71 9.19C5.67 9.11 5.62 9.03 5.55 8.97C5.49 8.9 5.41 8.85 5.33 8.82C5.24 8.78 5.15 8.76 5.06 8.76C4.96 8.76 4.88 8.78 4.79 8.82C4.71 8.85 4.63 8.9 4.56 8.97C4.5 9.03 4.45 9.11 4.41 9.19C4.37 9.28 4.36 9.37 4.36 9.46L4.36 12.94C4.35 13.19 4.3 13.44 4.21 13.66C4.11 13.89 3.97 14.1 3.79 14.27C3.62 14.45 3.41 14.59 3.18 14.68C2.95 14.77 2.71 14.82 2.46 14.82C2.21 14.82 1.96 14.77 1.73 14.68C1.5 14.59 1.29 14.45 1.12 14.27C0.94 14.1 0.8 13.89 0.71 13.66C0.61 13.44 0.56 13.19 0.56 12.94L0.56 11.68C0.56 11.35 0.83 11.09 1.16 11.09C1.49 11.09 1.75 11.35 1.75 11.68L1.75 12.94C1.75 13.32 2.07 13.64 2.46 13.64C2.84 13.64 3.16 13.32 3.16 12.94L3.16 9.46C3.16 9.13 3.25 8.8 3.42 8.52C3.58 8.23 3.82 7.99 4.11 7.83C4.4 7.66 4.72 7.58 5.06 7.58C5.39 7.58 5.71 7.66 6 7.83C6.29 7.99 6.53 8.23 6.7 8.52C6.86 8.8 6.95 9.13 6.96 9.46L6.96 17.69C6.96 18.08 7.27 18.39 7.66 18.39C8.05 18.39 8.36 18.08 8.36 17.69L8.36 4.85C8.36 3.8 9.22 2.95 10.28 2.95C11.34 2.95 12.2 3.8 12.2 4.85L12.2 15.41C12.2 15.49 12.18 15.57 12.15 15.64Z"/></symbol><symbol id="lg-bytedance" viewBox="0 0 24 24"><path d="M18.79 2.62C18.86 2.64 19.53 2.81 20.27 3C21.02 3.19 21.76 3.38 21.91 3.42L22.19 3.49L22.18 11.54L22.16 19.59L20.63 19.98C19.79 20.2 19 20.39 18.88 20.43L18.66 20.48L18.66 11.52C18.66 3.04 18.66 2.58 18.79 2.62ZM1.51 11.55C1.51 7.16 1.53 3.56 1.57 3.56C1.6 3.56 2.39 3.75 3.33 3.99L5.04 4.42L5.04 11.55C5.04 15.46 5.03 18.67 5.01 18.67C4.99 18.67 4.2 18.87 3.25 19.11L1.51 19.55L1.51 11.55ZM13.02 16.85L13.02 9.21L14.73 8.77C15.67 8.53 16.46 8.34 16.5 8.35C16.53 8.35 16.55 10.45 16.55 13.02L16.55 17.69L16.39 17.69C16.29 17.69 15.49 17.49 14.62 17.27L14.62 17.27L13.02 16.85ZM7.21 10.66C7.24 10.66 8.03 10.85 8.98 11.09L10.69 11.52L10.67 15.33L10.65 19.14L9.11 19.53C8.27 19.75 7.48 19.95 7.37 19.98L7.15 20.03L7.15 15.35C7.15 12.77 7.17 10.66 7.21 10.66Z"/></symbol><symbol id="lg-stepfun" viewBox="0 0 24 24"><path fill="currentColor" d="M20.97 11.9993C20.97 16.9593 16.96 20.9693 12 20.9693C7.04 20.9693 3.03 16.9593 3.03 11.9993C3.03 7.0393 7.04 3.0293 12 3.0293C16.96 3.0293 20.97 7.0393 20.97 11.9993ZM13.63 14.4093H10.35V17.6893H13.63V14.4093ZM13.63 6.3093H10.35V9.5893H13.63V6.3093ZM17.69 6.3093H14.41V9.5893H17.69V6.3093ZM9.58 14.4093H6.3V17.6893H9.58V14.4093ZM13.63 10.3593H10.35V13.6393H13.63V10.3593Z"/></symbol><symbol id="lg-xiaomi" viewBox="0 0 24 24"><path d="M18.57 5.41C20.14 6.98 20.3 9.24 20.3 12C20.3 14.75 20.14 17.01 18.57 18.58C17 20.14 14.75 20.3 11.99 20.3C9.23 20.3 6.97 20.14 5.4 18.58C3.83 17.01 3.67 14.75 3.67 12C3.67 9.24 3.83 6.98 5.4 5.42C6.97 3.85 9.23 3.67 11.99 3.67C14.74 3.67 17 3.85 18.57 5.41ZM7.02 8.82C7 8.83 6.99 8.84 6.98 8.86C6.97 8.87 6.97 8.89 6.97 8.91L6.97 15.07C6.97 15.09 6.97 15.11 6.98 15.12C6.99 15.14 7 15.15 7.02 15.16C7.04 15.17 7.05 15.17 7.07 15.17L8.42 15.17C8.44 15.17 8.45 15.17 8.46 15.16C8.47 15.16 8.49 15.15 8.5 15.14C8.51 15.13 8.51 15.12 8.52 15.11C8.53 15.1 8.53 15.08 8.53 15.07L8.53 10.23C8.53 10.22 8.53 10.2 8.54 10.18C8.55 10.17 8.56 10.15 8.58 10.15C8.6 10.14 8.61 10.13 8.63 10.13L11.08 10.13C11.56 10.14 12.02 10.2 12.27 10.45C12.56 10.74 12.59 11.31 12.59 11.87L12.59 15.07C12.59 15.08 12.6 15.1 12.6 15.11C12.61 15.12 12.61 15.13 12.62 15.14C12.63 15.15 12.64 15.16 12.66 15.16C12.67 15.17 12.68 15.17 12.7 15.17L14.05 15.17C14.06 15.17 14.08 15.17 14.1 15.16C14.11 15.15 14.13 15.14 14.14 15.12C14.15 15.11 14.15 15.09 14.15 15.07L14.15 11.93C14.15 10.93 14.09 9.89 13.58 9.38C13.05 8.85 11.99 8.8 10.97 8.8L7.07 8.8C7.05 8.8 7.04 8.81 7.02 8.82ZM15.44 8.81C15.42 8.82 15.41 8.83 15.4 8.84C15.39 8.85 15.38 8.86 15.38 8.87C15.38 8.88 15.37 8.89 15.37 8.91L15.37 15.07C15.37 15.09 15.38 15.11 15.39 15.12C15.39 15.14 15.41 15.15 15.42 15.16C15.44 15.17 15.46 15.17 15.48 15.17L16.83 15.17C16.84 15.17 16.86 15.17 16.88 15.16C16.89 15.15 16.91 15.14 16.92 15.12C16.93 15.11 16.93 15.09 16.93 15.07L16.93 8.91C16.93 8.89 16.93 8.87 16.92 8.86C16.91 8.84 16.89 8.83 16.88 8.82C16.86 8.81 16.84 8.8 16.83 8.8L15.48 8.8C15.46 8.8 15.45 8.81 15.44 8.81ZM9.8 11.27C9.79 11.28 9.77 11.29 9.76 11.31C9.75 11.33 9.75 11.34 9.75 11.36L9.75 15.07C9.75 15.08 9.75 15.1 9.76 15.11C9.76 15.12 9.77 15.13 9.78 15.14C9.79 15.15 9.8 15.16 9.81 15.16C9.83 15.17 9.84 15.17 9.85 15.17L11.27 15.17C11.29 15.17 11.31 15.17 11.32 15.16C11.34 15.15 11.35 15.14 11.36 15.12C11.37 15.11 11.37 15.09 11.37 15.07L11.37 11.36C11.37 11.3 11.33 11.26 11.27 11.26L9.85 11.26C9.84 11.26 9.82 11.26 9.8 11.27Z"/></symbol><symbol id="lg-microsoft" viewBox="0 0 24 24"><path d="M4.4 4.4L11.61 4.4L11.61 11.61L4.4 11.61L4.4 4.4ZM12.39 4.4L19.6 4.4L19.6 11.61L12.39 11.61L12.39 4.4ZM4.4 12.39L11.61 12.39L11.61 19.6L4.4 19.6L4.4 12.39ZM12.39 12.39L19.6 12.39L19.6 19.6L12.39 19.6L12.39 12.39Z"/></symbol><symbol id="lg-bfl" viewBox="0 0 24 24"><path d="M19.53 19.04L19.53 17.12L16.91 13.42L14.3 17.12L14.3 19.04L1.22 19.04L12.23 3.46L16.91 10.1L16.91 10.1L16.91 10.1L16.91 10.1L16.91 10.1L23.22 19.04L19.53 19.04ZM4.93 17.12L7.28 17.12L12.23 10.1L14.57 10.1L9.62 17.12L11.97 17.12L16.91 10.1L14.57 10.1L12.23 6.79L4.93 17.12Z"/></symbol><symbol id="ic-agents" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><rect x="6" y="1.75" width="4" height="4"/><rect x="1.75" y="10.25" width="4" height="4"/><rect x="10.25" y="10.25" width="4" height="4"/><path d="M8 5.75V8M3.75 10.25V8H12.25V10.25"/></symbol><symbol id="ic-search" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="6.75" cy="6.75" r="4.5"/><path d="M10.25 10.25L14.25 14.25"/></symbol><symbol id="ic-reasoning" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 3.25H6.5L9.5 12.75H14"/><path d="M9.5 3.25H14"/><path d="M2 12.75H5"/></symbol><symbol id="ic-writing" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M2 3.25H14M2 7.25H9M2 11.25H6"/><path d="M10 13.75L14.25 9.5"/></symbol><symbol id="ic-factuality" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><rect x="1.75" y="1.75" width="12.5" height="12.5"/><path d="M4.75 8.25L7 10.5L11.5 5.5"/></symbol><symbol id="ic-coding" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 4L1.75 8L5 12M11 4L14.25 8L11 12M9.25 2.75L6.75 13.25"/></symbol><symbol id="ic-instructionFollowing" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M6.5 3.25H14.25M6.5 8H14.25M6.5 12.75H14.25"/><path d="M1.75 3.25L2.75 4.25L4.5 2.25"/><path d="M1.75 8H4.25M1.75 12.75H4.25"/></symbol><symbol id="ic-vision" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M1 8C2.75 4.75 5.25 3.25 8 3.25C10.75 3.25 13.25 4.75 15 8C13.25 11.25 10.75 12.75 8 12.75C5.25 12.75 2.75 11.25 1 8Z"/><circle cx="8" cy="8" r="2"/></symbol><symbol id="ic-imageGeneration" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><rect x="1.75" y="2.75" width="12.5" height="10.5"/><path d="M1.75 11L6 7L9.5 10.5L11.25 8.75L14.25 11.75"/><rect x="10" y="4.75" width="1.5" height="1.5" fill="currentColor" stroke="none"/></symbol><symbol id="ic-ability" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="8" cy="8" r="6.25"/><circle cx="8" cy="8" r="2.75"/><rect x="7.25" y="7.25" width="1.5" height="1.5" fill="currentColor" stroke="none"/></symbol><symbol id="ic-price" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M11.25 4.25H6.5C5.25 4.25 4.25 5 4.25 6.125C4.25 7.25 5.25 8 6.5 8H9.5C10.75 8 11.75 8.75 11.75 9.875C11.75 11 10.75 11.75 9.5 11.75H4.75"/><path d="M8 1.75V4.25M8 11.75V14.25"/></symbol><symbol id="ic-speed" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="8" cy="9" r="5.25"/><path d="M8 9V6M6 1.75H10M12.5 3.5L13.5 4.5"/></symbol></defs></svg>
 <header class="nav g" id="nav">
   <a class="logo" href="../" aria-label="MAT home"><svg viewBox="0 0 26 16" aria-hidden="true"><circle cx="18" cy="8" r="6" fill="#9882CF"/><circle cx="13" cy="8" r="6" fill="#C98565"/><circle cx="8" cy="8" r="6" fill="#F4EFE6"/></svg>MAT</a>
   <nav class="links" aria-label="Sections" id="navLinks"></nav>
@@ -395,8 +370,9 @@ section{padding-bottom:var(--s10)}
   <div class="g fbase"><span>© 2026 MAT</span><span>Desktop app · runs locally</span><span>Arena data CC BY 4.0</span></div>
 </footer>
 <script>
-// MAT rankings page. Reads v2/latest.json (rebuilt every Monday by rankings/pipeline) and draws, for one kind of work and one
-// quality bar: who MAT picks, every model's ability · price · speed, the setups that clear the bar, and how cost trades for time.
+// MAT rankings page · v2 (one table). Reads v2/latest.json — rebuilt every Monday by rankings/pipeline — and shows, for one kind
+// of work and one quality bar, a single ranked table: every model in the cheapest setup that clears the bar, then a cut line,
+// then the models that don't clear it. Ability, price and speed are bars inside the table, so the chart and the ranking are one.
 (()=>{
 const $=s=>document.querySelector(s);
 const LANGS=[["en","English"],["zh-Hans","简体中文"],["zh-Hant","繁體中文"]];
@@ -409,117 +385,93 @@ const L=(()=>{ const ok=LANGS.map(l=>l[0]); const pick=c=>{ if(!c) return null; 
 document.documentElement.lang=L; if(L!=='en') document.documentElement.classList.add('cjk');
 
 const T={
-en:{nav:["Why MAT","What it saves","How it works","Models","Questions"],beta:"Get the beta",back:"The ranking",rebuilt:"Rebuilt every Monday · last rebuild {d}",
- h1:"Good enough.<br>Then cheapest.<br>Then fast.",
- lede:"Most rankings ask who is strongest. MAT asks a narrower question, for every kind of work and every quality bar: which model — at which effort, with or without a second model checking — passes, at the lowest cost per finished job, inside the time limit. This is the table MAT staffs from.",
- figs:[["models"],["kinds of work"],["quality bars"],["for work your plans already cover"]],
- kind:"Kind of work",bar:"Quality bar",
+en:{nav:["Why MAT","What it saves","How it works","Models","Rankings","Privacy","Questions"],beta:"Get the beta",back:"Home",
+ pickH:"MAT's pick · {c} · {t}",kA:"pass chance",kP:"per finished job",kS:"per job",vs:"{x}× cheaper than the priciest setup that clears",vsFast:"Fastest that clears: {m}, {t}",
+ chT:"Setups that clear · price vs. time",chX:"Price per finished job (log) →",chZ:"cheaper and faster ↖",
+ srcH:"Where these numbers come from",srcD:"Share is how much each source counts toward a model's score on this board. Updated is the source's own date; where a source doesn't publish one, it's the day MAT read it.",
+ srcC:["Source","Share of score","Models","Updated"],gen:"Intelligence Index · every board",prH:"Price and speed",prA:"List prices, measured speed and thinking",prO:"Price cross-check",read:"read {d}",stale:"last read {d}",down:"unavailable",
+ h1:"Model rankings",sub:"For each kind of work and quality bar: the models that clear it, cheapest first.",upd:"Updated {d} · rebuilt every Monday",
  cats:{agents:"Agents",search:"Search",reasoning:"Reasoning",writing:"Writing",factuality:"Factuality",coding:"Coding",instructionFollowing:"Instruction following",vision:"Vision",imageGeneration:"Image generation"},
- tiers:{draft:["Draft","Brainstorms and first passes. You will redo it anyway."],usable:["Usable","Day-to-day work you read before you use."],deliver:["Deliver","Goes straight to someone else."],critical:["Critical","Contracts, production code, money. A second model always checks, then you do."]},
- barline:"≥ {p}% pass · ≤ {t}",clearN:"{n} setups clear the bar. MAT takes the cheapest.",none:"Nothing clears this bar inside the time limit.",
- noneBody:"The best MAT can do here is {p}%. MAT will say so and ask you before it starts — or add a human check.",
- pick:"MAT's pick",runner:"Runner-up",fastest:"Fastest that clears",pass:"pass chance",perjob:"per finished job",time:"expected time",passS:"pass",jobS:"per job",timeS:"time",
- why:"{a} scores highest here on its own, but {b} clears the {t} bar for {x}% less per job.",same:"MAT's pick is also the fastest setup that clears.",
- dimT:"Ability · Price · Speed",dimS:"{c} at the {t} bar · each model on its own, at its best effort inside the {cap} limit",
- model:"Model",ab:"Ability",pr:"Price",sp:"Speed",abD:"Pass chance · longer is better",prD:"Cost per job · shorter is cheaper (log)",spD:"Time per job · shorter is faster",
- dimF:"Bright: clears {t} on its own. Dim: needs a second model checking, or is not good enough for this bar. Ability decides who is in; price and speed decide the order.",
- showAll:"Show all {n}",showLess:"Show fewer",
- clears:"Clears {t}",clearsS:"{n} models, each in its cheapest setup. Ability is the bar: it decides who is listed, not the order.",sortBy:"Sort what clears by",
- shortT:"Doesn't clear {t}",shortS:"Each model on its own, at its best effort",setup:"Setup",abC:"Ability · pass chance",prC:"Price · per job",spC:"Speed · time",
- alone:"on its own",checks:"{m} checks",best:"Best alone: {e}",drawK:"Draws {k}, a vision model keeps the best",draw1:"One picture",
- eff:{none:"No thinking",minimal:"Minimal effort",low:"Low effort",medium:"Medium effort",high:"High effort",xhigh:"Extra-high effort",max:"Max effort",default:"Default effort"},
+ tiers:{draft:"Draft",usable:"Usable",deliver:"Deliver",critical:"Critical"},
+ tierD:{draft:"First passes you'll redo anyway",usable:"Day-to-day work you check before using",deliver:"Goes straight to someone else",critical:"Contracts, production, money — always double-checked"},
+ barline:"≥ {p}% pass · ≤ {t} per step",sortBy:"Rank by",byPrice:"Price",bySpeed:"Speed",
+ col:["#","Model","Ability","Price","Speed"],colD:["","","Pass chance","Per finished job","Per job"],
+ pick:"MAT's pick",fast:"Fastest",cut:"{t} bar · {p}% — below this line, models don't clear it",cutNone:"Nothing clears the {t} bar inside {cap}. Best reach below.",
+ alone:"on its own",checks:"+ {m} checks",draws:"draws {k}, keeps the best",draw1:"one picture",best:"best alone",
  effS:{none:"no thinking",minimal:"minimal",low:"low",medium:"medium",high:"high",xhigh:"xhigh",max:"max",default:"default"},
- scT:"Cost and time",scS:"The setups that clear {c} · {t}",scA:"Every dot is a model's cheapest setup that clears the bar.",
- scB:"The line joins the setups nothing beats on both cost and time. MAT starts at its left end; when you are waiting on the answer it can trade along the line.",
- scX:"Cost per finished job →",scY:"faster ↓",
- howT:"How MAT picks",howS:"The same four steps for every kind of work",
- steps:[["The bar comes first.","A setup that misses the bar is not cheap; it is a redo. Anything under the pass chance is out, whatever it costs."],["Price the finished job.","Not the price per token. The tokens in and out, the thinking, the checker's share, and the redos the checker sends back."],["Inside the time limit.","Each bar has a limit per step. Of what is left, the cheapest wins, and a tie goes to the faster one."],["Your plans cost nothing.","In the app, models you already pay for by the month count as $0 until their allowance runs out. Your table can differ from this one."]],
- honT:"Honest numbers",
- hon:[["Pass chances are estimates.","They come from public benchmarks — Arena, Artificial Analysis, Vals and Scale — put on one scale. MAT's own checker grades every job on your Mac, and your copy of this table learns from that."],["Prices are list prices.","From the makers' own pages, as of {d}. OpenRouter is only a cross-check."],["Sources this week","{s}"]],
- notes:"Notes",dl:"Download this week's data (JSON)",arch:"Every week so far",method:"How it is built",
- attr:"Arena leaderboard data © LMArena, CC BY 4.0.",stale:"last week's data, read {d}",fail:"not read",
- loading:"Loading this week's table…",err:"This week's table could not be loaded. Try again in a minute.",
+ more:"Show all {n}",less:"Show fewer",
+ how:"How this is ranked",
+ howP:["Only setups that pass the bar are ranked above the line. Ability is the gate, not the order.","A setup is a model at one effort level, sometimes with a second model checking it. Each model is shown in its cheapest setup that clears.","Price is per finished job: tokens, thinking, the checker's share, and the redos it sends back. List prices; in the app, plans you already pay for count as $0.","Pass chances are estimates from public benchmarks put on one scale; MAT's own checker refines them on your Mac."],
+ src:"Sources",dl:"Download data (JSON)",arch:"Past weeks",method:"Method",attr:"Arena data © LMArena, CC BY 4.0",
+ loading:"Loading…",err:"This week's table could not be loaded. Try again in a minute.",
  foot:["One chat, and a crew on the models you already pay for — running locally.","Product","Beta","Company"],min:"min",sec:"s",langNote:"This page is in English, 简体中文 and 繁體中文 for now."},
-"zh-Hans":{nav:["为什么是 MAT","省下什么","工作原理","模型","常见问题"],beta:"获取测试版",back:"排行榜",rebuilt:"每周一重建 · 最近一次 {d}",
- h1:"够用为先，<br>再看便宜，<br>再看快。",
- lede:"多数排行榜只问谁最强。MAT 问的更具体：对每一类活、每一档质量要求，哪个模型——用多大的思考力度、要不要另一个模型复核——能过线，每件花得最少，还不超时。MAT 就按这张表配人。",
- figs:[["个模型"],["类活"],["档质量要求"],["你已付费的套餐内"]],
- kind:"活的类别",bar:"质量要求",
+"zh-Hans":{nav:["为什么是 MAT","省下什么","工作原理","模型","排行榜","隐私","常见问题"],beta:"获取测试版",back:"首页",
+ pickH:"MAT 会选 · {c} · {t}",kA:"过线率",kP:"每完成一件",kS:"每件耗时",vs:"比能过线的最贵配法便宜 {x} 倍",vsFast:"能过线的最快：{m}，{t}",
+ chT:"能过线的配法 · 价格 vs 耗时",chX:"每完成一件的价格（对数）→",chZ:"更便宜、更快 ↖",
+ srcH:"数据从哪来",srcD:"占比：这个来源在本榜模型得分里占多少。更新：来源自己标的日期；来源不标日期的，是 MAT 读取的那天。",
+ srcC:["来源","得分占比","模型数","更新"],gen:"综合智能指数 · 所有榜单",prH:"价格与速度",prA:"官方标价、实测速度与思考量",prO:"价格交叉核对",read:"{d} 读取",stale:"上次读取 {d}",down:"暂不可用",
+ h1:"模型排行榜",sub:"每一类活、每一档质量要求下，能过线的模型，最便宜的排在最前。",upd:"{d} 更新 · 每周一重建",
  cats:{agents:"智能体",search:"搜索调研",reasoning:"推理分析",writing:"写作",factuality:"事实复核",coding:"编程",instructionFollowing:"遵循指令",vision:"看图与文档",imageGeneration:"出图"},
- tiers:{draft:["草稿","头脑风暴、初稿，反正还要重写。"],usable:["可用","日常的活，你看过再用。"],deliver:["交付","直接交给别人。"],critical:["关键","合同、上线的代码、钱。一定有另一个模型复核，再由你确认。"]},
- barline:"过线率 ≥ {p}% · ≤ {t}",clearN:"{n} 种配法能过线，MAT 取最便宜的。",none:"在时限内，没有任何配法能达到这一档。",
- noneBody:"这里最好也只能到 {p}%。MAT 会如实告诉你，开工前先问你，或者加一道人工确认。",
- pick:"MAT 会选",runner:"次选",fastest:"过线里最快",pass:"过线率",perjob:"每件花费",time:"预计耗时",passS:"过线",jobS:"每件",timeS:"耗时",
- why:"单独看，{a} 在这里能力最强；但 {b} 达到「{t}」这一档，每件便宜 {x}%。",same:"MAT 选的也正好是过线里最快的。",
- dimT:"能力 · 价格 · 速度",dimS:"{c} ·「{t}」档 · 每个模型单独完成、在 {cap} 时限内用它最合适的思考力度",
- model:"模型",ab:"能力",pr:"价格",sp:"速度",abD:"过线率 · 越长越好",prD:"每件花费 · 越短越便宜（对数刻度）",spD:"每件耗时 · 越短越快",
- dimF:"亮：单独就能达到「{t}」。暗：需要另一个模型复核，或者达不到这一档。能力决定谁有资格，价格和速度决定排序。",
- showAll:"显示全部 {n} 个",showLess:"收起",
- clears:"达到「{t}」",clearsS:"{n} 个模型，各取最便宜的配法。能力是门槛：它决定谁上榜，不决定排序。",sortBy:"上榜的按",
- shortT:"达不到「{t}」",shortS:"每个模型单独完成、用它最合适的思考力度",setup:"配法",abC:"能力 · 过线率",prC:"价格 · 每件",spC:"速度 · 耗时",
- alone:"单独完成",checks:"{m} 复核",best:"单独最好：{e}",drawK:"一次画 {k} 张，由看图模型挑最好的",draw1:"画一张",
- eff:{none:"不思考",minimal:"最低力度",low:"低力度",medium:"中力度",high:"高力度",xhigh:"超高力度",max:"最大力度",default:"默认力度"},
+ tiers:{draft:"草稿",usable:"可用",deliver:"交付",critical:"关键"},
+ tierD:{draft:"初稿，反正还要重写",usable:"日常的活，你看过再用",deliver:"直接交给别人",critical:"合同、上线、钱——一定会再复核"},
+ barline:"过线率 ≥ {p}% · 每步 ≤ {t}",sortBy:"排序",byPrice:"价格",bySpeed:"速度",
+ col:["#","模型","能力","价格","速度"],colD:["","","过线率","每完成一件","每件耗时"],
+ pick:"MAT 会选",fast:"最快",cut:"「{t}」线 · {p}%——线以下的模型达不到",cutNone:"在 {cap} 内没有模型能达到「{t}」。下面是能达到的最高水平。",
+ alone:"单独完成",checks:"+ {m} 复核",draws:"画 {k} 张选最好",draw1:"画一张",best:"单独最好",
  effS:{none:"不思考",minimal:"最低",low:"低",medium:"中",high:"高",xhigh:"超高",max:"最大",default:"默认"},
- scT:"花费与耗时",scS:"{c} ·「{t}」档里能过线的配法",scA:"每个点是一个模型过线的最便宜配法。",
- scB:"连线上的配法，花费和耗时都没有对手。MAT 从最左端选起；你在等结果时，它可以沿着这条线拿钱换时间。",
- scX:"每件花费 →",scY:"更快 ↓",
- howT:"MAT 怎么选",howS:"每一类活都是同样四步",
- steps:[["先看能不能过线。","过不了线的配法不叫便宜，叫返工。过线率不够的，再便宜也不要。"],["按做完一件算钱。","不是按每个 token 的单价，而是算上输入输出、思考、复核的那一份，以及复核打回重做的次数。"],["不超出时限。","每一档每一步都有时限。剩下的里面取最便宜的，一样便宜就取更快的。"],["你已付费的不算钱。","在 App 里，你按月付费的模型在额度用完前按 $0 计。所以你自己的表可能和这张不一样。"]],
- honT:"诚实的数字",
- hon:[["过线率是估算。","来自公开评测——Arena、Artificial Analysis、Vals 和 Scale——换算到同一把尺上。MAT 自带的复核会给你 Mac 上的每件活打分，你那份表会从中学习。"],["价格是官方标价。","取自各家官网，截至 {d}。OpenRouter 只用来交叉核对。"],["本周数据源","{s}"]],
- notes:"备注",dl:"下载本周数据（JSON）",arch:"往期所有表",method:"怎么算的",
- attr:"Arena 排行数据 © LMArena，CC BY 4.0。",stale:"沿用 {d} 读到的数据",fail:"没读到",
- loading:"正在读取本周的表…",err:"本周的表没能读出来，过一分钟再试。",
+ more:"显示全部 {n} 个",less:"收起",
+ how:"怎么排的",
+ howP:["线以上只排能过线的配法。能力是门槛，不决定先后。","配法 = 某个模型的某档思考力度，有时再加一个模型复核。每个模型只显示它能过线的最便宜配法。","价格按做完一件算：token、思考、复核的那一份，以及被打回重做的次数。用的是官方标价；在 App 里，你已付费的套餐按 $0 计。","过线率是由公开评测换算到同一把尺上的估算，MAT 会在你的 Mac 上用自带的复核结果继续校准。"],
+ src:"数据源",dl:"下载数据（JSON）",arch:"往期",method:"方法",attr:"Arena 数据 © LMArena，CC BY 4.0",
+ loading:"读取中…",err:"本周的表没能读出来，过一分钟再试。",
  foot:["一个对话，用上你已付费的所有模型——在你自己的电脑上运行。","产品","测试版","公司"],min:"分",sec:"秒",langNote:"本页目前提供英文、简体中文和繁體中文。"},
-"zh-Hant":{nav:["為什麼是 MAT","省下什麼","運作方式","模型","常見問題"],beta:"取得測試版",back:"排行榜",rebuilt:"每週一重建 · 最近一次 {d}",
- h1:"夠用為先，<br>再看便宜，<br>再看快。",
- lede:"多數排行榜只問誰最強。MAT 問得更具體：對每一類工作、每一檔品質要求，哪個模型——用多大的思考強度、要不要另一個模型複核——能過線，每件花得最少，還不超時。MAT 就照這張表配人。",
- figs:[["個模型"],["類工作"],["檔品質要求"],["你已付費的方案內"]],
- kind:"工作類別",bar:"品質要求",
+"zh-Hant":{nav:["為什麼是 MAT","省下什麼","運作方式","模型","排行榜","隱私","常見問題"],beta:"取得測試版",back:"首頁",
+ pickH:"MAT 會選 · {c} · {t}",kA:"過線率",kP:"每完成一件",kS:"每件耗時",vs:"比能過線的最貴配法便宜 {x} 倍",vsFast:"能過線的最快：{m}，{t}",
+ chT:"能過線的配法 · 價格 vs 耗時",chX:"每完成一件的價格（對數）→",chZ:"更便宜、更快 ↖",
+ srcH:"資料從哪來",srcD:"佔比：這個來源在本榜模型得分裡佔多少。更新：來源自己標的日期；來源不標日期的，是 MAT 讀取的那天。",
+ srcC:["來源","得分佔比","模型數","更新"],gen:"綜合智慧指數 · 所有榜單",prH:"價格與速度",prA:"官方定價、實測速度與思考量",prO:"價格交叉核對",read:"{d} 讀取",stale:"上次讀取 {d}",down:"暫不可用",
+ h1:"模型排行榜",sub:"每一類工作、每一檔品質要求下，能過線的模型，最便宜的排在最前。",upd:"{d} 更新 · 每週一重建",
  cats:{agents:"智能體",search:"搜尋調研",reasoning:"推理分析",writing:"寫作",factuality:"事實複核",coding:"程式",instructionFollowing:"遵循指令",vision:"看圖與文件",imageGeneration:"出圖"},
- tiers:{draft:["草稿","腦力激盪、初稿，反正還要重寫。"],usable:["可用","日常工作，你看過再用。"],deliver:["交付","直接交給別人。"],critical:["關鍵","合約、上線的程式碼、錢。一定有另一個模型複核，再由你確認。"]},
- barline:"過線率 ≥ {p}% · ≤ {t}",clearN:"{n} 種配法能過線，MAT 取最便宜的。",none:"在時限內，沒有任何配法能達到這一檔。",
- noneBody:"這裡最好也只能到 {p}%。MAT 會如實告訴你，開工前先問你，或加一道人工確認。",
- pick:"MAT 會選",runner:"次選",fastest:"過線中最快",pass:"過線率",perjob:"每件花費",time:"預計耗時",passS:"過線",jobS:"每件",timeS:"耗時",
- why:"單獨看，{a} 在這裡能力最強；但 {b} 達到「{t}」這一檔，每件便宜 {x}%。",same:"MAT 選的也正好是過線中最快的。",
- dimT:"能力 · 價格 · 速度",dimS:"{c} ·「{t}」檔 · 每個模型單獨完成、在 {cap} 時限內用它最合適的思考強度",
- model:"模型",ab:"能力",pr:"價格",sp:"速度",abD:"過線率 · 越長越好",prD:"每件花費 · 越短越便宜（對數刻度）",spD:"每件耗時 · 越短越快",
- dimF:"亮：單獨就能達到「{t}」。暗：需要另一個模型複核，或達不到這一檔。能力決定誰有資格，價格和速度決定排序。",
- showAll:"顯示全部 {n} 個",showLess:"收起",
- clears:"達到「{t}」",clearsS:"{n} 個模型，各取最便宜的配法。能力是門檻：它決定誰上榜，不決定排序。",sortBy:"上榜的依",
- shortT:"達不到「{t}」",shortS:"每個模型單獨完成、用它最合適的思考強度",setup:"配法",abC:"能力 · 過線率",prC:"價格 · 每件",spC:"速度 · 耗時",
- alone:"單獨完成",checks:"{m} 複核",best:"單獨最好：{e}",drawK:"一次畫 {k} 張，由看圖模型挑最好的",draw1:"畫一張",
- eff:{none:"不思考",minimal:"最低強度",low:"低強度",medium:"中強度",high:"高強度",xhigh:"超高強度",max:"最大強度",default:"預設強度"},
+ tiers:{draft:"草稿",usable:"可用",deliver:"交付",critical:"關鍵"},
+ tierD:{draft:"初稿，反正還要重寫",usable:"日常工作，你看過再用",deliver:"直接交給別人",critical:"合約、上線、錢——一定會再複核"},
+ barline:"過線率 ≥ {p}% · 每步 ≤ {t}",sortBy:"排序",byPrice:"價格",bySpeed:"速度",
+ col:["#","模型","能力","價格","速度"],colD:["","","過線率","每完成一件","每件耗時"],
+ pick:"MAT 會選",fast:"最快",cut:"「{t}」線 · {p}%——線以下的模型達不到",cutNone:"在 {cap} 內沒有模型能達到「{t}」。下面是能達到的最高水準。",
+ alone:"單獨完成",checks:"+ {m} 複核",draws:"畫 {k} 張選最好",draw1:"畫一張",best:"單獨最好",
  effS:{none:"不思考",minimal:"最低",low:"低",medium:"中",high:"高",xhigh:"超高",max:"最大",default:"預設"},
- scT:"花費與耗時",scS:"{c} ·「{t}」檔中能過線的配法",scA:"每個點是一個模型過線的最便宜配法。",
- scB:"連線上的配法，花費和耗時都沒有對手。MAT 從最左端選起；你在等結果時，它可以沿著這條線用錢換時間。",
- scX:"每件花費 →",scY:"更快 ↓",
- howT:"MAT 怎麼選",howS:"每一類工作都是同樣四步",
- steps:[["先看能不能過線。","過不了線的配法不叫便宜，叫重做。過線率不夠的，再便宜也不要。"],["按做完一件算錢。","不是按每個 token 的單價，而是算上輸入輸出、思考、複核的那一份，以及複核退回重做的次數。"],["不超出時限。","每一檔每一步都有時限。剩下的裡面取最便宜的，一樣便宜就取更快的。"],["你已付費的不算錢。","在 App 裡，你按月付費的模型在額度用完前以 $0 計。所以你自己的表可能和這張不一樣。"]],
- honT:"誠實的數字",
- hon:[["過線率是估算。","來自公開評測——Arena、Artificial Analysis、Vals 和 Scale——換算到同一把尺上。MAT 內建的複核會為你 Mac 上的每件工作打分，你那份表會從中學習。"],["價格是官方定價。","取自各家官網，截至 {d}。OpenRouter 只用來交叉核對。"],["本週資料來源","{s}"]],
- notes:"備註",dl:"下載本週資料（JSON）",arch:"歷來所有表",method:"怎麼算的",
- attr:"Arena 排行資料 © LMArena，CC BY 4.0。",stale:"沿用 {d} 讀到的資料",fail:"沒讀到",
- loading:"正在讀取本週的表…",err:"本週的表沒能讀出來，過一分鐘再試。",
+ more:"顯示全部 {n} 個",less:"收起",
+ how:"怎麼排的",
+ howP:["線以上只排能過線的配法。能力是門檻，不決定先後。","配法 = 某個模型的某檔思考強度，有時再加一個模型複核。每個模型只顯示它能過線的最便宜配法。","價格按做完一件算：token、思考、複核的那一份，以及被退回重做的次數。用的是官方定價；在 App 裡，你已付費的方案以 $0 計。","過線率是由公開評測換算到同一把尺上的估算，MAT 會在你的 Mac 上用內建的複核結果繼續校準。"],
+ src:"資料來源",dl:"下載資料（JSON）",arch:"往期",method:"方法",attr:"Arena 資料 © LMArena，CC BY 4.0",
+ loading:"讀取中…",err:"本週的表沒能讀出來，過一分鐘再試。",
  foot:["一個對話，用上你已付費的所有模型——在你自己的電腦上執行。","產品","測試版","公司"],min:"分",sec:"秒",langNote:"本頁目前提供英文、简体中文和繁體中文。"}
 }[L];
 const f=(s,o)=>s.replace(/\{(\w+)\}/g,(_,k)=>o[k]!=null?o[k]:'');
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ic=(id,s)=>`<svg class="ic${s?' s':''}" aria-hidden="true"><use href="#ic-${id}"/></svg>`;
-const MK={"Anthropic":"anthropic","OpenAI":"openai","Google":"google","SpaceXAI":"spacexai","Meta":"meta","Mistral":"mistral","DeepSeek":"deepseek","Alibaba":"alibaba","Z.ai":"zai","Moonshot":"moonshot","MiniMax":"minimax","ByteDance":"bytedance","Xiaomi":"xiaomi","Microsoft":"microsoft","Black Forest Labs":"bfl"};
-const logo=mk=>MK[mk]?`<svg class="blogo" aria-hidden="true"><use href="#lg-${MK[mk]}"/></svg>`:`<svg class="blogo" aria-hidden="true" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" fill="none" stroke="currentColor"/></svg>`;
-const money=c=>c==null?'—':c===0?'$0':c<0.01?'$'+c.toFixed(3):c<1?'$'+c.toFixed(2):'$'+c.toFixed(2);
+const MK={"Anthropic":"anthropic","OpenAI":"openai","Google":"google","SpaceXAI":"spacexai","Meta":"meta","Mistral":"mistral","DeepSeek":"deepseek","Alibaba":"alibaba","Z.ai":"zai","Moonshot":"moonshot","MiniMax":"minimax","ByteDance":"bytedance","Xiaomi":"xiaomi","StepFun":"stepfun","Microsoft":"microsoft","Black Forest Labs":"bfl"};
+const logo=mk=>MK[mk]?`<svg class="blogo" aria-hidden="true"><use href="#lg-${MK[mk]}"/></svg>`:`<svg class="blogo" aria-hidden="true" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="11" height="11" fill="none" stroke="currentColor"/></svg>`;
+const money=c=>c==null?'—':c===0?'$0':c<0.01?'$'+c.toFixed(3):'$'+c.toFixed(2);
 const pct=p=>Math.round(p*100)+'%';
-const dur=s=>{ s=Math.round(s); if(s<60) return s+(L==='en'?' s':T.sec); const m=Math.floor(s/60), r=s%60; return L==='en'?`${m} min${r?' '+r+' s':''}`:`${m}${T.min}${r?' '+r+T.sec:''}`; };
-const capTxt=s=>s<120?dur(s):(L==='en'?`${s/60} min`:`${s/60} ${T.min}`);
+const dur=s=>{ s=Math.round(s); if(s<60) return s+(L==='en'?' s':T.sec); const m=Math.floor(s/60), r=s%60; return L==='en'?`${m}m ${String(r).padStart(2,'0')}s`:`${m}${T.min}${String(r).padStart(2,'0')}${T.sec}`; };
+const capTxt=s=>s<120?(L==='en'?s+' s':s+T.sec):(L==='en'?`${s/60} min`:`${s/60} ${T.min}`);
+const SRC={aa_gdpval:["Artificial Analysis","GDPval-AA"],vals_index:["Vals AI","Vals Index"],arena_agent:["Arena","Agent"],
+ vals_terminal_bench_4:["Vals AI","Terminal-Bench 4.0"],arena_webdev:["Arena","WebDev"],arena_coding:["Arena","Text · Coding"],aa_terminal_bench_40:["Artificial Analysis","Terminal-Bench 4.0"],
+ vals_swebench:["Vals AI","SWE-bench Verified"],vals_terminal_bench_2_1:["Vals AI","Terminal-Bench 2.1"],arena_search:["Arena","Search"],arena_overall:["Arena","Text"],
+ arena_math:["Arena","Text · Math"],vals_proofbench:["Vals AI","ProofBench"],aa_hle:["Artificial Analysis","Humanity's Last Exam"],scale_hle_diamond:["Scale Labs","HLE-Diamond"],
+ arena_creative_writing:["Arena","Text · Creative writing"],arena_chinese:["Arena","Text · Chinese"],eqbench_creative_writing:["EQ-Bench","Creative Writing v3"],
+ aa_omniscience:["Artificial Analysis","AA-Omniscience"],arena_instruction_following:["Arena","Text · Instruction following"],aa_ifbench:["Artificial Analysis","IFBench"],
+ arena_vision:["Arena","Vision"],arena_document:["Arena","Document"],vals_mmmu:["Vals AI","MMMU"],aa_mmmu:["Artificial Analysis","MMMU-Pro"],
+ arena_text_to_image:["Arena","Text to image"],arena_image_edit:["Arena","Image edit"]};
+const SURL={eqbench_creative_writing:"https://eqbench.com/creative_writing.html",aa:"https://artificialanalysis.ai/leaderboards/models"};
 const CATS=["agents","search","reasoning","writing","factuality","coding","instructionFollowing","vision","imageGeneration"];
 const TIERS=["draft","usable","deliver","critical"];
 
-// ── static bits in the shell
-document.title=(L==='en'?'Rankings · MAT':'排行榜 · MAT');
-$('#navLinks').innerHTML=["problem","race","work","ranks","faq"].map((h,i)=>`<a href="../#${h}"${h==='ranks'?' class="cur"':''}>${T.nav[i]}</a>`).join('');
+// shell
+document.title=(L==='en'?'Model rankings · MAT':'模型排行榜 · MAT');
+$('#navLinks').innerHTML=["../#problem","../#race","../#work","../#ranks","./","../#private","../#faq"].map((h,i)=>`<a href="${h}"${h==='./'?' class="cur" aria-current="page"':''}>${T.nav[i]}</a>`).join('');
 $('#navBeta .bl').textContent=T.beta;
-$('#langC').textContent=LANGS.find(l=>l[0]===L)[1].slice(0,L==='en'?2:2).replace('En','EN');
+$('#langC').textContent={en:'EN','zh-Hans':'简','zh-Hant':'繁'}[L];
 $('#langBtn').addEventListener('click',e=>{ const p=$('#langPop'); const open=p.hidden; p.hidden=!open; e.currentTarget.setAttribute('aria-expanded',open); });
 $('#langPop').innerHTML=LANGS.map(([c,n])=>`<button type="button" data-l="${c}"${c===L?' aria-current="true"':''}>${n}</button>`).join('')+`<p>${T.langNote}</p>`;
 $('#langPop').addEventListener('click',e=>{ const b=e.target.closest('[data-l]'); if(!b) return; try{ localStorage.setItem('mat-lang',b.dataset.l); }catch(x){} const u=new URL(location.href); u.searchParams.set('lang',b.dataset.l); location.href=u.toString(); });
@@ -527,150 +479,151 @@ document.addEventListener('click',e=>{ if(!e.target.closest('#langPop,#langBtn')
 $('#footLine').textContent=T.foot[0]; $('#fh1').textContent=T.foot[1]; $('#fh2').textContent=T.foot[2]; $('#fh3').textContent=T.foot[3];
 $('#app').innerHTML=`<div class="g"><p class="load">${T.loading}</p></div>`;
 
-// ── state
-const st={cat:'coding',tier:'deliver',sort:'price',allDim:false,allShort:false};
-const h=/^#(\w+)\/(\w+)/.exec(location.hash); if(h&&CATS.includes(h[1])&&TIERS.includes(h[2])){ st.cat=h[1]; st.tier=h[2]; }
+const st={cat:'coding',tier:'deliver',sort:'price',all:false};
+const hh=/^#(\w+)\/(\w+)/.exec(location.hash); if(hh&&CATS.includes(hh[1])&&TIERS.includes(hh[2])){ st.cat=hh[1]; st.tier=hh[2]; }
 let D,N;
-
 fetch('v2/latest.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{ D=d; N=Object.fromEntries(d.models.map(m=>[m.id,m])); draw(); })
  .catch(()=>{ $('#app').innerHTML=`<div class="g"><p class="load">${T.err}</p></div>`; });
 
-function single(row,tier,cap){ // a model on its own at the effort that gives the best pass chance inside the limit
+// a model on its own, at the effort with the best pass chance inside the limit
+function alone(row,tier,cap){
   if(row.variants){ const vs=row.variants.filter(v=>v.t<=cap); if(!vs.length) return null;
     const v=vs.reduce((a,b)=>(b.p[tier]>a.p[tier]||(b.p[tier]===a.p[tier]&&b.c<a.c))?b:a); return {m:row.m,effort:v.effort,P:v.p[tier],cost:v.c,time:v.t}; }
   return row.c==null?null:{m:row.m,P:row.p[tier],cost:row.c,time:row.t||20,k:1};
 }
-function setupTxt(o,short){
-  if(o.k!=null) return o.k>1?f(T.drawK,{k:o.k}):T.draw1;
-  const e=short?T.effS[o.effort]||o.effort:T.eff[o.effort]||o.effort;
-  return e+' · '+(o.reviewer?f(T.checks,{m:N[o.reviewer].name}):T.alone);
+function setup(o,under){
+  if(o.k!=null) return o.k>1?f(T.draws,{k:o.k}):T.draw1;
+  const e=T.effS[o.effort]||o.effort;
+  if(under) return e+' · '+T.best;
+  return e+' '+(o.reviewer?f(T.checks,{m:esc(N[o.reviewer].name)}):'· '+T.alone);
+}
+
+function chart(pts,pickId,fastId,isSame,TI){
+  const nar=innerWidth<=860, W=nar?340:520,H=nar?220:210,l=46,r=12,t=18,b=30;
+  const cs=pts.map(o=>o.cost).filter(c=>c>0), lo=Math.log10(Math.min(...cs)/1.25), hi=Math.log10(Math.max(...cs)*1.25);
+  const tmax=Math.min(TI.cap,Math.max(...pts.map(o=>o.time))*1.12), tmin=Math.max(0,Math.min(...pts.map(o=>o.time))*0.85);
+  const X=c=>l+Math.max(0,Math.min(1,(Math.log10(Math.max(c,1e-4))-lo)/(hi-lo)))*(W-l-r), Y=s=>t+(s-tmin)/(tmax-tmin||1)*(H-t-b);
+  const P=pts.map(o=>({o,x:X(o.cost),y:Y(o.time),pk:isSame(o,pickId),fs:isSame(o,fastId)}));
+  // labels: pick first, then fastest, then the rest; each tries right, left, above, below and is dropped if all collide
+  const boxes=P.map(p=>({x0:p.x-6,x1:p.x+6,y0:p.y-6,y1:p.y+6})), hit=(q)=>boxes.some(z=>q.x0<z.x1&&q.x1>z.x0&&q.y0<z.y1&&q.y1>z.y0);
+  let dots='',lab='';
+  for(const p of P.slice().sort((a,b)=>(b.pk*2+b.fs)-(a.pk*2+a.fs))){
+    const nm=esc(N[p.o.m].name), fs=p.pk?11:p.fs?10:9.5, w=nm.length*fs*0.56, h=fs+2, g=p.pk?15:9;
+    const tries=[[p.x+g,p.y+fs*0.35,'start'],[p.x-g,p.y+fs*0.35,'end'],[p.x,p.y-g,'middle'],[p.x,p.y+g+fs*0.7,'middle']];
+    for(const [tx,ty,an] of tries){ const x0=an==='start'?tx:an==='end'?tx-w:tx-w/2, q={x0,x1:x0+w,y0:ty-fs,y1:ty-fs+h};
+      if(q.x0<l-30||q.x1>W||q.y0<0||q.y1>H-b+2||hit(q)) continue;
+      boxes.push(q); lab+=`<text x="${tx.toFixed(1)}" y="${ty.toFixed(1)}" class="${p.pk?'lpk':p.fs?'lfs':'lot'}" text-anchor="${an}">${nm}</text>`; break; } }
+  for(const p of P.slice().sort((a,b)=>(a.pk*2+a.fs)-(b.pk*2+b.fs))){ const tip=`<title>${esc(N[p.o.m].name)} · ${pct(p.o.P)} · ${money(p.o.cost)} · ${dur(p.o.time)}</title>`;
+    dots+=p.pk?`<circle cx="${p.x}" cy="${p.y}" r="12" class="dpk2"/><circle cx="${p.x}" cy="${p.y}" r="6" class="dpk">${tip}</circle>`:p.fs?`<circle cx="${p.x}" cy="${p.y}" r="5" class="dfs">${tip}</circle>`:`<circle cx="${p.x}" cy="${p.y}" r="4" class="dup">${tip}</circle>`; }
+  const yt=[tmin,(tmin+tmax)/2,tmax].map(s=>`<text x="${l-8}" y="${(Y(s)+3).toFixed(1)}" class="ax" text-anchor="end">${dur(s)}</text>`).join('');
+  const cmin=Math.min(...cs), cmax=Math.max(...cs);
+  return `<svg viewBox="0 0 ${W} ${H}" class="scv" role="img" aria-label="${T.chT}">
+    <line x1="${l}" x2="${W-r}" y1="${H-b}" y2="${H-b}" class="axl"/><line x1="${l}" x2="${l}" y1="${t}" y2="${H-b}" class="axl"/>
+    ${yt}
+    <text x="${X(cmin)}" y="${H-b+16}" class="ax" text-anchor="middle">${money(cmin)}</text><text x="${X(cmax)}" y="${H-b+16}" class="ax" text-anchor="middle">${money(cmax)}</text>
+    ${nar?'':`<text x="${(l+W-r)/2}" y="${H-b+16}" class="ax" text-anchor="middle">${T.chX}</text>`}
+    <text x="${l+6}" y="${t-6}" class="zt">${T.chZ}</text>
+    ${dots}${lab}</svg>`;
+}
+function sources(cat){
+  const M=D.method, img=cat==='imageGeneration', list=img?M.imageSources:(M.sources[cat]||[]), wg=img?0:M.wGeneral, tot=list.reduce((s,x)=>s+x[1],0)+wg;
+  const meta=k=>D.sources[k.startsWith('aa_')||k==='aa_ii'?'aa':k]||{};
+  const when=s=>!s.ok&&!s.staleSince?`<span class="bad">${T.down}</span>`:s.staleSince?`<span class="bad">${f(T.stale,{d:s.staleSince})}</span>`:s.updated?s.updated:`<span class="rd">${f(T.read,{d:D.fetched})}</span>`;
+  const line=(k,prov,bench,w)=>{ const s=meta(k), url=SURL[k]||(k.startsWith('aa_')?SURL.aa:s.url);
+    return `<div class="sr"><a class="sn" href="${esc(url||'#')}" target="_blank" rel="noopener"><small>${prov}</small><span>${bench} ↗</span></a>
+      <span class="sw">${w==null?'<span class="na">—</span>':`<span class="trk"><i style="width:${w*100}%"></i></span><b>${Math.round(w*100)}%</b>`}</span>
+      <span class="sm"><em>${T.srcC[2]} </em>${s.matched!=null?s.matched:'—'}</span><span class="sd">${when(s)}</span></div>`; };
+  const rows=list.slice().sort((a,b)=>b[1]-a[1]).map(([k,w])=>line(k,...(SRC[k]||["",k]),w/tot));
+  if(wg) rows.push(line('aa_ii',"Artificial Analysis",T.gen,wg/tot));
+  return `<div class="src">
+    <div class="srh"><h3>${T.srcH}</h3><p>${T.srcD}</p></div>
+    <div class="sr hd"><span>${T.srcC[0]}</span><span>${T.srcC[1]}</span><span>${T.srcC[2]}</span><span>${T.srcC[3]}</span></div>
+    ${rows.join('')}
+    <p class="sg2">${T.prH}</p>
+    ${line('aa',"Artificial Analysis",T.prA,null)}${line('openrouter',"OpenRouter",T.prO,null)}
+    <p class="attr">${T.attr} · <a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset" target="_blank" rel="noopener">lmarena-ai/leaderboard-dataset</a></p>
+  </div>`;
 }
 
 function draw(){
   const B=D.boards.find(b=>b.category===st.cat), TI=D.tiers.find(t=>t.id===st.tier), PK=B.picks[st.tier];
-  const catName=T.cats[st.cat], tierName=T.tiers[st.tier][0];
+  const tierName=T.tiers[st.tier];
   const rows=B.rows.filter(r=>!(N[r.m]||{}).local);
-  const singles=rows.map(r=>single(r,st.tier,TI.cap)).filter(Boolean).sort((a,b)=>b.P-a.P||a.cost-b.cost);
-  const clears=(PK.cheapest||[]).slice();
-  const clearIds=new Set(clears.map(o=>o.m));
-  const out=[];
+  const above=(PK.cheapest||[]).slice().sort(st.sort==='price'?(a,b)=>a.cost-b.cost||a.time-b.time:(a,b)=>a.time-b.time||a.cost-b.cost);
+  const inAbove=new Set(above.map(o=>o.m));
+  const below=rows.map(r=>alone(r,st.tier,TI.cap)).filter(o=>o&&!inAbove.has(o.m)).sort((a,b)=>b.P-a.P||a.cost-b.cost);
+  const pickId=(PK.cheapest||[])[0], fastId=PK.fastest;
+  const isSame=(a,b)=>a&&b&&a.m===b.m&&a.effort===b.effort&&a.reviewer===b.reviewer&&a.k===b.k;
+  // shared scales, so bars compare down the whole table
+  const all=[...above,...below], cs=all.map(o=>o.cost).filter(c=>c>0);
+  const lo=Math.log10(Math.min(...cs)/1.5), hi=Math.log10(Math.max(...cs)*1.2);
+  const px=c=>c<=0?2:Math.max(2,(Math.log10(c)-lo)/(hi-lo)*100);
+  const sx=t=>Math.max(2,Math.min(100,t/TI.cap*100));
 
-  // header
-  out.push(`<section id="top"><div class="g">
-    <p class="lab"><a href="../#ranks">←<span>${T.back}</span></a><em>${f(T.rebuilt,{d:D.fetched})}</em></p>
-    <h1>${T.h1}</h1><p class="lede">${T.lede}</p>
-    <dl class="figs"><div><dt>${D.models.length}</dt><dd>${T.figs[0][0]}</dd></div><div><dt>9</dt><dd>${T.figs[1][0]}</dd></div><div><dt>4</dt><dd>${T.figs[2][0]}</dd></div><div><dt>$0</dt><dd>${T.figs[3][0]}</dd></div></dl>
-  </div></section>`);
+  const row=(o,i,under)=>{ const m=N[o.m], pk=!under&&isSame(o,pickId), fs=!under&&isSame(o,fastId);
+    return `<div class="r${under?' dn':''}${pk?' top':''}">
+      <span class="n">${String(i+1).padStart(2,'0')}</span>
+      <span class="m">${logo(m.maker)}<span class="t"><span class="nm">${esc(m.name)}${pk?`<em class="tag">${T.pick}</em>`:''}${fs&&!pk?`<em class="tag q">${T.fast}</em>`:''}</span><span class="su">${setup(o,under)}</span></span></span>
+      <span class="c a">${ic('ability',1)}<span class="trk"><i style="width:${o.P*100}%"></i><u style="left:${TI.bar*100}%"></u></span><b>${pct(o.P)}</b></span>
+      <span class="c p">${ic('price',1)}<span class="trk"><i style="width:${px(o.cost)}%"></i></span><b>${money(o.cost)}</b></span>
+      <span class="c s">${ic('speed',1)}<span class="trk"><i style="width:${sx(o.time)}%"></i></span><b>${dur(o.time)}</b></span>
+    </div>`; };
 
-  // controls
-  out.push(`<section id="s-ctl" style="padding-bottom:var(--s9)"><div class="g"><div class="ctl">
-    <div class="row-k"><span class="k">${T.kind}</span><div class="tabs" role="tablist" aria-label="${T.kind}">${CATS.map(c=>`<button class="tab" role="tab" data-c="${c}" aria-selected="${c===st.cat}">${ic(c)}<span>${T.cats[c]}</span></button>`).join('')}</div></div>
-    <div class="row-k"><span class="k">${ic('ability',1)}${T.bar}</span><div class="bars">${D.tiers.map(t=>`<button class="bar" data-t="${t.id}" aria-pressed="${t.id===st.tier}"><b>${T.tiers[t.id][0]}</b><span>${f(T.barline,{p:Math.round(t.bar*100),t:capTxt(t.cap)})}</span><i>${T.tiers[t.id][1]}</i></button>`).join('')}</div></div>
-  </div></div></section>`);
+  const pk0=(PK.cheapest||[])[0], pricey=above.reduce((a,o)=>o.cost>a?o.cost:a,0), fo=fastId&&above.find(o=>isSame(o,fastId));
+  const sum=pk0?`<div class="sum">
+    <div class="pk">
+      <p class="ey">${f(T.pickH,{c:T.cats[st.cat],t:tierName})}</p>
+      <p class="pn">${logo(N[pk0.m].maker)}<span>${esc(N[pk0.m].name)}</span></p><p class="su">${setup(pk0)}</p>
+      <div class="kp"><span class="k a"><b>${pct(pk0.P)}</b><small>${T.kA}</small></span><span class="k p"><b>${money(pk0.cost)}</b><small>${T.kP}</small></span><span class="k s"><b>${dur(pk0.time)}</b><small>${T.kS}</small></span></div>
+      <p class="vs">${pricey>pk0.cost*1.15?`<span>${f(T.vs,{x:(pricey/pk0.cost).toFixed(1)})}</span>`:''}${fo&&!isSame(fo,pk0)?`<span>${f(T.vsFast,{m:esc(N[fo.m].name),t:dur(fo.time)})}</span>`:''}</p>
+    </div>
+    ${above.length>1?`<figure class="sc"><figcaption><span>${T.chT}</span><span class="lg"><i class="l1"></i>${T.pick}<i class="l2"></i>${T.fast}</span></figcaption>${chart(above,pickId,fastId,isSame,TI)}</figure>`:''}
+  </div>`:'';
+  const limitBelow=st.all?below.length:Math.min(below.length,Math.max(5,12-above.length));
 
-  // pick
-  const lab=(a,b,r='')=>`<p class="sec-lab"><b>${a}</b><span>${b}</span>${r?`<span class="r">${r}</span>`:''}</p>`;
-  const main=clears[0], runner=clears[1], fast=PK.fastest;
-  let pk=`<section id="s-pick"><div class="g">${lab(catName+' · '+tierName, PK.feasible?f(T.clearN,{n:PK.feasible}):T.none)}`;
-  const stats=(o,big)=>`<div class="pk-v"><div><b>${pct(o.P)}</b><span>${ic('ability',1)}${big?T.pass:T.passS}</span></div><div><b>${money(o.cost)}</b><span>${ic('price',1)}${big?T.perjob:T.jobS}</span></div><div><b>${dur(o.time)}</b><span>${ic('speed',1)}${big?T.time:T.timeS}</span></div></div>`;
-  const card=(cls,l,o,big)=>`<div class="${cls}"><p class="pk-l">${l}</p><p class="pk-n">${logo(N[o.m].maker)}<span>${esc(N[o.m].name)}</span></p><p class="pk-s">${setupTxt(o)}</p>${stats(o,big)}</div>`;
-  if(main){
-    const same=(a,b)=>a&&b&&a.m===b.m&&a.effort===b.effort&&a.reviewer===b.reviewer&&a.k===b.k;
-    let alts='';
-    if(same(fast,main)) alts=(runner?card('alt a1',T.runner,runner):'')+`<div class="alt a2"><p class="pk-l">${T.fastest}</p><p class="pk-s">${T.same}</p></div>`;
-    else if(same(fast,runner)) alts=card('alt a1',T.runner+' · '+T.fastest,runner);
-    else alts=(runner?card('alt a1',T.runner,runner):'')+(fast?card('alt a2',T.fastest,fast):'');
-    pk+=`<div class="pick">${card('main',T.pick,main,true)}${alts}</div>`;
-    const top=singles[0];
-    if(top&&top.m!==main.m){ const theirs=clears.find(o=>o.m===top.m); if(theirs&&theirs.cost>main.cost*1.05) pk+=`<p class="note">${f(T.why,{a:esc(N[top.m].name),b:esc(N[main.m].name),t:tierName,x:Math.round((1-main.cost/theirs.cost)*100)})}</p>`; }
-  } else if(PK.bestEffort){
-    const b=PK.bestEffort; pk+=`<p class="warn"><b>${T.none}</b> ${f(T.noneBody,{p:Math.round(b.P*100)})}</p><div class="pick">${card('main',T.pick,b,true)}</div>`;
-  }
-  out.push(pk+`</div></section>`);
-
-  // ability · price · speed
-  const lp=c=>Math.max(0.02,Math.min(1,(Math.log10(Math.max(c,0.001))+2)/2));
-  const showN=st.allDim?singles.length:Math.min(12,singles.length);
-  let dm=`<section id="s-dim"><div class="g">${lab(T.dimT,f(T.dimS,{c:catName,t:tierName,cap:capTxt(TI.cap)}))}<div class="dim">
-    <div class="dm-h"><div>${T.model}</div>
-      <div><div class="t">${ic('ability')}${T.ab}</div><div class="d">${T.abD}</div><div class="axis"><span style="left:0">0%</span><span style="left:${TI.bar*100}%;transform:translateX(-100%);padding-right:4px">${tierName} ${Math.round(TI.bar*100)}%</span></div></div>
-      <div><div class="t">${ic('price')}${T.pr}</div><div class="d">${T.prD}</div><div class="axis"><span style="left:0">$0.01</span><span style="left:50%;transform:translateX(-50%)">$0.10</span><span style="right:0">$1</span></div></div>
-      <div><div class="t">${ic('speed')}${T.sp}</div><div class="d">${T.spD}</div><div class="axis"><span style="left:0">0</span><span style="right:0">${capTxt(TI.cap)}</span></div></div></div>`;
-  singles.slice(0,showN).forEach(o=>{ const m=N[o.m], on=o.P>=TI.bar, isPick=main&&main.m===o.m;
-    dm+=`<div class="dm-r${on?'':' off'}"><div class="dm-m">${logo(m.maker)}<span class="nm">${esc(m.name)}</span><small>${o.effort?T.effS[o.effort]||o.effort:''}</small>${isPick?`<span class="tag">${T.pick}</span>`:''}</div>
-      <div class="cell">${ic('ability',1)}<span class="trk"><i style="width:${o.P*100}%"></i><u style="left:${TI.bar*100}%"></u></span><b>${pct(o.P)}</b></div>
-      <div class="cell">${ic('price',1)}<span class="trk"><i style="width:${lp(o.cost)*100}%"></i></span><b>${money(o.cost)}</b></div>
-      <div class="cell">${ic('speed',1)}<span class="trk"><i style="width:${Math.min(100,o.time/TI.cap*100)}%"></i><u style="left:calc(100% - 1px)"></u></span><b>${dur(o.time)}</b></div></div>`; });
-  dm+=`<div class="dm-f"><span>${f(T.dimF,{t:tierName})}</span>${singles.length>12?`<button class="more" data-more="dim">${st.allDim?T.showLess:f(T.showAll,{n:singles.length})}</button>`:''}</div></div></div></section>`;
-  out.push(dm);
-
-  // the setups that clear, and the ones that don't
-  const sorted=clears.slice().sort(st.sort==='price'?(a,b)=>a.cost-b.cost||a.time-b.time:(a,b)=>a.time-b.time||a.cost-b.cost);
-  const hdr=`<div class="tr h"><span>#</span><span>${T.model}</span><span>${T.setup}</span><span>${ic('ability',1)}${T.abC}</span><span>${ic('price',1)}${T.prC}</span><span>${ic('speed',1)}${T.spC}</span></div>`;
-  const line=(o,i,off)=>{ const m=N[o.m]; return `<div class="tr${off?' off':''}"><span class="rn">${String(i+1).padStart(2,'0')}</span><span class="mn dm-m">${logo(m.maker)}<span class="nm">${esc(m.name)}</span><small>${esc(m.maker)}</small></span>
-    <span class="su">${off?f(T.best,{e:o.effort?(T.eff[o.effort]||o.effort):T.draw1}):setupTxt(o)}</span>
-    <span class="ps"><span class="trk"><i style="width:${o.P*100}%"></i><u style="left:${TI.bar*100}%"></u></span><b>${pct(o.P)}</b></span><span class="co">${off?'—':money(o.cost)}</span><span class="tm">${off?'—':dur(o.time)}</span>
-    <span class="v3"><span>${ic('ability',1)}${pct(o.P)}</span>${off?'':`<span>${ic('price',1)}${money(o.cost)}</span><span>${ic('speed',1)}${dur(o.time)}</span>`}</span></div>`; };
-  const shorts=singles.filter(o=>!clearIds.has(o.m));
-  const showS=st.allShort?shorts.length:Math.min(5,shorts.length);
-  let tb=`<section id="s-tbl"><div class="g"><div class="tbl">`;
-  if(sorted.length){
-    tb+=`<p class="sec-lab"><b>${f(T.clears,{t:tierName})}</b><span>${f(T.clearsS,{n:sorted.length})}</span><span class="r"><span>${T.sortBy}</span><button class="srt" data-s="price" aria-pressed="${st.sort==='price'}">${ic('price',1)}${T.pr}</button><button class="srt" data-s="speed" aria-pressed="${st.sort==='speed'}">${ic('speed',1)}${T.sp}</button></span></p>`+hdr+sorted.map((o,i)=>line(o,i)).join('');
-  }
-  if(shorts.length){
-    tb+=`<div class="${sorted.length?'sub':''}"><p class="sec-lab"><b>${f(T.shortT,{t:tierName})}</b><span>${T.shortS}</span></p>${hdr}${shorts.slice(0,showS).map((o,i)=>line(o,sorted.length+i,true)).join('')}
-      ${shorts.length>5?`<p class="tail"><button class="more" data-more="short">${st.allShort?T.showLess:f(T.showAll,{n:shorts.length})}</button></p>`:''}</div>`;
-  }
-  out.push(tb+`</div></div></section>`);
-
-  // cost and time
-  const pts=[...clears,...(PK.frontier||[])].filter((o,i,a)=>a.findIndex(x=>x.m===o.m&&x.effort===o.effort&&x.reviewer===o.reviewer&&x.k===o.k)===i);
-  if(pts.length>=2){
-    const W=880,H=360,Lm=64,Bm=44, cs=pts.map(o=>o.cost), ts=pts.map(o=>o.time);
-    const x0=Math.log10(Math.min(...cs)/1.3), x1=Math.log10(Math.max(...cs)*1.3), y1=TI.cap, y0=Math.max(0,Math.floor((Math.min(...ts)-10)/30)*30);
-    const X=c=>Lm+(Math.log10(c)-x0)/(x1-x0)*(W-Lm), Y=s=>H-(s-y0)/(y1-y0)*H;
-    let g=`<svg viewBox="-4 -16 ${W+8} ${H+Bm+16}" role="img" aria-label="${T.scT}">`;
-    for(let k=0;k<=4;k++){ const s=y0+(y1-y0)*k/4; g+=`<line x1="${Lm}" x2="${W}" y1="${Y(s)}" y2="${Y(s)}" stroke="currentColor" stroke-opacity="${k?0.08:0.3}"/><text x="0" y="${Y(s)+4}">${dur(s)}</text>`; }
-    const ticks=[0.005,0.01,0.02,0.05,0.1,0.2,0.5,1,2,5].filter(c=>Math.log10(c)>=x0&&Math.log10(c)<=x1);
-    ticks.forEach(c=>{ g+=`<line x1="${X(c)}" x2="${X(c)}" y1="${H}" y2="${H+6}" stroke="currentColor" stroke-opacity=".3"/><text x="${X(c)}" y="${H+22}" text-anchor="middle">${money(c)}</text>`; });
-    g+=`<text x="${W}" y="${H+40}" text-anchor="end">${T.scX}</text><text x="0" y="${H+40}">${T.scY}</text>`;
-    pts.forEach(o=>{ g+=`<circle cx="${X(o.cost)}" cy="${Y(o.time)}" r="4" fill="currentColor" fill-opacity=".35"><title>${esc(N[o.m].name)} · ${setupTxt(o,1)} · ${pct(o.P)} · ${money(o.cost)} · ${dur(o.time)}</title></circle>`; });
-    const fr=(PK.frontier||[]); if(fr.length>1) g+=`<polyline points="${fr.map(o=>X(o.cost)+','+Y(o.time)).join(' ')}" fill="none" stroke="currentColor" stroke-width="1.5"/>`;
-    fr.forEach(o=>{ g+=`<circle cx="${X(o.cost)}" cy="${Y(o.time)}" r="5" fill="currentColor"/>`; });
-    if(main){ g+=`<circle cx="${X(main.cost)}" cy="${Y(main.time)}" r="11" fill="none" stroke="currentColor" stroke-width="1.5"/><text class="lb" x="${X(main.cost)-6}" y="${Y(main.time)-18}">${T.pick} · ${money(main.cost)} · ${dur(main.time)}</text>`; }
-    g+=`</svg>`;
-    out.push(`<section id="s-scatter"><div class="g">${lab(T.scT,f(T.scS,{c:catName,t:tierName}))}<div class="sc">${g}</div><div class="sc-t"><p>${T.scA}</p><p>${T.scB}</p></div></div></section>`);
-  }
-
-  // how, honest numbers
-  out.push(`<section id="s-how"><div class="g">${lab(T.howT,T.howS)}<div class="steps">${T.steps.map((s,i)=>`<div><b>0${i+1}</b><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('')}</div></div></section>`);
-  const SL={aa:"Artificial Analysis",arena_overall:"Arena Text",arena_coding:"Arena Coding",arena_math:"Arena Math",arena_creative_writing:"Arena Creative Writing",arena_chinese:"Arena Chinese",arena_instruction_following:"Arena Instruction Following",arena_vision:"Arena Vision",arena_document:"Arena Document",arena_search:"Arena Search",arena_webdev:"Arena WebDev",arena_text_to_image:"Arena Text-to-Image",arena_image_edit:"Arena Image Edit",arena_agent:"Arena Agent",vals_terminal_bench_4:"Terminal-Bench 4.0",vals_terminal_bench_2_1:"Terminal-Bench 2.1",vals_swebench:"SWE-bench Verified",vals_index:"Vals Index",vals_proofbench:"ProofBench",vals_mmmu:"MMMU-Pro",scale_hle_diamond:"HLE-Diamond",eqbench_creative_writing:"EQ-Bench Creative Writing",openrouter:"OpenRouter prices"};
-  const srcs=Object.entries(D.sources||{}).filter(([k])=>SL[k]).map(([k,s])=>`<span>${SL[k]}${s.updated?' · '+s.updated:''}${s.ok?'':` <span class="st">(${s.staleSince?f(T.stale,{d:s.staleSince}):T.fail})</span>`}</span>`).join('');
-  out.push(`<section id="s-hon"><div class="g"><p class="sec-lab" style="grid-column:1/-1"></p><p class="hon-l">${T.honT}</p><div class="hon">
-    ${T.hon.map(([a,b],i)=>`<div class="n"><b>${a}</b>${i===2?`<div class="srcs">${srcs}</div>`:`<p>${f(b,{d:D.fetched})}</p>`}</div>`).join('')}
-    <div class="n"><b>Arena</b><p>${T.attr} <a class="u" href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset" target="_blank" rel="noopener">lmarena-ai/leaderboard-dataset</a></p></div>
-    <div class="lnk"><a href="v2/latest.json" download>${T.dl} →</a><a href="v2/index.json">${T.arch} →</a><a href="https://github.com/RobertLeeHao/MAT/tree/main/rankings" target="_blank" rel="noopener">${T.method} ↗</a></div>
-  </div></div></section>`);
-
-  $('#app').innerHTML=out.join('');
+  $('#app').innerHTML=`
+  <section id="hd"><div class="g">
+    <p class="crumb"><a href="../#ranks">← ${T.back}</a><span>${f(T.upd,{d:D.fetched})}</span></p>
+    <h1>${T.h1}</h1><p class="sub">${T.sub}</p>
+  </div></section>
+  <section id="board"><div class="g"><div class="bd">
+    <div class="tabs" role="tablist">${CATS.map(c=>`<button class="tab" role="tab" data-c="${c}" aria-selected="${c===st.cat}">${ic(c)}<span>${T.cats[c]}</span></button>`).join('')}</div>
+    <div class="tool">
+      <div class="seg" role="group" aria-label="Quality bar">${TIERS.map(t=>`<button class="sg" data-t="${t}" aria-pressed="${t===st.tier}">${T.tiers[t]}</button>`).join('')}</div>
+      <p class="binfo"><b>${T.tierD[st.tier]}</b><span>${f(T.barline,{p:Math.round(TI.bar*100),t:capTxt(TI.cap)})}</span></p>
+      <div class="sort"><span>${T.sortBy}</span><button class="so" data-s="price" aria-pressed="${st.sort==='price'}">${ic('price',1)}${T.byPrice}</button><button class="so" data-s="speed" aria-pressed="${st.sort==='speed'}">${ic('speed',1)}${T.bySpeed}</button></div>
+    </div>
+    ${sum}
+    <div class="tbl" role="table">
+      <div class="r h"><span class="n">${T.col[0]}</span><span class="m">${T.col[1]}</span>
+        <span class="c a">${ic('ability',1)}<span>${T.col[2]}<small>${T.colD[2]}</small></span></span>
+        <span class="c p">${ic('price',1)}<span>${T.col[3]}<small>${T.colD[3]}</small></span></span>
+        <span class="c s">${ic('speed',1)}<span>${T.col[4]}<small>${T.colD[4]}</small></span></span></div>
+      ${above.map((o,i)=>row(o,i)).join('')}
+      <div class="cut"><span>${above.length?f(T.cut,{t:tierName,p:Math.round(TI.bar*100)}):f(T.cutNone,{t:tierName,cap:capTxt(TI.cap)})}</span></div>
+      ${below.slice(0,limitBelow).map((o,i)=>row(o,above.length+i,true)).join('')}
+    </div>
+    ${below.length>limitBelow||st.all?`<p class="mo"><button class="more">${st.all?T.less:f(T.more,{n:above.length+below.length})}</button></p>`:''}
+    ${sources(st.cat)}
+  </div></div></section>
+  <section id="ft"><div class="g"><div class="how">
+    <h2>${T.how}</h2>
+    <ol>${T.howP.map(p=>`<li>${p}</li>`).join('')}</ol>
+    <p class="lnk"><a href="v2/latest.json" download>${T.dl}</a><a href="v2/index.json">${T.arch}</a><a href="https://github.com/RobertLeeHao/MAT/tree/main/rankings" target="_blank" rel="noopener">${T.method} ↗</a></p>
+  </div></div></section>`;
   const tabs=$('.tabs'), cur=tabs.querySelector('[aria-selected="true"]'); if(cur&&tabs.scrollWidth>tabs.clientWidth) tabs.scrollLeft=cur.offsetLeft-tabs.clientWidth/2+cur.offsetWidth/2;
 }
 
 document.addEventListener('click',e=>{
-  const t=e.target.closest('.tab'), b=e.target.closest('.bar'), s=e.target.closest('.srt'), m=e.target.closest('.more');
   if(!D) return;
-  if(t){ st.cat=t.dataset.c; st.allDim=st.allShort=false; }
-  else if(b){ st.tier=b.dataset.t; st.allDim=st.allShort=false; }
-  else if(s){ st.sort=s.dataset.s; }
-  else if(m){ if(m.dataset.more==='dim') st.allDim=!st.allDim; else st.allShort=!st.allShort; }
-  else return;
+  const t=e.target.closest('.tab'), b=e.target.closest('.sg'), s=e.target.closest('.so'), m=e.target.closest('.more');
+  if(t){ st.cat=t.dataset.c; st.all=false; } else if(b){ st.tier=b.dataset.t; st.all=false; } else if(s){ st.sort=s.dataset.s; } else if(m){ st.all=!st.all; } else return;
   history.replaceState(null,'','#'+st.cat+'/'+st.tier);
   const y=window.scrollY; draw(); window.scrollTo(0,y);
 });
 document.addEventListener('keydown',e=>{ const t=e.target.closest&&e.target.closest('.tab'); if(!t||!/Arrow(Left|Right)/.test(e.key)) return;
   const i=CATS.indexOf(st.cat)+(e.key==='ArrowRight'?1:-1); st.cat=CATS[(i+CATS.length)%CATS.length]; draw(); $('.tab[aria-selected="true"]').focus(); });
 })();
-
 </script>
 </body>
 </html>
