@@ -1,0 +1,38 @@
+name: Rankings probe
+
+# Runs only on the rankings-probe branch: checks whether each data source
+# behind the model rankings can be read by a script, with no person in the loop.
+on:
+  push:
+    branches: [rankings-probe]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          pip install requests==2.32.3 playwright==1.47.0 pandas==2.2.3 pyarrow==17.0.0
+          python -m playwright install --with-deps chromium
+      - name: Probe
+        env:
+          AA_API_KEY: ${{ secrets.AA_API_KEY }}
+        run: python rankings/probe/probe.py
+      - name: Arena public dataset
+        if: always()
+        run: python rankings/probe/arena_hf.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probe-out
+          path: rankings/probe/out
+          retention-days: 14

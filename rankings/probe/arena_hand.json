@@ -1,0 +1,358 @@
+[
+ {
+  "subset": "text_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Gemini 4 Argon",
+  "value": 1525
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Muse Wonder",
+  "value": 1513
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Claude Opus 5.5",
+  "value": 1508
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Claude Fable 5.1",
+  "value": 1501
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "coding"
+  ],
+  "model": "Gemini 4 Argon",
+  "value": 1561
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "coding"
+  ],
+  "model": "Muse Wonder",
+  "value": 1558
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "coding"
+  ],
+  "model": "Claude Opus 5.5",
+  "value": 1545
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "coding"
+  ],
+  "model": "GPT-6 Astra",
+  "value": 1543
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "math"
+  ],
+  "model": "Gemini 4 Argon",
+  "value": 1529
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "math"
+  ],
+  "model": "Claude Fable 5.1",
+  "value": 1524
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "math"
+  ],
+  "model": "Gemini 3.8 Flash",
+  "value": 1522
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "math"
+  ],
+  "model": "Claude Sonnet 5.5",
+  "value": 1510
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "instruction_following",
+   "if"
+  ],
+  "model": "Gemini 4 Argon",
+  "value": 1528
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "instruction_following",
+   "if"
+  ],
+  "model": "Claude Opus 5.5",
+  "value": 1517
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "instruction_following",
+   "if"
+  ],
+  "model": "Muse Wonder",
+  "value": 1503
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "instruction_following",
+   "if"
+  ],
+  "model": "Claude Fable 5.1",
+  "value": 1497
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "creative_writing"
+  ],
+  "model": "Claude Opus 5.5",
+  "value": 1517
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "creative_writing"
+  ],
+  "model": "Gemini 4 Argon",
+  "value": 1516
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "creative_writing"
+  ],
+  "model": "Gemini 3.8 Flash",
+  "value": 1487
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "creative_writing"
+  ],
+  "model": "Muse Wonder",
+  "value": 1486
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "chinese"
+  ],
+  "model": "Gemini 4 Argon",
+  "value": 1588
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "chinese"
+  ],
+  "model": "Claude Opus 5.5",
+  "value": 1574
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "chinese"
+  ],
+  "model": "Claude Fable 5.1",
+  "value": 1567
+ },
+ {
+  "subset": "text_style_control",
+  "category": [
+   "chinese"
+  ],
+  "model": "Claude Sonnet 5.5",
+  "value": 1546
+ },
+ {
+  "subset": "vision_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Qwen3.8 Max",
+  "value": 1301
+ },
+ {
+  "subset": "vision_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "GPT-6.1 Sol",
+  "value": 1294
+ },
+ {
+  "subset": "vision_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Claude Opus 5.5",
+  "value": 1293
+ },
+ {
+  "subset": "vision_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Muse Spark 1.3",
+  "value": 1290
+ },
+ {
+  "subset": "search_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Qwen3.8 Max",
+  "value": 1261
+ },
+ {
+  "subset": "search_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Claude Fable 5.1",
+  "value": 1246
+ },
+ {
+  "subset": "search_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "GPT-6 Astra",
+  "value": 1234
+ },
+ {
+  "subset": "search_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "GPT-6.1 Sol",
+  "value": 1233
+ },
+ {
+  "subset": "document_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Claude Fable 5.1",
+  "value": 1513
+ },
+ {
+  "subset": "document_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "GPT-5.6 Terra",
+  "value": 1472
+ },
+ {
+  "subset": "document_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "Muse Spark 1.3",
+  "value": 1471
+ },
+ {
+  "subset": "document_style_control",
+  "category": [
+   "overall"
+  ],
+  "model": "GPT-6 Astra",
+  "value": 1468
+ },
+ {
+  "subset": "webdev",
+  "category": [
+   "overall"
+  ],
+  "model": "Claude Opus 5.5",
+  "value": 1811
+ },
+ {
+  "subset": "webdev",
+  "category": [
+   "overall"
+  ],
+  "model": "GPT-6 Astra",
+  "value": 1780
+ },
+ {
+  "subset": "webdev",
+  "category": [
+   "overall"
+  ],
+  "model": "Claude Sonnet 5.5",
+  "value": 1774
+ },
+ {
+  "subset": "webdev",
+  "category": [
+   "overall"
+  ],
+  "model": "GPT-6.1 Sol",
+  "value": 1760
+ },
+ {
+  "subset": "text_to_image",
+  "category": [
+   "overall"
+  ],
+  "model": "GPT Image 2.5",
+  "value": 1425
+ },
+ {
+  "subset": "text_to_image",
+  "category": [
+   "overall"
+  ],
+  "model": "Grok Imagine 2.0",
+  "value": 1334
+ },
+ {
+  "subset": "text_to_image",
+  "category": [
+   "overall"
+  ],
+  "model": "MAI-Image-2.6",
+  "value": 1332
+ },
+ {
+  "subset": "text_to_image",
+  "category": [
+   "overall"
+  ],
+  "model": "Muse Image",
+  "value": 1274
+ }
+]

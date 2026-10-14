@@ -1,0 +1,896 @@
+[
+ {
+  "id": "arena_text_overall",
+  "url": "https://arena.ai/leaderboard/chat/text",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Gemini 4 Argon",
+    "1525"
+   ],
+   [
+    "Muse Wonder",
+    "1513"
+   ],
+   [
+    "Claude Opus 5.5",
+    "1508"
+   ]
+  ]
+ },
+ {
+  "id": "arena_text_coding",
+  "url": "https://arena.ai/leaderboard/chat/text/coding",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Gemini 4 Argon",
+    "1561"
+   ],
+   [
+    "Muse Wonder",
+    "1558"
+   ],
+   [
+    "Claude Opus 5.5",
+    "1545"
+   ]
+  ]
+ },
+ {
+  "id": "arena_webdev",
+  "url": "https://arena.ai/leaderboard/code/webdev",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "1811"
+   ],
+   [
+    "GPT-6 Astra",
+    "1780"
+   ],
+   [
+    "Claude Sonnet 5.5",
+    "1774"
+   ]
+  ]
+ },
+ {
+  "id": "arena_math",
+  "url": "https://arena.ai/leaderboard/chat/text/math",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Gemini 4 Argon",
+    "1529"
+   ],
+   [
+    "Claude Fable 5.1",
+    "1524"
+   ],
+   [
+    "Gemini 3.8 Flash",
+    "1522"
+   ]
+  ]
+ },
+ {
+  "id": "arena_instruction_following",
+  "url": "https://arena.ai/leaderboard/chat/text/instruction-following",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Gemini 4 Argon",
+    "1528"
+   ],
+   [
+    "Claude Opus 5.5",
+    "1517"
+   ],
+   [
+    "Muse Wonder",
+    "1503"
+   ]
+  ]
+ },
+ {
+  "id": "arena_creative_writing",
+  "url": "https://arena.ai/leaderboard/chat/text/creative-writing",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "1517"
+   ],
+   [
+    "Gemini 4 Argon",
+    "1516"
+   ],
+   [
+    "Gemini 3.8 Flash",
+    "1487"
+   ]
+  ]
+ },
+ {
+  "id": "arena_chinese",
+  "url": "https://arena.ai/leaderboard/chat/text/chinese",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Gemini 4 Argon",
+    "1588"
+   ],
+   [
+    "Claude Opus 5.5",
+    "1574"
+   ],
+   [
+    "Claude Fable 5.1",
+    "1567"
+   ]
+  ]
+ },
+ {
+  "id": "arena_vision",
+  "url": "https://arena.ai/leaderboard/chat/vision",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Qwen3.8 Max",
+    "1301"
+   ],
+   [
+    "GPT-6.1 Sol",
+    "1294"
+   ],
+   [
+    "Claude Opus 5.5",
+    "1293"
+   ]
+  ]
+ },
+ {
+  "id": "arena_search",
+  "url": "https://arena.ai/leaderboard/chat/search",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Qwen3.8 Max",
+    "1261"
+   ],
+   [
+    "Claude Fable 5.1",
+    "1246"
+   ],
+   [
+    "GPT-6 Astra",
+    "1234"
+   ]
+  ]
+ },
+ {
+  "id": "arena_document",
+  "url": "https://arena.ai/leaderboard/chat/document",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Fable 5.1",
+    "1513"
+   ],
+   [
+    "GPT-5.6 Terra",
+    "1472"
+   ],
+   [
+    "Muse Spark 1.3",
+    "1471"
+   ]
+  ]
+ },
+ {
+  "id": "arena_agent_net_improvement",
+  "url": "https://arena.ai/leaderboard/agent",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "17.01"
+   ],
+   [
+    "GPT-6.1 Sol",
+    "15.05"
+   ],
+   [
+    "Claude Fable 5.1",
+    "14.32"
+   ]
+  ]
+ },
+ {
+  "id": "gdpval_aa_elo",
+  "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "1866"
+   ],
+   [
+    "Claude Sonnet 5.5",
+    "1838"
+   ],
+   [
+    "Muse Wonder",
+    "1770"
+   ]
+  ]
+ },
+ {
+  "id": "swe_bench_pro_v2_scale",
+  "url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2?tab=full",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Fable 5.1",
+    "99.1"
+   ],
+   [
+    "Kimi K3",
+    "97.7"
+   ],
+   [
+    "GPT-6 Astra",
+    "96.9"
+   ]
+  ]
+ },
+ {
+  "id": "swe_bench_verified_vals",
+  "url": "https://www.vals.ai/benchmarks/swebench",
+  "kind": "bench",
+  "anchors": [
+   [
+    "DeepSeek V4 Pro",
+    "96.4"
+   ],
+   [
+    "GPT-5.6 Terra",
+    "95.4"
+   ],
+   [
+    "GLM-5.3",
+    "95.4"
+   ]
+  ]
+ },
+ {
+  "id": "terminal_bench_4_0_vals",
+  "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "65.15"
+   ],
+   [
+    "Claude Sonnet 5.5",
+    "64.14"
+   ],
+   [
+    "GPT-6 Astra",
+    "59.6"
+   ]
+  ]
+ },
+ {
+  "id": "terminal_bench_2_1_vals",
+  "url": "https://www.vals.ai/benchmarks/terminal-bench-2-1",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "87.64"
+   ],
+   [
+    "GPT-6 Astra",
+    "87.27"
+   ],
+   [
+    "Claude Fable 5.1",
+    "85.02"
+   ]
+  ]
+ },
+ {
+  "id": "terminal_bench_4_0_aa",
+  "url": "https://artificialanalysis.ai/evaluations/terminalbench-4-0",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Sonnet 5.5",
+    "63.6"
+   ],
+   [
+    "Claude Opus 5.5",
+    "59.6"
+   ]
+  ]
+ },
+ {
+  "id": "terminal_bench_2_1_aa",
+  "url": "https://artificialanalysis.ai/evaluations/terminalbench-2-1",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Fable 5.1",
+    "91.4"
+   ]
+  ]
+ },
+ {
+  "id": "vals_index",
+  "url": "https://www.vals.ai/benchmarks/vals_index",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Gemini 4 Argon",
+    "68.9"
+   ],
+   [
+    "Claude Sonnet 5.5",
+    "67.04"
+   ],
+   [
+    "Claude Opus 5.5",
+    "66.97"
+   ]
+  ]
+ },
+ {
+  "id": "mcp_atlas_scale",
+  "url": "https://labs.scale.com/leaderboard/mcp_atlas",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Fable 5.1",
+    "87.2"
+   ],
+   [
+    "GLM-5.3",
+    "84.2"
+   ],
+   [
+    "Kimi K3",
+    "82.3"
+   ]
+  ]
+ },
+ {
+  "id": "remote_labor_index_scale",
+  "url": "https://labs.scale.com/leaderboard/rli",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "21.25"
+   ],
+   [
+    "GPT-6 Astra",
+    "20.83"
+   ],
+   [
+    "Claude Fable 5.1",
+    "17.92"
+   ]
+  ]
+ },
+ {
+  "id": "tau3_banking_aa",
+  "url": "https://artificialanalysis.ai/evaluations/tau3-banking",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Qwen3.8 Max",
+    "51.3"
+   ],
+   [
+    "Muse Spark 1.3",
+    "50.5"
+   ]
+  ]
+ },
+ {
+  "id": "hle_diamond_scale",
+  "url": "https://labs.scale.com/leaderboard/hle-diamond",
+  "kind": "bench",
+  "anchors": [
+   [
+    "GPT-6 Astra",
+    "60.6"
+   ],
+   [
+    "Claude Opus 5.5",
+    "55"
+   ],
+   [
+    "Claude Fable 5.1",
+    "51.3"
+   ]
+  ]
+ },
+ {
+  "id": "hle_aa",
+  "url": "https://artificialanalysis.ai/evaluations/humanitys-last-exam",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "61.4"
+   ],
+   [
+    "Claude Fable 5.1",
+    "59.1"
+   ]
+  ]
+ },
+ {
+  "id": "proofbench_vals",
+  "url": "https://www.vals.ai/benchmarks/proof_bench",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Fable 5.1",
+    "100"
+   ],
+   [
+    "Claude Opus 5.5",
+    "100"
+   ],
+   [
+    "Claude Sonnet 5.5",
+    "100"
+   ]
+  ]
+ },
+ {
+  "id": "eqbench_creative_writing_elo",
+  "url": "https://eqbench.com/creative_writing.js",
+  "kind": "bench",
+  "anchors": [
+   [
+    "GPT-6 Astra",
+    "2173.3"
+   ],
+   [
+    "Claude Fable 5.1",
+    "2162"
+   ],
+   [
+    "Kimi K3",
+    "2082.3"
+   ]
+  ]
+ },
+ {
+  "id": "aa_omniscience_accuracy",
+  "url": "https://artificialanalysis.ai/evaluations/omniscience",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Fable 5.1",
+    "67"
+   ],
+   [
+    "Claude Opus 5.5",
+    "66"
+   ]
+  ]
+ },
+ {
+  "id": "aa_omniscience_index",
+  "url": "https://artificialanalysis.ai/evaluations/omniscience",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "46"
+   ],
+   [
+    "GPT-6 Astra",
+    "44"
+   ],
+   [
+    "Claude Fable 5.1",
+    "43"
+   ]
+  ]
+ },
+ {
+  "id": "ifbench_aa",
+  "url": "https://artificialanalysis.ai/evaluations/ifbench",
+  "kind": "bench",
+  "anchors": [
+   [
+    "MiniMax M3",
+    "82.9"
+   ]
+  ]
+ },
+ {
+  "id": "mmmu_pro_vals",
+  "url": "https://www.vals.ai/benchmarks/mmmu",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Fable 5.1",
+    "90.64"
+   ],
+   [
+    "Gemini 3.8 Flash",
+    "89.08"
+   ],
+   [
+    "Gemini 3.1 Pro",
+    "88.21"
+   ]
+  ]
+ },
+ {
+  "id": "mmmu_pro_aa",
+  "url": "https://artificialanalysis.ai/evaluations/mmmu-pro",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "88"
+   ],
+   [
+    "GPT-6 Astra",
+    "87"
+   ]
+  ]
+ },
+ {
+  "id": "aa_lcr",
+  "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning",
+  "kind": "bench",
+  "anchors": [
+   [
+    "Kimi K3",
+    "88.7"
+   ],
+   [
+    "MiMo V2.6 Pro",
+    "86.3"
+   ]
+  ]
+ },
+ {
+  "id": "arena_text_to_image",
+  "url": "https://arena.ai/leaderboard/image/text-to-image",
+  "kind": "bench",
+  "anchors": [
+   [
+    "GPT Image 2.5",
+    "1425"
+   ],
+   [
+    "Grok Imagine 2.0",
+    "1334"
+   ],
+   [
+    "MAI-Image-2.6",
+    "1332"
+   ]
+  ]
+ },
+ {
+  "id": "aa_text_to_image_elo",
+  "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+  "kind": "bench",
+  "anchors": [
+   [
+    "GPT Image 2.5",
+    "1199"
+   ],
+   [
+    "Grok Imagine 2.0",
+    "1155"
+   ],
+   [
+    "MAI-Image-2.6",
+    "1152"
+   ]
+  ]
+ },
+ {
+  "id": "aa_image_edit_elo",
+  "url": "https://artificialanalysis.ai/image/leaderboard/editing",
+  "kind": "bench",
+  "anchors": [
+   [
+    "GPT Image 2.5",
+    "1186"
+   ],
+   [
+    "MAI-Image-2.6",
+    "1143"
+   ],
+   [
+    "Muse Image",
+    "1123"
+   ]
+  ]
+ },
+ {
+  "id": "aa_leaderboard",
+  "url": "https://artificialanalysis.ai/leaderboards/models",
+  "kind": "aa",
+  "anchors": [
+   [
+    "Claude Opus 5.5",
+    "58"
+   ],
+   [
+    "Claude Opus 5.5",
+    "56"
+   ],
+   [
+    "Claude Opus 5.5",
+    "54"
+   ],
+   [
+    "Claude Opus 5.5",
+    "5.98"
+   ]
+  ]
+ },
+ {
+  "id": "aa_model_page",
+  "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+  "kind": "aa",
+  "anchors": [
+   [
+    "Claude Sonnet 5.5",
+    "56"
+   ]
+  ]
+ },
+ {
+  "id": "openrouter_models_api",
+  "url": "https://openrouter.ai/api/v1/models",
+  "kind": "json",
+  "anchors": [
+   [
+    "claude-opus-5.5",
+    "0.000004"
+   ],
+   [
+    "gpt-6.1-sol",
+    "0.000002"
+   ]
+  ]
+ },
+ {
+  "id": "price:developers.openai.com",
+  "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "kind": "price",
+  "anchors": [
+   [
+    "GPT-6 Astra",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:developers.openai.com",
+  "url": "https://developers.openai.com/api/docs/pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "GPT-6.1 Sol",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:developers.openai.com",
+  "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+  "kind": "price",
+  "anchors": [
+   [
+    "GPT-5.6 Terra",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:developers.openai.com",
+  "url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
+  "kind": "price",
+  "anchors": [
+   [
+    "GPT Image 2.5",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:platform.claude.com",
+  "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "Claude Fable 5.1",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:ai.google.dev",
+  "url": "https://ai.google.dev/gemini-api/docs/pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "Gemini 4 Argon",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:docs.x.ai",
+  "url": "https://docs.x.ai/docs/models/grok-4.7",
+  "kind": "price",
+  "anchors": [
+   [
+    "Grok 4.7",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:docs.x.ai",
+  "url": "https://docs.x.ai/docs/models/grok-imagine-image-2.0",
+  "kind": "price",
+  "anchors": [
+   [
+    "Grok Imagine 2.0",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:dev.meta.ai",
+  "url": "https://dev.meta.ai/models/muse-spark/",
+  "kind": "price",
+  "anchors": [
+   [
+    "Muse Spark 1.3",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:dev.meta.ai",
+  "url": "https://dev.meta.ai/models/muse-wonder/",
+  "kind": "price",
+  "anchors": [
+   [
+    "Muse Wonder",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:docs.mistral.ai",
+  "url": "https://docs.mistral.ai/models/mistral-medium-3-5-26-04",
+  "kind": "price",
+  "anchors": [
+   [
+    "Mistral Medium 3.5",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:docs.mistral.ai",
+  "url": "https://docs.mistral.ai/models/mistral-small-4-0-26-03",
+  "kind": "price",
+  "anchors": [
+   [
+    "Mistral Small 4",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:docs.mistral.ai",
+  "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+  "kind": "price",
+  "anchors": [
+   [
+    "Mistral Large 4",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:api-docs.deepseek.com",
+  "url": "https://api-docs.deepseek.com/quick_start/pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "DeepSeek V4.1 Flash",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:www.alibabacloud.com",
+  "url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "Qwen3.8 Max",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:docs.z.ai",
+  "url": "https://docs.z.ai/guides/overview/pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "GLM-5.3",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:platform.kimi.ai",
+  "url": "https://platform.kimi.ai/docs/pricing/chat",
+  "kind": "price",
+  "anchors": [
+   [
+    "Kimi K3",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:platform.minimax.io",
+  "url": "https://platform.minimax.io/docs/guides/pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "MiniMax M3",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:www.byteplus.com",
+  "url": "https://www.byteplus.com/en/product/modelark/pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "Seed 2.1 Pro",
+    null
+   ]
+  ]
+ },
+ {
+  "id": "price:docs.bfl.ai",
+  "url": "https://docs.bfl.ai/quick_start/pricing",
+  "kind": "price",
+  "anchors": [
+   [
+    "FLUX.2 Pro",
+    null
+   ]
+  ]
+ }
+]
