@@ -17,6 +17,18 @@ mkdir -p "$R/data/$D" "$R/v2/archive" "$R/v2/changes"
 if [ -f "$PREV_SRC" ]; then $FETCH --out "$R/data/$D/sources.json" --previous "$PREV_SRC"
 else $FETCH --out "$R/data/$D/sources.json"; PREV_SRC=""; fi
 
+# The local-model table (Ollama): independent of the rankings, so a failure
+# here never holds them back, and theirs never holds this back.
+mkdir -p "$R/local/archive"
+if $PY "$P/local_models.py" --out "$R/local/.candidate.json" --previous "$R/local/latest.json"; then
+  mv "$R/local/.candidate.json" "$R/local/archive/$D.json"
+  cp "$R/local/archive/$D.json" "$R/local/latest.json"
+  echo "local=true" >> "${GITHUB_OUTPUT:-/dev/null}"
+else
+  rm -f "$R/local/.candidate.json"
+  echo "⚠ local-model table not updated this week"
+fi
+
 TMP="$R/v2/.candidate.json"
 $PY "$P/build.py" --sources "$R/data/$D/sources.json" --out "$TMP"
 

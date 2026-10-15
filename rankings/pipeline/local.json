@@ -1,0 +1,27 @@
+{
+  "note": "Hand-kept. The families MAT recommends for running on a Mac through Ollama, best first. local_models.py reads every tag of these families from ollama.com each week (size, context, input); the order of `prefer` is a judgement, not a benchmark — change it here when a better small model ships.",
+  "source": "https://ollama.com/library",
+  "families": [
+    {"family": "qwen3.8",  "maker": "Alibaba", "tools": true, "thinking": true,
+     "good": {"en": "writing, research and agentic work; strong in Chinese and English", "zh": "写作、调研和多步任务；中英文都强"}},
+    {"family": "qwen3.6",  "maker": "Alibaba", "tools": true, "thinking": true,
+     "good": {"en": "coding and longer tasks", "zh": "写代码和较长的任务"}},
+    {"family": "gemma4",   "maker": "Google",  "tools": true, "thinking": true,
+     "good": {"en": "general use, reading pictures and documents", "zh": "日常使用、看图和读文档"}},
+    {"family": "qwen3.5",  "maker": "Alibaba", "tools": true, "thinking": true,
+     "good": {"en": "questions and short drafts, Chinese and English", "zh": "问答和短稿，中英文"}},
+    {"family": "gpt-oss",  "maker": "OpenAI",  "tools": true, "thinking": true,
+     "good": {"en": "reasoning, English", "zh": "推理，英文为主"}},
+    {"family": "ministral-3", "maker": "Mistral", "tools": true, "thinking": false,
+     "good": {"en": "fast everyday answers, European languages", "zh": "快速日常问答，欧洲语言"}},
+    {"family": "granite4.2", "maker": "IBM", "tools": true, "thinking": true,
+     "good": {"en": "structured output and tool calls", "zh": "结构化输出和工具调用"}},
+    {"family": "deepseek-r1", "maker": "DeepSeek", "tools": true, "thinking": true,
+     "good": {"en": "step-by-step reasoning", "zh": "逐步推理"}}
+  ],
+  "prefer": [
+    "qwen3.8:27b", "qwen3.6:35b", "gemma4:26b", "qwen3.5:27b",
+    "qwen3.5:9b", "gemma4:12b", "qwen3.5:4b", "qwen3.5:2b"
+  ],
+  "ramBuckets": [8, 16, 24, 32, 48, 64, 96, 128, 192]
+}

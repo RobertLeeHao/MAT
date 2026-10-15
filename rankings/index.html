@@ -290,16 +290,19 @@ main{padding-top:var(--navh)}
 .sc figcaption{display:flex;justify-content:space-between;gap:var(--s3);font-size:calc(11*var(--px));font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
 .sc figcaption{flex-wrap:wrap}.sc .lg{white-space:nowrap;display:flex;align-items:center;gap:calc(6*var(--px));text-transform:none;letter-spacing:0;font-weight:500}
 .sc .lg i{width:calc(8*var(--px));height:calc(8*var(--px));border-radius:50%;margin-left:var(--s2)}
-.sc .lg .l1{background:var(--ca)}.sc .lg .l2{box-shadow:inset 0 0 0 1.5px var(--cs)}
+.sc .lg .l1{box-shadow:inset 0 0 0 2px var(--ca)}.sc .lg .l2{box-shadow:inset 0 0 0 1.5px var(--cs)}
 .scv{width:100%;height:auto;display:block;overflow:visible}
 .scv .zone{fill:rgba(121,194,142,.06)}
 .scv .axl{stroke:rgba(244,239,230,.16);stroke-width:.5}
 .scv .barl{stroke:var(--amber);stroke-width:1;stroke-dasharray:4 3}
 .scv .barT{fill:var(--amber);font-size:10px;font-weight:600}
 .scv .ax{fill:rgba(244,239,230,.45);font-size:10px}
-.scv .dup{fill:var(--paper);opacity:.8}.scv .ddn{fill:rgba(244,239,230,.28)}
-.scv .dpk{fill:var(--ca)}.scv .dpk2{fill:rgba(121,194,142,.18)}
-.scv .dfs{fill:var(--ground);stroke:var(--cs);stroke-width:1.5}
+.scv .mk .bg{fill:#26262A;stroke:rgba(244,239,230,.28);stroke-width:1}
+.scv .mk use{color:var(--paper);fill:currentColor}
+.scv .mk .mkt{fill:var(--paper);font-weight:700}
+.scv .mk.pk .bg{fill:#1F2A23;stroke:var(--ca);stroke-width:2}
+.scv .mk.pk .halo{fill:rgba(121,194,142,.16)}
+.scv .mk.fs .bg{stroke:var(--cs);stroke-width:1.5}
 .scv .lpk{fill:var(--ca);font-size:11px;font-weight:700}.scv .lot{fill:rgba(244,239,230,.5);font-size:9.5px}.scv .zt{fill:rgba(121,194,142,.7);font-size:10px;font-weight:600}.scv .lfs{fill:var(--cs);font-size:10px;font-weight:600}
 
 /* where the numbers come from: the foot of the leaderboard */
@@ -546,22 +549,27 @@ function setup(o,under){
 }
 
 function chart(pts,pickId,fastId,isSame,TI){
-  const nar=innerWidth<=860, W=nar?340:520,H=nar?220:210,l=46,r=12,t=18,b=30;
+  const nar=innerWidth<=860, W=nar?340:520,H=nar?230:220,l=46,r=16,t=26,b=32;
   const cs=pts.map(o=>o.cost).filter(c=>c>0), lo=Math.log10(Math.min(...cs)/1.25), hi=Math.log10(Math.max(...cs)*1.25);
-  const tmax=Math.min(TI.cap,Math.max(...pts.map(o=>o.time))*1.12), tmin=Math.max(0,Math.min(...pts.map(o=>o.time))*0.85);
+  const tmax=Math.max(...pts.map(o=>o.time))*1.15, tmin=Math.max(0,Math.min(...pts.map(o=>o.time))*0.85);
   const X=c=>l+Math.max(0,Math.min(1,(Math.log10(Math.max(c,1e-4))-lo)/(hi-lo)))*(W-l-r), Y=s=>t+(s-tmin)/(tmax-tmin||1)*(H-t-b);
   const P=pts.map(o=>({o,x:X(o.cost),y:Y(o.time),pk:isSame(o,pickId),fs:isSame(o,fastId)}));
+  // each model is its maker's mark in a small disc: MAT's pick ringed green, the fastest blue
+  P.forEach(p=>{ p.R=p.pk?13:p.fs?11.5:10; });
   // labels: pick first, then fastest, then the rest; each tries right, left, above, below and is dropped if all collide
-  const boxes=P.map(p=>({x0:p.x-6,x1:p.x+6,y0:p.y-6,y1:p.y+6})), hit=(q)=>boxes.some(z=>q.x0<z.x1&&q.x1>z.x0&&q.y0<z.y1&&q.y1>z.y0);
+  const boxes=P.map(p=>({x0:p.x-p.R-2,x1:p.x+p.R+2,y0:p.y-p.R-2,y1:p.y+p.R+2})), hit=(q)=>boxes.some(z=>q.x0<z.x1&&q.x1>z.x0&&q.y0<z.y1&&q.y1>z.y0);
   let dots='',lab='';
   for(const p of P.slice().sort((a,b)=>(b.pk*2+b.fs)-(a.pk*2+a.fs))){
-    const nm=esc(N[p.o.m].name), fs=p.pk?11:p.fs?10:9.5, w=nm.length*fs*0.56, h=fs+2, g=p.pk?15:9;
-    const tries=[[p.x+g,p.y+fs*0.35,'start'],[p.x-g,p.y+fs*0.35,'end'],[p.x,p.y-g,'middle'],[p.x,p.y+g+fs*0.7,'middle']];
+    const nm=esc(N[p.o.m].name), fs=p.pk?11:p.fs?10:9.5, w=nm.length*fs*0.56, h=fs+2, g=p.R+5;
+    const tries=[[p.x+g,p.y+fs*0.35,'start'],[p.x-g,p.y+fs*0.35,'end'],[p.x,p.y-g-2,'middle'],[p.x,p.y+g+fs*0.75,'middle']];
     for(const [tx,ty,an] of tries){ const x0=an==='start'?tx:an==='end'?tx-w:tx-w/2, q={x0,x1:x0+w,y0:ty-fs,y1:ty-fs+h};
       if(q.x0<l-30||q.x1>W||q.y0<0||q.y1>H-b+2||hit(q)) continue;
       boxes.push(q); lab+=`<text x="${tx.toFixed(1)}" y="${ty.toFixed(1)}" class="${p.pk?'lpk':p.fs?'lfs':'lot'}" text-anchor="${an}">${nm}</text>`; break; } }
-  for(const p of P.slice().sort((a,b)=>(a.pk*2+a.fs)-(b.pk*2+b.fs))){ const tip=`<title>${esc(N[p.o.m].name)} · ${pct(p.o.P)} · ${money(p.o.cost)} · ${dur(p.o.time)}</title>`;
-    dots+=p.pk?`<circle cx="${p.x}" cy="${p.y}" r="12" class="dpk2"/><circle cx="${p.x}" cy="${p.y}" r="6" class="dpk">${tip}</circle>`:p.fs?`<circle cx="${p.x}" cy="${p.y}" r="5" class="dfs">${tip}</circle>`:`<circle cx="${p.x}" cy="${p.y}" r="4" class="dup">${tip}</circle>`; }
+  for(const p of P.slice().sort((a,b)=>(a.pk*2+a.fs)-(b.pk*2+b.fs))){ const m=N[p.o.m], tip=`<title>${esc(m.name)} · ${pct(p.o.P)} · ${money(p.o.cost)} · ${dur(p.o.time)}</title>`;
+    const s=p.R*1.25, id=MK[m.maker];
+    const mark=id?`<use href="#lg-${id}" x="${(-s/2).toFixed(1)}" y="${(-s/2).toFixed(1)}" width="${s.toFixed(1)}" height="${s.toFixed(1)}"/>`
+                 :`<text y="${(p.R*0.32).toFixed(1)}" text-anchor="middle" class="mkt" style="font-size:${(p.R*0.85).toFixed(1)}px">${esc((m.maker||m.name).slice(0,1))}</text>`;
+    dots+=`<g class="mk${p.pk?' pk':p.fs?' fs':''}" transform="translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})">${tip}${p.pk?`<circle r="${p.R+5}" class="halo"/>`:''}<circle r="${p.R}" class="bg"/>${mark}</g>`; }
   const yt=[tmin,(tmin+tmax)/2,tmax].map(s=>`<text x="${l-8}" y="${(Y(s)+3).toFixed(1)}" class="ax" text-anchor="end">${dur(s)}</text>`).join('');
   const cmin=Math.min(...cs), cmax=Math.max(...cs);
   return `<svg viewBox="0 0 ${W} ${H}" class="scv" role="img" aria-label="${T.chT}">
@@ -569,7 +577,7 @@ function chart(pts,pickId,fastId,isSame,TI){
     ${yt}
     <text x="${X(cmin)}" y="${H-b+16}" class="ax" text-anchor="middle">${money(cmin)}</text><text x="${X(cmax)}" y="${H-b+16}" class="ax" text-anchor="middle">${money(cmax)}</text>
     ${nar?'':`<text x="${(l+W-r)/2}" y="${H-b+16}" class="ax" text-anchor="middle">${T.chX}</text>`}
-    <text x="${l+6}" y="${t-6}" class="zt">${T.chZ}</text>
+    <text x="${l+6}" y="${t-12}" class="zt">${T.chZ}</text>
     ${dots}${lab}</svg>`;
 }
 function sources(cat){

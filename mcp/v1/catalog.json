@@ -1,0 +1,1412 @@
+{
+  "schema": "mat-mcp-catalog/2",
+  "updated": "2026-10-15",
+  "about": "Servers MAT offers on Settings › Tools › Browse. Only reviewed entries ship. Every entry says up front whether it works today (ready), needs something the user must get first (needs-setup), or cannot be used yet (unavailable) — so nobody finds out halfway.",
+  "availability": {
+    "ready": "Tick and go; at most a sign-in or a free account on that service.",
+    "needs-setup": "Works, but needs something first: a paid key, an app approved by the company admin, or a real-name developer account. The reason is shown before ticking.",
+    "unavailable": "Listed so people know it exists, not tickable. The reason says what MAT itself still has to do."
+  },
+  "categories": {
+    "files": "Files",
+    "browser": "Browser",
+    "web": "Web & search",
+    "docs": "Docs",
+    "work": "Work",
+    "comms": "Mail & chat",
+    "code": "Code",
+    "design": "Design",
+    "data": "Data",
+    "money": "Payments",
+    "maps": "Maps"
+  },
+  "entries": [
+    {
+      "id": "files",
+      "name": "Files on this Mac",
+      "summary": {
+        "en": "Read and write in folders you choose",
+        "zh": "读写你指定的文件夹"
+      },
+      "category": "files",
+      "logo": "Files",
+      "registry": null,
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "@modelcontextprotocol/server-filesystem",
+        "version": "1.0.0",
+        "args": [
+          "{folders}"
+        ],
+        "env": []
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": true,
+      "reviewed": null
+    },
+    {
+      "id": "browser",
+      "name": "Browser",
+      "summary": {
+        "en": "Open pages, click and read them",
+        "zh": "打开网页、点击、读取内容"
+      },
+      "category": "browser",
+      "logo": "Browser",
+      "registry": null,
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "@playwright/mcp",
+        "version": "0.0.83",
+        "args": [
+          "--isolated"
+        ],
+        "env": []
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": true,
+      "reviewed": null
+    },
+    {
+      "id": "fetch",
+      "name": "Fetch",
+      "summary": {
+        "en": "Fetch a web page as text",
+        "zh": "抓取网页并转成文字"
+      },
+      "category": "web",
+      "logo": "Server",
+      "registry": null,
+      "transport": "local",
+      "local": {
+        "runtime": "uvx",
+        "package": "mcp-server-fetch",
+        "version": "2026.10.10",
+        "args": [],
+        "env": []
+      },
+      "needs": [
+        "uv"
+      ],
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "summary": {
+        "en": "History and changes in a repo on this Mac",
+        "zh": "读取本机仓库的历史和改动"
+      },
+      "category": "code",
+      "logo": "Server",
+      "registry": null,
+      "transport": "local",
+      "local": {
+        "runtime": "uvx",
+        "package": "mcp-server-git",
+        "version": "2026.10.10",
+        "args": [
+          "--repository",
+          "{folder}"
+        ],
+        "env": []
+      },
+      "needs": [
+        "uv"
+      ],
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "summary": {
+        "en": "Search, read and create pages",
+        "zh": "搜索、阅读和创建页面"
+      },
+      "category": "docs",
+      "logo": "Notion",
+      "registry": "com.notion/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.notion.com/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {
+          "delete-pages": "off"
+        }
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": true,
+      "reviewed": null
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "summary": {
+        "en": "Read and update issues",
+        "zh": "查看和更新工单"
+      },
+      "category": "work",
+      "logo": "Linear",
+      "registry": "app.linear/linear",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.linear.app/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "atlassian",
+      "name": "Jira & Confluence",
+      "summary": {
+        "en": "Jira issues and Confluence pages",
+        "zh": "Jira 工单和 Confluence 文档"
+      },
+      "category": "work",
+      "logo": "Server",
+      "registry": "com.atlassian/atlassian-mcp-server",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.atlassian.com/v2/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "asana",
+      "name": "Asana",
+      "summary": {
+        "en": "Tasks and projects",
+        "zh": "任务和项目"
+      },
+      "category": "work",
+      "logo": "Server",
+      "registry": null,
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.asana.com/sse",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Not in the official registry; verify the current endpoint (sse vs v2) before review."
+    },
+    {
+      "id": "monday",
+      "name": "monday.com",
+      "summary": {
+        "en": "Boards and projects",
+        "zh": "看板和项目"
+      },
+      "category": "work",
+      "logo": "Server",
+      "registry": "com.monday/monday.com",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.monday.com/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "todoist",
+      "name": "Todoist",
+      "summary": {
+        "en": "To-dos",
+        "zh": "待办事项"
+      },
+      "category": "work",
+      "logo": "Server",
+      "registry": "net.todoist/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://ai.todoist.net/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "airtable",
+      "name": "Airtable",
+      "summary": {
+        "en": "Bases and records",
+        "zh": "表格和数据库"
+      },
+      "category": "data",
+      "logo": "Server",
+      "registry": "com.airtable/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.airtable.com/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "miro",
+      "name": "Miro",
+      "summary": {
+        "en": "Whiteboards",
+        "zh": "白板"
+      },
+      "category": "design",
+      "logo": "Server",
+      "registry": "io.github.miroapp/mcp-server",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.miro.com/",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "summary": {
+        "en": "Designs and assets",
+        "zh": "设计和素材"
+      },
+      "category": "design",
+      "logo": "Server",
+      "registry": "com.canva.mcp/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.canva.com/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "summary": {
+        "en": "Automations across thousands of apps",
+        "zh": "连接几千个应用的自动化"
+      },
+      "category": "work",
+      "logo": "Server",
+      "registry": "com.zapier/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.zapier.com/api/v1/connect",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Free plan has a monthly task cap; tool calls use it up."
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "summary": {
+        "en": "Issues, pull requests and code",
+        "zh": "Issue、PR 和代码"
+      },
+      "category": "code",
+      "logo": "GitHub",
+      "registry": "io.github.github/github-mcp-server",
+      "transport": "remote",
+      "remote": {
+        "url": "https://api.githubcopilot.com/mcp/",
+        "auth": "token"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": true,
+      "reviewed": null,
+      "note": "Personal access token pasted once. Browser sign-in needs a registered GitHub OAuth app — see the github-oauth row."
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "summary": {
+        "en": "Issues, merge requests and code",
+        "zh": "Issue、合并请求和代码"
+      },
+      "category": "code",
+      "logo": "Server",
+      "registry": "com.gitlab/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://gitlab.com/api/v4/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "summary": {
+        "en": "Errors and issues",
+        "zh": "查错误和问题"
+      },
+      "category": "code",
+      "logo": "Server",
+      "registry": "io.github.getsentry/sentry-mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.sentry.dev/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "context7",
+      "name": "Context7",
+      "summary": {
+        "en": "Up-to-date docs for code libraries",
+        "zh": "最新的代码库文档"
+      },
+      "category": "code",
+      "logo": "Server",
+      "registry": "io.github.upstash/context7",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.context7.com/mcp",
+        "auth": "none"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face",
+      "summary": {
+        "en": "Models, datasets and Spaces",
+        "zh": "模型、数据集和 Spaces"
+      },
+      "category": "code",
+      "logo": "Server",
+      "registry": "co.huggingface/hf-mcp-server",
+      "transport": "remote",
+      "remote": {
+        "url": "https://huggingface.co/mcp?login",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "microsoft-learn",
+      "name": "Microsoft Learn",
+      "summary": {
+        "en": "Microsoft's technical docs",
+        "zh": "微软官方技术文档"
+      },
+      "category": "code",
+      "logo": "Server",
+      "registry": "com.microsoft/microsoft-learn-mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://learn.microsoft.com/api/mcp",
+        "auth": "none"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "summary": {
+        "en": "Database and backend (for developers)",
+        "zh": "数据库和后端（开发者用）"
+      },
+      "category": "data",
+      "logo": "Server",
+      "registry": "com.supabase/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.supabase.com/mcp?read_only=true",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Read-only by default; a second entry or a setting can drop read_only."
+    },
+    {
+      "id": "neon",
+      "name": "Neon",
+      "summary": {
+        "en": "Postgres databases (for developers)",
+        "zh": "Postgres 数据库（开发者用）"
+      },
+      "category": "data",
+      "logo": "Server",
+      "registry": "com.neon/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.neon.tech/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "summary": {
+        "en": "Query a MongoDB database",
+        "zh": "查询 MongoDB 数据库"
+      },
+      "category": "data",
+      "logo": "Server",
+      "registry": "io.github.mongodb-js/mongodb-mcp-server",
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "mongodb-mcp-server",
+        "version": "3.0.5",
+        "args": [
+          "--readOnly"
+        ],
+        "env": [
+          {
+            "name": "MDB_MCP_CONNECTION_STRING",
+            "label": "Connection string",
+            "secret": true
+          }
+        ]
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Verify flag/env names against the README."
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "summary": {
+        "en": "Customers, products and payments",
+        "zh": "客户、产品和付款"
+      },
+      "category": "money",
+      "logo": "Server",
+      "registry": "com.stripe/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.stripe.com",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Touches real money: every create/refund/cancel tool defaults to Off."
+    },
+    {
+      "id": "paypal",
+      "name": "PayPal",
+      "summary": {
+        "en": "Orders, invoices and payments",
+        "zh": "订单、发票和付款"
+      },
+      "category": "money",
+      "logo": "Server",
+      "registry": "com.paypal.mcp/mcp",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.paypal.com/mcp",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "ready"
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Same as Stripe: write tools default to Off."
+    },
+    {
+      "id": "brave",
+      "name": "Brave Search",
+      "summary": {
+        "en": "Web search",
+        "zh": "网页搜索"
+      },
+      "category": "web",
+      "logo": "Server",
+      "registry": "io.github.brave/brave-search-mcp-server",
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "@brave/brave-search-mcp-server",
+        "version": "2.1.4",
+        "args": [],
+        "env": [
+          {
+            "name": "BRAVE_API_KEY",
+            "label": "Brave Search API key",
+            "secret": true
+          }
+        ]
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "paid-key",
+          "who": "user"
+        },
+        "reason": {
+          "en": "Needs a Brave Search API key; the free plan still asks for a card.",
+          "zh": "需要 Brave Search API key，免费档也要绑卡。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "exa",
+      "name": "Exa Search",
+      "summary": {
+        "en": "Web search and research",
+        "zh": "网页搜索和资料整理"
+      },
+      "category": "web",
+      "logo": "Server",
+      "registry": "ai.exa/exa",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.exa.ai/mcp",
+        "auth": "key"
+      },
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "paid-key",
+          "who": "user"
+        },
+        "reason": {
+          "en": "Needs an Exa API key: free credits, then paid per search.",
+          "zh": "需要 Exa API key：有免费额度，用完按次付费。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "summary": {
+        "en": "Search answers with sources",
+        "zh": "带来源的搜索回答"
+      },
+      "category": "web",
+      "logo": "Server",
+      "registry": "ai.perplexity/mcp-server",
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "@perplexity-ai/mcp-server",
+        "version": "1.3.0",
+        "args": [],
+        "env": [
+          {
+            "name": "PERPLEXITY_API_KEY",
+            "label": "Perplexity API key",
+            "secret": true
+          }
+        ]
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "paid-key",
+          "who": "user"
+        },
+        "reason": {
+          "en": "Needs a Perplexity API key, paid per request (separate from a Pro subscription).",
+          "zh": "需要 Perplexity API key，按次付费（和 Pro 订阅是两回事）。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "tavily",
+      "name": "Tavily",
+      "summary": {
+        "en": "Search built for AI",
+        "zh": "给 AI 用的搜索"
+      },
+      "category": "web",
+      "logo": "Server",
+      "registry": "io.github.tavily-ai/tavily-mcp",
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "tavily-mcp",
+        "version": "0.2.22",
+        "args": [],
+        "env": [
+          {
+            "name": "TAVILY_API_KEY",
+            "label": "Tavily API key",
+            "secret": true
+          }
+        ]
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "paid-key",
+          "who": "user"
+        },
+        "reason": {
+          "en": "Needs a Tavily API key: a monthly free allowance, then paid.",
+          "zh": "需要 Tavily API key：每月有免费额度，超出付费。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "firecrawl",
+      "name": "Firecrawl",
+      "summary": {
+        "en": "Crawl whole sites into text",
+        "zh": "把整站抓成文字"
+      },
+      "category": "web",
+      "logo": "Server",
+      "registry": "io.github.firecrawl/firecrawl-mcp-server",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.firecrawl.dev/v2/mcp",
+        "auth": "key"
+      },
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "paid-key",
+          "who": "user"
+        },
+        "reason": {
+          "en": "Needs a Firecrawl API key: free credits, then paid.",
+          "zh": "需要 Firecrawl API key：有免费额度，用完付费。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "apify",
+      "name": "Apify",
+      "summary": {
+        "en": "Ready-made web scrapers",
+        "zh": "现成的网页抓取器"
+      },
+      "category": "web",
+      "logo": "Server",
+      "registry": "com.apify/apify-mcp-server",
+      "transport": "remote",
+      "remote": {
+        "url": "https://mcp.apify.com/",
+        "auth": "oauth"
+      },
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "paid-key",
+          "who": "user"
+        },
+        "reason": {
+          "en": "Runs on Apify credits: a small monthly free amount, then paid.",
+          "zh": "按 Apify 用量计费：每月有少量免费额度，超出付费。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "lark",
+      "name": "飞书 / Lark",
+      "summary": {
+        "en": "Messages, docs and Base",
+        "zh": "消息、文档、多维表格"
+      },
+      "category": "comms",
+      "logo": "Server",
+      "registry": null,
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "@larksuiteoapi/lark-mcp",
+        "version": "0.5.1",
+        "args": [
+          "mcp",
+          "-a",
+          "{app_id}",
+          "-s",
+          "{app_secret}"
+        ],
+        "env": []
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "admin-app",
+          "who": "company"
+        },
+        "reason": {
+          "en": "Needs an app created on the 飞书 open platform (App ID + Secret), usually approved by your company admin.",
+          "zh": "需要在飞书开放平台建一个应用（App ID + Secret），一般要公司管理员审批。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "cn",
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Verify args against the README."
+    },
+    {
+      "id": "dingtalk",
+      "name": "钉钉",
+      "summary": {
+        "en": "Contacts, messages and to-dos",
+        "zh": "通讯录、消息、待办"
+      },
+      "category": "comms",
+      "logo": "Server",
+      "registry": null,
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "dingtalk-mcp",
+        "version": "1.1.21",
+        "args": [],
+        "env": [
+          {
+            "name": "DINGTALK_Client_ID",
+            "label": "Client ID",
+            "secret": false
+          },
+          {
+            "name": "DINGTALK_Client_Secret",
+            "label": "Client Secret",
+            "secret": true
+          }
+        ]
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "admin-app",
+          "who": "company"
+        },
+        "reason": {
+          "en": "Needs an app on the 钉钉 open platform (Client ID + Secret) and admin approval.",
+          "zh": "需要在钉钉开放平台建应用（Client ID + Secret），并经管理员审批。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "cn"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Verify env names."
+    },
+    {
+      "id": "amap",
+      "name": "高德地图",
+      "summary": {
+        "en": "Places, routes and weather",
+        "zh": "地点、路线、天气"
+      },
+      "category": "maps",
+      "logo": "Server",
+      "registry": null,
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "@amap/amap-maps-mcp-server",
+        "version": "0.0.8",
+        "args": [],
+        "env": [
+          {
+            "name": "AMAP_MAPS_API_KEY",
+            "label": "高德 Web 服务 Key",
+            "secret": true
+          }
+        ]
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "real-name",
+          "who": "user"
+        },
+        "reason": {
+          "en": "Needs a 高德 developer account with real-name verification, then a Web service key.",
+          "zh": "需要注册高德开发者并完成实名认证，再申请 Web 服务 Key。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "cn"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Verify env name."
+    },
+    {
+      "id": "baidu-map",
+      "name": "百度地图",
+      "summary": {
+        "en": "Places, routes and weather",
+        "zh": "地点、路线、天气"
+      },
+      "category": "maps",
+      "logo": "Server",
+      "registry": null,
+      "transport": "local",
+      "local": {
+        "runtime": "npx",
+        "package": "@baidumap/mcp-server-baidu-map",
+        "version": "1.0.5",
+        "args": [],
+        "env": [
+          {
+            "name": "BAIDU_MAP_API_KEY",
+            "label": "百度地图 AK",
+            "secret": true
+          }
+        ]
+      },
+      "needs": [
+        "node"
+      ],
+      "availability": {
+        "status": "needs-setup",
+        "blocker": {
+          "kind": "real-name",
+          "who": "user"
+        },
+        "reason": {
+          "en": "Needs a 百度地图 developer account with real-name verification, then an AK.",
+          "zh": "需要注册百度地图开发者并完成实名认证，再申请 AK。"
+        }
+      },
+      "defaults": {
+        "reads": "allow",
+        "changes": "ask",
+        "overrides": {}
+      },
+      "regions": [
+        "cn"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Verify env name."
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "summary": {
+        "en": "Read design files",
+        "zh": "读取设计稿"
+      },
+      "category": "design",
+      "logo": "Server",
+      "registry": null,
+      "transport": null,
+      "availability": {
+        "status": "unavailable",
+        "blocker": {
+          "kind": "client-approval",
+          "who": "mat"
+        },
+        "reason": {
+          "en": "Not yet: Figma only lets approved apps connect, and MAT is not on its list. Full use also needs a paid Dev or Full seat.",
+          "zh": "暂不可用：Figma 只允许它批准过的应用连接，MAT 还不在名单上；完整使用还需要付费的 Dev 或 Full 席位。"
+        }
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Remote https://mcp.figma.com/mcp (com.figma.mcp/mcp). Seat requirement to verify."
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "summary": {
+        "en": "Channels and messages",
+        "zh": "频道和消息"
+      },
+      "category": "comms",
+      "logo": "Server",
+      "registry": null,
+      "transport": null,
+      "availability": {
+        "status": "unavailable",
+        "blocker": {
+          "kind": "app-approval",
+          "who": "mat"
+        },
+        "reason": {
+          "en": "Not yet: Slack's own MCP server only accepts approved apps; MAT has not been reviewed by Slack.",
+          "zh": "暂不可用：Slack 官方 MCP 只接受审核过的应用，MAT 还没通过 Slack 审核。"
+        }
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Verify Slack's current policy."
+    },
+    {
+      "id": "google",
+      "name": "Gmail, Drive & Calendar",
+      "summary": {
+        "en": "Mail, Drive and Calendar",
+        "zh": "邮件、云盘和日历"
+      },
+      "category": "comms",
+      "logo": "Server",
+      "registry": null,
+      "transport": null,
+      "availability": {
+        "status": "unavailable",
+        "blocker": {
+          "kind": "oauth-verification",
+          "who": "mat"
+        },
+        "reason": {
+          "en": "Not yet: Google requires app verification and a paid yearly security assessment before an app may read Gmail or Drive.",
+          "zh": "暂不可用：Google 要求应用先通过审核和每年付费的安全评估，才能读取 Gmail 和云盘。"
+        }
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Restricted scopes → CASA assessment."
+    },
+    {
+      "id": "microsoft-365",
+      "name": "Outlook, Teams & OneDrive",
+      "summary": {
+        "en": "Mail, meetings and files",
+        "zh": "邮件、会议和文件"
+      },
+      "category": "comms",
+      "logo": "Server",
+      "registry": null,
+      "transport": null,
+      "availability": {
+        "status": "unavailable",
+        "blocker": {
+          "kind": "publisher-verification",
+          "who": "mat"
+        },
+        "reason": {
+          "en": "Not yet: needs MAT registered and verified as a Microsoft app publisher; many companies also require admin consent.",
+          "zh": "暂不可用：需要先把 MAT 注册为经过验证的微软应用发布者；很多公司还要管理员同意。"
+        }
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null
+    },
+    {
+      "id": "github-oauth",
+      "name": "GitHub · browser sign-in",
+      "summary": {
+        "en": "Sign in to GitHub in the browser",
+        "zh": "用浏览器登录 GitHub"
+      },
+      "category": "code",
+      "logo": "GitHub",
+      "registry": null,
+      "transport": null,
+      "availability": {
+        "status": "unavailable",
+        "blocker": {
+          "kind": "oauth-app",
+          "who": "mat"
+        },
+        "reason": {
+          "en": "Not yet: needs a GitHub OAuth app registered for MAT. GitHub works today with a personal access token.",
+          "zh": "暂不可用：要先给 MAT 注册 GitHub OAuth 应用。现在可以用个人 token 连接 GitHub。"
+        }
+      },
+      "regions": [
+        "global"
+      ],
+      "suggested": false,
+      "reviewed": null,
+      "note": "Shown only as the explanation under the GitHub row, not as its own row."
+    }
+  ]
+}

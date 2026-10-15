@@ -54,3 +54,11 @@ Arena leaderboard data is © LMArena, licensed CC BY 4.0. Any page that shows th
 pip install -r rankings/pipeline/requirements.txt
 sh rankings/pipeline/run.sh
 ```
+
+## Models that run on a Mac (`local/`)
+
+`https://robertleehao.github.io/MAT/rankings/local/latest.json` lists the models MAT recommends running through Ollama, rebuilt every Monday in the same run (`pipeline/local_models.py`, a separate step: one failing never holds the other back).
+
+- `pipeline/local.json` (kept by hand): which families to read, what each is good for, and `prefer` — the order MAT recommends in. That order is a judgement, not a benchmark.
+- For every family it reads the tags page on ollama.com and keeps the plain tags: download size, context window, whether it reads pictures. `ramGB` is the Mac memory MAT asks for (weights × 1.2 + 3 GB). `picks` has one tag per memory size: the first in `prefer` that fits.
+- The app reads it at onboarding and every time Settings › Providers opens, and recommends the pick for that Mac's memory. A family that fails to load keeps last week's rows, marked `stale`.

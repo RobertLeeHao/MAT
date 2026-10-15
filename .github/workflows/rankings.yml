@@ -35,13 +35,13 @@ jobs:
         run: |
           git config user.name "MAT rankings bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add rankings/data rankings/v2
+          git add rankings/data rankings/v2 rankings/local
           git diff --cached --quiet && exit 0
           git commit -m "Rankings $(date -u +%F)"
           git pull --rebase origin main
           git push origin HEAD:main
       - name: Publish with the website
-        if: steps.run.outputs.published == 'true'
+        if: steps.run.outputs.published == 'true' || steps.run.outputs.local == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run Website -R "$GITHUB_REPOSITORY"

@@ -1,0 +1,556 @@
+{
+ "version": 1,
+ "date": "2026-10-15",
+ "source": "https://ollama.com/library",
+ "note": "Sizes are Ollama's download sizes. ramGB is the Mac memory MAT recommends for each (weights × 1.2 + 3 GB). Picks follow a hand-kept preference order, not a benchmark. First table read by hand from ollama.com on 2026-10-15; later weeks by pipeline/local_models.py.",
+ "picks": [
+  {
+   "ramGB": 8,
+   "tag": "qwen3.5:4b"
+  },
+  {
+   "ramGB": 16,
+   "tag": "qwen3.5:9b"
+  },
+  {
+   "ramGB": 24,
+   "tag": "gemma4:26b"
+  },
+  {
+   "ramGB": 32,
+   "tag": "qwen3.8:27b"
+  },
+  {
+   "ramGB": 48,
+   "tag": "qwen3.8:27b"
+  },
+  {
+   "ramGB": 64,
+   "tag": "qwen3.8:27b"
+  },
+  {
+   "ramGB": 96,
+   "tag": "qwen3.8:27b"
+  },
+  {
+   "ramGB": 128,
+   "tag": "qwen3.8:27b"
+  },
+  {
+   "ramGB": 192,
+   "tag": "qwen3.8:27b"
+  }
+ ],
+ "models": [
+  {
+   "tag": "deepseek-r1:1.5b",
+   "gb": 1.1,
+   "context": "128K",
+   "vision": false,
+   "family": "deepseek-r1",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-R1 1.5B",
+   "ramGB": 8,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "step-by-step reasoning",
+    "zh": "逐步推理"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "deepseek-r1:7b",
+   "gb": 4.7,
+   "context": "128K",
+   "vision": false,
+   "family": "deepseek-r1",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-R1 7B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "step-by-step reasoning",
+    "zh": "逐步推理"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "deepseek-r1:8b",
+   "gb": 5.2,
+   "context": "128K",
+   "vision": false,
+   "family": "deepseek-r1",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-R1 8B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "step-by-step reasoning",
+    "zh": "逐步推理"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "deepseek-r1:14b",
+   "gb": 9.0,
+   "context": "128K",
+   "vision": false,
+   "family": "deepseek-r1",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-R1 14B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "step-by-step reasoning",
+    "zh": "逐步推理"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "deepseek-r1:32b",
+   "gb": 20,
+   "context": "128K",
+   "vision": false,
+   "family": "deepseek-r1",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-R1 32B",
+   "ramGB": 32,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "step-by-step reasoning",
+    "zh": "逐步推理"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "deepseek-r1:70b",
+   "gb": 43,
+   "context": "128K",
+   "vision": false,
+   "family": "deepseek-r1",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-R1 70B",
+   "ramGB": 64,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "step-by-step reasoning",
+    "zh": "逐步推理"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "deepseek-r1:671b",
+   "gb": 404,
+   "context": "160K",
+   "vision": false,
+   "family": "deepseek-r1",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-R1 671B",
+   "ramGB": 192,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "step-by-step reasoning",
+    "zh": "逐步推理"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gemma4:e2b",
+   "gb": 4.6,
+   "context": "128K",
+   "vision": true,
+   "family": "gemma4",
+   "maker": "Google",
+   "name": "Gemma 4 E2B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "general use, reading pictures and documents",
+    "zh": "日常使用、看图和读文档"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gemma4:e4b",
+   "gb": 6.6,
+   "context": "128K",
+   "vision": true,
+   "family": "gemma4",
+   "maker": "Google",
+   "name": "Gemma 4 E4B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "general use, reading pictures and documents",
+    "zh": "日常使用、看图和读文档"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gemma4:12b",
+   "gb": 7.7,
+   "context": "256K",
+   "vision": true,
+   "family": "gemma4",
+   "maker": "Google",
+   "name": "Gemma 4 12B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "general use, reading pictures and documents",
+    "zh": "日常使用、看图和读文档"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gemma4:26b",
+   "gb": 16,
+   "context": "256K",
+   "vision": true,
+   "family": "gemma4",
+   "maker": "Google",
+   "name": "Gemma 4 26B",
+   "ramGB": 24,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "general use, reading pictures and documents",
+    "zh": "日常使用、看图和读文档"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gemma4:31b",
+   "gb": 19,
+   "context": "256K",
+   "vision": true,
+   "family": "gemma4",
+   "maker": "Google",
+   "name": "Gemma 4 31B",
+   "ramGB": 32,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "general use, reading pictures and documents",
+    "zh": "日常使用、看图和读文档"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gpt-oss:20b",
+   "gb": 14,
+   "context": "128K",
+   "vision": false,
+   "family": "gpt-oss",
+   "maker": "OpenAI",
+   "name": "gpt-oss 20B",
+   "ramGB": 24,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "reasoning, English",
+    "zh": "推理，英文为主"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gpt-oss:120b",
+   "gb": 65,
+   "context": "128K",
+   "vision": false,
+   "family": "gpt-oss",
+   "maker": "OpenAI",
+   "name": "gpt-oss 120B",
+   "ramGB": 96,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "reasoning, English",
+    "zh": "推理，英文为主"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "granite4.2:3b",
+   "gb": 2.2,
+   "context": "128K",
+   "vision": false,
+   "family": "granite4.2",
+   "maker": "IBM",
+   "name": "Granite 4.2 3B",
+   "ramGB": 8,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "structured output and tool calls",
+    "zh": "结构化输出和工具调用"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "granite4.2:8b",
+   "gb": 5.3,
+   "context": "128K",
+   "vision": false,
+   "family": "granite4.2",
+   "maker": "IBM",
+   "name": "Granite 4.2 8B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "structured output and tool calls",
+    "zh": "结构化输出和工具调用"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "granite4.2:30b",
+   "gb": 18,
+   "context": "128K",
+   "vision": false,
+   "family": "granite4.2",
+   "maker": "IBM",
+   "name": "Granite 4.2 30B",
+   "ramGB": 32,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "structured output and tool calls",
+    "zh": "结构化输出和工具调用"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "ministral-3:3b",
+   "gb": 3.0,
+   "context": "256K",
+   "vision": true,
+   "family": "ministral-3",
+   "maker": "Mistral",
+   "name": "Ministral 3 3B",
+   "ramGB": 8,
+   "tools": true,
+   "thinking": false,
+   "good": {
+    "en": "fast everyday answers, European languages",
+    "zh": "快速日常问答，欧洲语言"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "ministral-3:8b",
+   "gb": 6.0,
+   "context": "256K",
+   "vision": true,
+   "family": "ministral-3",
+   "maker": "Mistral",
+   "name": "Ministral 3 8B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": false,
+   "good": {
+    "en": "fast everyday answers, European languages",
+    "zh": "快速日常问答，欧洲语言"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "ministral-3:14b",
+   "gb": 9.1,
+   "context": "256K",
+   "vision": true,
+   "family": "ministral-3",
+   "maker": "Mistral",
+   "name": "Ministral 3 14B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": false,
+   "good": {
+    "en": "fast everyday answers, European languages",
+    "zh": "快速日常问答，欧洲语言"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.5:0.8b",
+   "gb": 1.2,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.5",
+   "maker": "Alibaba",
+   "name": "Qwen3.5 0.8B",
+   "ramGB": 8,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "questions and short drafts, Chinese and English",
+    "zh": "问答和短稿，中英文"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.5:2b",
+   "gb": 2.7,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.5",
+   "maker": "Alibaba",
+   "name": "Qwen3.5 2B",
+   "ramGB": 8,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "questions and short drafts, Chinese and English",
+    "zh": "问答和短稿，中英文"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.5:4b",
+   "gb": 3.3,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.5",
+   "maker": "Alibaba",
+   "name": "Qwen3.5 4B",
+   "ramGB": 8,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "questions and short drafts, Chinese and English",
+    "zh": "问答和短稿，中英文"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.5:9b",
+   "gb": 6.6,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.5",
+   "maker": "Alibaba",
+   "name": "Qwen3.5 9B",
+   "ramGB": 16,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "questions and short drafts, Chinese and English",
+    "zh": "问答和短稿，中英文"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.5:27b",
+   "gb": 17,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.5",
+   "maker": "Alibaba",
+   "name": "Qwen3.5 27B",
+   "ramGB": 24,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "questions and short drafts, Chinese and English",
+    "zh": "问答和短稿，中英文"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.5:35b",
+   "gb": 22,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.5",
+   "maker": "Alibaba",
+   "name": "Qwen3.5 35B",
+   "ramGB": 32,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "questions and short drafts, Chinese and English",
+    "zh": "问答和短稿，中英文"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.5:122b",
+   "gb": 81,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.5",
+   "maker": "Alibaba",
+   "name": "Qwen3.5 122B",
+   "ramGB": 128,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "questions and short drafts, Chinese and English",
+    "zh": "问答和短稿，中英文"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.6:27b",
+   "gb": 18,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.6",
+   "maker": "Alibaba",
+   "name": "Qwen3.6 27B",
+   "ramGB": 32,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "coding and longer tasks",
+    "zh": "写代码和较长的任务"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.6:35b",
+   "gb": 23,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.6",
+   "maker": "Alibaba",
+   "name": "Qwen3.6 35B",
+   "ramGB": 32,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "coding and longer tasks",
+    "zh": "写代码和较长的任务"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "qwen3.8:27b",
+   "gb": 18,
+   "context": "256K",
+   "vision": true,
+   "family": "qwen3.8",
+   "maker": "Alibaba",
+   "name": "Qwen3.8 27B",
+   "ramGB": 32,
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "writing, research and agentic work; strong in Chinese and English",
+    "zh": "写作、调研和多步任务；中英文都强"
+   },
+   "read": "2026-10-15"
+  }
+ ]
+}
