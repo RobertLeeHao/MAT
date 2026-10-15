@@ -29,6 +29,8 @@ jobs:
           if [ -d rankings/v2 ]; then mkdir -p _site/rankings && cp -r rankings/v2 rankings/index.html _site/rankings/; fi
           # the weekly table of models that run on a Mac (Ollama), read by the app
           if [ -d rankings/local ]; then mkdir -p _site/rankings && cp -r rankings/local _site/rankings/; fi
+          # MAT's list of tool (MCP) servers, read by the app (Settings › Tools)
+          if [ -d mcp/v1 ]; then mkdir -p _site/mcp && cp -r mcp/v1 _site/mcp/; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

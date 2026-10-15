@@ -55,10 +55,11 @@ pip install -r rankings/pipeline/requirements.txt
 sh rankings/pipeline/run.sh
 ```
 
-## Models that run on a Mac (`local/`)
+## Models MAT can reach through Ollama (`local/`)
 
-`https://robertleehao.github.io/MAT/rankings/local/latest.json` lists the models MAT recommends running through Ollama, rebuilt every Monday in the same run (`pipeline/local_models.py`, a separate step: one failing never holds the other back).
+`https://robertleehao.github.io/MAT/rankings/local/latest.json` lists every model MAT can call through Ollama — on the Mac (`where: local`) or in Ollama's cloud (`where: cloud`) — rebuilt every Monday in the same run (`pipeline/local_models.py`, a separate step: one failing never holds the other back). What changed is written to `local/changes/<date>.md`.
 
-- `pipeline/local.json` (kept by hand): which families to read, what each is good for, and `prefer` — the order MAT recommends in. That order is a judgement, not a benchmark.
-- For every family it reads the tags page on ollama.com and keeps the plain tags: download size, context window, whether it reads pictures. `ramGB` is the Mac memory MAT asks for (weights × 1.2 + 3 GB). `picks` has one tag per memory size: the first in `prefer` that fits.
-- The app reads it at onboarding and every time Settings › Providers opens, and recommends the pick for that Mac's memory. A family that fails to load keeps last week's rows, marked `stale`.
+- `pipeline/local.json` (kept by hand): the families always read, what each is good for, and `prefer` — the order MAT recommends local models in. That order is a judgement, not a benchmark.
+- New families are picked up by themselves: anything on ollama.com's popular or newest pages that holds a conversation (tools or thinking; not embedding or decision models), was updated within the last year and has ≥ 100K pulls — or ≥ 5K if it came out this month. `discover.skip` lists families that match but are not general chat models. Found families are listed under `found`, stay in the table on later weeks, and are never recommended until added to `prefer`.
+- Local tags: download size, context window, whether it reads pictures, and `ramGB`, the Mac memory MAT asks for (weights × 1.2 + 3 GB). Cloud tags: Ollama's usage level instead of a size; they need `ollama signin`, count against Ollama's limits, and send the prompt to Ollama.
+- `picks` has one local tag per memory size: the first in `prefer` that fits. The app reads the table at onboarding and every time Settings › Providers opens. A family that fails to load keeps last week's rows, marked `stale`.

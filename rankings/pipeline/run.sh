@@ -20,7 +20,8 @@ else $FETCH --out "$R/data/$D/sources.json"; PREV_SRC=""; fi
 # The local-model table (Ollama): independent of the rankings, so a failure
 # here never holds them back, and theirs never holds this back.
 mkdir -p "$R/local/archive"
-if $PY "$P/local_models.py" --out "$R/local/.candidate.json" --previous "$R/local/latest.json"; then
+mkdir -p "$R/local/changes"
+if $PY "$P/local_models.py" --out "$R/local/.candidate.json" --previous "$R/local/latest.json" --changes "$R/local/changes/$D.md"; then
   mv "$R/local/.candidate.json" "$R/local/archive/$D.json"
   cp "$R/local/archive/$D.json" "$R/local/latest.json"
   echo "local=true" >> "${GITHUB_OUTPUT:-/dev/null}"

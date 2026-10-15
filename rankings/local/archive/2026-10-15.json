@@ -2,7 +2,7 @@
  "version": 1,
  "date": "2026-10-15",
  "source": "https://ollama.com/library",
- "note": "Sizes are Ollama's download sizes. ramGB is the Mac memory MAT recommends for each (weights × 1.2 + 3 GB). Picks follow a hand-kept preference order, not a benchmark. First table read by hand from ollama.com on 2026-10-15; later weeks by pipeline/local_models.py.",
+ "note": "where = local (runs on the Mac; gb is Ollama's download size, ramGB the Mac memory MAT asks for: weights × 1.2 + 3 GB) or cloud (runs in Ollama's cloud: needs `ollama signin`, has usage limits, the prompt leaves the Mac). Picks are local only and follow a hand-kept preference order, not a benchmark. Families under `found` were picked up from ollama.com automatically and are listed, not recommended. 2026-10-15 table read by hand; later weeks by pipeline/local_models.py.",
  "picks": [
   {
    "ramGB": 8,
@@ -57,7 +57,8 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "deepseek-r1:7b",
@@ -74,7 +75,8 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "deepseek-r1:8b",
@@ -91,7 +93,8 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "deepseek-r1:14b",
@@ -108,7 +111,8 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "deepseek-r1:32b",
@@ -125,7 +129,8 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "deepseek-r1:70b",
@@ -142,7 +147,8 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "deepseek-r1:671b",
@@ -158,6 +164,77 @@
    "good": {
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
+   },
+   "read": "2026-10-15",
+   "where": "local"
+  },
+  {
+   "tag": "deepseek-v4-pro:cloud",
+   "where": "cloud",
+   "context": "1M",
+   "vision": false,
+   "usage": "Extra High Usage",
+   "family": "deepseek-v4-pro",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-V4 Pro (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "DeepSeek V4 Pro: frontier MoE, three reasoning modes",
+    "zh": "DeepSeek V4 Pro: frontier MoE, three reasoning modes"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "deepseek-v4.1-flash:cloud",
+   "where": "cloud",
+   "context": "1M",
+   "vision": true,
+   "usage": "Medium Usage",
+   "family": "deepseek-v4.1-flash",
+   "maker": "DeepSeek",
+   "name": "DeepSeek-V4.1 Flash (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "DeepSeek V4.1 Flash: fast, multimodal, tools",
+    "zh": "DeepSeek V4.1 Flash: fast, multimodal, tools"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "gemma4:cloud",
+   "where": "cloud",
+   "context": "256K",
+   "vision": true,
+   "usage": "Low Usage",
+   "family": "gemma4",
+   "maker": "Google",
+   "name": "Gemma 4 (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "general use, reading pictures and documents",
+    "zh": "日常使用、看图和读文档"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gemma4:31b-cloud",
+   "where": "cloud",
+   "context": "256K",
+   "vision": true,
+   "usage": "Low Usage",
+   "family": "gemma4",
+   "maker": "Google",
+   "name": "Gemma 4 31B (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "general use, reading pictures and documents",
+    "zh": "日常使用、看图和读文档"
    },
    "read": "2026-10-15"
   },
@@ -176,7 +253,8 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "gemma4:e4b",
@@ -193,7 +271,8 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "gemma4:12b",
@@ -210,7 +289,8 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "gemma4:26b",
@@ -227,7 +307,8 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "gemma4:31b",
@@ -243,6 +324,95 @@
    "good": {
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
+   },
+   "read": "2026-10-15",
+   "where": "local"
+  },
+  {
+   "tag": "glm-5.2:cloud",
+   "where": "cloud",
+   "context": "976K",
+   "vision": false,
+   "usage": "High Usage",
+   "family": "glm-5.2",
+   "maker": "Z.ai",
+   "name": "GLM-5.2 (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "GLM-5.2: Z.ai flagship for long-horizon tasks",
+    "zh": "GLM-5.2: Z.ai flagship for long-horizon tasks"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "glm-5.3:cloud",
+   "where": "cloud",
+   "context": "1M",
+   "vision": false,
+   "usage": "High Usage",
+   "family": "glm-5.3",
+   "maker": "Z.ai",
+   "name": "GLM-5.3 (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "GLM-5.3: Z.ai flagship, strongest open-weights model for coding",
+    "zh": "GLM-5.3: Z.ai flagship, strongest open-weights model for coding"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "glm-5.3-flash:cloud",
+   "where": "cloud",
+   "context": "1M",
+   "vision": true,
+   "usage": "Medium Usage",
+   "family": "glm-5.3-flash",
+   "maker": "Z.ai",
+   "name": "GLM-5.3 Flash (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "GLM-5.3 Flash: natively multimodal, strong at coding and agents",
+    "zh": "GLM-5.3 Flash: natively multimodal, strong at coding and agents"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "gpt-oss:20b-cloud",
+   "where": "cloud",
+   "context": "128K",
+   "vision": false,
+   "usage": "Low Usage",
+   "family": "gpt-oss",
+   "maker": "OpenAI",
+   "name": "gpt-oss 20B (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "reasoning, English",
+    "zh": "推理，英文为主"
+   },
+   "read": "2026-10-15"
+  },
+  {
+   "tag": "gpt-oss:120b-cloud",
+   "where": "cloud",
+   "context": "128K",
+   "vision": false,
+   "usage": "Medium Usage",
+   "family": "gpt-oss",
+   "maker": "OpenAI",
+   "name": "gpt-oss 120B (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "reasoning, English",
+    "zh": "推理，英文为主"
    },
    "read": "2026-10-15"
   },
@@ -261,7 +431,8 @@
     "en": "reasoning, English",
     "zh": "推理，英文为主"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "gpt-oss:120b",
@@ -278,7 +449,8 @@
     "en": "reasoning, English",
     "zh": "推理，英文为主"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "granite4.2:3b",
@@ -295,7 +467,8 @@
     "en": "structured output and tool calls",
     "zh": "结构化输出和工具调用"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "granite4.2:8b",
@@ -312,7 +485,8 @@
     "en": "structured output and tool calls",
     "zh": "结构化输出和工具调用"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "granite4.2:30b",
@@ -329,7 +503,98 @@
     "en": "structured output and tool calls",
     "zh": "结构化输出和工具调用"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
+  },
+  {
+   "tag": "kimi-k2.6:cloud",
+   "where": "cloud",
+   "context": "256K",
+   "vision": true,
+   "usage": "High Usage",
+   "family": "kimi-k2.6",
+   "maker": "Moonshot",
+   "name": "Kimi-K2.6 (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "Kimi K2.6: multimodal agentic model for long-horizon coding",
+    "zh": "Kimi K2.6: multimodal agentic model for long-horizon coding"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "kimi-k2.7-code:cloud",
+   "where": "cloud",
+   "context": "256K",
+   "vision": true,
+   "usage": "High Usage",
+   "family": "kimi-k2.7-code",
+   "maker": "Moonshot",
+   "name": "Kimi-K2.7 Code (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "Kimi K2.7 Code: coding-focused agentic model",
+    "zh": "Kimi K2.7 Code: coding-focused agentic model"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "kimi-k3:cloud",
+   "where": "cloud",
+   "context": "1M",
+   "vision": true,
+   "usage": "Extra High Usage",
+   "family": "kimi-k3",
+   "maker": "Moonshot",
+   "name": "Kimi-K3 (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "Kimi K3: Moonshot’s most capable open-weight multimodal agentic model",
+    "zh": "Kimi K3: Moonshot’s most capable open-weight multimodal agentic model"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "minimax-m2.7:cloud",
+   "where": "cloud",
+   "context": "200K",
+   "vision": false,
+   "usage": "Medium Usage",
+   "family": "minimax-m2.7",
+   "maker": "MiniMax",
+   "name": "MiniMax-M2.7 (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "MiniMax M2.7: coding, agentic workflows, productivity",
+    "zh": "MiniMax M2.7: coding, agentic workflows, productivity"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "minimax-m3:cloud",
+   "where": "cloud",
+   "context": "512K",
+   "vision": true,
+   "usage": "High Usage",
+   "family": "minimax-m3",
+   "maker": "MiniMax",
+   "name": "MiniMax-M3 (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "MiniMax M3: coding and agentic, 1M context, multimodal",
+    "zh": "MiniMax M3: coding and agentic, 1M context, multimodal"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
   },
   {
    "tag": "ministral-3:3b",
@@ -346,7 +611,8 @@
     "en": "fast everyday answers, European languages",
     "zh": "快速日常问答，欧洲语言"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "ministral-3:8b",
@@ -363,7 +629,8 @@
     "en": "fast everyday answers, European languages",
     "zh": "快速日常问答，欧洲语言"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "ministral-3:14b",
@@ -380,7 +647,98 @@
     "en": "fast everyday answers, European languages",
     "zh": "快速日常问答，欧洲语言"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
+  },
+  {
+   "tag": "mistral-large-3:675b-cloud",
+   "where": "cloud",
+   "context": "256K",
+   "vision": true,
+   "usage": "Medium Usage",
+   "family": "mistral-large-3",
+   "maker": "Mistral",
+   "name": "Mistral-Large 3 675B (cloud)",
+   "tools": true,
+   "thinking": false,
+   "good": {
+    "en": "Mistral Large 3: multimodal MoE for production work",
+    "zh": "Mistral Large 3: multimodal MoE for production work"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "mistral-large-4:cloud",
+   "where": "cloud",
+   "context": "1M",
+   "vision": true,
+   "usage": "High Usage",
+   "family": "mistral-large-4",
+   "maker": "Mistral",
+   "name": "Mistral-Large 4 (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "Mistral Large 4: open-weight multimodal MoE, 1.05T total",
+    "zh": "Mistral Large 4: open-weight multimodal MoE, 1.05T total"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "nemotron-3-nano:30b-cloud",
+   "where": "cloud",
+   "context": "1M",
+   "vision": false,
+   "usage": "Low Usage",
+   "family": "nemotron-3-nano",
+   "maker": "NVIDIA",
+   "name": "Nemotron-3 Nano 30B (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "Nemotron 3 Nano: efficient agentic model",
+    "zh": "Nemotron 3 Nano: efficient agentic model"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "nemotron-3-super:cloud",
+   "where": "cloud",
+   "context": "256K",
+   "vision": false,
+   "usage": "Medium Usage",
+   "family": "nemotron-3-super",
+   "maker": "NVIDIA",
+   "name": "Nemotron-3 Super (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "NVIDIA Nemotron 3 Super: 120B open MoE for multi-agent work",
+    "zh": "NVIDIA Nemotron 3 Super: 120B open MoE for multi-agent work"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
+  },
+  {
+   "tag": "nemotron-3-ultra:cloud",
+   "where": "cloud",
+   "context": "256K",
+   "vision": false,
+   "usage": "High Usage",
+   "family": "nemotron-3-ultra",
+   "maker": "NVIDIA",
+   "name": "Nemotron-3 Ultra (cloud)",
+   "tools": true,
+   "thinking": true,
+   "good": {
+    "en": "Nemotron 3 Ultra: high-throughput reasoning and long agent runs",
+    "zh": "Nemotron 3 Ultra: high-throughput reasoning and long agent runs"
+   },
+   "read": "2026-10-15",
+   "found": "2026-10-15"
   },
   {
    "tag": "qwen3.5:0.8b",
@@ -397,7 +755,8 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.5:2b",
@@ -414,7 +773,8 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.5:4b",
@@ -431,7 +791,8 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.5:9b",
@@ -448,7 +809,8 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.5:27b",
@@ -465,7 +827,8 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.5:35b",
@@ -482,7 +845,8 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.5:122b",
@@ -499,7 +863,8 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.6:27b",
@@ -516,7 +881,8 @@
     "en": "coding and longer tasks",
     "zh": "写代码和较长的任务"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.6:35b",
@@ -533,7 +899,8 @@
     "en": "coding and longer tasks",
     "zh": "写代码和较长的任务"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
   },
   {
    "tag": "qwen3.8:27b",
@@ -550,7 +917,145 @@
     "en": "writing, research and agentic work; strong in Chinese and English",
     "zh": "写作、调研和多步任务；中英文都强"
    },
-   "read": "2026-10-15"
+   "read": "2026-10-15",
+   "where": "local"
+  }
+ ],
+ "found": [
+  {
+   "family": "nemotron-3-super",
+   "maker": "NVIDIA",
+   "good": {
+    "en": "NVIDIA Nemotron 3 Super: 120B open MoE for multi-agent work",
+    "zh": "NVIDIA Nemotron 3 Super: 120B open MoE for multi-agent work"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "minimax-m2.7",
+   "maker": "MiniMax",
+   "good": {
+    "en": "MiniMax M2.7: coding, agentic workflows, productivity",
+    "zh": "MiniMax M2.7: coding, agentic workflows, productivity"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "nemotron-3-nano",
+   "maker": "NVIDIA",
+   "good": {
+    "en": "Nemotron 3 Nano: efficient agentic model",
+    "zh": "Nemotron 3 Nano: efficient agentic model"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "minimax-m3",
+   "maker": "MiniMax",
+   "good": {
+    "en": "MiniMax M3: coding and agentic, 1M context, multimodal",
+    "zh": "MiniMax M3: coding and agentic, 1M context, multimodal"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "kimi-k2.6",
+   "maker": "Moonshot",
+   "good": {
+    "en": "Kimi K2.6: multimodal agentic model for long-horizon coding",
+    "zh": "Kimi K2.6: multimodal agentic model for long-horizon coding"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "deepseek-v4-pro",
+   "maker": "DeepSeek",
+   "good": {
+    "en": "DeepSeek V4 Pro: frontier MoE, three reasoning modes",
+    "zh": "DeepSeek V4 Pro: frontier MoE, three reasoning modes"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "glm-5.2",
+   "maker": "Z.ai",
+   "good": {
+    "en": "GLM-5.2: Z.ai flagship for long-horizon tasks",
+    "zh": "GLM-5.2: Z.ai flagship for long-horizon tasks"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "kimi-k2.7-code",
+   "maker": "Moonshot",
+   "good": {
+    "en": "Kimi K2.7 Code: coding-focused agentic model",
+    "zh": "Kimi K2.7 Code: coding-focused agentic model"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "glm-5.3-flash",
+   "maker": "Z.ai",
+   "good": {
+    "en": "GLM-5.3 Flash: natively multimodal, strong at coding and agents",
+    "zh": "GLM-5.3 Flash: natively multimodal, strong at coding and agents"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "mistral-large-3",
+   "maker": "Mistral",
+   "good": {
+    "en": "Mistral Large 3: multimodal MoE for production work",
+    "zh": "Mistral Large 3: multimodal MoE for production work"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "deepseek-v4.1-flash",
+   "maker": "DeepSeek",
+   "good": {
+    "en": "DeepSeek V4.1 Flash: fast, multimodal, tools",
+    "zh": "DeepSeek V4.1 Flash: fast, multimodal, tools"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "nemotron-3-ultra",
+   "maker": "NVIDIA",
+   "good": {
+    "en": "Nemotron 3 Ultra: high-throughput reasoning and long agent runs",
+    "zh": "Nemotron 3 Ultra: high-throughput reasoning and long agent runs"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "kimi-k3",
+   "maker": "Moonshot",
+   "good": {
+    "en": "Kimi K3: Moonshot’s most capable open-weight multimodal agentic model",
+    "zh": "Kimi K3: Moonshot’s most capable open-weight multimodal agentic model"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "glm-5.3",
+   "maker": "Z.ai",
+   "good": {
+    "en": "GLM-5.3: Z.ai flagship, strongest open-weights model for coding",
+    "zh": "GLM-5.3: Z.ai flagship, strongest open-weights model for coding"
+   },
+   "found": "2026-10-15"
+  },
+  {
+   "family": "mistral-large-4",
+   "maker": "Mistral",
+   "good": {
+    "en": "Mistral Large 4: open-weight multimodal MoE, 1.05T total",
+    "zh": "Mistral Large 4: open-weight multimodal MoE, 1.05T total"
+   },
+   "found": "2026-10-15"
   }
  ]
 }
