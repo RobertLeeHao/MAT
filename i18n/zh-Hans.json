@@ -326,7 +326,20 @@
   "sooner, because six seats ran at once": "更快完成，因为六个座位同时运行",
   "“Draft the launch email for the October release. Under 200 words.”": "“为十月版本起草发布邮件。200 字以内。”",
   "“Look at the AI note-taking apps: who’s winning, why, and what they charge.”": "“看看 AI 笔记应用：谁在领先、为什么，以及怎么收费。”",
-  "“RAG or fine-tuning for our support bot?”": "“我们的客服机器人，用 RAG 还是微调？”"
+  "“RAG or fine-tuning for our support bot?”": "“我们的客服机器人，用 RAG 还是微调？”",
+  "Oct 19, 2026": "2026 年 10 月 19 日",
+  "0.1.5: see where every model comes from.": "0.1.5：每个模型从哪来，一眼看清。",
+  "Settings › Providers is one list: subscriptions, keys and the models on your Mac are the same kind of row, top to bottom in the order MAT tries them. Drag a key to change the order.": "Settings › Providers 现在是一张列表：订阅、key 和这台 Mac 上的模型都是同一种行，从上到下就是 MAT 尝试的顺序。拖动 key 就能改顺序。",
+  "Each connection is tested every time the page opens, and the row says what came back: working and how fast, rate limited, out of credit, or key refused.": "每次打开这一页，每个连接都会真测一遍，行里直接写结果：能用、多快，被限流，余额不足，或者 key 被拒。",
+  "What MAT uses, at the top of the page: the model each size of work reaches for first, through which connection, and how many it falls back to. MAT picks; you can pin one.": "页面最上面是「MAT 在用什么」：每一档活先用哪个模型、经由哪个连接、还有几个后备。默认由 MAT 选，你也可以钉一个。",
+  "How much of each allowance is used is drawn in the provider’s colour, behind its row and in the sidebar. A provider that works but reports no balance is striped, and MAT tells you what it spent there itself.": "每份额度用了多少，用这家的品牌色画在它那一行的背景上，侧栏里也一样。能用但不报余额的画成斜线，花了多少由 MAT 自己记给你看。",
+  "Claude Code and Codex appear as soon as they’re installed, with their sign-in state. A signed-in Claude Code is no longer reported as signed out.": "Claude Code 和 Codex 装好就会出现，并写明登录状态。已经登录的 Claude Code 不会再被说成没登录。",
+  "0.1.4: plans you can steer, methods that keep themselves.": "0.1.4：计划由你调，做法自己维护。",
+  "Before a job runs, MAT shows its plan with three numbers you can set: cost, time and quality. A one-line summary says what you set, and each stage says how it flows: in order, one each, a few versions, send back, or ask you first.": "活开跑之前，MAT 先给出计划，带三个你能调的数：花费、时间、质量。一行摘要写着你调了什么；每一段写明怎么流转：按顺序、各做一份、出几个版本、打回重做，或者先问你。",
+  "When something could be a quick write or a planned job, MAT asks which, with time, price and quality on both sides. A job can also run tonight, or be done by a date.": "一件事既可以直接写、也可以排计划时，MAT 会问你选哪种，两边都写清时间、价钱和质量。活也可以安排在今晚跑，或者在某个日期前完成。",
+  "What MAT learns from a job is kept as one method per kind of work. A method is updated rather than duplicated, scored by how the jobs that used it went, and put away after 60 days unused. Settings › Memory shows the record.": "MAT 从活里学到的东西，每类活只留一份做法：有新经验就更新它，而不是再加一份；按用过它的活做得好不好打分；60 天没用就收起来。Settings › Memory 里能看到记录。",
+  "The judge that answers MAT’s yes-or-no questions is now your choice: Jev, a small model on your Mac through Ollama (one click to install, in setup or in Settings), or your cheapest chat model.": "回答 MAT 那些是 / 否问题的裁判，现在由你选：Jev、通过 Ollama 跑在你 Mac 上的小模型（在初次设置或 Settings 里一键安装），或者你最便宜的聊天模型。",
+  "Your Claude Pro / Max plan or ChatGPT plan can do the work through Claude Code or Codex, with no bill per call. When the plan’s limit is hit, MAT moves to your other providers and comes back when it resets.": "你的 Claude Pro / Max 订阅或 ChatGPT 套餐，可以通过 Claude Code 或 Codex 来干活，不按次计费。用到套餐上限时，MAT 换用你别的 provider，等额度恢复再回来。"
  },
  "attrs": {
   "A chat with MAT, and beside it the crew MAT hires. You ask whether to use RAG or fine-tuning, and MAT answers right there: no crew. You ask for a launch email, and MAT hires one seat, Wren on GPT-6.1 Sol, then checks the draft: 52 seconds, $0.004. You ask for a look at twelve AI note-taking apps, and MAT lays out five stages and hires a crew of nine across four of your subscriptions — six scouts on Gemini and DeepSeek, two to compare on Qwen, one to write on GPT-6.1 Sol — then the crew works stage by stage, each one checked before the next starts: 14 minutes and $0.60, against $1.55 for one strong model.": "与 MAT 的对话窗口，旁边是 MAT 组建的团队。你问该用 RAG 还是微调，MAT 当场回答：不需要团队。你要一封发布邮件，MAT 安排一个座位——用 GPT-6.1 Sol 的 Wren——然后检查草稿：52 秒，$0.004。你要分析十二款 AI 笔记应用，MAT 列出五个阶段，在你的四个订阅上组建一个九人团队——六个调研员用 Gemini 和 DeepSeek，两个比较者用 Qwen，一个撰写者用 GPT-6.1 Sol——随后团队逐阶段工作，每个阶段都在下一阶段开始前经过检查：14 分钟、$0.60，而单个强模型需要 $1.55。",
