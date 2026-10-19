@@ -64,6 +64,9 @@ WORKFLOW
 # 排行榜周更的工作流放在 rankings/pipeline/ 里，这里装到 .github/workflows/。
 [ -f rankings/pipeline/rankings.yml ] && cp rankings/pipeline/rankings.yml .github/workflows/rankings.yml
 
+# 2026-10-19 · every page's top bar comes from parts/topbar.py: write it into the pages first
+python3 parts/topbar.py || { echo "❌ 顶部栏没生成成功（parts/topbar.py）"; exit 1; }
+
 [ -d .git ] || git init -b main
 git config user.name  >/dev/null || git config user.name  "Robert Lee"
 git config user.email >/dev/null || git config user.email "$OWNER@users.noreply.github.com"

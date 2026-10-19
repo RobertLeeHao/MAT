@@ -169,20 +169,43 @@ html[data-motion="quiet"] .body,html[data-motion="quiet"] .why-g{padding-bottom:
 .hd+.body{margin-top:var(--hc-gap)}
 .body{border-top:0}
 
-/* ── nav: on the grid, the ground under it ── */
+/* part:topbar */
+/* ── top bar (one component for every page: parts/topbar.py) ── */
 .nav{position:fixed;inset:0 0 auto 0;z-index:40;height:var(--navh);align-items:center;background:var(--ground)}
-.nav:after{content:"";position:absolute;left:var(--m);right:var(--m);bottom:0;border-top:var(--hair)}
+.nav:after,.sh-bar:after{content:"";position:absolute;left:var(--m);right:var(--m);bottom:0;border-top:var(--hair)}
+.sh-bar{flex:none;height:var(--navh);align-items:center;position:relative}
 .logo{grid-column:1/4;display:flex;align-items:center;gap:var(--s3);font-family:var(--display);font-weight:700;font-size:calc(15*var(--px));letter-spacing:-.01em}
-.links{grid-column:4/9;display:flex;gap:var(--s5);font-size:calc(13*var(--px));line-height:calc(16*var(--px));font-weight:500;color:var(--mute)}
-.links a{text-box:trim-both cap alphabetic;white-space:nowrap}
-html:is(:lang(es),:lang(fr),:lang(de)) .links{gap:var(--s4)}
-.links a:hover,.links a.cur{color:var(--paper)}
+.logo .mark{flex:none;width:calc(22*var(--px));height:calc(22*var(--px))}
+html[data-ground="paper"] .nav .logo .mark{filter:invert(1) hue-rotate(180deg)}
+.links,.sh-nav{display:flex;gap:var(--s5);font-size:calc(13*var(--px));line-height:calc(16*var(--px));font-weight:500;color:var(--mute)}
+.links{grid-column:4/9} .sh-nav{grid-column:4/11}
+.links a,.sh-nav a{text-box:trim-both cap alphabetic;white-space:nowrap}
+html:is(:lang(es),:lang(fr),:lang(de)) :is(.links,.sh-nav){gap:var(--s4)}
+.links a:hover,.links a.cur,.sh-nav a:hover,.sh-nav a[aria-current="page"]{color:var(--paper)}
+.nav .cta,.sh-bar .cta{grid-column:11/13;display:flex;justify-content:flex-end;align-items:center;gap:calc(8*var(--px))}
+.nav .cta .btn{transition:opacity .25s var(--out3)}
+.sh-x{display:flex;align-items:center;gap:var(--s3);height:calc(36*var(--px));padding:0 var(--s3);border:0;background:none;color:var(--mute);font-size:calc(13*var(--px));font-weight:600;cursor:pointer;box-shadow:inset 0 0 0 .5px var(--hc2)}
+.sh-x:hover{color:var(--paper)}
+.sh-x i{position:relative;width:calc(10*var(--px));height:calc(10*var(--px));background:linear-gradient(currentColor,currentColor) center/100% 1.25px no-repeat,linear-gradient(currentColor,currentColor) center/1.25px 100% no-repeat;transform:rotate(45deg)}
+.sh-x:focus-visible,.sh-nav a:focus-visible,.links a:focus-visible{outline:1px solid var(--amber);outline-offset:2px}
+.lang-b{flex:none;display:inline-flex;align-items:center;gap:calc(6*var(--px));height:calc(36*var(--px));padding:0 calc(10*var(--px));border:0;background:none;color:var(--mute);font:600 calc(12*var(--px))/1 var(--text);cursor:pointer;box-shadow:inset 0 0 0 .5px var(--hc2);transition:color .15s}
+.lang-b:hover,.lang-b[aria-expanded="true"]{color:var(--paper)}
+.lang-b svg{flex:none;width:calc(14*var(--px));height:calc(14*var(--px));fill:none;stroke:currentColor;stroke-width:1.1}
+.lang-b:focus-visible{outline:1px solid var(--amber);outline-offset:2px}
+.lang-b span{text-box:trim-both cap alphabetic}
+.lang-b.wide{height:auto;padding:0;box-shadow:none;font:inherit;color:var(--dim)}
+.lang-b.wide:hover{color:var(--paper)}
+.gh-b{text-decoration:none}
+.gh-b svg{width:calc(9*var(--px));height:calc(9*var(--px))}
+/* the section links leave the row when it gets tight; GitHub goes to the footer on phones and while the links share the row */
+@media (max-width:1080px){ .links,.sh-nav{display:none} .nav .cta,.sh-bar .cta{grid-column:7/13} }
+@media (max-width:1240px){ html:lang(fr) .links{display:none} html:lang(fr) .nav .cta{grid-column:7/13} }
+@media (max-width:699px), (min-width:1081px) and (max-width:1279px){ .nav .gh-b{display:none} }
+@media (max-width:860px), (max-width:1199px) and (orientation:portrait){ .logo{grid-column:1/7} .nav .cta,.sh-bar .cta{grid-column:7/-1} }
+/* /part:topbar */
 /* v3.2 · the mark, the sections and one button. The Quiet / Bold / Loud switch is gone: how much a page moves is not a question an
    official site asks its visitors. It moves (Bold) unless the system asks for reduced motion (Quiet); ?motion=quiet|bold|loud still
    forces a level for review. */
-.nav .cta{grid-column:11/13;display:flex;justify-content:flex-end}
-@media (max-width:1080px){ .links{display:none} .nav .cta{grid-column:7/13} }
-@media (max-width:1240px){ html:lang(fr) .links{display:none} html:lang(fr) .nav .cta{grid-column:7/13} }
 /* v3.3c · a button never wraps its label (between 861 and 900 px the nav's last two columns were narrower than “Join the waitlist”) */
 .btn{white-space:nowrap}
 
@@ -230,7 +253,6 @@ section[data-ground="paper"] .btn.primary,html[data-ground="paper"] .nav .btn.pr
 section[data-ground="amber"] .btn.primary{background:var(--amber);color:var(--amber-ink)} section[data-ground="amber"] .btn.primary:hover{background:#F0B95C}
 section[data-ground="amber"] .lab b{color:var(--amber)}
 section[data-ground="paper"] .btn.primary:hover,html[data-ground="paper"] .nav .btn.primary:hover{background:#2a2a2c}
-html[data-ground="paper"] .nav .logo canvas{filter:invert(1) hue-rotate(180deg)}
 
 /* ═══ hero ═══ */
 #hero{overflow:hidden}
@@ -464,7 +486,6 @@ footer{background:#111112;color:#F4EFE6;padding-top:var(--s9)}
 /* ═══ one column: phones, and every portrait screen up to 1199 px (iPad portrait) ═══ */
 @media (max-width:860px), (max-width:1199px) and (orientation:portrait){
   :root{--m:calc(24*var(--px));--gt:calc(12*var(--px));--sec:var(--s10);--ph:var(--s7);--hc-gap:var(--s5);--d1:clamp(calc(52*var(--px)),15vw,calc(96*var(--px)));--d2:clamp(calc(38*var(--px)),10.4vw,calc(64*var(--px)));--h3:calc(18*var(--px));--lede:calc(17*var(--px))}
-  .logo{grid-column:1/7} .nav .cta{grid-column:7/-1}
   .hd h2,.hd .lede,.hd .cap,#hero .lede{grid-column:1/-1}
   #hero .acts .btn{flex:1 1 100%}
   .hero-in{padding-top:calc(var(--navh) + var(--s9))}
@@ -533,7 +554,6 @@ footer{background:#111112;color:#F4EFE6;padding-top:var(--s9)}
 #cta .cta-g{padding-bottom:var(--s9)}
 .foot-get{margin-top:var(--s5);max-width:calc(420*var(--px))}
 .foot-get .get{gap:var(--s2)} .foot-get .btn{height:calc(40*var(--px))}
-.nav .cta .btn{transition:opacity .25s var(--out3)}
 /* v3.3 · the nav button is always there, top right (Apple, Linear, Raycast keep theirs from the first screen) */
 #problem,#answer,#soon,#faq,#private{padding-bottom:var(--s10)}
 #ranks{padding-bottom:0}
@@ -1134,15 +1154,6 @@ html[data-motion="quiet"] .wf.on{animation:none}
 /* ═══ v3.3 · the footer's pages: a sheet over the page (Apple's legal pages, Linear's changelog: a plain page, a list by date) ═══ */
 .sheet{position:fixed;inset:0;z-index:80;background:#111112;color:var(--paper);display:flex;flex-direction:column;--sheet:#111112;--pop:#1C1C1E}
 .sheet[hidden]{display:none} .sheet:focus{outline:none}
-.sh-bar{flex:none;height:var(--navh);align-items:center;position:relative}
-.sh-bar:after{content:"";position:absolute;left:var(--m);right:var(--m);bottom:0;border-top:var(--hair)}
-.sh-bar .logo{grid-column:1/4}
-.sh-nav{grid-column:4/11;display:flex;gap:var(--s5);font-size:calc(13*var(--px));font-weight:500;color:var(--mute)}
-.sh-nav a{text-box:trim-both cap alphabetic} .sh-nav a:hover,.sh-nav a[aria-current="page"]{color:var(--paper)}
-.sh-x{grid-column:11/13;justify-self:end;display:flex;align-items:center;gap:var(--s3);height:calc(36*var(--px));padding:0 var(--s3);border:0;background:none;color:var(--mute);font-size:calc(13*var(--px));font-weight:600;cursor:pointer;box-shadow:inset 0 0 0 .5px var(--hc2)}
-.sh-x:hover{color:var(--paper)}
-.sh-x i{position:relative;width:calc(10*var(--px));height:calc(10*var(--px));background:linear-gradient(currentColor,currentColor) center/100% 1.25px no-repeat,linear-gradient(currentColor,currentColor) center/1.25px 100% no-repeat;transform:rotate(45deg)}
-.sh-x:focus-visible,.sh-nav a:focus-visible{outline:1px solid var(--amber);outline-offset:2px}
 .sh-scroll{flex:1 1 0;min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .sh-pg{display:none;padding-top:var(--s10);padding-bottom:var(--s11);align-content:start}
 .sh-pg.on{display:grid}
@@ -1174,7 +1185,6 @@ html.sheet-on,html.sheet-on body{overflow:hidden}
 .sh-steps b{color:var(--paper);font-weight:600}
 .sh-dl dd a.u{color:var(--paper);text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:.5px}
 @media (max-width:860px), (max-width:1199px) and (orientation:portrait){
-  .sh-nav{display:none} .sh-bar .logo{grid-column:1/7} .sh-x{grid-column:7/-1}
   .sh-pg h2,.sh-pg>.lede{grid-column:1/-1}
   .sh-log time{grid-column:1/-1} .sh-log>li>div{grid-column:1/-1;margin-top:var(--s4)}
   .sh-cols{grid-template-columns:1fr;row-gap:var(--s6)}
@@ -1359,19 +1369,6 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 
 
 /* ═══ v3.9 · language: a globe button next to the nav's call to action and in the footer; the list names each language in itself ═══ */
-.nav .cta{gap:calc(8*var(--px));align-items:center}
-.lang-b{flex:none;display:inline-flex;align-items:center;gap:calc(6*var(--px));height:calc(36*var(--px));padding:0 calc(10*var(--px));border:0;background:none;color:var(--mute);font:600 calc(12*var(--px))/1 var(--text);cursor:pointer;box-shadow:inset 0 0 0 .5px var(--hc2);transition:color .15s}
-.lang-b:hover,.lang-b[aria-expanded="true"]{color:var(--paper)}
-/* v4.1 · the GitHub repo, as a small boxed link left of the globe (same look). Phones: only in the footer. */
-.gh-b{text-decoration:none}
-.gh-b svg{width:calc(9*var(--px));height:calc(9*var(--px))}
-/* also while the section links share the row and it is tight (1081–1279; es and ja ran into it at 1081) */
-@media (max-width:699px), (min-width:1081px) and (max-width:1279px){ .nav .gh-b{display:none} }
-.lang-b svg{flex:none;width:calc(14*var(--px));height:calc(14*var(--px));fill:none;stroke:currentColor;stroke-width:1.1}
-.lang-b:focus-visible{outline:1px solid var(--amber);outline-offset:2px}
-.lang-b span{text-box:trim-both cap alphabetic}
-.lang-b.wide{height:auto;padding:0;box-shadow:none;font:inherit;color:var(--dim)}
-.lang-b.wide:hover{color:var(--paper)}
 .lang-menu{position:fixed;z-index:85;min-width:calc(208*var(--px));padding:calc(6*var(--px)) 0;background:#1C1C1E;box-shadow:inset 0 0 0 .5px rgba(244,239,230,.3),0 calc(12*var(--px)) calc(32*var(--px)) rgba(0,0,0,.45)}
 .lang-menu[hidden]{display:none}
 .lang-menu button{display:flex;width:100%;justify-content:space-between;align-items:center;gap:calc(16*var(--px));height:calc(36*var(--px));padding:0 calc(14*var(--px));border:0;background:none;color:rgba(244,239,230,.66);font:500 calc(13*var(--px))/1 var(--text);cursor:pointer;text-align:left}
@@ -1479,11 +1476,12 @@ footer.sf .sf-base .lang-f{margin-left:auto;display:block}
 @media (max-width:860px), (max-width:1199px) and (orientation:portrait){ #rkCard .rk-row .tx{row-gap:calc(10*var(--px))} }
 </style>
 
+<!-- part:topbar -->
 <header class="nav g" id="nav">
-  <a class="logo" href="#hero" aria-label="MAT home"><canvas id="logoRig" aria-hidden="true"></canvas>MAT</a>
-  <nav class="links" aria-label="Sections"><a href="#problem">Why MAT</a><a href="#race">What it saves</a><a href="#work">How it works</a><a href="#ranks">Models</a><a href="rankings/">Rankings</a><a href="#private">Privacy</a><a href="#faq">Questions</a></nav>
+  <a class="logo" href="#hero" aria-label="MAT home"><svg class="mark" viewBox="0 0 22 22" aria-hidden="true"><circle cx="16" cy="11" r="3.5" fill="#9882CF"/><circle cx="11.9" cy="11" r="4.15" fill="#C98565"/><circle cx="7.2" cy="11" r="5" fill="#F4EFE6"/></svg>MAT</a>
+  <nav class="links" aria-label="Sections" id="navLinks"><a href="#problem">Why MAT</a><a href="#race">What it saves</a><a href="#work">How it works</a><a href="#ranks">Models</a><a href="rankings/">Rankings</a><a href="#private">Privacy</a><a href="#faq">Questions</a></nav>
   <div class="cta"><a class="lang-b gh-b" href="https://github.com/RobertLeeHao/MAT" target="_blank" rel="noopener"><span>GitHub</span><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8 8 2M3.5 2H8v4.5"/></svg></a><button class="lang-b" type="button" data-lang-menu aria-haspopup="menu" aria-expanded="false" aria-label="Language" data-i18n-skip><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c-2 2.2-2 10.8 0 13M8 1.5c2 2.2 2 10.8 0 13"/></svg><span class="lang-c"></span></button><a class="btn primary md" href="#join" id="navJoin"><span class="bl">Get the beta</span></a></div>
-</header>
+</header><!-- /part:topbar -->
 <div class="gridov g" id="gridov" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
 <main>
@@ -1821,7 +1819,8 @@ footer.sf .sf-base .lang-f{margin-left:auto;display:block}
 </div>
 <!-- v3.3 · the footer's pages: one sheet over the page, a page per link (#install, #changelog, #about, #privacy, #terms, #contact). Esc or × closes it. -->
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" tabindex="-1" hidden>
-  <div class="sh-bar g"><a class="logo" href="#" data-close aria-label="Close and go back to the page">MAT</a><nav class="sh-nav" aria-label="Pages"><a href="#install" data-sheet>Get the beta</a><a href="#changelog" data-sheet>Changelog</a><a href="#about" data-sheet>About</a><a href="#privacy" data-sheet>Privacy</a><a href="#terms" data-sheet>Terms</a><a href="#contact" data-sheet>Contact</a></nav><button class="sh-x" type="button" data-close aria-label="Close">Close<i aria-hidden="true"></i></button></div>
+  <!-- part:topbar:sheet -->
+<div class="sh-bar g"><a class="logo" href="#" data-close aria-label="Close and go back to the page"><svg class="mark" viewBox="0 0 22 22" aria-hidden="true"><circle cx="16" cy="11" r="3.5" fill="#9882CF"/><circle cx="11.9" cy="11" r="4.15" fill="#C98565"/><circle cx="7.2" cy="11" r="5" fill="#F4EFE6"/></svg>MAT</a><nav class="sh-nav" aria-label="Pages"><a href="#install" data-sheet>Get the beta</a><a href="#changelog" data-sheet>Changelog</a><a href="#about" data-sheet>About</a><a href="#privacy" data-sheet>Privacy</a><a href="#terms" data-sheet>Terms</a><a href="#contact" data-sheet>Contact</a></nav><div class="cta"><button class="lang-b" type="button" data-lang-menu aria-haspopup="menu" aria-expanded="false" aria-label="Language" data-i18n-skip><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c-2 2.2-2 10.8 0 13M8 1.5c2 2.2 2 10.8 0 13"/></svg><span class="lang-c"></span></button><button class="sh-x" type="button" data-close aria-label="Close">Close<i aria-hidden="true"></i></button></div></div>  <!-- /part:topbar:sheet -->
   <div class="sh-scroll" data-lenis-prevent>
   <article class="sh-pg g" data-pg="install">
     <p class="lab"><b>B·00</b><span>Get the beta</span></p>
@@ -2317,7 +2316,7 @@ const FACE=(()=>{ const INKF='#1C1C24';
     else o+=`<path d="M25 39.6C25 47.2 39 47.2 39 39.6Z" fill="${INKF}"/>`;
     return o; }
   return {tag:(name,px,ex)=>`<svg class="fc" viewBox="0 0 64 64" width="${px}" height="${px}" aria-hidden="true">${svg(name,ex||'rest')}</svg>`}; })();
-const logo=makeRig('logoRig',22,{still:true,always:true}); logo.static=true; // the nav mark never moves
+// 2026-10-19 · the nav mark is an SVG from parts/topbar.py now (the same on every page); it never moved anyway
 
 // ═══ 2 · Race: both runs on one time axis; a playhead pushes right with the scroll ═══
 // Blocks are stages (same stage, same colour, in both rows; width = minutes). Lines are money spent so far.
