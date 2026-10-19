@@ -1,0 +1,16 @@
+// MAT relay (docs: MATDemo/docs/remote-protocol.md §9). A separate Worker from the website:
+// the site stays static. One Durable Object per host key holds the Mac's socket and its
+// phones' sockets and copies bytes between them. It never sees plaintext and stores nothing.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mat-relay",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "durable_objects": {
+    "bindings": [{ "name": "MAILBOX", "class_name": "Mailbox" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Mailbox"] }],
+  // relay.askmat.app → this Worker. Uncomment after askmat.app is on Cloudflare (SETUP.md).
+  // "routes": [{ "pattern": "relay.askmat.app", "custom_domain": true }],
+  "observability": { "enabled": true }
+}

@@ -59,3 +59,6 @@ Every common server is listed, even when it cannot be used yet, and the problem 
 | 百度地图 | needs-setup | Real-name developer account + AK | user |
 
 Also worth knowing (ready, but): Notion, Linear, Atlassian, Asana, monday, Todoist, Airtable, Miro, Canva, Zapier, GitLab, Sentry, Hugging Face, Supabase, Neon, Stripe, PayPal need the user's own account on that service (all have free tiers; Zapier's free plan has a task cap). Stripe and PayPal touch real money, so their write tools default to Off.
+
+## domains（2026-10-15）
+本机服务器可以带 `domains`：除了 npm / PyPI / GitHub 这些下载包的地址，它只能连这里列出的域名（`*.example.com` 匹配子域名）。MAT 用本机代理 + 沙箱执行，IP 地址和本机服务一律不通。`["*"]` = 任何公网域名，但解析到内网（127/8、10/8、192.168/16、169.254/16 等）的一律拒绝；Fetch 用这个，同时沙箱关掉 DNS，所以 Fetch 自带的内网检查不会被 Clash/Surge 的 fake-ip（198.18.0.0/15）误伤。没有这个字段 = 不限网络（browser、mongodb 以及用户自己加的服务器）。写错了的话，行上会写出被拦的域名。

@@ -41,6 +41,7 @@
         ],
         "env": []
       },
+      "domains": [],
       "needs": [
         "node"
       ],
@@ -113,6 +114,9 @@
         "args": [],
         "env": []
       },
+      "domains": [
+        "*"
+      ],
       "needs": [
         "uv"
       ],
@@ -151,6 +155,7 @@
         ],
         "env": []
       },
+      "domains": [],
       "needs": [
         "uv"
       ],
@@ -824,6 +829,9 @@
           }
         ]
       },
+      "domains": [
+        "api.search.brave.com"
+      ],
       "needs": [
         "node"
       ],
@@ -910,6 +918,9 @@
           }
         ]
       },
+      "domains": [
+        "api.perplexity.ai"
+      ],
       "needs": [
         "node"
       ],
@@ -959,6 +970,9 @@
           }
         ]
       },
+      "domains": [
+        "api.tavily.com"
+      ],
       "needs": [
         "node"
       ],
@@ -1082,6 +1096,10 @@
         ],
         "env": []
       },
+      "domains": [
+        "open.feishu.cn",
+        "open.larksuite.com"
+      ],
       "needs": [
         "node"
       ],
@@ -1138,6 +1156,10 @@
           }
         ]
       },
+      "domains": [
+        "api.dingtalk.com",
+        "oapi.dingtalk.com"
+      ],
       "needs": [
         "node"
       ],
@@ -1188,6 +1210,9 @@
           }
         ]
       },
+      "domains": [
+        "restapi.amap.com"
+      ],
       "needs": [
         "node"
       ],
@@ -1238,6 +1263,9 @@
           }
         ]
       },
+      "domains": [
+        "api.map.baidu.com"
+      ],
       "needs": [
         "node"
       ],

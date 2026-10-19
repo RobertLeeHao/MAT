@@ -1,0 +1,13 @@
+{
+  "name": "mat-relay",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "wrangler deploy",
+    "test": "python3 ../../MATDemo/tools/remote/selftest.py --relay ws://127.0.0.1:8787"
+  },
+  "devDependencies": {
+    "wrangler": "4.149.0"
+  }
+}
