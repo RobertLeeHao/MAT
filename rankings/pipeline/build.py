@@ -61,6 +61,17 @@ LABEL = {"aa_gdpval": "GDPval-AA", "vals_index": "Vals Index", "arena_agent": "A
          "arena_instruction_following": "Arena Instruction Following", "aa_ifbench": "IFBench",
          "arena_vision": "Arena Vision", "arena_document": "Arena Document", "vals_mmmu": "MMMU-Pro (Vals)", "aa_mmmu": "MMMU-Pro (AA)",
          "arena_text_to_image": "Arena Text-to-Image", "arena_image_edit": "Arena Image Edit"}
+# 2026-10-21 · a source that measures general ability, not this kind of work.
+# It still counts toward the score, but not as evidence for the domain.
+PROXY = {"arena_overall"}
+# How far to lean against a model the domain's own sources have not measured:
+# the score used is a lower confidence bound, score − K × (share of the
+# domain's own sources missing) × σ, where σ is how far, across the models
+# that WERE measured, the domain score strays from the general Index. A
+# model known only by its general Index is assumed one σ worse than that
+# Index alone suggests (Hugo 10-21: Gemini 4 Argon topped Search with no
+# search score at all).
+UNCERT_K = 1.0
 IMG_SRC = [("arena_text_to_image", .6), ("arena_image_edit", .4)]
 IMG_B = {"draft": -1.5, "usable": -0.5, "deliver": 0.4, "critical": 1.0}
 IMG_SLOPE = 0.5
@@ -178,23 +189,37 @@ def build(reg, src, include_local=False):
         return {} if sx == 0 else {m: mg + sg * (v - mx) / sx for m, v in xs.items()}
 
     theta, coverage, signals = defaultdict(dict), defaultdict(dict), defaultdict(dict)
+    spread = {}
     for cat, srcs in SOURCES.items():
         eq = {s: equate(s) for s, _ in srcs}
+        own_w = sum(w for s, w in srcs if s not in PROXY) or 1.0
+        # how far this domain's own scores stray from the general Index
+        resid = []
+        for mid in general:
+            got = [(w, eq[s][mid]) for s, w in srcs if s not in PROXY and mid in eq[s]]
+            if got:
+                resid.append(sum(w * x for w, x in got) / sum(w for w, _ in got) - general[mid])
+        sigma = st.pstdev(resid) if len(resid) >= 4 else 0.0
+        spread[cat] = round(sigma, 2)
         for mid, m in models.items():
             if m.get("image"):
                 continue
-            num = den = cov = 0.0
+            num = den = own = 0.0
             sig = []
             for s, w in srcs:
                 if mid in eq[s]:
-                    num += w * eq[s][mid]; den += w; cov += w
+                    num += w * eq[s][mid]; den += w
+                    if s not in PROXY:
+                        own += w
                     v = scores[s][mid]
                     sig.append(f"{LABEL.get(s, s)} {v:.3g}" if isinstance(v, float) and abs(v) < 10 else f"{LABEL.get(s, s)} {v:.0f}")
             if mid in general:
                 num += W_GENERAL * general[mid]; den += W_GENERAL
             if den == 0:
                 continue
-            theta[cat][mid], coverage[cat][mid], signals[cat][mid] = num / den, round(cov, 2), sig
+            cov = own / own_w
+            theta[cat][mid] = num / den - UNCERT_K * (1 - cov) * sigma
+            coverage[cat][mid], signals[cat][mid] = round(cov, 2), sig
 
     def can_do(cat, mid):
         m = models[mid]
@@ -333,7 +358,7 @@ def build(reg, src, include_local=False):
         attribution=["Arena leaderboard data (lmarena-ai/leaderboard-dataset), CC BY 4.0",
                      "Artificial Analysis (artificialanalysis.ai)", "Vals AI (vals.ai)", "Scale Labs (labs.scale.com)", "EQ-Bench (eqbench.com)"],
         tiers=[{k: T[k] for k in ["id", "zh", "en", "bar", "cap", "b", "review"]} for T in TIERS],
-        method=dict(slope=SLOPE, maxRetries=MAX_RETRIES, reviewEase=REVIEW_EASE, wGeneral=W_GENERAL, profile=PROFILE,
+        method=dict(proxy=sorted(PROXY), uncertK=UNCERT_K, spread=spread, slope=SLOPE, maxRetries=MAX_RETRIES, reviewEase=REVIEW_EASE, wGeneral=W_GENERAL, profile=PROFILE,
                     thinkMult=THINK_MULT, effortSens=EFFORT_SENS, sources={k: v for k, v in SOURCES.items()},
                     kThink=round(k_think, 4), imageSources=IMG_SRC, imageB=IMG_B, imageSlope=IMG_SLOPE),
         notes=notes, models=out_models, boards=boards)

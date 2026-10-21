@@ -42,6 +42,16 @@ The table does not just rank models by strength. For each kind of work and each 
 
 Arena leaderboard data is © LMArena, licensed CC BY 4.0. Any page that shows these numbers credits Arena and links to the dataset.
 
+## Models a domain has not measured
+
+Every text domain blends its own benchmarks with the model's general Intelligence Index, so a new model still gets a place. But a place that rests on the general Index alone is a guess about the domain, and it should not outrank models the domain actually measured. So the score used to pick is a lower confidence bound:
+
+score − `UNCERT_K` × (share of the domain's own sources missing) × σ
+
+σ is how far, across the models the domain's own sources did measure, the domain score strays from the general Index (published as `method.spread`). Arena's overall text board counts toward the score but not as domain evidence (`PROXY`). `coverage` on each row is the share of the domain's own sources that measured it.
+
+Example (2026-10-21): Gemini 4 Argon had no search score anywhere, only its general Index, and ranked first for Search. Under the bound it ranks behind the models Arena Search measured.
+
 ## Checks before publishing
 
 - Artificial Analysis and Arena's text board must have been read within the last 21 days. Last week's numbers count as read on the day they were fetched.
