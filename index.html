@@ -2415,7 +2415,12 @@ function team(ids){
   if(h.classList.contains('wf'))return null;
   if(h.classList.contains('cr-p'))return h.classList.contains('done')?'idle':(h.classList.contains('in')?'working':'waiting');
   if(h.classList.contains('wk')){const si=h.querySelector('.si'),k=si&&si._k;return k==='done'?'idle':k==='think'?'thinking':(k==='wait'||k==='pause'||k==='need')?'waiting':'working'}
+  if(h.classList.contains('mcol'))return 'free';
   return 'working'};
+ // 07 · the seats on the subscription bars aren't tied to a job on the page: each one keeps its own day — mostly reading,
+ // now and then thinking, a moment idle (a smile when a piece is done), rarely waiting — on its own clock, at its own tempo
+ const freeNext=c=>{const r=Math.random();const st=c.state==='working'?(r<.45?'thinking':r<.8?'idle':'waiting'):(r<.75?'working':'thinking');
+  const len={working:[3,8],thinking:[1.4,3.2],idle:[1.2,3],waiting:[2,4]}[st];return [st,len[0]+Math.random()*(len[1]-len[0])]};
  const quiet=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const rigs=new WeakMap();let seed=0,last=0;const live=[];
  let ptr=null;addEventListener('pointermove',e=>{if(e.pointerType!=='touch')ptr={x:e.clientX,y:e.clientY}},{passive:true});
@@ -2423,8 +2428,10 @@ function team(ids){
   const vh=innerHeight,vw=innerWidth,on=b=>!(b.bottom<0||b.top>vh||b.right<0||b.left>vw||!b.width);
   document.querySelectorAll('svg.fc[data-fc]').forEach(el=>{if(!on(el.getBoundingClientRect()))return;
    const s=stateOf(el);if(s===null){if(!el._still){el._still=1;el.innerHTML=memberStill(el.dataset.fc,'idle')}return}
-   let c=rigs.get(el);if(!c){c=Char(style(el.dataset.fc),{member:true,state:s,seed:(++seed)%5});rigs.set(el,c)}
-   if(s!==(c.pendingState||c.state)){if(c.state==='working'&&s==='idle')c.trigger('done');c.setState(s)}
+   let c=rigs.get(el);if(!c){const st0=s==='free'?(Math.random()<.7?'working':'thinking'):s;c=Char(style(el.dataset.fc),{member:true,state:st0,seed:(++seed)%5});
+    if(s==='free'){c.speed=.8+Math.random()*.45;c.sT=Math.random()*1.2;c.readI=Math.floor(Math.random()*5);c.blinkT=Math.random()*3;c.free=1.5+Math.random()*5;}rigs.set(el,c)}
+   if(s==='free'){c.free-=1/30;if(c.free<=0){const [st,len]=freeNext(c);if(c.state==='working'&&st==='idle'&&Math.random()<.6)c.trigger('done');c.setState(st);c.free=len;}}
+   else if(s!==(c.pendingState||c.state)){if(c.state==='working'&&s==='idle')c.trigger('done');c.setState(s)}
    c.step(1/30);el.innerHTML=c.last});
   live.forEach(m=>{if(!m.vis||!m.el.isConnected)return;m.size();const b=m.el.getBoundingClientRect();if(!on(b))return;
    if(ptr){const w=Math.max(b.width,30);m.c.mouse={x:Math.max(-1,Math.min(1,(ptr.x-(b.left+b.width/2))/(w*3+160))),y:Math.max(-1,Math.min(1,(ptr.y-(b.top+b.height/2))/(w*2.6+140)))}}
