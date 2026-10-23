@@ -26,7 +26,7 @@ MARK = ('<svg class="mark" viewBox="0 0 22 22" aria-hidden="true">'
         '<circle cx="11.9" cy="11" r="4.15" fill="#C98565"/>'
         '<circle cx="7.2" cy="11" r="5" fill="#F4EFE6"/></svg>')
 
-SECTIONS = [("#problem", "Why MAT"), ("#race", "What it saves"), ("#work", "How it works"),
+SECTIONS = [("#answer", "Why MAT"), ("#race", "What it saves"), ("#work", "How it works"),
             ("#ranks", "Models"), ("rankings/", "Rankings"), ("#private", "Privacy"), ("#faq", "Questions")]
 SHEETS = [("#install", "Get the beta"), ("#changelog", "Changelog"), ("#about", "About"),
           ("#privacy", "Privacy"), ("#terms", "Terms"), ("#contact", "Contact")]

@@ -405,7 +405,7 @@ footer.sf .sf-base .lang-f{margin-left:auto;display:block}
 <!-- part:topbar -->
 <header class="nav g" id="nav">
   <a class="logo" href="../" aria-label="MAT home"><svg class="mark" viewBox="0 0 22 22" aria-hidden="true"><circle cx="16" cy="11" r="3.5" fill="#9882CF"/><circle cx="11.9" cy="11" r="4.15" fill="#C98565"/><circle cx="7.2" cy="11" r="5" fill="#F4EFE6"/></svg>MAT</a>
-  <nav class="links" aria-label="Sections" id="navLinks"><a href="../#problem">Why MAT</a><a href="../#race">What it saves</a><a href="../#work">How it works</a><a href="../#ranks">Models</a><a href="./" class="cur" aria-current="page">Rankings</a><a href="../#private">Privacy</a><a href="../#faq">Questions</a></nav>
+  <nav class="links" aria-label="Sections" id="navLinks"><a href="../#answer">Why MAT</a><a href="../#race">What it saves</a><a href="../#work">How it works</a><a href="../#ranks">Models</a><a href="./" class="cur" aria-current="page">Rankings</a><a href="../#private">Privacy</a><a href="../#faq">Questions</a></nav>
   <div class="cta"><a class="lang-b gh-b" href="https://github.com/RobertLeeHao/MAT" target="_blank" rel="noopener"><span>GitHub</span><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8 8 2M3.5 2H8v4.5"/></svg></a><button class="lang-b" type="button" data-lang-menu aria-haspopup="menu" aria-expanded="false" aria-label="Language" data-i18n-skip><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c-2 2.2-2 10.8 0 13M8 1.5c2 2.2 2 10.8 0 13"/></svg><span class="lang-c"></span></button><a class="btn primary md" href="../#join" id="navJoin"><span class="bl">Get the beta</span></a></div>
 </header><!-- /part:topbar -->
 <div class="lang-pop" id="langPop" role="menu" hidden></div>
@@ -417,7 +417,7 @@ footer.sf .sf-base .lang-f{margin-left:auto;display:block}
       <p data-f="line">One chat, and a crew on the models you already pay for — running locally.</p>
       <div class="foot-get"><div class="get" data-get="foot"><a class="btn primary" href="https://github.com/RobertLeeHao/MAT/releases/latest/download/MAT-macOS.zip" data-dl><span class="bl" data-f="dl">Download for Mac</span><span class="arw v"><i>↓</i><i>↓</i></span></a><a class="btn line" href="https://github.com/RobertLeeHao/MAT/discussions" target="_blank" rel="noopener"><span class="bl" data-f="discuss">Discuss on GitHub</span><span class="arw"><i>↗</i><i>↗</i></span></a></div></div>
     </div>
-    <nav class="sf-col" aria-label="Product"><div class="fh"><b>01</b><span data-f="product">Product</span></div><a href="../#problem" data-f="why">Why MAT</a><a href="../#race" data-f="saves">What it saves</a><a href="../#work" data-f="how">How it works</a><a href="../#private" data-f="data">Your data</a><a href="./" data-f="ranking">The ranking</a><a href="../#soon" data-f="soon">Coming soon</a></nav>
+    <nav class="sf-col" aria-label="Product"><div class="fh"><b>01</b><span data-f="product">Product</span></div><a href="../#answer" data-f="why">Why MAT</a><a href="../#race" data-f="saves">What it saves</a><a href="../#work" data-f="how">How it works</a><a href="../#private" data-f="data">Your data</a><a href="./" data-f="ranking">The ranking</a><a href="../#soon" data-f="soon">Coming soon</a></nav>
     <nav class="sf-col" aria-label="Beta"><div class="fh"><b>02</b><span data-f="beta">Beta</span></div><a href="https://github.com/RobertLeeHao/MAT/releases/latest/download/MAT-macOS.zip" data-dl data-f="dl">Download for Mac</a><a href="../#install" data-f="open">How to open it</a><a href="https://github.com/RobertLeeHao/MAT/discussions" target="_blank" rel="noopener" data-f="discussions">Discussions</a><a href="https://github.com/RobertLeeHao/MAT" target="_blank" rel="noopener">GitHub</a><a href="../#faq" data-f="faq">Questions</a><a href="../#changelog" data-f="changelog">Changelog</a></nav>
     <nav class="sf-col" aria-label="Company"><div class="fh"><b>03</b><span data-f="company">Company</span></div><a href="../#about" data-f="about">About</a><a href="../#privacy" data-f="privacy">Privacy</a><a href="../#terms" data-f="terms">Terms</a><a href="../#contact" data-f="contact">Contact</a></nav>
   </div>
@@ -523,7 +523,7 @@ const TIERS=["draft","usable","deliver","critical"];
 
 // shell
 document.title=(L==='en'?'Model rankings · MAT':'模型排行榜 · MAT');
-$('#navLinks').innerHTML=["../#problem","../#race","../#work","../#ranks","./","../#private","../#faq"].map((h,i)=>`<a href="${h}"${h==='./'?' class="cur" aria-current="page"':''}>${T.nav[i]}</a>`).join('');
+$('#navLinks').innerHTML=["../#answer","../#race","../#work","../#ranks","./","../#private","../#faq"].map((h,i)=>`<a href="${h}"${h==='./'?' class="cur" aria-current="page"':''}>${T.nav[i]}</a>`).join('');
 $('#navJoin .bl').textContent=T.beta;
 document.querySelectorAll('.lang-c').forEach(e=>e.textContent={en:'EN','zh-Hans':'简','zh-Hant':'繁'}[L]);
 $('#langPop').innerHTML=LANGS.map(([c,n])=>`<button type="button" data-l="${c}"${c===L?' aria-current="true"':''}>${n}</button>`).join('')+`<p>${T.langNote}</p>`;
