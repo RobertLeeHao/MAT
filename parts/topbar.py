@@ -21,10 +21,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The mark: the three figures at rest, as the main page's nav has always
 # drawn them (white in front, copper and violet behind and smaller). One
 # drawing for every bar, so the logo can't differ from page to page.
-MARK = ('<svg class="mark" viewBox="0 0 22 22" aria-hidden="true">'
-        '<circle cx="16" cy="11" r="3.5" fill="#9882CF"/>'
-        '<circle cx="11.9" cy="11" r="4.15" fill="#C98565"/>'
-        '<circle cx="7.2" cy="11" r="5" fill="#F4EFE6"/></svg>')
+MARK = ('<svg class="mark" viewBox="17.06 64.00 223.00 128.00" aria-hidden="true"><path d="M190.05 80.04A48 48 0 1 1 190.05 175.96A70 70 0 0 0 190.05 80.04Z" fill="#9882CF"/><path d="M135.47 72.11A56 56 0 1 1 135.47 183.89A78 78 0 0 0 135.47 72.11Z" fill="#C98565"/><path d="M17.06 128.00a64 64 0 1 0 128 0a64 64 0 1 0 -128 0Z" fill="#F4EFE6"/></svg>')
 
 SECTIONS = [("#answer", "Why MAT"), ("#race", "What it saves"), ("#work", "How it works"),
             ("#ranks", "Models"), ("rankings/", "Rankings"), ("#private", "Privacy"), ("#faq", "Questions")]

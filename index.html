@@ -1236,12 +1236,12 @@ html:not([data-motion="quiet"]) .dz-r.star.in:before{transform:none;opacity:1}
 
 /* ═══ v3.3b · 07 · one idea: your subscriptions, used together. The seats of one job sit on top of the bars they run on; the bars
    are what each subscription has left. Nothing else is added: no labels on the faces (the hover card names them), one note. ═══ */
-.mcol .seats{position:absolute;left:calc(12*var(--px));right:calc(8*var(--px));bottom:calc(var(--v) * 0.78 * var(--g,1) + calc(10*var(--px)));z-index:2;display:flex;flex-wrap:wrap;gap:calc(4*var(--px));align-items:flex-end;pointer-events:none}
-.mcol .seats svg{display:block;width:calc(24*var(--px));height:calc(24*var(--px))}
-.mcol .seats svg.mk{width:calc(36*var(--px));height:auto}
+.mcol .seats{position:absolute;left:calc(12*var(--px));right:calc(8*var(--px));top:calc(100% - var(--v) * var(--g,1) + calc(10*var(--px)));z-index:2;display:flex;flex-wrap:wrap;align-content:flex-start;gap:calc(4*var(--px));align-items:flex-end;pointer-events:none}
+.mcol .seats svg{display:block;width:calc(52*var(--px));height:calc(52*var(--px))}   /* 10-24: the crew's size everywhere on the page (MAT 64, crew 52) */
+.mcol .seats svg.mk{width:calc(64*var(--px));height:auto}
 html[data-motion="quiet"] .mcol .seats{opacity:1!important}
 @media (max-width:699px){
-  .mcol .seats{left:0;right:0;justify-content:center;flex-direction:column;align-items:center;flex-wrap:nowrap;gap:calc(3*var(--px));bottom:calc(var(--v) * 0.68 * var(--g,1) - calc(6*var(--px)));transform:translateY(100%)}
+  .mcol .seats{top:auto;left:0;right:0;justify-content:center;flex-direction:column;align-items:center;flex-wrap:nowrap;gap:calc(3*var(--px));bottom:calc(var(--v) * 0.68 * var(--g,1) - calc(6*var(--px)));transform:translateY(100%)}
   .mcol .seats svg{width:calc(14*var(--px));height:calc(14*var(--px))} .mcol .seats svg.mk{width:calc(22*var(--px))}
 }
 
@@ -1478,7 +1478,7 @@ footer.sf .sf-base .lang-f{margin-left:auto;display:block}
 
 <!-- part:topbar -->
 <header class="nav g" id="nav">
-  <a class="logo" href="#hero" aria-label="MAT home"><svg class="mark" viewBox="0 0 22 22" aria-hidden="true"><circle cx="16" cy="11" r="3.5" fill="#9882CF"/><circle cx="11.9" cy="11" r="4.15" fill="#C98565"/><circle cx="7.2" cy="11" r="5" fill="#F4EFE6"/></svg>MAT</a>
+  <a class="logo" href="#hero" aria-label="MAT home"><svg class="mark" viewBox="17.06 64.00 223.00 128.00" aria-hidden="true"><path d="M190.05 80.04A48 48 0 1 1 190.05 175.96A70 70 0 0 0 190.05 80.04Z" fill="#9882CF"/><path d="M135.47 72.11A56 56 0 1 1 135.47 183.89A78 78 0 0 0 135.47 72.11Z" fill="#C98565"/><path d="M17.06 128.00a64 64 0 1 0 128 0a64 64 0 1 0 -128 0Z" fill="#F4EFE6"/></svg>MAT</a>
   <nav class="links" aria-label="Sections" id="navLinks"><a href="#answer">Why MAT</a><a href="#race">What it saves</a><a href="#work">How it works</a><a href="#ranks">Models</a><a href="rankings/">Rankings</a><a href="#private">Privacy</a><a href="#faq">Questions</a></nav>
   <div class="cta"><a class="lang-b gh-b" href="https://github.com/RobertLeeHao/MAT" target="_blank" rel="noopener"><span>GitHub</span><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8 8 2M3.5 2H8v4.5"/></svg></a><button class="lang-b" type="button" data-lang-menu aria-haspopup="menu" aria-expanded="false" aria-label="Language" data-i18n-skip><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c-2 2.2-2 10.8 0 13M8 1.5c2 2.2 2 10.8 0 13"/></svg><span class="lang-c"></span></button><a class="btn primary md" href="#join" id="navJoin"><span class="bl">Get the beta</span></a></div>
 </header><!-- /part:topbar -->
@@ -1728,7 +1728,7 @@ footer.sf .sf-base .lang-f{margin-left:auto;display:block}
     <h2 class="split rv">Try it. Tell us what breaks.</h2>
     <div class="cta-get rv"><div class="get" data-get="cta"><a class="btn primary" href="https://github.com/RobertLeeHao/MAT/releases/latest/download/MAT-macOS.zip" data-dl><span class="bl">Download for Mac</span><span class="arw v"><i>↓</i><i>↓</i></span></a><a class="btn line" href="https://github.com/RobertLeeHao/MAT/discussions" target="_blank" rel="noopener"><span class="bl">Discuss on GitHub</span><span class="arw"><i>↗</i><i>↗</i></span></a></div></div>
     <p class="small cta-meta rv">Free beta<span data-ver></span> · macOS 13 or later · <a class="u" href="#install" data-sheet>How to open it</a></p>
-    <div class="cta-mat" aria-hidden="true"><canvas id="ctaRig"></canvas></div>
+    
   </div>
 </section>
 
@@ -1748,7 +1748,7 @@ footer.sf .sf-base .lang-f{margin-left:auto;display:block}
 <footer class="sf" data-ground="ink">
   <div class="g sf-top">
     <div class="sf-brand">
-      <a class="sf-logo" href="#hero" aria-label="MAT home"><svg viewBox="0 0 26 16" aria-hidden="true"><circle cx="18" cy="8" r="6" fill="#9882CF"/><circle cx="13" cy="8" r="6" fill="#C98565"/><circle cx="8" cy="8" r="6" fill="#F4EFE6"/></svg><span>MAT</span></a>
+      <a class="sf-logo" href="#hero" aria-label="MAT home"><svg viewBox="21.21 64.00 214.00 128.00" aria-hidden="true"><path d="M181.88 80.30A48 48 0 1 1 181.88 175.70A64 64 0 0 0 181.88 80.30Z" fill="#9882CF"/><path d="M131.17 72.58A56 56 0 1 1 131.17 183.42A72 72 0 0 0 131.17 72.58Z" fill="#C98565"/><path d="M21.21 128.00a64 64 0 1 0 128 0a64 64 0 1 0 -128 0Z" fill="#F4EFE6"/></svg><span>MAT</span></a>
       <p>One chat, and a crew on the models you already pay for — running locally.</p>
       <div class="foot-get"><div class="get" data-get="foot"><a class="btn primary" href="https://github.com/RobertLeeHao/MAT/releases/latest/download/MAT-macOS.zip" data-dl><span class="bl">Download for Mac</span><span class="arw v"><i>↓</i><i>↓</i></span></a><a class="btn line" href="https://github.com/RobertLeeHao/MAT/discussions" target="_blank" rel="noopener"><span class="bl">Discuss on GitHub</span><span class="arw"><i>↗</i><i>↗</i></span></a></div></div>
     </div>
@@ -1777,7 +1777,7 @@ footer.sf .sf-base .lang-f{margin-left:auto;display:block}
 <!-- v3.3 · the footer's pages: one sheet over the page, a page per link (#install, #changelog, #about, #privacy, #terms, #contact). Esc or × closes it. -->
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" tabindex="-1" hidden>
   <!-- part:topbar:sheet -->
-<div class="sh-bar g"><a class="logo" href="#" data-close aria-label="Close and go back to the page"><svg class="mark" viewBox="0 0 22 22" aria-hidden="true"><circle cx="16" cy="11" r="3.5" fill="#9882CF"/><circle cx="11.9" cy="11" r="4.15" fill="#C98565"/><circle cx="7.2" cy="11" r="5" fill="#F4EFE6"/></svg>MAT</a><nav class="sh-nav" aria-label="Pages"><a href="#install" data-sheet>Get the beta</a><a href="#changelog" data-sheet>Changelog</a><a href="#about" data-sheet>About</a><a href="#privacy" data-sheet>Privacy</a><a href="#terms" data-sheet>Terms</a><a href="#contact" data-sheet>Contact</a></nav><div class="cta"><button class="lang-b" type="button" data-lang-menu aria-haspopup="menu" aria-expanded="false" aria-label="Language" data-i18n-skip><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c-2 2.2-2 10.8 0 13M8 1.5c2 2.2 2 10.8 0 13"/></svg><span class="lang-c"></span></button><button class="sh-x" type="button" data-close aria-label="Close">Close<i aria-hidden="true"></i></button></div></div>  <!-- /part:topbar:sheet -->
+<div class="sh-bar g"><a class="logo" href="#" data-close aria-label="Close and go back to the page"><svg class="mark" viewBox="17.06 64.00 223.00 128.00" aria-hidden="true"><path d="M190.05 80.04A48 48 0 1 1 190.05 175.96A70 70 0 0 0 190.05 80.04Z" fill="#9882CF"/><path d="M135.47 72.11A56 56 0 1 1 135.47 183.89A78 78 0 0 0 135.47 72.11Z" fill="#C98565"/><path d="M17.06 128.00a64 64 0 1 0 128 0a64 64 0 1 0 -128 0Z" fill="#F4EFE6"/></svg>MAT</a><nav class="sh-nav" aria-label="Pages"><a href="#install" data-sheet>Get the beta</a><a href="#changelog" data-sheet>Changelog</a><a href="#about" data-sheet>About</a><a href="#privacy" data-sheet>Privacy</a><a href="#terms" data-sheet>Terms</a><a href="#contact" data-sheet>Contact</a></nav><div class="cta"><button class="lang-b" type="button" data-lang-menu aria-haspopup="menu" aria-expanded="false" aria-label="Language" data-i18n-skip><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c-2 2.2-2 10.8 0 13M8 1.5c2 2.2 2 10.8 0 13"/></svg><span class="lang-c"></span></button><button class="sh-x" type="button" data-close aria-label="Close">Close<i aria-hidden="true"></i></button></div></div>  <!-- /part:topbar:sheet -->
   <div class="sh-scroll" data-lenis-prevent>
   <article class="sh-pg g" data-pg="install">
     <p class="lab"><b>B·00</b><span>Get the beta</span></p>
@@ -2239,8 +2239,7 @@ $$('.rv').forEach(el=>revIO.observe(el));
 // MAT's mark, still: the rig's rest formation (radii 16 · 14 · 12; the front two cut from the one behind by 2 of the ground colour)
 // 2026-10-23 · MAT in the chat is its face now, as in the app; the old drawing stays below as markLogoSVG
 function markSVG(w,ground='#111112'){ return FACE.mat(Math.round(w*.8),ground==='#EAAA42'); }
-function markLogoSVG(w,ground='#111112',lead='#F4EFE6'){ const L=21.3,A=34.8,S=46.8;
-  return `<svg class="mk" viewBox="3.3 14 55.5 36" width="${w}" height="${(w*36/55.5).toFixed(1)}" aria-hidden="true"><circle cx="${S}" cy="32" r="12" fill="#9882CF"/><circle cx="${A}" cy="32" r="16" fill="${ground}"/><circle cx="${A}" cy="32" r="14" fill="#C98565"/><circle cx="${L}" cy="32" r="18" fill="${ground}"/><circle cx="${L}" cy="32" r="16" fill="${lead}"/></svg>`; }
+// 2026-10-24 · markLogoSVG (the rig's rest formation) removed: the mark is Figma 260:1611 (parts/topbar.py, footer)
 // the app's status icons (14 pt): running = a blue ring with a bright third (it turns) · needs you = amber with "!" ·
 // done = paper with a tick · paused = a ring with two bars · thinking = three dots · none = nothing
 const SI={
@@ -2259,7 +2258,7 @@ const FACE=(()=>{
 const P0=()=>({eh:1,ew:1,smile:0,lid:0,lidA:0,bY:0,bA:0,bC:.18,bAsym:0,lidAsym:0});
 const EX={neutral:{},attentive:{eh:1.1,ew:1.04,bY:-3},thinking:{eh:.92,lid:.12,bY:-1,bAsym:1,bA:4},focus:{eh:.82,lid:.24,bY:1.5,bA:7,bC:.08},
  happy:{smile:1,bY:-3,bC:.35,bA:-4},sad:{eh:.86,lid:.18,lidA:-14,bA:-20,bY:-1,bC:-.05},angry:{eh:.86,lid:.3,lidA:18,bA:24,bY:2.5,bC:-.05},
- surprised:{eh:1.25,ew:1.08,bY:-6,bC:.4},asking:{eh:1.05,bAsym:1.4,bY:-2},sleepy:{eh:.6,lid:.45,bY:2,bC:.05},smug:{smile:.55,lid:.2,bAsym:1,bA:6}};
+ surprised:{eh:1.25,ew:1.08,bY:-6,bC:.4},asking:{eh:1.05,bAsym:1.4,bY:-2},sleepy:{eh:.6,lid:.45,bY:2,bC:.05},asleep:{eh:.55,lid:.86,bY:3,bC:0},smug:{smile:.55,lid:.2,bAsym:1,bA:6}};
 const KEYS=['eh','ew','smile','lid','lidA','lidAsym','bY','bA','bC','bAsym'];
 const DELAY={eh:0,ew:0,smile:0,lid:.04,lidA:.04,lidAsym:.04,bY:.08,bA:.08,bC:.08,bAsym:.08};
 const ex=(n,k)=>{const b=P0(),d=EX[n]||{},o={...b};for(const key in d)o[key]=b[key]+(d[key]-b[key])*k;return o};
@@ -2437,6 +2436,165 @@ function team(ids){
    if(ptr){const w=Math.max(b.width,30);m.c.mouse={x:Math.max(-1,Math.min(1,(ptr.x-(b.left+b.width/2))/(w*3+160))),y:Math.max(-1,Math.min(1,(ptr.y-(b.top+b.height/2))/(w*2.6+140)))}}
    m.c.step(1/30);m.el.innerHTML=m.c.last});}
  if(!quiet)requestAnimationFrame(loop);
+ // ═══ 2026-10-24 (v3) · the crew on the page — in the sections, not over them ═══
+ // Round 4, after Hugo: the motion misled the eye (they left for the button before you could see it), they floated over The
+ // answer, 04 / 05 / 06 broke the rules, nothing hung together. The cause (project doc "MAT-官网角色层", §九): v2 chose "each
+ // section a stage" but still ran ONE set of characters in ONE layer over the whole page, chasing anchors, travelling between a
+ // dozen stages on scroll thresholds. Now:
+ //  · each scene has its own MAT / Lin / Tess, belongs to one section, and is cut off by the sheet that slides over that section —
+ //    so they scroll, pin and get covered with their section like the rest of the layout (Notion, Duolingo);
+ //  · they travel only where it means something: from the title into the seats under the film, and at 02, where MAT works alone,
+ //    then with one, then with a crew (the crew comes out from behind MAT and goes back in, as in the logo);
+ //  · scenes only where they have a job: the opening, the film, 02, 04 (the seats on the bars, made the crew's size), 08 (MAT under
+ //    the notch, as in the app) and the end (beside the button, cheering when you point at it);
+ //  · two sizes everywhere after the opening: MAT 64 / crew 52 (phones 48 / 40);
+ //  · hidden only behind solid things (the film's sheet, the notch).
+ const CREW=(()=>{
+  const Q=()=>quiet||document.documentElement.dataset.motion==='quiet';
+  const $1=q=>document.querySelector(q), $a=q=>[...document.querySelectorAll(q)];
+  const css=document.createElement('style');
+  css.textContent='.crew-layer{position:fixed;inset:0;z-index:35;pointer-events:none;overflow:hidden}'+
+   '.crew-layer>i{position:absolute;left:0;top:0;display:block;will-change:transform;visibility:hidden;transform-origin:50% 50%}'+
+   '.crew-layer>i>b{position:absolute;inset:0;border-radius:50%;opacity:0}'+
+   '.crew-layer svg{display:block;width:100%;height:100%;overflow:visible}';
+  document.head.appendChild(css);
+  const layer=document.createElement('div'); layer.className='crew-layer'; layer.setAttribute('aria-hidden','true'); document.body.appendChild(layer);
+  // the logo: three circles, r 64 / 56 / 48 at x 85.21 / 139.21 / 187.21, gap 8 (256 frame)
+  const LOGO={MAT:{k:1,col:'#F4EFE6',cx:85.21},Lin:{k:56/64,col:'#C98565',cx:139.21},Tess:{k:48/64,col:'#9882CF',cx:187.21}};
+  let seed=2;
+  function actor(n,i){ const el=document.createElement('i'), disc=document.createElement('b'), svg=document.createElement('span');
+    disc.style.background=LOGO[n].col; svg.style.cssText='position:absolute;inset:0'; el.append(svg,disc); el.style.zIndex=3-i; layer.appendChild(el);
+    const c=n==='MAT'?Char({...MATO},{mood:'calm'}):Char(style(n),{member:true,state:'idle',seed:(seed++)%5});
+    if(n!=='MAT') c.speed=.9+i*.08;
+    return {n,i,...LOGO[n],el,svg,disc,c,x:-999,y:-999,s:0,mode:'gone',a:null,sq:0,vsq:0,rot:0,tick:-1,acc:0,lastSt:''}; }
+  const mob=()=>innerWidth<700;
+  const SZ=()=>mob()?{L:48,C:40,hero:84}:{L:64,C:52,hero:132};
+  const sz=n=>n==='MAT'?SZ().L:SZ().C;
+  const rect=q=>{ const e=typeof q==='string'?$1(q):q; return e&&e.getBoundingClientRect(); };
+  const topOf=q=>{ const r=rect(q); return r?r.top:null; };
+  // formations: a row on one baseline; the logo stack (MAT in front, the crew peeking out behind, the logo's spacing)
+  function row(names,cx,base,gap,right,size){ size=size||sz; const w=names.map(size), tot=w.reduce((a,b)=>a+b,0)+gap*(names.length-1);
+    let x=right!=null?right-tot:cx-tot/2; const o={}; names.forEach((n,j)=>{ o[n]={x:x+w[j]/2,y:base-w[j]/2,s:w[j]}; x+=w[j]+gap; }); return o; }
+  const KK=()=>SZ().L/128;
+  function stack(names,x,cy){ const o={}; names.forEach(n=>{ o[n]={x:x+(LOGO[n].cx-85.21)*KK(),y:cy,s:sz(n)}; }); return o; }
+  const stackW=names=>{ const l=names[names.length-1]; return (LOGO[l].cx-85.21)*KK()+sz(l)/2; };
+  let T=0, ptrIn=false;
+  const HERO={st:Q()||scrollY>40?'done':'logo',t:0};
+  // ── the scenes ──
+  const SCENES=[
+   { // the opening and the film: the logo comes apart into the three of them; when the film comes up they go and sit under it
+    names:['MAT','Lin','Tess'],
+    fn(){ const hero=rect('#hero'), film=rect('#film'), fr=rect('#filmFrame'); if(!hero||!film||!fr) return null; const vh=innerHeight;
+      const pinned=getComputedStyle($1('#filmPin')||document.body).position==='sticky', ans=rect('#answer');
+      const filmOn=fr.width>0&&(pinned?(fr.top<vh*.55&&fr.bottom>vh*.25):(fr.top>-40&&fr.top<vh*.6));
+      if(filmOn) this.want='film'; else if(fr.top>=vh*.55||!this.want) this.want='title';   // past the film they stay in their seats and get covered with it
+      const who=['MAT','Lin','Tess'], at={};
+      if(this.want==='film'){ const L=SZ().L, order=['Lin','MAT','Tess'], look={x:fr.left+fr.width/2,y:fr.top+fr.height*.42};
+        const r=row(order,fr.left+fr.width/2,Math.min(fr.bottom+L*(mob()?.6:.35),vh-8),L*.08);
+        order.forEach(n=>{ at[n]={...r[n],look,state:'idle'}; });
+        return {key:'film',at,cb:ans?ans.top:null}; }
+      const S=SZ().hero, size=n=>S*LOGO[n].k; let fin;
+      if(mob()){ const g=rect('#hero .hero-meta')||rect('.hero-get')||hero; fin=row(who,0,g.bottom+18+S,10,innerWidth-16,size); }
+      else { const h1=rect('#hero h1')||hero, cy=h1.top+h1.height*.5; fin=row(who,hero.left+hero.width*.76,cy+S/2,S*.14,null,size); }
+      const ccx=(fin.MAT.x-fin.MAT.s/2+fin.Tess.x+fin.Tess.s/2)/2, kk=S/128, st={};
+      who.forEach(n=>{ st[n]={x:ccx-43*kk+(LOGO[n].cx-85.21)*kk,y:fin.MAT.y,s:S*LOGO[n].k}; });      // the logo, centred where the row stands
+      who.forEach((n,j)=>{ let o=fin[n], disc=0;
+        if(HERO.st==='logo'){ o=st[n]; disc=1; }
+        else if(HERO.st==='split'){ const u=Math.max(0,Math.min(1,(T-HERO.t-j*.09)/.75)), e=u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;
+          o={x:st[n].x+(fin[n].x-st[n].x)*e,y:st[n].y+(fin[n].y-st[n].y)*e-Math.sin(Math.PI*e)*S*.18,s:st[n].s+(fin[n].s-st[n].s)*e}; disc=Math.max(0,1-u*1.7); }
+        at[n]={...o,disc,watch:n==='MAT',look:n==='MAT'?null:{x:fin.MAT.x,y:fin.MAT.y},state:'idle'}; });
+      const lab=rect('#filmLab'); return {key:'title',at,cb:lab?lab.top-6:film.top}; } },   // the film's sheet: cut where its first line starts (same ground above it)
+   { // 02: alone, with one, with a crew — the crew comes out from behind MAT and goes back in
+    names:['MAT','Lin','Tess'],
+    fn(){ const sec=rect('#decide'), rows=$a('#dz .dz-r'); if(!sec||!rows.length||sec.bottom<-200||sec.top>innerHeight+200) return null;
+      const vh=innerHeight; let best=0,bd=1e9; rows.forEach((r,i)=>{ const b=r.getBoundingClientRect(), d=Math.abs((b.top+b.bottom)/2-vh*.5); if(d<bd){bd=d;best=i;} });
+      const who=[['MAT'],['MAT','Lin'],['MAT','Lin','Tess']][best], rw=rows[best].getBoundingClientRect(), ot=rows[best].querySelector('.dz-o'), ob=ot&&ot.getBoundingClientRect();
+      const all=['MAT','Lin','Tess'], L=SZ().L; let x,y;
+      if(mob()){ x=rw.right-4-stackW(all); y=rw.top-L*.42; } else { x=rw.right-24-stackW(all); y=(ob||rw).top+L*.62; }   // room kept for all three, so MAT doesn't shift as they join
+      const st=stack(all,x,y), look=ob?{x:ob.left+ob.width*.2,y:ob.top+ob.height*.3}:null, at={};
+      all.forEach(n=>{ at[n]=who.includes(n)?{...st[n],watch:n==='MAT',look:n==='MAT'?null:look,state:'idle'}:{x:st.MAT.x,y:st.MAT.y,s:sz(n)*.6,look,state:'idle'}; });   // not on yet: tucked behind MAT
+      return {key:'row'+best,at,ct:sec.top,cb:topOf('#race')}; } },
+   { // 08: MAT lives under the notch, as in the app — it drops out of it when you get here, and goes back up when you leave
+    names:['MAT'],
+    fn(){ const r=rect('#isl'), sec=rect('#dock'); if(!r||!r.width||!sec||sec.bottom<-200||sec.top>innerHeight+200) return null; const vh=innerHeight, S=SZ().L;
+      const nb=r.top+(mob()?22:28), cx=r.left+r.width/2, inn=r.top<vh*.6&&r.bottom>vh*.3;
+      const t=inn?{x:cx,y:nb+S*.3,s:S,rot:180+4*Math.sin(T*1.3),state:'idle'}:{x:cx,y:nb-S/2-4,s:S,rot:180,state:'idle'};
+      return {key:inn?'in':'out',at:{MAT:t},ct:nb,cb:topOf('#soon')}; } },
+   { // the end: beside the button (on phones, sitting on it); they cheer when you point at it
+    names:['MAT','Lin','Tess'],
+    fn(){ const sec=rect('#cta'), bs=$a('#cta .cta-get .btn').map(b=>b.getBoundingClientRect()); if(!sec||!bs.length||!bs[0].width||sec.bottom<-200||sec.top>innerHeight+200) return null;
+      const who=['MAT','Lin','Tess'], dl=bs[0], last=bs[bs.length-1], look={x:dl.left+dl.width/2,y:dl.top+dl.height/2};
+      const r=mob()?row(who,0,dl.top+2,SZ().C*.12,dl.right-10):row(who,0,dl.bottom,SZ().C*.14,last.right+28+SZ().L+SZ().C*2+SZ().C*.28);
+      const at={}; who.forEach(n=>{ at[n]={...r[n],watch:n==='MAT',look:n==='MAT'?null:look,state:'idle'}; });
+      return {key:'cta',at,ct:sec.top}; } }
+  ];
+  SCENES.forEach(sc=>{ sc.P=sc.names.map((n,i)=>actor(n,i)); sc.key=''; });
+  // ── motion ──
+  const ease=u=>u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;
+  const onScreen=p=>p.mode!=='gone'&&p.y>-p.s&&p.y<innerHeight+p.s&&p.x>-p.s&&p.x<innerWidth+p.s;
+  const DELAY=[0,.07,.14];
+  function hopTo(p,t,delay){ const d=Math.hypot(t.x-p.x,t.y-p.y); p.mode='hop'; p.a={t0:T+(delay!=null?delay:DELAY[p.i]),dur:.4+Math.min(.25,d/2200),ox:p.x-t.x,oy:p.y-t.y,s0:p.s,h:Math.min(140,30+d*.3),pre:.09}; }
+  function cheer(sc){ sc.P.forEach(p=>{ const t=sc.o&&sc.o.at[p.n]; if(p.mode==='on'&&t&&!Q()){ p.mode='hop'; p.a={t0:T+DELAY[p.i]*1.6,dur:.42,ox:0,oy:0,s0:p.s,h:t.s*.6,pre:.08}; p.c.trigger(p.n==='MAT'?'greet':'done'); } }); }
+  const CTA=SCENES[3]; let ctaSeen=false;
+  let last=performance.now();
+  function frame(now){ requestAnimationFrame(frame);
+    const dt=Math.min(.05,(now-last)/1000); last=now; if(document.hidden) return; T+=dt;
+    const quietNow=Q(); if(quietNow&&HERO.st!=='done') HERO.st='done';
+    if(HERO.st==='logo'&&T>.95){ HERO.st='split'; HERO.t=T; }
+    if(HERO.st==='split'&&T-HERO.t>1.05){ HERO.st='done'; SCENES[0].P[0].c.trigger('greet'); }
+    if(HERO.st!=='done'&&scrollY>innerHeight*.3) HERO.st='done';
+    for(const sc of SCENES){
+      const o=sc.fn(); sc.o=o;
+      if(!o){ sc.P.forEach(p=>{ p.mode='gone'; p.el.style.visibility='hidden'; }); sc.key=''; continue; }
+      if(o.key!==sc.key){ // the scene changed (or just came into reach): hop where it's visible, otherwise just be there
+        sc.P.forEach(p=>{ const t=o.at[p.n]; if(!t){ p.mode='gone'; return; }
+          if(quietNow||p.mode==='gone'||!onScreen(p)||!sc.key){ p.mode='on'; p.x=t.x; p.y=t.y; p.s=t.s; }
+          else hopTo(p,t); });
+        sc.key=o.key; }
+      sc.P.forEach(p=>{ const t=o.at[p.n], a=p.a; if(!t) return; let x=p.x,y=p.y,s=p.s,disc=t.disc||0,sqT=0;
+        if(p.mode==='on'){ x=t.x; y=t.y; s=t.s; }
+        else if(p.mode==='hop'){
+          if(T<a.t0+a.pre){ sqT=T>a.t0?.12:0; x=t.x+a.ox; y=t.y+a.oy; }                             // crouch
+          else { const v=Math.min(1,(T-a.t0-a.pre)/a.dur), e=ease(v); x=t.x+a.ox*(1-e); y=t.y+a.oy*(1-e)-a.h*4*v*(1-v); s=a.s0+(t.s-a.s0)*e; sqT=-.07;
+            if(v>=1){ p.mode='on'; p.sq=.17; p.vsq=0; x=t.x; y=t.y; s=t.s; } } }
+        const vx=(x-p.x)/Math.max(dt,1e-3); p.x=x; p.y=y; p.s=s;
+        if(!quietNow){ p.vsq+=((sqT-p.sq)*600-p.vsq*2*Math.sqrt(600)*.32)*dt; p.sq+=p.vsq*dt; } else p.sq=0;      // squash & stretch, from the feet
+        const base=t.rot||0; p.rot+=((p.mode==='hop'?base+Math.max(-12,Math.min(12,vx*.012)):base)-p.rot)*Math.min(1,dt*(p.mode==='hop'?12:20));
+        // clipped by whatever covers the section: the next sheet below, the edge above, the notch
+        const S=Math.max(1,s), ct=Math.max(o.ct!=null?o.ct:-1e9,t.ct!=null?t.ct:-1e9), cb=Math.min(o.cb!=null?o.cb:1e9,t.cb!=null?t.cb:1e9);
+        const hidden=p.mode==='gone'||y+S/2<-4||y-S/2>innerHeight+4||(y-S/2>=cb)||(y+S/2<=ct);
+        p.el.style.visibility=hidden?'hidden':'visible'; if(hidden) return;
+        const c=p.c;
+        if(t.watch){ c.script=null; c.watch=true; c.mouse=ptr?{x:Math.max(-1,Math.min(1,(ptr.x-x)/500)),y:Math.max(-1,Math.min(1,(ptr.y-y)/400))}:null; }
+        else if(t.look){ const L=t.look; c.watch=false; c.script=()=>({x:Math.max(-1,Math.min(1,(L.x-p.x)/260)),y:Math.max(-1,Math.min(1,(L.y-p.y)/200))}); }
+        else { c.watch=false; c.script=null; }
+        const st=t.state||'idle'; if(st!==(c.pendingState||c.state)) c.setState(st);
+        if(quietNow){ const k2=c.state+'|q'; if(p.lastSt!==k2){ p.lastSt=k2; p.svg.innerHTML=`<svg viewBox="4 4 92 92">${c.still()}</svg>`; } }
+        else { p.lastSt=''; p.acc+=dt; while(p.acc>=1/30){ c.step(1/30); p.acc-=1/30; }
+          if(c.tick!==p.tick){ p.tick=c.tick; p.svg.innerHTML=`<svg viewBox="4 4 92 92">${c.last}</svg>`; } }
+        p.disc.style.opacity=disc.toFixed(3);
+        const sq=p.sq; p.el.style.width=p.el.style.height=S+'px';
+        p.el.style.transform=`translate3d(${(x-S/2).toFixed(1)}px,${(y-S/2).toFixed(1)}px,0) rotate(${p.rot.toFixed(1)}deg) translateY(${(S/2).toFixed(1)}px) scale(${(1+sq*.8).toFixed(3)},${(1-sq).toFixed(3)}) translateY(${(-S/2).toFixed(1)}px)`;
+        let it=Math.max(0,ct-(y-S/2)), ib=Math.max(0,(y+S/2)-cb), il=0, ir=0;
+        if(Math.abs(((p.rot%360)+360)%360-180)<90){ [it,ib]=[ib,it]; [il,ir]=[ir,il]; }
+        p.el.style.clipPath=(it||ib)?`inset(${it.toFixed(1)}px ${ir}px ${ib.toFixed(1)}px ${il}px)`:''; });
+      // the logo's gap: where a face overlaps the one in front of it, cut it out (gap = MAT's r × 1/8)
+      for(let j=1;j<sc.P.length;j++){ const b=sc.P[j], f=sc.P[j-1], rf=f.s/2, gap=sc.P[0].s/2*.125, d=Math.hypot(b.x-f.x,b.y-f.y);
+        const cut=f.mode!=='gone'&&b.mode!=='gone'&&d<rf+gap+b.s/2;
+        const m=cut?`radial-gradient(circle ${(rf+gap).toFixed(1)}px at ${(f.x-b.x+b.s/2).toFixed(1)}px ${(f.y-b.y+b.s/2).toFixed(1)}px,transparent 99%,#000 100%)`:'';
+        if(b._m!==m){ b._m=m; b.el.style.webkitMaskImage=m; b.el.style.maskImage=m; } }
+    }
+    // the end: on a phone there's no pointing, so they cheer once when the button comes up
+    if(!matchMedia('(hover:hover)').matches&&!ctaSeen&&CTA.o){ const g=rect('#cta .cta-get'); if(g&&g.top<innerHeight*.7){ ctaSeen=true; setTimeout(()=>cheer(CTA),250); } }
+  }
+  requestAnimationFrame(frame);
+  const btn=$1('#cta .cta-get .btn');
+  if(btn){ btn.addEventListener('pointerenter',()=>cheer(CTA)); btn.addEventListener('focus',()=>cheer(CTA)); }
+  window.CREW_SCENE=()=>SCENES.map(s=>s.key).filter(Boolean).join(',');
+  window.CREW_P=SCENES.flatMap(s=>s.P);
+  window.CREW_JOY=()=>cheer(CTA);
+  return {SCENES};
+ })();
  const MAP={rest:'idle',listening:'listen',thinking:'think',asking:'ask',concerned:'idle',resting:'sleepy',offline:'sleepy'};
  return {
   // a crew member's face; the loop animates it while it is on screen
@@ -3009,7 +3167,8 @@ function rwBuild(){ const s=RW.svg, W=s.parentElement.clientWidth, port=W<560; R
   // you, and the lead who takes your place
   RW.youL=E('line',{class:'pl'},s);
   // MAT's mark where you sat: the rig's rest formation, the front two cut from the one behind by the ground colour
-  RW.leadG=E('g',{},s); { const k=0.86,[hx,hy]=G.hub; [[14.8,12,'#9882CF',0],[2.8,14,'#C98565',2],[-10.7,16,'#F4EFE6',2]].forEach(([ox,r,c,b])=>{ if(b) E('circle',{cx:hx+ox*k,cy:hy,r:(r+b)*k,fill:'var(--sheet)'},RW.leadG); E('circle',{cx:hx+ox*k,cy:hy,r:r*k,fill:c},RW.leadG); }); }
+  RW.leadG=E('g',{},s); { const k=0.86,[hx,hy]=G.hub, sc=16*k/64, g=E('g',{transform:`translate(${hx-10.7*k-85.21*sc} ${hy-128*sc}) scale(${sc})`},RW.leadG);
+    [['M181.88 80.30A48 48 0 1 1 181.88 175.70A64 64 0 0 0 181.88 80.30Z','#9882CF'],['M131.17 72.58A56 56 0 1 1 131.17 183.42A72 72 0 0 0 131.17 72.58Z','#C98565'],['M21.21 128.00a64 64 0 1 0 128 0a64 64 0 1 0 -128 0Z','#F4EFE6']].forEach(([d,c])=>E('path',{d,fill:c},g)); }
   E('text',{x:G.leadLbl[0],y:G.leadLbl[1],class:'pt b','text-anchor':port?'start':'middle'},RW.leadG,'MAT');
   RW.you=E('circle',{r:11,class:'pf'},s); RW.youT=E('text',{class:'pt b','text-anchor':port?'start':'middle'},s,'You');
   RW.t=-1; RW.k=-1; rwSize(); }
@@ -3355,8 +3514,7 @@ hcBuild();
 function heroVis(){ if(window.HERO_FILM){ HC.vis=false; HC.rig.vis=false; return; } const v=$('#answer').getBoundingClientRect().top>innerHeight*0.3; HC.vis=v; HC.rig.vis=v; if(LEVEL!=='quiet') hcTick(); }
 
 // ═══ v3.0 · 13 · MAT itself, at the end of the page: it swims slowly in its circle and leans toward your pointer; when you join, it is pleased.
-const ctaRig=makeRig('ctaRig',200,{ground:[36,26,11]}); ctaRig.sz=[200,132]; ctaRig.still=LEVEL==='quiet';
-function ctaJoy(){ if(LEVEL!=='quiet'&&!RM) ctaRig.set('pleased'); }
+function ctaJoy(){ if(window.CREW_JOY) CREW_JOY(); }
 
 // ═══ v3.2 · 11 · on phones the questions fold, as Notion's and Raycast's do: the question becomes a button, its answer opens under it.
 // Wider screens keep the three open newspaper columns (plain headings, no buttons).
