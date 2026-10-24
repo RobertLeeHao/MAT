@@ -1,6 +1,6 @@
 {
  "version": 1,
- "date": "2026-10-21",
+ "date": "2026-10-24",
  "source": "https://ollama.com/library",
  "note": "where = local (runs on the Mac; gb is Ollama's download size, ramGB the Mac memory MAT asks for: weights × 1.2 + 3 GB) or cloud (runs in Ollama's cloud: needs `ollama signin`, has usage limits, the prompt leaves the Mac). Picks are local only and follow a hand-kept preference order, not a benchmark. Families under `found` were picked up from ollama.com automatically and are listed, not recommended.",
  "picks": [
@@ -194,7 +194,7 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 8
   },
   {
@@ -212,7 +212,7 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -230,7 +230,7 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -248,7 +248,7 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -266,7 +266,7 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 32
   },
   {
@@ -284,7 +284,7 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 64
   },
   {
@@ -302,7 +302,7 @@
     "en": "step-by-step reasoning",
     "zh": "逐步推理"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 192
   },
   {
@@ -320,7 +320,7 @@
     "en": "DeepSeek V4 Pro: frontier MoE, three reasoning modes",
     "zh": "DeepSeek V4 Pro: frontier MoE, three reasoning modes"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -338,7 +338,7 @@
     "en": "DeepSeek V4.1 Flash: fast, multimodal, tools",
     "zh": "DeepSeek V4.1 Flash: fast, multimodal, tools"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -356,7 +356,7 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-21"
+   "read": "2026-10-24"
   },
   {
    "tag": "gemma4:31b-cloud",
@@ -373,7 +373,7 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-21"
+   "read": "2026-10-24"
   },
   {
    "tag": "gemma4:31b",
@@ -390,7 +390,7 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -408,7 +408,7 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -426,7 +426,7 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -444,7 +444,7 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 24
   },
   {
@@ -462,7 +462,7 @@
     "en": "general use, reading pictures and documents",
     "zh": "日常使用、看图和读文档"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 32
   },
   {
@@ -480,7 +480,7 @@
     "en": "GLM-5.2: Z.ai flagship for long-horizon tasks",
     "zh": "GLM-5.2: Z.ai flagship for long-horizon tasks"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -498,7 +498,7 @@
     "en": "GLM-5.3: Z.ai flagship, strongest open-weights model for coding",
     "zh": "GLM-5.3: Z.ai flagship, strongest open-weights model for coding"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -516,7 +516,7 @@
     "en": "GLM-5.3 Flash: natively multimodal, strong at coding and agents",
     "zh": "GLM-5.3 Flash: natively multimodal, strong at coding and agents"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -534,7 +534,7 @@
     "en": "reasoning, English",
     "zh": "推理，英文为主"
    },
-   "read": "2026-10-21"
+   "read": "2026-10-24"
   },
   {
    "tag": "gpt-oss:20b",
@@ -551,7 +551,7 @@
     "en": "reasoning, English",
     "zh": "推理，英文为主"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 96
   },
   {
@@ -569,7 +569,7 @@
     "en": "structured output and tool calls",
     "zh": "结构化输出和工具调用"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 8
   },
   {
@@ -587,7 +587,7 @@
     "en": "structured output and tool calls",
     "zh": "结构化输出和工具调用"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -605,7 +605,7 @@
     "en": "structured output and tool calls",
     "zh": "结构化输出和工具调用"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 32
   },
   {
@@ -623,7 +623,7 @@
     "en": "Kimi K2.6: multimodal agentic model for long-horizon coding",
     "zh": "Kimi K2.6: multimodal agentic model for long-horizon coding"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -641,7 +641,7 @@
     "en": "Kimi K2.7 Code: coding-focused agentic model",
     "zh": "Kimi K2.7 Code: coding-focused agentic model"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -659,7 +659,7 @@
     "en": "Kimi K3: Moonshot’s most capable open-weight multimodal agentic model",
     "zh": "Kimi K3: Moonshot’s most capable open-weight multimodal agentic model"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -677,7 +677,7 @@
     "en": "MiniMax M2.7: coding, agentic workflows, productivity",
     "zh": "MiniMax M2.7: coding, agentic workflows, productivity"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -695,7 +695,7 @@
     "en": "MiniMax M3: coding and agentic, 1M context, multimodal",
     "zh": "MiniMax M3: coding and agentic, 1M context, multimodal"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -713,7 +713,7 @@
     "en": "fast everyday answers, European languages",
     "zh": "快速日常问答，欧洲语言"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 8
   },
   {
@@ -731,7 +731,7 @@
     "en": "fast everyday answers, European languages",
     "zh": "快速日常问答，欧洲语言"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -749,7 +749,7 @@
     "en": "fast everyday answers, European languages",
     "zh": "快速日常问答，欧洲语言"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -767,7 +767,7 @@
     "en": "Mistral Large 3: multimodal MoE for production work",
     "zh": "Mistral Large 3: multimodal MoE for production work"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -785,7 +785,7 @@
     "en": "Mistral Large 4: open-weight multimodal MoE, 1.05T total",
     "zh": "Mistral Large 4: open-weight multimodal MoE, 1.05T total"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -803,7 +803,7 @@
     "en": "Nemotron 3 Nano: efficient agentic model",
     "zh": "Nemotron 3 Nano: efficient agentic model"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -821,7 +821,7 @@
     "en": "Nemotron 3 Nano: efficient agentic model",
     "zh": "Nemotron 3 Nano: efficient agentic model"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 8,
    "found": "2026-10-15"
   },
@@ -840,7 +840,7 @@
     "en": "Nemotron 3 Nano: efficient agentic model",
     "zh": "Nemotron 3 Nano: efficient agentic model"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 32,
    "found": "2026-10-15"
   },
@@ -859,7 +859,7 @@
     "en": "NVIDIA Nemotron 3 Super: 120B open MoE for multi-agent work",
     "zh": "NVIDIA Nemotron 3 Super: 120B open MoE for multi-agent work"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -877,7 +877,7 @@
     "en": "NVIDIA Nemotron 3 Super: 120B open MoE for multi-agent work",
     "zh": "NVIDIA Nemotron 3 Super: 120B open MoE for multi-agent work"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 128,
    "found": "2026-10-15"
   },
@@ -896,7 +896,7 @@
     "en": "Nemotron 3 Ultra: high-throughput reasoning and long agent runs",
     "zh": "Nemotron 3 Ultra: high-throughput reasoning and long agent runs"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "found": "2026-10-15"
   },
   {
@@ -914,7 +914,7 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 8
   },
   {
@@ -932,7 +932,7 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 8
   },
   {
@@ -950,7 +950,7 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 8
   },
   {
@@ -968,7 +968,7 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 16
   },
   {
@@ -986,7 +986,7 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 24
   },
   {
@@ -1004,7 +1004,7 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 32
   },
   {
@@ -1022,7 +1022,7 @@
     "en": "questions and short drafts, Chinese and English",
     "zh": "问答和短稿，中英文"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 128
   },
   {
@@ -1040,7 +1040,7 @@
     "en": "coding and longer tasks",
     "zh": "写代码和较长的任务"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 32
   },
   {
@@ -1058,7 +1058,7 @@
     "en": "coding and longer tasks",
     "zh": "写代码和较长的任务"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 32
   },
   {
@@ -1076,7 +1076,7 @@
     "en": "writing, research and agentic work; strong in Chinese and English",
     "zh": "写作、调研和多步任务；中英文都强"
    },
-   "read": "2026-10-21",
+   "read": "2026-10-24",
    "ramGB": 32
   }
  ]

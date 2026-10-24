@@ -1,7 +1,12 @@
 {
- "latest": "2026-10-21",
+ "latest": "2026-10-24",
  "latestUrl": "latest.json",
  "archive": [
+  {
+   "date": "2026-10-24",
+   "url": "archive/2026-10-24.json",
+   "changes": "changes/2026-10-24.md"
+  },
   {
    "date": "2026-10-21",
    "url": "archive/2026-10-21.json",
