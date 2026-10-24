@@ -42,16 +42,22 @@ SOURCES = {
     "agents": [("aa_gdpval", .5), ("vals_index", .25), ("arena_agent", .25)],
     "coding": [("vals_terminal_bench_4", .3), ("arena_webdev", .25), ("arena_coding", .15),
                ("aa_terminal_bench_40", .1), ("vals_swebench", .1), ("vals_terminal_bench_2_1", .1)],
-    "search": [("arena_search", .6), ("arena_overall", .4)],
+    # 2026-10-24 · research is finding, reading and getting it right: Arena
+    # Search scores few models (most were ranked on Arena Text alone, a chat
+    # score), so the agentic-work, long-reading and knowledge sources AA
+    # already publishes join it. MAT's comparison test (C1/C7) showed the
+    # search board ranking a chat score, not research.
+    "search": [("arena_search", .35), ("aa_gdpval", .2), ("arena_agent", .15), ("aa_omniscience", .15),
+               ("aa_lcr", .15), ("arena_overall", .1)],
     "reasoning": [("arena_math", .4), ("vals_proofbench", .3), ("aa_hle", .2), ("scale_hle_diamond", .1)],
     "writing": [("arena_creative_writing", .5), ("arena_chinese", .3), ("eqbench_creative_writing", .2)],
     "factuality": [("aa_omniscience", 1.0)],
     "instructionFollowing": [("arena_instruction_following", .8), ("aa_ifbench", .2)],
     "vision": [("arena_vision", .5), ("arena_document", .2), ("vals_mmmu", .15), ("aa_mmmu", .15)],
 }
-AA_BENCH = {"aa_gdpval": "gdpval", "aa_omniscience": "omniscience", "aa_hle": "hle", "aa_ifbench": "ifbench",
+AA_BENCH = {"aa_gdpval": "gdpval", "aa_omniscience": "omniscience", "aa_hle": "hle", "aa_ifbench": "ifbench", "aa_lcr": "lcr",
             "aa_mmmu": "mmmuPro", "aa_terminal_bench_40": "terminalBench40"}
-LABEL = {"aa_gdpval": "GDPval-AA", "vals_index": "Vals Index", "arena_agent": "Arena Agent",
+LABEL = {"aa_lcr": "AA Long Context Reasoning", "aa_gdpval": "GDPval-AA", "vals_index": "Vals Index", "arena_agent": "Arena Agent",
          "vals_terminal_bench_4": "Terminal-Bench 4.0 (Vals)", "arena_webdev": "Arena WebDev", "arena_coding": "Arena Coding",
          "aa_terminal_bench_40": "Terminal-Bench 4.0 (AA)", "vals_swebench": "SWE-bench Verified", "vals_terminal_bench_2_1": "Terminal-Bench 2.1",
          "arena_search": "Arena Search", "arena_overall": "Arena Text", "arena_math": "Arena Math", "vals_proofbench": "ProofBench",
@@ -72,6 +78,15 @@ PROXY = {"arena_overall"}
 # Index alone suggests (Hugo 10-21: Gemini 4 Argon topped Search with no
 # search score at all).
 UNCERT_K = 1.0
+# 2026-10-24 · MAT's own comparison test as one more source (measured.json,
+# written by MATDemo/tools/export-measured.py): models working alone on the
+# test's tasks, judged blind. It only counts in a kind of work once at least
+# MEASURED_MIN_MODELS models were measured there, each on MEASURED_MIN_N tasks
+# or more, and then weighs MEASURED_W next to the public sources — a check on
+# them, not a replacement (only models already paid for take part).
+MEASURED_W = 0.25
+MEASURED_MIN_MODELS = 4
+MEASURED_MIN_N = 3
 IMG_SRC = [("arena_text_to_image", .6), ("arena_image_edit", .4)]
 IMG_B = {"draft": -1.5, "usable": -0.5, "deliver": 0.4, "critical": 1.0}
 IMG_SLOPE = 0.5
@@ -188,9 +203,26 @@ def build(reg, src, include_local=False):
         mg, sg = st.mean(general[m] for m in both), st.pstdev(general[m] for m in both)
         return {} if sx == 0 else {m: mg + sg * (v - mx) / sx for m, v in xs.items()}
 
+    # ── MAT's own measurements, where there are enough of them
+    sources = {c: list(v) for c, v in SOURCES.items()}
+    measured_used = {}
+    mpath = os.path.join(HERE, "measured.json")
+    if os.path.exists(mpath):
+        meas = json.load(open(mpath)).get("categories", {})
+        for cat, rows in meas.items():
+            ok = {m: r["score"] for m, r in rows.items() if r["n"] >= MEASURED_MIN_N and m in models}
+            if cat in sources and len(ok) >= MEASURED_MIN_MODELS:
+                key = f"mat_{cat}"
+                scores[key] = ok
+                LABEL[key] = "MAT comparison test"
+                sources[cat].append((key, MEASURED_W))
+                measured_used[cat] = sorted(ok)
+            elif cat in sources and ok:
+                notes.append(f"MAT comparison test, {cat}: {len(ok)} model(s) measured, {MEASURED_MIN_MODELS} needed before it counts")
+
     theta, coverage, signals = defaultdict(dict), defaultdict(dict), defaultdict(dict)
     spread = {}
-    for cat, srcs in SOURCES.items():
+    for cat, srcs in sources.items():
         eq = {s: equate(s) for s, _ in srcs}
         own_w = sum(w for s, w in srcs if s not in PROXY) or 1.0
         # how far this domain's own scores stray from the general Index
@@ -359,7 +391,8 @@ def build(reg, src, include_local=False):
                      "Artificial Analysis (artificialanalysis.ai)", "Vals AI (vals.ai)", "Scale Labs (labs.scale.com)", "EQ-Bench (eqbench.com)"],
         tiers=[{k: T[k] for k in ["id", "zh", "en", "bar", "cap", "b", "review"]} for T in TIERS],
         method=dict(proxy=sorted(PROXY), uncertK=UNCERT_K, spread=spread, slope=SLOPE, maxRetries=MAX_RETRIES, reviewEase=REVIEW_EASE, wGeneral=W_GENERAL, profile=PROFILE,
-                    thinkMult=THINK_MULT, effortSens=EFFORT_SENS, sources={k: v for k, v in SOURCES.items()},
+                    thinkMult=THINK_MULT, effortSens=EFFORT_SENS, sources={k: v for k, v in sources.items()},
+                    measured=dict(weight=MEASURED_W, minModels=MEASURED_MIN_MODELS, minTasks=MEASURED_MIN_N, used=measured_used),
                     kThink=round(k_think, 4), imageSources=IMG_SRC, imageB=IMG_B, imageSlope=IMG_SLOPE),
         notes=notes, models=out_models, boards=boards)
 

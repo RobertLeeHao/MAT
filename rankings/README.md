@@ -52,6 +52,27 @@ score − `UNCERT_K` × (share of the domain's own sources missing) × σ
 
 Example (2026-10-21): Gemini 4 Argon had no search score anywhere, only its general Index, and ranked first for Search. Under the bound it ranks behind the models Arena Search measured.
 
+## Search: what it is made of (2026-10-24)
+
+Search used to be Arena Search (60%) and Arena Text (40%). Arena Search measures few models, so most were ranked on Arena Text alone — a chat score, not research. Research is finding, reading and getting it right, so Search now blends:
+
+| Source | Weight | Why |
+|---|---|---|
+| Arena Search | 0.35 | people's preference between search-grounded answers |
+| GDPval-AA | 0.20 | multi-step real work with tools |
+| Arena Agent | 0.15 | agentic tasks |
+| AA-Omniscience | 0.15 | knowing what it knows; not inventing facts |
+| AA Long Context Reasoning | 0.15 | reading many long pages and reasoning across them |
+| Arena Text | 0.10 | general ability (counts toward the score, not as evidence) |
+
+Web-browsing benchmarks were considered: BrowseComp is mostly self-reported by the model makers, bunched near the top, and its compiled data is licensed for non-commercial use only; BrowseComp-ZH and WideSearch have not been updated for current models.
+
+## MAT's own comparison test (from 2026-10-24)
+
+MAT runs a comparison test: the same tasks answered by single models working alone (through Claude Code and Codex), judged blind by models from more than one family (`MATDemo/tools/export-measured.py` writes `pipeline/measured.json`). For each kind of work it gives each model's mean score and how many tasks it rests on.
+
+It counts as one more source (`MEASURED_W` = 0.25) only where at least `MEASURED_MIN_MODELS` = 4 models were measured on `MEASURED_MIN_N` = 3 tasks or more; until then it is listed in `notes` and changes nothing. Only models MAT already pays for take part, so it is a check on the public sources, not a full ranking. The judges' self-preference (each favours its own family by 0.2–0.6) is averaged out by using judges from both families on every answer. `method.measured.used` lists where it counted.
+
 ## Checks before publishing
 
 - Artificial Analysis and Arena's text board must have been read within the last 21 days. Last week's numbers count as read on the day they were fetched.

@@ -1,0 +1,357 @@
+{
+ "generated": "2026-10-24",
+ "method": "mean blind-judge score (1-5) of a model working alone in MAT's comparison test; see rankings/README.md",
+ "categories": {
+  "search": {
+   "claude-opus-5.5": {
+    "score": 3.928,
+    "n": 48,
+    "tasks": [
+     "C1",
+     "C7",
+     "S1"
+    ]
+   },
+   "gpt-6-astra": {
+    "score": 4.462,
+    "n": 41,
+    "tasks": [
+     "C1",
+     "C7",
+     "S1"
+    ]
+   },
+   "claude-sonnet-5.5": {
+    "score": 3.583,
+    "n": 3,
+    "tasks": [
+     "C1",
+     "C7",
+     "S1"
+    ]
+   },
+   "claude-haiku-5.5": {
+    "score": 3.583,
+    "n": 3,
+    "tasks": [
+     "C1",
+     "C7",
+     "S1"
+    ]
+   },
+   "gpt-6.1-sol": {
+    "score": 3.527,
+    "n": 3,
+    "tasks": [
+     "C1",
+     "C7",
+     "S1"
+    ]
+   },
+   "gpt-6-luna": {
+    "score": 4.625,
+    "n": 2,
+    "tasks": [
+     "C1",
+     "S1"
+    ]
+   }
+  },
+  "factuality": {
+   "claude-opus-5.5": {
+    "score": 4.355,
+    "n": 15,
+    "tasks": [
+     "S1"
+    ]
+   },
+   "gpt-6-astra": {
+    "score": 4.382,
+    "n": 15,
+    "tasks": [
+     "S1"
+    ]
+   },
+   "claude-sonnet-5.5": {
+    "score": 4.0,
+    "n": 1,
+    "tasks": [
+     "S1"
+    ]
+   },
+   "claude-haiku-5.5": {
+    "score": 4.25,
+    "n": 1,
+    "tasks": [
+     "S1"
+    ]
+   },
+   "gpt-6.1-sol": {
+    "score": 1.08,
+    "n": 1,
+    "tasks": [
+     "S1"
+    ]
+   },
+   "gpt-6-luna": {
+    "score": 4.58,
+    "n": 1,
+    "tasks": [
+     "S1"
+    ]
+   }
+  },
+  "writing": {
+   "claude-opus-5.5": {
+    "score": 4.047,
+    "n": 53,
+    "tasks": [
+     "C2",
+     "C5",
+     "C8",
+     "S2",
+     "S4",
+     "S8"
+    ]
+   },
+   "gpt-6-astra": {
+    "score": 4.55,
+    "n": 51,
+    "tasks": [
+     "C2",
+     "C5",
+     "C8",
+     "S2",
+     "S4",
+     "S8"
+    ]
+   },
+   "claude-sonnet-5.5": {
+    "score": 3.82,
+    "n": 6,
+    "tasks": [
+     "C2",
+     "C5",
+     "C8",
+     "S2",
+     "S4",
+     "S8"
+    ]
+   },
+   "claude-haiku-5.5": {
+    "score": 3.86,
+    "n": 6,
+    "tasks": [
+     "C2",
+     "C5",
+     "C8",
+     "S2",
+     "S4",
+     "S8"
+    ]
+   },
+   "gpt-6.1-sol": {
+    "score": 4.75,
+    "n": 5,
+    "tasks": [
+     "C5",
+     "C8",
+     "S2",
+     "S4",
+     "S8"
+    ]
+   },
+   "gpt-6-luna": {
+    "score": 4.152,
+    "n": 6,
+    "tasks": [
+     "C2",
+     "C5",
+     "C8",
+     "S2",
+     "S4",
+     "S8"
+    ]
+   }
+  },
+  "reasoning": {
+   "claude-opus-5.5": {
+    "score": 4.373,
+    "n": 37,
+    "tasks": [
+     "C4",
+     "C6",
+     "S3"
+    ]
+   },
+   "gpt-6-astra": {
+    "score": 4.548,
+    "n": 29,
+    "tasks": [
+     "C4",
+     "C6",
+     "S3"
+    ]
+   },
+   "claude-sonnet-5.5": {
+    "score": 4.307,
+    "n": 3,
+    "tasks": [
+     "C4",
+     "C6",
+     "S3"
+    ]
+   },
+   "claude-haiku-5.5": {
+    "score": 4.197,
+    "n": 3,
+    "tasks": [
+     "C4",
+     "C6",
+     "S3"
+    ]
+   },
+   "gpt-6.1-sol": {
+    "score": 4.72,
+    "n": 3,
+    "tasks": [
+     "C4",
+     "C6",
+     "S3"
+    ]
+   },
+   "gpt-6-luna": {
+    "score": 4.693,
+    "n": 3,
+    "tasks": [
+     "C4",
+     "C6",
+     "S3"
+    ]
+   }
+  },
+  "instructionFollowing": {
+   "claude-opus-5.5": {
+    "score": 4.479,
+    "n": 43,
+    "tasks": [
+     "C3",
+     "C9",
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S8",
+     "S9"
+    ]
+   },
+   "gpt-6-astra": {
+    "score": 4.706,
+    "n": 40,
+    "tasks": [
+     "C3",
+     "C9",
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S8",
+     "S9"
+    ]
+   },
+   "claude-sonnet-5.5": {
+    "score": 4.365,
+    "n": 8,
+    "tasks": [
+     "C3",
+     "C9",
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S8",
+     "S9"
+    ]
+   },
+   "claude-haiku-5.5": {
+    "score": 4.541,
+    "n": 8,
+    "tasks": [
+     "C3",
+     "C9",
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S8",
+     "S9"
+    ]
+   },
+   "gpt-6.1-sol": {
+    "score": 4.729,
+    "n": 8,
+    "tasks": [
+     "C3",
+     "C9",
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S8",
+     "S9"
+    ]
+   },
+   "gpt-6-luna": {
+    "score": 4.594,
+    "n": 8,
+    "tasks": [
+     "C3",
+     "C9",
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S8",
+     "S9"
+    ]
+   }
+  },
+  "agents": {
+   "claude-opus-5.5": {
+    "score": 3.413,
+    "n": 16,
+    "tasks": [
+     "C7"
+    ]
+   },
+   "gpt-6-astra": {
+    "score": 4.539,
+    "n": 10,
+    "tasks": [
+     "C7"
+    ]
+   },
+   "claude-sonnet-5.5": {
+    "score": 3.08,
+    "n": 1,
+    "tasks": [
+     "C7"
+    ]
+   },
+   "claude-haiku-5.5": {
+    "score": 3.08,
+    "n": 1,
+    "tasks": [
+     "C7"
+    ]
+   },
+   "gpt-6.1-sol": {
+    "score": 4.67,
+    "n": 1,
+    "tasks": [
+     "C7"
+    ]
+   }
+  }
+ }
+}
