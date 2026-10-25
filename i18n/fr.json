@@ -338,7 +338,17 @@
   "sooner, because six seats ran at once": "plus tôt, car six postes ont travaillé en même temps",
   "“Draft the launch email for the October release. Under 200 words.”": "« Rédige l’e-mail de lancement de la version d’octobre. Moins de 200 mots. »",
   "“Look at the AI note-taking apps: who’s winning, why, and what they charge.”": "« Analyse les apps de prise de notes IA : qui gagne, pourquoi, et à quel prix. »",
-  "“RAG or fine-tuning for our support bot?”": "« RAG ou fine-tuning pour notre bot d’assistance ? »"
+  "“RAG or fine-tuning for our support bot?”": "« RAG ou fine-tuning pour notre bot d’assistance ? »",
+  "<0>One example</0>Eight note-taking apps compared, done three ways: the research splits into three seats running side by side · <1>How we counted<2>A measured run from MAT's comparison test (October 25, 2026): tokens × each model's public list price, the same request for all three, scored 1–5 by two blind judges (Claude Sonnet and GPT-6.1 Sol). The best of three runs of this task; across all three, MAT scored 3.8 against 3.6 for one strong model, at two thirds of its cost, and took longer on average.</2></1>": "<0>Un exemple</0>Huit applis de prise de notes comparées, de trois façons : la recherche est répartie entre trois postes qui travaillent en même temps · <1>Comment on a compté<2>Une exécution mesurée lors du test comparatif de MAT (25 octobre 2026) : tokens × le prix public de chaque modèle, la même demande pour les trois, notées de 1 à 5 par deux juges à l’aveugle (Claude Sonnet et GPT-6.1 Sol). La meilleure de trois exécutions de cette tâche ; sur les trois, MAT a obtenu 3,8 contre 3,6 pour un modèle puissant, pour les deux tiers de son coût, et a pris plus de temps en moyenne.</2></1>",
+  "sooner, because three research seats ran at once": "plus tôt, parce que trois postes de recherche ont travaillé en même temps",
+  "judge score out of 5 · one cheap model: 3.3": "note des juges sur 5 · un modèle bon marché : 3,3",
+  "0.1.6: big jobs split, and files that look finished.": "0.1.6 : les gros travaux se partagent, et les fichiers sortent finis.",
+  "Oct 25, 2026": "25 oct. 2026",
+  "A long list of the same kind of work — 200 sentences to translate, reviews to sort — is split and done side by side on several models. Every piece follows the same rules, and the totals are counted by MAT, not guessed.": "Une longue liste de travail du même genre — 200 phrases à traduire, des avis à trier — est découpée et traitée en parallèle par plusieurs modèles. Chaque morceau suit les mêmes règles, et les totaux sont comptés par MAT, pas devinés.",
+  "Research on many things at once is shared out: each research seat looks up its own few, reading the web itself, and the seats work at the same time.": "Une recherche sur beaucoup de sujets à la fois est partagée : chaque poste de recherche cherche les siens en lisant le web lui-même, et les postes travaillent en même temps.",
+  "Before anything is handed over, MAT checks it against your request — blanks, “to be filled”, sections shorter than asked, a slide count that’s off — and sends it back once to be fixed. The model that wrote it fixes it.": "Avant de rendre quoi que ce soit, MAT le vérifie au regard de votre demande — cases vides, « à compléter », sections plus courtes que demandé, nombre de diapositives faux — et le renvoie une fois pour correction. C’est le modèle qui l’a écrit qui corrige.",
+  "Word, Excel and PowerPoint files come out finished: slides in order, with steps drawn as a flow, figures as a chart and comparisons as a table; spreadsheet cells hold real formulas, with the results shown in the chat.": "Les fichiers Word, Excel et PowerPoint sortent finis : diapositives dans l’ordre, avec les étapes en schéma, les chiffres en graphique et les comparaisons en tableau ; les cellules du tableur contiennent de vraies formules, et les résultats s’affichent dans la conversation.",
+  "Seats are staffed from a ranking that now also weighs MAT’s own measured results for each kind of work. A connection can be turned off or removed from its ⋯ menu in Settings › Providers.": "Les postes sont attribués d’après un classement qui tient désormais compte aussi des résultats que MAT mesure pour chaque type de travail. Une connexion peut être désactivée ou supprimée depuis son menu ⋯ dans Réglages › Providers."
  },
  "attrs": {
   "A chat with MAT, and beside it the crew MAT hires. You ask whether to use RAG or fine-tuning, and MAT answers right there: no crew. You ask for a launch email, and MAT hires one seat, Wren on GPT-6.1 Sol, then checks the draft: 52 seconds, $0.004. You ask for a look at twelve AI note-taking apps, and MAT lays out five stages and hires a crew of nine across four of your subscriptions — six scouts on Gemini and DeepSeek, two to compare on Qwen, one to write on GPT-6.1 Sol — then the crew works stage by stage, each one checked before the next starts: 14 minutes and $0.60, against $1.55 for one strong model.": "Une conversation avec MAT, et à côté, l’équipe que MAT recrute. Vous demandez s’il faut utiliser RAG ou le fine-tuning, et MAT répond directement : pas d’équipe. Vous demandez un e-mail de lancement, et MAT recrute un poste, Wren sur GPT-6.1 Sol, puis contrôle le brouillon : 52 secondes, $0.004. Vous demandez une analyse de douze apps de prise de notes IA, et MAT prévoit cinq étapes et recrute une équipe de neuf sur quatre de vos abonnements — six éclaireurs sur Gemini et DeepSeek, deux pour comparer sur Qwen, un pour rédiger sur GPT-6.1 Sol — puis l’équipe travaille étape par étape, chacune contrôlée avant que la suivante ne commence : 14 minutes et $0.60, contre $1.55 pour un seul modèle puissant.",
@@ -355,7 +365,8 @@
   "Ranking, top ten": "Classement, top dix",
   "Sections": "Sections",
   "Three runs on one time axis. One strong model alone: 22 minutes, $1.55, 12 of 12 claims hold up. Cheap models only: a failed check and a redo, 17.5 minutes, $0.38, 9 of 12 claims hold up. MAT and its crew: 14 minutes, $0.60, 12 of 12.": "Trois exécutions sur un même axe de temps. Un seul modèle puissant : 22 minutes, $1.55, 12 affirmations sur 12 vérifiées. Modèles bon marché seuls : un contrôle échoué et une reprise, 17,5 minutes, $0.38, 9 sur 12 vérifiées. MAT et son équipe : 14 minutes, $0.60, 12 sur 12.",
-  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.": "Votre ordinateur contient vos conversations, votre mémoire et vos fichiers. Des lignes partent directement de lui vers trois fournisseurs de modèles ; chaque ligne emporte le travail d’une étape et rapporte le résultat. Rien entre les deux."
+  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.": "Votre ordinateur contient vos conversations, votre mémoire et vos fichiers. Des lignes partent directement de lui vers trois fournisseurs de modèles ; chaque ligne emporte le travail d’une étape et rapporte le résultat. Rien entre les deux.",
+  "Three runs of one job on one time axis. One strong model, Claude Opus alone: 4.2 minutes, $0.53, judged 3.4 of 5. One cheap model, Claude Haiku alone: 4.0 minutes, $0.19, judged 3.3 of 5. MAT and its crew — GPT-6 Luna briefs, Claude Opus plans, three GPT-6 Luna seats research side by side, GPT-6.1 Sol writes, Claude Opus checks: 2.2 minutes, $0.15, judged 4.2 of 5.": "Trois exécutions d’un même travail sur un seul axe de temps. Un modèle puissant, Claude Opus seul : 4,2 minutes, 0,53 $, noté 3,4 sur 5. Un modèle bon marché, Claude Haiku seul : 4,0 minutes, 0,19 $, noté 3,3 sur 5. MAT et son équipe — GPT-6 Luna rédige la consigne, Claude Opus planifie, trois postes GPT-6 Luna cherchent en même temps, GPT-6.1 Sol rédige, Claude Opus vérifie : 2,2 minutes, 0,15 $, noté 4,2 sur 5."
  },
  "meta": {
   "MAT is one chat for every AI you already pay for, running on your own computer. A question gets an answer. A job gets one model — or, when the work splits, a crew, checked at every step.": "MAT, c’est une seule conversation pour toutes les IA que vous payez déjà, sur votre propre ordinateur. Une question obtient une réponse. Une tâche obtient un modèle — ou, quand le travail se divise, une équipe, contrôlée à chaque étape.",
@@ -477,7 +488,10 @@
   "<0>See the full ranking</0><1><2>→</2><3>→</3></1>": "<0>Voir le classement complet</0><1><2>→</2><3>→</3></1>",
   "See the full ranking": "Voir le classement complet",
   "This week's ranking couldn't be loaded.": "Impossible de charger le classement de cette semaine.",
-  "Ranking at the Deliver bar": "Classement à la barre « Livrer »"
+  "Ranking at the Deliver bar": "Classement à la barre « Livrer »",
+  "One cheap model": "Un modèle bon marché",
+  "Claude Opus, start to finish": "Claude Opus, du début à la fin",
+  "Claude Haiku, start to finish": "Claude Haiku, du début à la fin"
  },
  "templates": {
   "${0} less · vs ${1}": "${0} de moins · contre ${1}",
@@ -535,6 +549,7 @@
   "All four quality bars, {0} models, and where every number comes from.": "Les quatre barres de qualité, {0} modèles, et d’où vient chaque chiffre.",
   "+{0} more clear the bar": "+{0} autres passent la barre",
   "{0}m {1}s": "{0} min {1} s",
-  "{0}s": "{0} s"
+  "{0}s": "{0} s",
+  "· {0} min · ${1} · {2} / {3}": "· {0} min · ${1} · {2} / {3}"
  }
 }

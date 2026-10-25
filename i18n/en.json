@@ -338,7 +338,17 @@
   "sooner, because six seats ran at once",
   "“Draft the launch email for the October release. Under 200 words.”",
   "“Look at the AI note-taking apps: who’s winning, why, and what they charge.”",
-  "“RAG or fine-tuning for our support bot?”"
+  "“RAG or fine-tuning for our support bot?”",
+  "<0>One example</0>Eight note-taking apps compared, done three ways: the research splits into three seats running side by side · <1>How we counted<2>A measured run from MAT's comparison test (October 25, 2026): tokens × each model's public list price, the same request for all three, scored 1–5 by two blind judges (Claude Sonnet and GPT-6.1 Sol). The best of three runs of this task; across all three, MAT scored 3.8 against 3.6 for one strong model, at two thirds of its cost, and took longer on average.</2></1>",
+  "sooner, because three research seats ran at once",
+  "judge score out of 5 · one cheap model: 3.3",
+  "0.1.6: big jobs split, and files that look finished.",
+  "Oct 25, 2026",
+  "A long list of the same kind of work — 200 sentences to translate, reviews to sort — is split and done side by side on several models. Every piece follows the same rules, and the totals are counted by MAT, not guessed.",
+  "Research on many things at once is shared out: each research seat looks up its own few, reading the web itself, and the seats work at the same time.",
+  "Before anything is handed over, MAT checks it against your request — blanks, “to be filled”, sections shorter than asked, a slide count that’s off — and sends it back once to be fixed. The model that wrote it fixes it.",
+  "Word, Excel and PowerPoint files come out finished: slides in order, with steps drawn as a flow, figures as a chart and comparisons as a table; spreadsheet cells hold real formulas, with the results shown in the chat.",
+  "Seats are staffed from a ranking that now also weighs MAT’s own measured results for each kind of work. A connection can be turned off or removed from its ⋯ menu in Settings › Providers."
  ],
  "attrs": [
   "A chat with MAT, and beside it the crew MAT hires. You ask whether to use RAG or fine-tuning, and MAT answers right there: no crew. You ask for a launch email, and MAT hires one seat, Wren on GPT-6.1 Sol, then checks the draft: 52 seconds, $0.004. You ask for a look at twelve AI note-taking apps, and MAT lays out five stages and hires a crew of nine across four of your subscriptions — six scouts on Gemini and DeepSeek, two to compare on Qwen, one to write on GPT-6.1 Sol — then the crew works stage by stage, each one checked before the next starts: 14 minutes and $0.60, against $1.55 for one strong model.",
@@ -355,7 +365,8 @@
   "Ranking, top ten",
   "Sections",
   "Three runs on one time axis. One strong model alone: 22 minutes, $1.55, 12 of 12 claims hold up. Cheap models only: a failed check and a redo, 17.5 minutes, $0.38, 9 of 12 claims hold up. MAT and its crew: 14 minutes, $0.60, 12 of 12.",
-  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between."
+  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.",
+  "Three runs of one job on one time axis. One strong model, Claude Opus alone: 4.2 minutes, $0.53, judged 3.4 of 5. One cheap model, Claude Haiku alone: 4.0 minutes, $0.19, judged 3.3 of 5. MAT and its crew — GPT-6 Luna briefs, Claude Opus plans, three GPT-6 Luna seats research side by side, GPT-6.1 Sol writes, Claude Opus checks: 2.2 minutes, $0.15, judged 4.2 of 5."
  ],
  "meta": [
   "MAT is one chat for every AI you already pay for, running on your own computer. A question gets an answer. A job gets one model — or, when the work splits, a crew, checked at every step.",
@@ -477,7 +488,10 @@
   "<0>See the full ranking</0><1><2>→</2><3>→</3></1>",
   "See the full ranking",
   "This week's ranking couldn't be loaded.",
-  "Ranking at the Deliver bar"
+  "Ranking at the Deliver bar",
+  "One cheap model",
+  "Claude Opus, start to finish",
+  "Claude Haiku, start to finish"
  ],
  "templates": {
   "${0} less · vs ${1}": "$0.95 less · vs $1.55",
@@ -535,6 +549,7 @@
   "All four quality bars, {0} models, and where every number comes from.": "All four quality bars, {0} models, and where every number comes from.",
   "+{0} more clear the bar": "+{0} more clear the bar",
   "{0}m {1}s": "{0}m {1}s",
-  "{0}s": "{0}s"
+  "{0}s": "{0}s",
+  "· {0} min · ${1} · {2} / {3}": "· 4.2 min · $0.53 · 3.4 / 5"
  }
 }

@@ -338,7 +338,17 @@
   "sooner, because six seats ran at once": "更快完成，因为六个座位同时运行",
   "“Draft the launch email for the October release. Under 200 words.”": "“为十月版本起草发布邮件。200 字以内。”",
   "“Look at the AI note-taking apps: who’s winning, why, and what they charge.”": "“看看 AI 笔记应用：谁在领先、为什么，以及怎么收费。”",
-  "“RAG or fine-tuning for our support bot?”": "“我们的客服机器人，用 RAG 还是微调？”"
+  "“RAG or fine-tuning for our support bot?”": "“我们的客服机器人，用 RAG 还是微调？”",
+  "<0>One example</0>Eight note-taking apps compared, done three ways: the research splits into three seats running side by side · <1>How we counted<2>A measured run from MAT's comparison test (October 25, 2026): tokens × each model's public list price, the same request for all three, scored 1–5 by two blind judges (Claude Sonnet and GPT-6.1 Sol). The best of three runs of this task; across all three, MAT scored 3.8 against 3.6 for one strong model, at two thirds of its cost, and took longer on average.</2></1>": "<0>一个例子</0>对比 8 款笔记软件，用三种方式完成：调研拆给三个座位同时进行 · <1>计算方法<2>来自 MAT 对比测试的一次实测（2026 年 10 月 25 日）：Token 用量 × 各模型公开标价，三种方式使用同一个请求，由两位盲评裁判（Claude Sonnet 和 GPT-6.1 Sol）按 1–5 分打分。这是该任务三次运行中最好的一次；三次平均下来，MAT 得 3.8 分，单个强模型 3.6 分，成本约为其三分之二，平均用时更长。</2></1>",
+  "sooner, because three research seats ran at once": "更快完成，因为三个调研座位同时运行",
+  "judge score out of 5 · one cheap model: 3.3": "裁判评分（满分 5）· 单个便宜模型：3.3",
+  "0.1.6: big jobs split, and files that look finished.": "0.1.6：大活拆开做，文件交出来就能用。",
+  "Oct 25, 2026": "2026 年 10 月 25 日",
+  "A long list of the same kind of work — 200 sentences to translate, reviews to sort — is split and done side by side on several models. Every piece follows the same rules, and the totals are counted by MAT, not guessed.": "一长串同类工作——要翻译的 200 句话、要分类的评论——会拆成几份，交给几个模型同时做。每一份按同一套规则判断，总数由 MAT 自己数，不靠模型估。",
+  "Research on many things at once is shared out: each research seat looks up its own few, reading the web itself, and the seats work at the same time.": "一次要查很多对象时会分工：每个调研座位负责其中几个，自己上网查、读网页，几个座位同时进行。",
+  "Before anything is handed over, MAT checks it against your request — blanks, “to be filled”, sections shorter than asked, a slide count that’s off — and sends it back once to be fixed. The model that wrote it fixes it.": "交付前，MAT 会对照你的要求检查一遍——有没有空着的、写着“待填”的、字数不够的、页数不对的——不合格就退回改一轮，由原来写的模型来改。",
+  "Word, Excel and PowerPoint files come out finished: slides in order, with steps drawn as a flow, figures as a chart and comparisons as a table; spreadsheet cells hold real formulas, with the results shown in the chat.": "Word、Excel、PPT 交出来就能用：幻灯片顺序正确，步骤画成流程图、数字画成图表、对比做成表格；表格里是真正的公式，算好的结果直接显示在对话里。",
+  "Seats are staffed from a ranking that now also weighs MAT’s own measured results for each kind of work. A connection can be turned off or removed from its ⋯ menu in Settings › Providers.": "每个座位用哪个模型，排行榜现在也会参考 MAT 自己按任务类型实测的结果。在 设置 › Providers 里，可以从连接的 ⋯ 菜单停用或删除它。"
  },
  "attrs": {
   "A chat with MAT, and beside it the crew MAT hires. You ask whether to use RAG or fine-tuning, and MAT answers right there: no crew. You ask for a launch email, and MAT hires one seat, Wren on GPT-6.1 Sol, then checks the draft: 52 seconds, $0.004. You ask for a look at twelve AI note-taking apps, and MAT lays out five stages and hires a crew of nine across four of your subscriptions — six scouts on Gemini and DeepSeek, two to compare on Qwen, one to write on GPT-6.1 Sol — then the crew works stage by stage, each one checked before the next starts: 14 minutes and $0.60, against $1.55 for one strong model.": "与 MAT 的对话窗口，旁边是 MAT 组建的团队。你问该用 RAG 还是微调，MAT 当场回答：不需要团队。你要一封发布邮件，MAT 安排一个座位——用 GPT-6.1 Sol 的 Wren——然后检查草稿：52 秒，$0.004。你要分析十二款 AI 笔记应用，MAT 列出五个阶段，在你的四个订阅上组建一个九人团队——六个调研员用 Gemini 和 DeepSeek，两个比较者用 Qwen，一个撰写者用 GPT-6.1 Sol——随后团队逐阶段工作，每个阶段都在下一阶段开始前经过检查：14 分钟、$0.60，而单个强模型需要 $1.55。",
@@ -355,7 +365,8 @@
   "Ranking, top ten": "排行榜前十",
   "Sections": "章节",
   "Three runs on one time axis. One strong model alone: 22 minutes, $1.55, 12 of 12 claims hold up. Cheap models only: a failed check and a redo, 17.5 minutes, $0.38, 9 of 12 claims hold up. MAT and its crew: 14 minutes, $0.60, 12 of 12.": "同一时间轴上的三次运行。单个强模型：22 分钟，$1.55，12 条结论中 12 条成立。仅用便宜模型：一次检查未通过并返工，17.5 分钟，$0.38，12 条中 9 条成立。MAT 和它的团队：14 分钟，$0.60，12 条中 12 条成立。",
-  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.": "你的电脑保存着你的对话、记忆和文件。线条从它直接连到三家模型服务商；每条线把一步的工作发出去，再把结果带回来。中间什么都没有。"
+  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.": "你的电脑保存着你的对话、记忆和文件。线条从它直接连到三家模型服务商；每条线把一步的工作发出去，再把结果带回来。中间什么都没有。",
+  "Three runs of one job on one time axis. One strong model, Claude Opus alone: 4.2 minutes, $0.53, judged 3.4 of 5. One cheap model, Claude Haiku alone: 4.0 minutes, $0.19, judged 3.3 of 5. MAT and its crew — GPT-6 Luna briefs, Claude Opus plans, three GPT-6 Luna seats research side by side, GPT-6.1 Sol writes, Claude Opus checks: 2.2 minutes, $0.15, judged 4.2 of 5.": "同一项任务的三次运行，放在同一条时间轴上。单个强模型（只用 Claude Opus）：4.2 分钟，$0.53，评分 3.4/5。单个便宜模型（只用 Claude Haiku）：4.0 分钟，$0.19，评分 3.3/5。MAT 和它的团队——GPT-6 Luna 写简报，Claude Opus 排计划，三个 GPT-6 Luna 座位同时调研，GPT-6.1 Sol 撰写，Claude Opus 检查：2.2 分钟，$0.15，评分 4.2/5。"
  },
  "meta": {
   "MAT is one chat for every AI you already pay for, running on your own computer. A question gets an answer. A job gets one model — or, when the work splits, a crew, checked at every step.": "MAT 是一个对话，连接你已付费的所有 AI，在你自己的电脑上运行。问题，得到答案。任务，交给一个模型——或者在工作可以拆分时，交给一个团队，每一步都经过检查。",
@@ -477,7 +488,10 @@
   "<0>See the full ranking</0><1><2>→</2><3>→</3></1>": "<0>查看完整排行榜</0><1><2>→</2><3>→</3></1>",
   "See the full ranking": "查看完整排行榜",
   "This week's ranking couldn't be loaded.": "本周的排行榜没能读出来。",
-  "Ranking at the Deliver bar": "「交付」线上的排名"
+  "Ranking at the Deliver bar": "「交付」线上的排名",
+  "One cheap model": "单个便宜模型",
+  "Claude Opus, start to finish": "Claude Opus，从头做到尾",
+  "Claude Haiku, start to finish": "Claude Haiku，从头做到尾"
  },
  "templates": {
   "${0} less · vs ${1}": "少花 ${0} · 对比 ${1}",
@@ -535,6 +549,7 @@
   "All four quality bars, {0} models, and where every number comes from.": "四档质量线、{0} 个模型，以及每个数字的来源。",
   "+{0} more clear the bar": "还有 {0} 个能过线",
   "{0}m {1}s": "{0}分{1}秒",
-  "{0}s": "{0}秒"
+  "{0}s": "{0}秒",
+  "· {0} min · ${1} · {2} / {3}": "· {0} 分钟 · ${1} · {2} / {3}"
  }
 }

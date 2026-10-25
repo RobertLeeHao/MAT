@@ -338,7 +338,17 @@
   "sooner, because six seats ran at once": "提早完成，因為六個座位同時執行",
   "“Draft the launch email for the October release. Under 200 words.”": "「為十月版本起草發表信。200 字以內。」",
   "“Look at the AI note-taking apps: who’s winning, why, and what they charge.”": "「研究一下 AI 筆記 App：誰領先、為什麼，還有各自怎麼收費。」",
-  "“RAG or fine-tuning for our support bot?”": "「我們的客服機器人該用 RAG 還是微調？」"
+  "“RAG or fine-tuning for our support bot?”": "「我們的客服機器人該用 RAG 還是微調？」",
+  "<0>One example</0>Eight note-taking apps compared, done three ways: the research splits into three seats running side by side · <1>How we counted<2>A measured run from MAT's comparison test (October 25, 2026): tokens × each model's public list price, the same request for all three, scored 1–5 by two blind judges (Claude Sonnet and GPT-6.1 Sol). The best of three runs of this task; across all three, MAT scored 3.8 against 3.6 for one strong model, at two thirds of its cost, and took longer on average.</2></1>": "<0>一個例子</0>比較 8 款筆記軟體，用三種方式完成：調研拆給三個座位同時進行 · <1>計算方法<2>來自 MAT 對比測試的一次實測（2026 年 10 月 25 日）：Token 用量 × 各模型公開標價，三種方式使用同一個請求，由兩位盲評裁判（Claude Sonnet 和 GPT-6.1 Sol）按 1–5 分評分。這是該任務三次執行中最好的一次；三次平均下來，MAT 得 3.8 分，單一強模型 3.6 分，成本約為其三分之二，平均用時較長。</2></1>",
+  "sooner, because three research seats ran at once": "更快完成，因為三個調研座位同時執行",
+  "judge score out of 5 · one cheap model: 3.3": "裁判評分（滿分 5）· 單一便宜模型：3.3",
+  "0.1.6: big jobs split, and files that look finished.": "0.1.6：大工作拆開做，檔案交出來就能用。",
+  "Oct 25, 2026": "2026 年 10 月 25 日",
+  "A long list of the same kind of work — 200 sentences to translate, reviews to sort — is split and done side by side on several models. Every piece follows the same rules, and the totals are counted by MAT, not guessed.": "一長串同類工作——要翻譯的 200 句話、要分類的評論——會拆成幾份，交給幾個模型同時做。每一份按同一套規則判斷，總數由 MAT 自己數，不靠模型估。",
+  "Research on many things at once is shared out: each research seat looks up its own few, reading the web itself, and the seats work at the same time.": "一次要查很多對象時會分工：每個調研座位負責其中幾個，自己上網查、讀網頁，幾個座位同時進行。",
+  "Before anything is handed over, MAT checks it against your request — blanks, “to be filled”, sections shorter than asked, a slide count that’s off — and sends it back once to be fixed. The model that wrote it fixes it.": "交付前，MAT 會對照你的要求檢查一遍——有沒有空著的、寫著「待填」的、字數不夠的、頁數不對的——不合格就退回改一輪，由原本撰寫的模型來改。",
+  "Word, Excel and PowerPoint files come out finished: slides in order, with steps drawn as a flow, figures as a chart and comparisons as a table; spreadsheet cells hold real formulas, with the results shown in the chat.": "Word、Excel、PPT 交出來就能用：投影片順序正確，步驟畫成流程圖、數字畫成圖表、比較做成表格；試算表裡是真正的公式，算好的結果直接顯示在對話裡。",
+  "Seats are staffed from a ranking that now also weighs MAT’s own measured results for each kind of work. A connection can be turned off or removed from its ⋯ menu in Settings › Providers.": "每個座位用哪個模型，排行榜現在也會參考 MAT 自己按工作類型實測的結果。在 設定 › Providers 裡，可以從連線的 ⋯ 選單停用或刪除它。"
  },
  "attrs": {
   "A chat with MAT, and beside it the crew MAT hires. You ask whether to use RAG or fine-tuning, and MAT answers right there: no crew. You ask for a launch email, and MAT hires one seat, Wren on GPT-6.1 Sol, then checks the draft: 52 seconds, $0.004. You ask for a look at twelve AI note-taking apps, and MAT lays out five stages and hires a crew of nine across four of your subscriptions — six scouts on Gemini and DeepSeek, two to compare on Qwen, one to write on GPT-6.1 Sol — then the crew works stage by stage, each one checked before the next starts: 14 minutes and $0.60, against $1.55 for one strong model.": "與 MAT 的聊天，旁邊是 MAT 招募的團隊。你問該用 RAG 還是微調，MAT 當場回答：不組團隊。你要一封發表信，MAT 招募一個座位，由 Wren 使用 GPT-6.1 Sol，再檢查草稿：52 秒，$0.004。你要研究十二個 AI 筆記 App，MAT 規劃五個階段，並在你的四個訂閱中招募九人團隊 — 六個偵察員使用 Gemini 與 DeepSeek，兩個比較員使用 Qwen，一個寫手使用 GPT-6.1 Sol — 接著團隊逐一完成各階段，每個階段都在下一個開始前經過檢查：14 分鐘、$0.60，單一強模型則要 $1.55。",
@@ -355,7 +365,8 @@
   "Ranking, top ten": "排名，前十名",
   "Sections": "章節",
   "Three runs on one time axis. One strong model alone: 22 minutes, $1.55, 12 of 12 claims hold up. Cheap models only: a failed check and a redo, 17.5 minutes, $0.38, 9 of 12 claims hold up. MAT and its crew: 14 minutes, $0.60, 12 of 12.": "三次執行，放在同一條時間軸上。單一強模型：22 分鐘、$1.55，12 項論點中 12 項經得起查證。只用便宜模型：一次檢查未通過並重做，17.5 分鐘、$0.38，12 項中 9 項經得起查證。MAT 與它的團隊：14 分鐘、$0.60，12 項中 12 項。",
-  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.": "你的電腦保存你的聊天、記憶與檔案。線條從電腦直接連到三個模型供應商；每條線把一個步驟的工作送出，再把結果帶回。中間沒有任何東西。"
+  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.": "你的電腦保存你的聊天、記憶與檔案。線條從電腦直接連到三個模型供應商；每條線把一個步驟的工作送出，再把結果帶回。中間沒有任何東西。",
+  "Three runs of one job on one time axis. One strong model, Claude Opus alone: 4.2 minutes, $0.53, judged 3.4 of 5. One cheap model, Claude Haiku alone: 4.0 minutes, $0.19, judged 3.3 of 5. MAT and its crew — GPT-6 Luna briefs, Claude Opus plans, three GPT-6 Luna seats research side by side, GPT-6.1 Sol writes, Claude Opus checks: 2.2 minutes, $0.15, judged 4.2 of 5.": "同一項任務的三次執行，放在同一條時間軸上。單一強模型（只用 Claude Opus）：4.2 分鐘，$0.53，評分 3.4/5。單一便宜模型（只用 Claude Haiku）：4.0 分鐘，$0.19，評分 3.3/5。MAT 和它的團隊——GPT-6 Luna 寫簡報，Claude Opus 排計畫，三個 GPT-6 Luna 座位同時調研，GPT-6.1 Sol 撰寫，Claude Opus 檢查：2.2 分鐘，$0.15，評分 4.2/5。"
  },
  "meta": {
   "MAT is one chat for every AI you already pay for, running on your own computer. A question gets an answer. A job gets one model — or, when the work splits, a crew, checked at every step.": "MAT 用一個聊天串起你已經付費的每個 AI，在你自己的電腦上執行。問題，直接得到回答。工作，交給單一模型 — 或在工作可以拆分時，交給一個團隊，每一步都經過檢查。",
@@ -477,7 +488,10 @@
   "<0>See the full ranking</0><1><2>→</2><3>→</3></1>": "<0>查看完整排行榜</0><1><2>→</2><3>→</3></1>",
   "See the full ranking": "查看完整排行榜",
   "This week's ranking couldn't be loaded.": "本週的排行榜沒能讀出來。",
-  "Ranking at the Deliver bar": "「交付」線上的排名"
+  "Ranking at the Deliver bar": "「交付」線上的排名",
+  "One cheap model": "單一便宜模型",
+  "Claude Opus, start to finish": "Claude Opus，從頭做到尾",
+  "Claude Haiku, start to finish": "Claude Haiku，從頭做到尾"
  },
  "templates": {
   "${0} less · vs ${1}": "少花 ${0} · 對比 ${1}",
@@ -535,6 +549,7 @@
   "All four quality bars, {0} models, and where every number comes from.": "四檔品質線、{0} 個模型，以及每個數字的來源。",
   "+{0} more clear the bar": "還有 {0} 個能過線",
   "{0}m {1}s": "{0}分{1}秒",
-  "{0}s": "{0}秒"
+  "{0}s": "{0}秒",
+  "· {0} min · ${1} · {2} / {3}": "· {0} 分鐘 · ${1} · {2} / {3}"
  }
 }

@@ -338,7 +338,17 @@
   "sooner, because six seats ran at once": "早く完了（6つの席が同時に動いたため）",
   "“Draft the launch email for the October release. Under 200 words.”": "「10月リリースのローンチメールの下書きを。200語以内で。」",
   "“Look at the AI note-taking apps: who’s winning, why, and what they charge.”": "「AI議事録アプリを調べて。どこが勝っていて、なぜか、料金はいくらか。」",
-  "“RAG or fine-tuning for our support bot?”": "「サポートボットにはRAGとファインチューニング、どちらがいい？」"
+  "“RAG or fine-tuning for our support bot?”": "「サポートボットにはRAGとファインチューニング、どちらがいい？」",
+  "<0>One example</0>Eight note-taking apps compared, done three ways: the research splits into three seats running side by side · <1>How we counted<2>A measured run from MAT's comparison test (October 25, 2026): tokens × each model's public list price, the same request for all three, scored 1–5 by two blind judges (Claude Sonnet and GPT-6.1 Sol). The best of three runs of this task; across all three, MAT scored 3.8 against 3.6 for one strong model, at two thirds of its cost, and took longer on average.</2></1>": "<0>一つの例</0>ノートアプリ 8 本の比較を、三つのやり方で：調査を三つの席に分けて同時に進める · <1>計算方法<2>MAT の比較テストでの実測（2026 年 10 月 25 日）：トークン数 × 各モデルの公開価格、三つとも同じ依頼、二人のブラインド審査員（Claude Sonnet と GPT-6.1 Sol）が 1–5 で採点。このタスクの 3 回の実行のうち最も良かった回です。3 回の平均では MAT が 3.8、強いモデル単体が 3.6 で、コストは約 3 分の 2、所要時間は平均して長めでした。</2></1>",
+  "sooner, because three research seats ran at once": "早く完了。三つの調査席が同時に動いたため",
+  "judge score out of 5 · one cheap model: 3.3": "審査スコア（5 点満点）· 安いモデル単体：3.3",
+  "0.1.6: big jobs split, and files that look finished.": "0.1.6：大きな仕事は分けて、ファイルはそのまま使える形で。",
+  "Oct 25, 2026": "2026年10月25日",
+  "A long list of the same kind of work — 200 sentences to translate, reviews to sort — is split and done side by side on several models. Every piece follows the same rules, and the totals are counted by MAT, not guessed.": "同じ種類の作業が長く並ぶとき——訳す 200 文、仕分けるレビュー——は分けて、複数のモデルが同時に進めます。どの部分も同じルールで判断し、合計は推測ではなく MAT が数えます。",
+  "Research on many things at once is shared out: each research seat looks up its own few, reading the web itself, and the seats work at the same time.": "たくさんの対象を一度に調べるときは分担します。調査席がそれぞれ担当分を自分でウェブを読んで調べ、同時に進めます。",
+  "Before anything is handed over, MAT checks it against your request — blanks, “to be filled”, sections shorter than asked, a slide count that’s off — and sends it back once to be fixed. The model that wrote it fixes it.": "渡す前に MAT が依頼と照らし合わせて確認します——空欄、「記入予定」、指定より短い節、合わない枚数——不備があれば一度だけ差し戻し、書いたモデル自身が直します。",
+  "Word, Excel and PowerPoint files come out finished: slides in order, with steps drawn as a flow, figures as a chart and comparisons as a table; spreadsheet cells hold real formulas, with the results shown in the chat.": "Word・Excel・PowerPoint はそのまま使える仕上がりに。スライドは正しい順で、手順はフロー図、数字はグラフ、比較は表として描きます。スプレッドシートのセルには本物の数式が入り、計算結果はチャットに表示されます。",
+  "Seats are staffed from a ranking that now also weighs MAT’s own measured results for each kind of work. A connection can be turned off or removed from its ⋯ menu in Settings › Providers.": "席の割り当てに使うランキングは、作業の種類ごとに MAT 自身が測った結果も加味するようになりました。設定 › Providers の各接続の ⋯ メニューから、オフにしたり削除したりできます。"
  },
  "attrs": {
   "A chat with MAT, and beside it the crew MAT hires. You ask whether to use RAG or fine-tuning, and MAT answers right there: no crew. You ask for a launch email, and MAT hires one seat, Wren on GPT-6.1 Sol, then checks the draft: 52 seconds, $0.004. You ask for a look at twelve AI note-taking apps, and MAT lays out five stages and hires a crew of nine across four of your subscriptions — six scouts on Gemini and DeepSeek, two to compare on Qwen, one to write on GPT-6.1 Sol — then the crew works stage by stage, each one checked before the next starts: 14 minutes and $0.60, against $1.55 for one strong model.": "MATとのチャットと、その横にMATが編成するチーム。RAGとファインチューニングのどちらを使うべきか尋ねると、MATはその場で答えます。チームは不要です。ローンチメールを頼むと、MATは1つの席にGPT-6.1 Sol上のWrenを割り当て、下書きをチェックします。52秒、$0.004。12のAI議事録アプリの調査を頼むと、MATは5つの段階を組み立て、あなたの4つのサブスクリプションにまたがる9人のチームを編成します。GeminiとDeepSeek上の6人のスカウト、Qwen上の2人の比較担当、GPT-6.1 Sol上の1人のライター。チームは段階ごとに作業し、各段階は次が始まる前にチェックされます。14分、$0.60。強力なモデル1つなら$1.55です。",
@@ -355,7 +365,8 @@
   "Ranking, top ten": "ランキング、上位10",
   "Sections": "セクション",
   "Three runs on one time axis. One strong model alone: 22 minutes, $1.55, 12 of 12 claims hold up. Cheap models only: a failed check and a redo, 17.5 minutes, $0.38, 9 of 12 claims hold up. MAT and its crew: 14 minutes, $0.60, 12 of 12.": "1つの時間軸に3つの実行。強力なモデル1つのみ：22分、$1.55、12件中12件の主張が正確。安いモデルのみ：チェック不合格とやり直しで17.5分、$0.38、12件中9件が正確。MATとそのチーム：14分、$0.60、12件中12件が正確。",
-  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.": "あなたのコンピュータには、チャット、メモリ、ファイルがあります。そこから3つのモデルプロバイダへ線が直接延び、それぞれの線が1ステップ分の作業を運び出し、結果を持ち帰ります。間には何もありません。"
+  "Your computer holds your chats, memory and files. Lines run straight from it to three model providers; each line carries one step's work out and the result back. Nothing sits in between.": "あなたのコンピュータには、チャット、メモリ、ファイルがあります。そこから3つのモデルプロバイダへ線が直接延び、それぞれの線が1ステップ分の作業を運び出し、結果を持ち帰ります。間には何もありません。",
+  "Three runs of one job on one time axis. One strong model, Claude Opus alone: 4.2 minutes, $0.53, judged 3.4 of 5. One cheap model, Claude Haiku alone: 4.0 minutes, $0.19, judged 3.3 of 5. MAT and its crew — GPT-6 Luna briefs, Claude Opus plans, three GPT-6 Luna seats research side by side, GPT-6.1 Sol writes, Claude Opus checks: 2.2 minutes, $0.15, judged 4.2 of 5.": "同じ仕事の 3 回の実行を一本の時間軸に並べたもの。強いモデル単体（Claude Opus のみ）：4.2 分、$0.53、評価 3.4/5。安いモデル単体（Claude Haiku のみ）：4.0 分、$0.19、評価 3.3/5。MAT とそのクルー——GPT-6 Luna が要件をまとめ、Claude Opus が計画し、三つの GPT-6 Luna の席が同時に調査、GPT-6.1 Sol が執筆、Claude Opus が確認：2.2 分、$0.15、評価 4.2/5。"
  },
  "meta": {
   "MAT is one chat for every AI you already pay for, running on your own computer. A question gets an answer. A job gets one model — or, when the work splits, a crew, checked at every step.": "MATは、契約中のすべてのAIを1つのチャットで使えるアプリ。あなたのコンピュータ上で動きます。質問には答えを。タスクには1つのモデルを。作業が分かれるときは、すべてのステップをチェックするチームを。",
@@ -477,7 +488,10 @@
   "<0>See the full ranking</0><1><2>→</2><3>→</3></1>": "<0>ランキングをすべて見る</0><1><2>→</2><3>→</3></1>",
   "See the full ranking": "ランキングをすべて見る",
   "This week's ranking couldn't be loaded.": "今週のランキングを読み込めませんでした。",
-  "Ranking at the Deliver bar": "「納品」ラインでのランキング"
+  "Ranking at the Deliver bar": "「納品」ラインでのランキング",
+  "One cheap model": "安いモデル単体",
+  "Claude Opus, start to finish": "Claude Opus、最初から最後まで",
+  "Claude Haiku, start to finish": "Claude Haiku、最初から最後まで"
  },
  "templates": {
   "${0} less · vs ${1}": "${0}安い · ${1}と比較",
@@ -535,6 +549,7 @@
   "All four quality bars, {0} models, and where every number comes from.": "4つの品質ライン、{0}モデル、そしてすべての数字の出どころ。",
   "+{0} more clear the bar": "ほかに{0}モデルがラインを超えます",
   "{0}m {1}s": "{0}分{1}秒",
-  "{0}s": "{0}秒"
+  "{0}s": "{0}秒",
+  "· {0} min · ${1} · {2} / {3}": "· {0} 分 · ${1} · {2} / {3}"
  }
 }
