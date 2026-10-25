@@ -4,8 +4,8 @@
  "categories": {
   "search": {
    "claude-opus-5.5": {
-    "score": 3.928,
-    "n": 48,
+    "score": 3.944,
+    "n": 71,
     "tasks": [
      "C1",
      "C7",
@@ -13,8 +13,8 @@
     ]
    },
    "gpt-6-astra": {
-    "score": 4.462,
-    "n": 41,
+    "score": 4.48,
+    "n": 53,
     "tasks": [
      "C1",
      "C7",
@@ -22,8 +22,8 @@
     ]
    },
    "claude-sonnet-5.5": {
-    "score": 3.583,
-    "n": 3,
+    "score": 3.535,
+    "n": 12,
     "tasks": [
      "C1",
      "C7",
@@ -31,8 +31,8 @@
     ]
    },
    "claude-haiku-5.5": {
-    "score": 3.583,
-    "n": 3,
+    "score": 3.498,
+    "n": 12,
     "tasks": [
      "C1",
      "C7",
@@ -40,8 +40,8 @@
     ]
    },
    "gpt-6.1-sol": {
-    "score": 3.527,
-    "n": 3,
+    "score": 3.129,
+    "n": 9,
     "tasks": [
      "C1",
      "C7",
@@ -49,53 +49,54 @@
     ]
    },
    "gpt-6-luna": {
-    "score": 4.625,
-    "n": 2,
+    "score": 4.475,
+    "n": 10,
     "tasks": [
      "C1",
+     "C7",
      "S1"
     ]
    }
   },
   "factuality": {
    "claude-opus-5.5": {
-    "score": 4.355,
-    "n": 15,
+    "score": 4.427,
+    "n": 23,
     "tasks": [
      "S1"
     ]
    },
    "gpt-6-astra": {
-    "score": 4.382,
-    "n": 15,
+    "score": 4.392,
+    "n": 18,
     "tasks": [
      "S1"
     ]
    },
    "claude-sonnet-5.5": {
-    "score": 4.0,
-    "n": 1,
+    "score": 4.043,
+    "n": 4,
     "tasks": [
      "S1"
     ]
    },
    "claude-haiku-5.5": {
-    "score": 4.25,
-    "n": 1,
+    "score": 4.082,
+    "n": 4,
     "tasks": [
      "S1"
     ]
    },
    "gpt-6.1-sol": {
-    "score": 1.08,
-    "n": 1,
+    "score": 1.083,
+    "n": 4,
     "tasks": [
      "S1"
     ]
    },
    "gpt-6-luna": {
-    "score": 4.58,
-    "n": 1,
+    "score": 4.553,
+    "n": 3,
     "tasks": [
      "S1"
     ]
@@ -103,8 +104,8 @@
   },
   "writing": {
    "claude-opus-5.5": {
-    "score": 4.047,
-    "n": 53,
+    "score": 3.999,
+    "n": 103,
     "tasks": [
      "C2",
      "C5",
@@ -115,8 +116,8 @@
     ]
    },
    "gpt-6-astra": {
-    "score": 4.55,
-    "n": 51,
+    "score": 4.515,
+    "n": 92,
     "tasks": [
      "C2",
      "C5",
@@ -127,8 +128,8 @@
     ]
    },
    "claude-sonnet-5.5": {
-    "score": 3.82,
-    "n": 6,
+    "score": 3.955,
+    "n": 24,
     "tasks": [
      "C2",
      "C5",
@@ -139,8 +140,8 @@
     ]
    },
    "claude-haiku-5.5": {
-    "score": 3.86,
-    "n": 6,
+    "score": 3.824,
+    "n": 24,
     "tasks": [
      "C2",
      "C5",
@@ -151,9 +152,10 @@
     ]
    },
    "gpt-6.1-sol": {
-    "score": 4.75,
-    "n": 5,
+    "score": 4.635,
+    "n": 22,
     "tasks": [
+     "C2",
      "C5",
      "C8",
      "S2",
@@ -162,8 +164,8 @@
     ]
    },
    "gpt-6-luna": {
-    "score": 4.152,
-    "n": 6,
+    "score": 4.083,
+    "n": 23,
     "tasks": [
      "C2",
      "C5",
@@ -176,8 +178,8 @@
   },
   "reasoning": {
    "claude-opus-5.5": {
-    "score": 4.373,
-    "n": 37,
+    "score": 4.28,
+    "n": 66,
     "tasks": [
      "C4",
      "C6",
@@ -185,8 +187,8 @@
     ]
    },
    "gpt-6-astra": {
-    "score": 4.548,
-    "n": 29,
+    "score": 4.51,
+    "n": 48,
     "tasks": [
      "C4",
      "C6",
@@ -194,8 +196,8 @@
     ]
    },
    "claude-sonnet-5.5": {
-    "score": 4.307,
-    "n": 3,
+    "score": 4.125,
+    "n": 12,
     "tasks": [
      "C4",
      "C6",
@@ -203,8 +205,8 @@
     ]
    },
    "claude-haiku-5.5": {
-    "score": 4.197,
-    "n": 3,
+    "score": 4.168,
+    "n": 12,
     "tasks": [
      "C4",
      "C6",
@@ -212,8 +214,8 @@
     ]
    },
    "gpt-6.1-sol": {
-    "score": 4.72,
-    "n": 3,
+    "score": 4.659,
+    "n": 12,
     "tasks": [
      "C4",
      "C6",
@@ -221,8 +223,8 @@
     ]
    },
    "gpt-6-luna": {
-    "score": 4.693,
-    "n": 3,
+    "score": 4.604,
+    "n": 12,
     "tasks": [
      "C4",
      "C6",
@@ -233,7 +235,7 @@
   "instructionFollowing": {
    "claude-opus-5.5": {
     "score": 4.479,
-    "n": 43,
+    "n": 83,
     "tasks": [
      "C3",
      "C9",
@@ -246,8 +248,8 @@
     ]
    },
    "gpt-6-astra": {
-    "score": 4.706,
-    "n": 40,
+    "score": 4.708,
+    "n": 71,
     "tasks": [
      "C3",
      "C9",
@@ -260,8 +262,8 @@
     ]
    },
    "claude-sonnet-5.5": {
-    "score": 4.365,
-    "n": 8,
+    "score": 4.471,
+    "n": 32,
     "tasks": [
      "C3",
      "C9",
@@ -274,8 +276,8 @@
     ]
    },
    "claude-haiku-5.5": {
-    "score": 4.541,
-    "n": 8,
+    "score": 4.554,
+    "n": 31,
     "tasks": [
      "C3",
      "C9",
@@ -288,8 +290,8 @@
     ]
    },
    "gpt-6.1-sol": {
-    "score": 4.729,
-    "n": 8,
+    "score": 4.626,
+    "n": 26,
     "tasks": [
      "C3",
      "C9",
@@ -302,8 +304,8 @@
     ]
    },
    "gpt-6-luna": {
-    "score": 4.594,
-    "n": 8,
+    "score": 4.581,
+    "n": 26,
     "tasks": [
      "C3",
      "C9",
@@ -318,39 +320,98 @@
   },
   "agents": {
    "claude-opus-5.5": {
-    "score": 3.413,
-    "n": 16,
+    "score": 3.418,
+    "n": 22,
     "tasks": [
      "C7"
     ]
    },
    "gpt-6-astra": {
-    "score": 4.539,
-    "n": 10,
+    "score": 4.574,
+    "n": 12,
     "tasks": [
      "C7"
     ]
    },
    "claude-sonnet-5.5": {
-    "score": 3.08,
-    "n": 1,
+    "score": 3.02,
+    "n": 4,
     "tasks": [
      "C7"
     ]
    },
    "claude-haiku-5.5": {
-    "score": 3.08,
-    "n": 1,
+    "score": 3.123,
+    "n": 4,
     "tasks": [
      "C7"
     ]
    },
    "gpt-6.1-sol": {
-    "score": 4.67,
-    "n": 1,
+    "score": 4.71,
+    "n": 2,
     "tasks": [
      "C7"
     ]
+   },
+   "gpt-6-luna": {
+    "score": 4.193,
+    "n": 3,
+    "tasks": [
+     "C7"
+    ]
+   }
+  }
+ },
+ "seatCategories": {
+  "reasoning": {
+   "gpt-6.1-sol": {
+    "score": 4.643,
+    "n": 14
+   },
+   "claude-sonnet-5.5": {
+    "score": 5.0,
+    "n": 1
+   },
+   "claude-fable-5.1": {
+    "score": 4.597,
+    "n": 6
+   }
+  },
+  "search": {
+   "claude-haiku-5.5": {
+    "score": 3.757,
+    "n": 23
+   },
+   "claude-opus-5.5": {
+    "score": 3.857,
+    "n": 14
+   },
+   "gpt-6-luna": {
+    "score": 2.917,
+    "n": 1
+   },
+   "gpt-6.1-sol": {
+    "score": 3.117,
+    "n": 5
+   },
+   "claude-fable-5.1": {
+    "score": 4.25,
+    "n": 1
+   }
+  },
+  "writing": {
+   "claude-opus-5.5": {
+    "score": 3.114,
+    "n": 25
+   },
+   "gpt-6.1-sol": {
+    "score": 3.773,
+    "n": 18
+   },
+   "claude-sonnet-5.5": {
+    "score": 3.333,
+    "n": 1
    }
   }
  }

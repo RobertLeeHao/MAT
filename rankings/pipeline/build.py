@@ -87,6 +87,13 @@ UNCERT_K = 1.0
 MEASURED_W = 0.25
 MEASURED_MIN_MODELS = 4
 MEASURED_MIN_N = 3
+# 2026-10-25 · …and more once the evidence is there (Hugo: the ranking's
+# credibility is the next lever). The full validation of 10-25 judged every
+# model 9–15 times per kind of work on MAT's own tasks — the closest evidence
+# to the work MAT staffs — so with a median of MEASURED_FULL_N tasks or more
+# per model the source weighs MEASURED_W_FULL (scaled linearly in between).
+MEASURED_W_FULL = 0.6
+MEASURED_FULL_N = 9
 IMG_SRC = [("arena_text_to_image", .6), ("arena_image_edit", .4)]
 IMG_B = {"draft": -1.5, "usable": -0.5, "deliver": 0.4, "critical": 1.0}
 IMG_SLOPE = 0.5
@@ -215,7 +222,9 @@ def build(reg, src, include_local=False):
                 key = f"mat_{cat}"
                 scores[key] = ok
                 LABEL[key] = "MAT comparison test"
-                sources[cat].append((key, MEASURED_W))
+                med_n = st.median(rows[m]["n"] for m in ok)
+                w = MEASURED_W + (MEASURED_W_FULL - MEASURED_W) * min(1.0, max(0.0, (med_n - MEASURED_MIN_N) / (MEASURED_FULL_N - MEASURED_MIN_N)))
+                sources[cat].append((key, round(w, 3)))
                 measured_used[cat] = sorted(ok)
             elif cat in sources and ok:
                 notes.append(f"MAT comparison test, {cat}: {len(ok)} model(s) measured, {MEASURED_MIN_MODELS} needed before it counts")
